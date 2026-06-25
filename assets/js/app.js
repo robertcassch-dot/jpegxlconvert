@@ -24,6 +24,30 @@ async function getHeic() {
   return _heic; // { heicTo, isHeic }
 }
 
+// libjxl cjxl — true lossless JPEG transcoding. Custom single-thread WASM build
+// (no pthreads, so no cross-origin-isolation headers needed). Lazy-loaded only
+// when a JPEG is converted to JXL losslessly: it repacks the original JPEG
+// bitstream instead of re-encoding pixels, so the result is bit-identical to the
+// source JPEG and ~10-20% smaller (a plain pixel "lossless" encode would be bigger).
+const CJXL_DIR = "/assets/vendor/jxl-enc/";
+let _cjxlFactory = null;
+function loadScriptOnce(src) {
+  return new Promise((resolve, reject) => {
+    const s = document.createElement("script");
+    s.src = src; s.onload = resolve; s.onerror = () => reject(new Error("load " + src));
+    document.head.appendChild(s);
+  });
+}
+async function transcodeJpegToJxl(file) {
+  if (!_cjxlFactory) { await loadScriptOnce(CJXL_DIR + "cjxl.js"); _cjxlFactory = globalThis.createCjxl; }
+  // Fresh module instance per file so batches stay clean.
+  const mod = await _cjxlFactory({ noInitialRun: true, locateFile: (p) => CJXL_DIR + p, print: () => {}, printErr: () => {} });
+  const bytes = new Uint8Array(await file.arrayBuffer());
+  mod.FS.writeFile("in.jpg", bytes);
+  try { mod.callMain(["in.jpg", "out.jxl", "--num_threads", "0", "--lossless_jpeg=1"]); } catch (e) { /* emscripten exits via throw */ }
+  return mod.FS.readFile("out.jxl"); // Uint8Array
+}
+
 // ---- tiny i18n for dynamic strings (keyed by <html lang>) ----
 const LANG = (document.documentElement.lang || "en").slice(0, 2);
 const T = {
@@ -90,6 +114,15 @@ async function convert(file, { target, quality, lossless }) {
   if (target === "auto") out = fromJxl ? "png" : (fromHeic ? "jpeg" : "jxl");
 
   if (out === "jxl") {
+    // Lossless JPEG → JXL: repack the original JPEG (true lossless transcoding),
+    // which is bit-identical and smaller. Falls back to the pixel path on error.
+    const isJpeg = !fromJxl && !fromHeic && (file.type === "image/jpeg" || /\.jpe?g$/i.test(file.name));
+    if (lossless && isJpeg) {
+      try {
+        const tbuf = await transcodeJpegToJxl(file);
+        if (tbuf && tbuf.length) return { blob: new Blob([tbuf], { type: "image/jxl" }), ext: "jxl" };
+      } catch (e) { /* fall through to pixel encode */ }
+    }
     const imageData = fromJxl ? (await getJxl()).decode(await file.arrayBuffer()) : await fileToImageData(file);
     const id = (imageData instanceof Promise) ? await imageData : imageData;
     const { encode } = await getJxl();
