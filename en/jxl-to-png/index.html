@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JPEG XL to PNG — Free in-browser converter</title>
+<meta name="description" content="Convert JPEG XL to PNG to get a lossless, universally supported image — ideal when you need perfect quality or transparency. Runs entirely in your browser.">
+<link rel="canonical" href="https://jpegxlconvert.com/en/jxl-to-png/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/jxl-to-png/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/jxl-a-png/">
+<link rel="alternate" hreflang="de" href="https://jpegxlconvert.com/de/jxl-in-png/">
+<link rel="alternate" hreflang="fr" href="https://jpegxlconvert.com/fr/jxl-en-png/">
+<link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/jxl-to-png/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/jxl-to-png/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="JPEG XL to PNG — JXL Convert">
+<meta property="og:description" content="Convert JPEG XL to PNG to get a lossless, universally supported image — ideal when you need perfect quality or…">
+<meta property="og:url" content="https://jpegxlconvert.com/en/jxl-to-png/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=5">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"PNG or JPG for my .jxl?","acceptedAnswer":{"@type":"Answer","text":"Use PNG for graphics, screenshots or transparency; JPG for photos you simply want to share."}},{"@type":"Question","name":"Does it stay lossless?","acceptedAnswer":{"@type":"Answer","text":"Yes — PNG keeps every pixel exactly."}},{"@type":"Question","name":"Is it free and private?","acceptedAnswer":{"@type":"Answer","text":"Yes — free, no sign-up, and the file never leaves your device."}},{"@type":"Question","name":"Is PNG bigger than JPG?","acceptedAnswer":{"@type":"Answer","text":"Usually yes, because PNG is lossless. Choose PNG when quality and transparency matter, JPG when you want the smallest shareable file."}},{"@type":"Question","name":"Will transparency be kept?","acceptedAnswer":{"@type":"Answer","text":"Yes — any alpha or transparency in your .jxl is fully preserved in the PNG."}}]}</script>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="#faq">FAQ</a></nav>
+    <details class="lang"><summary>🌐 EN</summary>
+      <div class="lang-menu">
+        <a class="active" href="/en/jxl-to-png/"><span class="flag">🇬🇧</span> English</a>
+        <a href="/es/jxl-a-png/"><span class="flag">🇪🇸</span> Español</a>
+        <a href="/de/jxl-in-png/"><span class="flag">🇩🇪</span> Deutsch</a>
+        <a href="/fr/jxl-en-png/"><span class="flag">🇫🇷</span> Français</a>
+        <a href="/ru/jxl-to-png/"><span class="flag">🇷🇺</span> Русский</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">⚡ Free in-browser converter</span>
+  <h1>JPEG XL to PNG</h1>
+  <p class="sub">Convert JPEG XL to PNG to get a lossless, universally supported image — ideal when you need perfect quality or transparency. Runs entirely in your browser.</p>
+  <div class="badges">
+    <span class="badge green">🔒 100% private</span><span class="badge">🚫 No sign-up</span>
+    <span class="badge">♾️ No limits</span><span class="badge">💧 No watermark</span><span class="badge">💸 Free</span>
+  </div>
+  <div class="tool">
+    <div class="dropzone" id="dropzone">
+      <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 16V4m0 0L7 9m5-5l5 5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke-linecap="round"/></svg>
+      <div class="dz-title">Drop your JPEG XL files here</div>
+      <div class="dz-hint">Converted instantly on your device</div>
+      <span class="dz-btn">Select files</span>
+      <input id="file-input" type="file" accept="image/*,.jxl,.heic,.heif" multiple hidden>
+      <div class="dz-privacy">🔒 100% in your browser — your files are never uploaded</div>
+    </div>
+    <div class="controls">
+      <div class="ctrl"><label>Convert to</label>
+        <div class="seg">
+          <button data-target="auto">Auto</button>
+          <button data-target="jxl">JPEG XL</button>
+          <button data-target="png" class="on">PNG</button>
+          <button data-target="jpeg">JPG</button>
+        </div>
+      </div>
+      <div class="ctrl"><label>Quality</label>
+        <div class="quality"><input type="range" id="quality" min="40" max="100" value="90"><output id="quality-val">90</output></div>
+      </div>
+      <div class="ctrl"><label>&nbsp;</label><label class="switch"><input type="checkbox" id="lossless"> Lossless</label></div>
+    </div>
+    <div class="results" id="results"></div>
+    <div class="results-actions" id="results-actions"></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>JPEG XL to PNG</h2>
+  <p class="lead">Convert JPEG XL to PNG to get a lossless, universally supported image — ideal when you need perfect quality or transparency. Runs entirely in your browser.</p>
+  <div class="grid3">
+    <div class="feature"><div class="fi">✅</div><p>Keep every pixel — PNG is fully lossless.</p></div>
+    <div class="feature"><div class="fi">✅</div><p>Transparency is preserved.</p></div>
+    <div class="feature"><div class="fi">✅</div><p>Open and edit your image in any tool that doesn't support .jxl yet.</p></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap about">
+  <h2>Good to know</h2>
+  <p class="prose">Converting JPEG XL to PNG gives you a lossless image that every editor, operating system and website understands. PNG keeps 100% of the pixel data and full transparency, which makes it the safe choice for screenshots, logos, diagrams and any graphic where you can't afford even a hint of compression artefacts.</p>
+  <p class="prose">Because the whole process happens in your browser, your .jxl never leaves your computer. Drop one file or dozens and download crisp PNGs instantly — no account, no upload, no watermark. If your goal is simply to share a photo and file size matters, JPG may suit you better; for editing and perfect fidelity, PNG is the right call.</p>
+</div></section>
+
+<section class="block alt" id="how"><div class="wrap">
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="step"><h3>Drop your files</h3><p>Drag them in or click to choose.</p></div>
+    <div class="step"><h3>Pick quality</h3><p>Use the slider or tick Lossless.</p></div>
+    <div class="step"><h3>Download</h3><p>Get your converted files instantly.</p></div>
+  </div>
+</div></section>
+
+<section class="block" id="faq"><div class="wrap">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <details open><summary>PNG or JPG for my .jxl?</summary><div class="ans">Use PNG for graphics, screenshots or transparency; JPG for photos you simply want to share.</div></details>
+    <details><summary>Does it stay lossless?</summary><div class="ans">Yes — PNG keeps every pixel exactly.</div></details>
+    <details><summary>Is it free and private?</summary><div class="ans">Yes — free, no sign-up, and the file never leaves your device.</div></details>
+    <details><summary>Is PNG bigger than JPG?</summary><div class="ans">Usually yes, because PNG is lossless. Choose PNG when quality and transparency matter, JPG when you want the smallest shareable file.</div></details>
+    <details><summary>Will transparency be kept?</summary><div class="ans">Yes — any alpha or transparency in your .jxl is fully preserved in the PNG.</div></details>
+  </div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>More conversions</h2>
+  <div class="conv-links">
+      <a class="conv-link" href="/en/jxl-to-jpg/">JPEG XL → JPG</a>
+      <a class="conv-link" href="/en/jpg-to-jxl/">JPG → JPEG XL</a>
+      <a class="conv-link" href="/en/png-to-jxl/">PNG → JPEG XL</a>
+      <a class="conv-link" href="/en/webp-to-jxl/">WebP → JPEG XL</a>
+      <a class="conv-link" href="/en/heic-to-jpg/">HEIC → JPG</a>
+      <a class="conv-link" href="/en/heic-to-png/">HEIC → PNG</a>
+      <a class="conv-link" href="/en/heic-to-jxl/">HEIC → JPEG XL</a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="#how">How to</a><a href="#faq">FAQ</a></nav>
+  </div>
+  <div class="legal"><span class="privacy-pill">🔒 Your files never leave your device</span><span class="flegal"><a href="/en/privacy/">Privacy</a> · <a href="/en/terms/">Terms</a></span><span>© 2026 JXL Convert</span></div>
+</div></footer>
+<script type="module" src="/assets/js/app.js?v=4"></script>
+</body>
+</html>

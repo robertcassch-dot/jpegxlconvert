@@ -1,0 +1,12 @@
+{
+  "name": "JXL Convert — Free JPEG XL Converter",
+  "short_name": "JXL Convert",
+  "description": "Free, private, in-browser JPEG XL converter. No sign-up, no limits, no watermark.",
+  "start_url": "/en/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#5b4bff",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

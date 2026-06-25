@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PNG en JPEG XL — Convertisseur gratuit dans le navigateur</title>
+<meta name="description" content="Convertissez PNG en JPEG XL pour des fichiers sans perte bien plus petits.">
+<link rel="canonical" href="https://jpegxlconvert.com/fr/png-en-jxl/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/png-to-jxl/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/png-a-jxl/">
+<link rel="alternate" hreflang="de" href="https://jpegxlconvert.com/de/png-in-jxl/">
+<link rel="alternate" hreflang="fr" href="https://jpegxlconvert.com/fr/png-en-jxl/">
+<link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/png-to-jxl/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/png-to-jxl/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PNG en JPEG XL — JXL Convert">
+<meta property="og:description" content="Convertissez PNG en JPEG XL pour des fichiers sans perte bien plus petits.">
+<meta property="og:url" content="https://jpegxlconvert.com/fr/png-en-jxl/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=5">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Le JXL est-il plus petit que le PNG ?","acceptedAnswer":{"@type":"Answer","text":"Oui — le mode sans perte de JPEG XL est généralement bien plus petit que le PNG."}},{"@type":"Question","name":"La transparence est-elle conservée ?","acceptedAnswer":{"@type":"Answer","text":"Oui, le canal alpha est préservé."}},{"@type":"Question","name":"Est-ce gratuit et privé ?","acceptedAnswer":{"@type":"Answer","text":"Oui — gratuit, sans inscription, et le fichier ne quitte jamais votre appareil."}},{"@type":"Question","name":"De combien mon PNG va-t-il rétrécir ?","acceptedAnswer":{"@type":"Answer","text":"Cela dépend de l'image, mais le mode sans perte de JPEG XL est souvent bien plus petit que le PNG, surtout pour les photos et graphiques complexes."}},{"@type":"Question","name":"Est-ce vraiment sans perte ?","acceptedAnswer":{"@type":"Answer","text":"Oui — avec Sans perte activé, chaque pixel et le canal alpha sont conservés exactement."}}]}</script>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/fr/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/fr/">Convertisseur</a><a href="/fr/visionneuse-jxl/">Visionneuse</a><a href="#faq">FAQ</a></nav>
+    <details class="lang"><summary>🌐 FR</summary>
+      <div class="lang-menu">
+        <a href="/en/png-to-jxl/"><span class="flag">🇬🇧</span> English</a>
+        <a href="/es/png-a-jxl/"><span class="flag">🇪🇸</span> Español</a>
+        <a href="/de/png-in-jxl/"><span class="flag">🇩🇪</span> Deutsch</a>
+        <a class="active" href="/fr/png-en-jxl/"><span class="flag">🇫🇷</span> Français</a>
+        <a href="/ru/png-to-jxl/"><span class="flag">🇷🇺</span> Русский</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">⚡ Convertisseur gratuit dans le navigateur</span>
+  <h1>PNG en JPEG XL</h1>
+  <p class="sub">Convertissez PNG en JPEG XL pour des fichiers sans perte bien plus petits. JPEG XL conserve chaque pixel et la transparence tout en passant largement sous le PNG. Tout dans votre navigateur.</p>
+  <div class="badges">
+    <span class="badge green">🔒 100% privé</span><span class="badge">🚫 Sans inscription</span>
+    <span class="badge">♾️ Sans limite</span><span class="badge">💧 Sans filigrane</span><span class="badge">💸 Gratuit</span>
+  </div>
+  <div class="tool">
+    <div class="dropzone" id="dropzone">
+      <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 16V4m0 0L7 9m5-5l5 5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke-linecap="round"/></svg>
+      <div class="dz-title">Déposez vos fichiers PNG ici</div>
+      <div class="dz-hint">Convertis instantanément sur votre appareil</div>
+      <span class="dz-btn">Sélectionner des fichiers</span>
+      <input id="file-input" type="file" accept="image/*,.jxl,.heic,.heif" multiple hidden>
+      <div class="dz-privacy">🔒 100% dans votre navigateur — vos fichiers ne sont jamais envoyés</div>
+    </div>
+    <div class="controls">
+      <div class="ctrl"><label>Convertir en</label>
+        <div class="seg">
+          <button data-target="auto">Auto</button>
+          <button data-target="jxl" class="on">JPEG XL</button>
+          <button data-target="png">PNG</button>
+          <button data-target="jpeg">JPG</button>
+        </div>
+      </div>
+      <div class="ctrl"><label>Qualité</label>
+        <div class="quality"><input type="range" id="quality" min="40" max="100" value="90"><output id="quality-val">90</output></div>
+      </div>
+      <div class="ctrl"><label>&nbsp;</label><label class="switch"><input type="checkbox" id="lossless"> Sans perte</label></div>
+    </div>
+    <div class="results" id="results"></div>
+    <div class="results-actions" id="results-actions"></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>PNG en JPEG XL</h2>
+  <p class="lead">Convertissez PNG en JPEG XL pour des fichiers sans perte bien plus petits. JPEG XL conserve chaque pixel et la transparence tout en passant largement sous le PNG. Tout dans votre navigateur.</p>
+  <div class="grid3">
+    <div class="feature"><div class="fi">✅</div><p>Bien plus petit que le PNG, et toujours sans perte.</p></div>
+    <div class="feature"><div class="fi">✅</div><p>La transparence est conservée.</p></div>
+    <div class="feature"><div class="fi">✅</div><p>Parfait pour alléger les graphiques lourds et les captures.</p></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap about">
+  <h2>Bon à savoir</h2>
+  <p class="prose">Le PNG est apprécié pour être sans perte, mais il est aussi réputé lourd — de grandes captures et des graphiques détaillés peuvent atteindre plusieurs mégaoctets. Convertir PNG en JPEG XL garde l'image parfaitement sans perte, transparence comprise, tout en réduisant généralement la taille de façon spectaculaire. C'est le moyen le plus simple d'alléger un dossier de PNG sans sacrifier un seul pixel.</p>
+  <p class="prose">Cela compte pour les sites et le stockage : des images sans perte plus légères se chargent plus vite et prennent moins de place. La conversion s'exécute entièrement sur votre appareil avec WebAssembly : même des graphiques confidentiels ou des designs non publiés ne touchent jamais un serveur. Déposez un lot, gardez Sans perte coché et téléchargez des fichiers .jxl plus petits en quelques secondes.</p>
+</div></section>
+
+<section class="block alt" id="how"><div class="wrap">
+  <h2>Comment ça marche</h2>
+  <div class="steps">
+    <div class="step"><h3>Déposez vos fichiers</h3><p>Glissez-les ou cliquez pour choisir.</p></div>
+    <div class="step"><h3>Choisissez la qualité</h3><p>Curseur ou cochez Sans perte.</p></div>
+    <div class="step"><h3>Téléchargez</h3><p>Obtenez vos fichiers instantanément.</p></div>
+  </div>
+</div></section>
+
+<section class="block" id="faq"><div class="wrap">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <details open><summary>Le JXL est-il plus petit que le PNG ?</summary><div class="ans">Oui — le mode sans perte de JPEG XL est généralement bien plus petit que le PNG.</div></details>
+    <details><summary>La transparence est-elle conservée ?</summary><div class="ans">Oui, le canal alpha est préservé.</div></details>
+    <details><summary>Est-ce gratuit et privé ?</summary><div class="ans">Oui — gratuit, sans inscription, et le fichier ne quitte jamais votre appareil.</div></details>
+    <details><summary>De combien mon PNG va-t-il rétrécir ?</summary><div class="ans">Cela dépend de l'image, mais le mode sans perte de JPEG XL est souvent bien plus petit que le PNG, surtout pour les photos et graphiques complexes.</div></details>
+    <details><summary>Est-ce vraiment sans perte ?</summary><div class="ans">Oui — avec Sans perte activé, chaque pixel et le canal alpha sont conservés exactement.</div></details>
+  </div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Plus de conversions</h2>
+  <div class="conv-links">
+      <a class="conv-link" href="/fr/jxl-en-jpg/">JPEG XL → JPG</a>
+      <a class="conv-link" href="/fr/jxl-en-png/">JPEG XL → PNG</a>
+      <a class="conv-link" href="/fr/jpg-en-jxl/">JPG → JPEG XL</a>
+      <a class="conv-link" href="/fr/webp-en-jxl/">WebP → JPEG XL</a>
+      <a class="conv-link" href="/fr/heic-en-jpg/">HEIC → JPG</a>
+      <a class="conv-link" href="/fr/heic-en-png/">HEIC → PNG</a>
+      <a class="conv-link" href="/fr/heic-en-jxl/">HEIC → JPEG XL</a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/fr/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/fr/">Convertisseur</a><a href="#how">Comment</a><a href="#faq">FAQ</a></nav>
+  </div>
+  <div class="legal"><span class="privacy-pill">🔒 Vos fichiers ne quittent jamais votre appareil</span><span class="flegal"><a href="/en/privacy/">Confidentialité</a> · <a href="/en/terms/">Conditions</a></span><span>© 2026 JXL Convert</span></div>
+</div></footer>
+<script type="module" src="/assets/js/app.js?v=4"></script>
+</body>
+</html>

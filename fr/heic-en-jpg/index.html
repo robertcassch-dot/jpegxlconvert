@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HEIC en JPG — Convertisseur gratuit dans le navigateur</title>
+<meta name="description" content="Des photos HEIC de votre iPhone qui ne s'ouvrent pas sous Windows, Android ou sur le web ? Convertissez HEIC en JPG et utilisez-les partout.">
+<link rel="canonical" href="https://jpegxlconvert.com/fr/heic-en-jpg/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/heic-to-jpg/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/heic-a-jpg/">
+<link rel="alternate" hreflang="de" href="https://jpegxlconvert.com/de/heic-in-jpg/">
+<link rel="alternate" hreflang="fr" href="https://jpegxlconvert.com/fr/heic-en-jpg/">
+<link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/heic-to-jpg/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/heic-to-jpg/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HEIC en JPG — JXL Convert">
+<meta property="og:description" content="Des photos HEIC de votre iPhone qui ne s'ouvrent pas sous Windows, Android ou sur le web ?">
+<meta property="og:url" content="https://jpegxlconvert.com/fr/heic-en-jpg/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=5">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Pourquoi mes photos HEIC ne s'ouvrent-elles pas ?","acceptedAnswer":{"@type":"Answer","text":"HEIC est le format d'Apple et la plupart des applis non-Apple, Windows et sites ne le lisent pas. En JPG, elles s'ouvrent partout."}},{"@type":"Question","name":"Vais-je perdre en qualité ?","acceptedAnswer":{"@type":"Answer","text":"Le JPG est avec perte, mais en haute qualité la différence est invisible à l'affichage, au partage et à l'impression."}},{"@type":"Question","name":"Est-ce gratuit et privé ?","acceptedAnswer":{"@type":"Answer","text":"Oui — gratuit, sans inscription, sans filigrane, et vos photos ne quittent jamais votre appareil."}},{"@type":"Question","name":"Mes photos vont-elles sortir pivotées ?","acceptedAnswer":{"@type":"Answer","text":"Non — le convertisseur lit les données d'orientation du HEIC, vos photos sortent donc dans le bon sens."}},{"@type":"Question","name":"Puis-je convertir un album entier d'un coup ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Sélectionnez autant de fichiers HEIC que vous voulez : ils sont tous convertis ensemble, en local sur votre appareil."}}]}</script>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/fr/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/fr/">Convertisseur</a><a href="/fr/visionneuse-jxl/">Visionneuse</a><a href="#faq">FAQ</a></nav>
+    <details class="lang"><summary>🌐 FR</summary>
+      <div class="lang-menu">
+        <a href="/en/heic-to-jpg/"><span class="flag">🇬🇧</span> English</a>
+        <a href="/es/heic-a-jpg/"><span class="flag">🇪🇸</span> Español</a>
+        <a href="/de/heic-in-jpg/"><span class="flag">🇩🇪</span> Deutsch</a>
+        <a class="active" href="/fr/heic-en-jpg/"><span class="flag">🇫🇷</span> Français</a>
+        <a href="/ru/heic-to-jpg/"><span class="flag">🇷🇺</span> Русский</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">⚡ Convertisseur gratuit dans le navigateur</span>
+  <h1>HEIC en JPG</h1>
+  <p class="sub">Des photos HEIC de votre iPhone qui ne s'ouvrent pas sous Windows, Android ou sur le web ? Convertissez HEIC en JPG et utilisez-les partout. Tout se fait dans votre navigateur, vos photos ne sont jamais envoyées.</p>
+  <div class="badges">
+    <span class="badge green">🔒 100% privé</span><span class="badge">🚫 Sans inscription</span>
+    <span class="badge">♾️ Sans limite</span><span class="badge">💧 Sans filigrane</span><span class="badge">💸 Gratuit</span>
+  </div>
+  <div class="tool">
+    <div class="dropzone" id="dropzone">
+      <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 16V4m0 0L7 9m5-5l5 5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke-linecap="round"/></svg>
+      <div class="dz-title">Déposez vos fichiers HEIC ici</div>
+      <div class="dz-hint">Convertis instantanément sur votre appareil</div>
+      <span class="dz-btn">Sélectionner des fichiers</span>
+      <input id="file-input" type="file" accept="image/*,.jxl,.heic,.heif" multiple hidden>
+      <div class="dz-privacy">🔒 100% dans votre navigateur — vos fichiers ne sont jamais envoyés</div>
+    </div>
+    <div class="controls">
+      <div class="ctrl"><label>Convertir en</label>
+        <div class="seg">
+          <button data-target="auto">Auto</button>
+          <button data-target="jxl">JPEG XL</button>
+          <button data-target="png">PNG</button>
+          <button data-target="jpeg" class="on">JPG</button>
+        </div>
+      </div>
+      <div class="ctrl"><label>Qualité</label>
+        <div class="quality"><input type="range" id="quality" min="40" max="100" value="90"><output id="quality-val">90</output></div>
+      </div>
+      <div class="ctrl"><label>&nbsp;</label><label class="switch"><input type="checkbox" id="lossless"> Sans perte</label></div>
+    </div>
+    <div class="results" id="results"></div>
+    <div class="results-actions" id="results-actions"></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>HEIC en JPG</h2>
+  <p class="lead">Des photos HEIC de votre iPhone qui ne s'ouvrent pas sous Windows, Android ou sur le web ? Convertissez HEIC en JPG et utilisez-les partout. Tout se fait dans votre navigateur, vos photos ne sont jamais envoyées.</p>
+  <div class="grid3">
+    <div class="feature"><div class="fi">✅</div><p>Ouvrez les photos HEIC de l'iPhone sur tout appareil, appli ou site.</p></div>
+    <div class="feature"><div class="fi">✅</div><p>Le JPG fonctionne littéralement partout — parfait pour partager, téléverser et imprimer.</p></div>
+    <div class="feature"><div class="fi">✅</div><p>Convertissez toutes vos photos HEIC d'un coup, gratuit et sans filigrane.</p></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap about">
+  <h2>Bon à savoir</h2>
+  <p class="prose">HEIC est le format avec lequel l'iPhone enregistre les photos, et il est excellent en qualité et en taille — jusqu'à ce que vous essayiez de l'ouvrir hors de l'univers Apple. Windows, Android, la plupart des sites et de nombreuses applis refusent tout simplement d'afficher le HEIC. Convertir HEIC en JPG règle cela complètement : le JPG s'ouvre partout, vous pouvez donc enfin partager, téléverser, imprimer et envoyer par e-mail vos photos iPhone sans erreur.</p>
+  <p class="prose">La conversion s'exécute entièrement dans votre navigateur, ce qui compte plus que d'habitude ici — ce sont vos photos personnelles, et elles ne sont jamais envoyées sur un serveur. Sélectionnez un seul HEIC ou toute votre pellicule, choisissez la qualité et téléchargez des JPG standard en quelques secondes, gratuit et sans filigrane.</p>
+</div></section>
+
+<section class="block alt" id="how"><div class="wrap">
+  <h2>Comment ça marche</h2>
+  <div class="steps">
+    <div class="step"><h3>Déposez vos fichiers</h3><p>Glissez-les ou cliquez pour choisir.</p></div>
+    <div class="step"><h3>Choisissez la qualité</h3><p>Curseur ou cochez Sans perte.</p></div>
+    <div class="step"><h3>Téléchargez</h3><p>Obtenez vos fichiers instantanément.</p></div>
+  </div>
+</div></section>
+
+<section class="block" id="faq"><div class="wrap">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <details open><summary>Pourquoi mes photos HEIC ne s'ouvrent-elles pas ?</summary><div class="ans">HEIC est le format d'Apple et la plupart des applis non-Apple, Windows et sites ne le lisent pas. En JPG, elles s'ouvrent partout.</div></details>
+    <details><summary>Vais-je perdre en qualité ?</summary><div class="ans">Le JPG est avec perte, mais en haute qualité la différence est invisible à l'affichage, au partage et à l'impression.</div></details>
+    <details><summary>Est-ce gratuit et privé ?</summary><div class="ans">Oui — gratuit, sans inscription, sans filigrane, et vos photos ne quittent jamais votre appareil.</div></details>
+    <details><summary>Mes photos vont-elles sortir pivotées ?</summary><div class="ans">Non — le convertisseur lit les données d'orientation du HEIC, vos photos sortent donc dans le bon sens.</div></details>
+    <details><summary>Puis-je convertir un album entier d'un coup ?</summary><div class="ans">Oui. Sélectionnez autant de fichiers HEIC que vous voulez : ils sont tous convertis ensemble, en local sur votre appareil.</div></details>
+  </div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Plus de conversions</h2>
+  <div class="conv-links">
+      <a class="conv-link" href="/fr/jxl-en-jpg/">JPEG XL → JPG</a>
+      <a class="conv-link" href="/fr/jxl-en-png/">JPEG XL → PNG</a>
+      <a class="conv-link" href="/fr/jpg-en-jxl/">JPG → JPEG XL</a>
+      <a class="conv-link" href="/fr/png-en-jxl/">PNG → JPEG XL</a>
+      <a class="conv-link" href="/fr/webp-en-jxl/">WebP → JPEG XL</a>
+      <a class="conv-link" href="/fr/heic-en-png/">HEIC → PNG</a>
+      <a class="conv-link" href="/fr/heic-en-jxl/">HEIC → JPEG XL</a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/fr/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/fr/">Convertisseur</a><a href="#how">Comment</a><a href="#faq">FAQ</a></nav>
+  </div>
+  <div class="legal"><span class="privacy-pill">🔒 Vos fichiers ne quittent jamais votre appareil</span><span class="flegal"><a href="/en/privacy/">Confidentialité</a> · <a href="/en/terms/">Conditions</a></span><span>© 2026 JXL Convert</span></div>
+</div></footer>
+<script type="module" src="/assets/js/app.js?v=4"></script>
+</body>
+</html>

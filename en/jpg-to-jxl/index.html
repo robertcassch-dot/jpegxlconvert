@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JPG to JPEG XL — Free in-browser converter</title>
+<meta name="description" content="Repack your JPG photos as JPEG XL and recover around 20% of their size with no quality loss at all.">
+<link rel="canonical" href="https://jpegxlconvert.com/en/jpg-to-jxl/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/jpg-to-jxl/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/jpg-a-jxl/">
+<link rel="alternate" hreflang="de" href="https://jpegxlconvert.com/de/jpg-in-jxl/">
+<link rel="alternate" hreflang="fr" href="https://jpegxlconvert.com/fr/jpg-en-jxl/">
+<link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/jpg-to-jxl/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/jpg-to-jxl/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="JPG to JPEG XL — JXL Convert">
+<meta property="og:description" content="Repack your JPG photos as JPEG XL and recover around 20% of their size with no quality loss at all.">
+<meta property="og:url" content="https://jpegxlconvert.com/en/jpg-to-jxl/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=5">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does JPG to JXL lose quality?","acceptedAnswer":{"@type":"Answer","text":"No — lossless mode repacks the existing JPG, so it's pixel-identical and just smaller."}},{"@type":"Question","name":"Where can I use .jxl?","acceptedAnswer":{"@type":"Answer","text":"Safari already supports it and Chrome is rolling it out; meanwhile keep your originals safe."}},{"@type":"Question","name":"Is it free and private?","acceptedAnswer":{"@type":"Answer","text":"Yes — free, no sign-up, and the file never leaves your device."}},{"@type":"Question","name":"Is the original JPG quality changed at all?","acceptedAnswer":{"@type":"Answer","text":"No. Lossless repacking rebuilds the same JPEG data inside the JPEG XL container, so it's mathematically identical — just smaller."}},{"@type":"Question","name":"Should I delete my JPGs after converting?","acceptedAnswer":{"@type":"Answer","text":"Keep them until JPEG XL support is universal. For now, .jxl is great for archiving and saving space alongside your originals."}}]}</script>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="#faq">FAQ</a></nav>
+    <details class="lang"><summary>🌐 EN</summary>
+      <div class="lang-menu">
+        <a class="active" href="/en/jpg-to-jxl/"><span class="flag">🇬🇧</span> English</a>
+        <a href="/es/jpg-a-jxl/"><span class="flag">🇪🇸</span> Español</a>
+        <a href="/de/jpg-in-jxl/"><span class="flag">🇩🇪</span> Deutsch</a>
+        <a href="/fr/jpg-en-jxl/"><span class="flag">🇫🇷</span> Français</a>
+        <a href="/ru/jpg-to-jxl/"><span class="flag">🇷🇺</span> Русский</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">⚡ Free in-browser converter</span>
+  <h1>JPG to JPEG XL</h1>
+  <p class="sub">Repack your JPG photos as JPEG XL and recover around 20% of their size with no quality loss at all. Smaller files, the same photo — converted privately in your browser.</p>
+  <div class="badges">
+    <span class="badge green">🔒 100% private</span><span class="badge">🚫 No sign-up</span>
+    <span class="badge">♾️ No limits</span><span class="badge">💧 No watermark</span><span class="badge">💸 Free</span>
+  </div>
+  <div class="tool">
+    <div class="dropzone" id="dropzone">
+      <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 16V4m0 0L7 9m5-5l5 5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke-linecap="round"/></svg>
+      <div class="dz-title">Drop your JPG files here</div>
+      <div class="dz-hint">Converted instantly on your device</div>
+      <span class="dz-btn">Select files</span>
+      <input id="file-input" type="file" accept="image/*,.jxl,.heic,.heif" multiple hidden>
+      <div class="dz-privacy">🔒 100% in your browser — your files are never uploaded</div>
+    </div>
+    <div class="controls">
+      <div class="ctrl"><label>Convert to</label>
+        <div class="seg">
+          <button data-target="auto">Auto</button>
+          <button data-target="jxl" class="on">JPEG XL</button>
+          <button data-target="png">PNG</button>
+          <button data-target="jpeg">JPG</button>
+        </div>
+      </div>
+      <div class="ctrl"><label>Quality</label>
+        <div class="quality"><input type="range" id="quality" min="40" max="100" value="90"><output id="quality-val">90</output></div>
+      </div>
+      <div class="ctrl"><label>&nbsp;</label><label class="switch"><input type="checkbox" id="lossless"> Lossless</label></div>
+    </div>
+    <div class="results" id="results"></div>
+    <div class="results-actions" id="results-actions"></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>JPG to JPEG XL</h2>
+  <p class="lead">Repack your JPG photos as JPEG XL and recover around 20% of their size with no quality loss at all. Smaller files, the same photo — converted privately in your browser.</p>
+  <div class="grid3">
+    <div class="feature"><div class="fi">✅</div><p>~20% smaller with zero quality loss (lossless JPEG repack).</p></div>
+    <div class="feature"><div class="fi">✅</div><p>Future-proof your photo library in a modern format.</p></div>
+    <div class="feature"><div class="fi">✅</div><p>No upload, no limits, no watermark.</p></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap about">
+  <h2>Good to know</h2>
+  <p class="prose">Modern phones produce gorgeous JPGs, but they're far from efficient. Converting JPG to JPEG XL with lossless repacking shrinks each file by around 20% while keeping it pixel-for-pixel identical to the original — you literally lose nothing and gain storage. Multiply that across a library of thousands of images and the savings add up fast.</p>
+  <p class="prose">JPEG XL is the modern, royalty-free successor to JPG: Safari already displays it natively and Chrome is rolling support out, so the format is only going to become more useful. Everything is converted privately in your browser, so you can future-proof even personal photos without uploading them anywhere.</p>
+</div></section>
+
+<section class="block alt" id="how"><div class="wrap">
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="step"><h3>Drop your files</h3><p>Drag them in or click to choose.</p></div>
+    <div class="step"><h3>Pick quality</h3><p>Use the slider or tick Lossless.</p></div>
+    <div class="step"><h3>Download</h3><p>Get your converted files instantly.</p></div>
+  </div>
+</div></section>
+
+<section class="block" id="faq"><div class="wrap">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <details open><summary>Does JPG to JXL lose quality?</summary><div class="ans">No — lossless mode repacks the existing JPG, so it's pixel-identical and just smaller.</div></details>
+    <details><summary>Where can I use .jxl?</summary><div class="ans">Safari already supports it and Chrome is rolling it out; meanwhile keep your originals safe.</div></details>
+    <details><summary>Is it free and private?</summary><div class="ans">Yes — free, no sign-up, and the file never leaves your device.</div></details>
+    <details><summary>Is the original JPG quality changed at all?</summary><div class="ans">No. Lossless repacking rebuilds the same JPEG data inside the JPEG XL container, so it's mathematically identical — just smaller.</div></details>
+    <details><summary>Should I delete my JPGs after converting?</summary><div class="ans">Keep them until JPEG XL support is universal. For now, .jxl is great for archiving and saving space alongside your originals.</div></details>
+  </div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>More conversions</h2>
+  <div class="conv-links">
+      <a class="conv-link" href="/en/jxl-to-jpg/">JPEG XL → JPG</a>
+      <a class="conv-link" href="/en/jxl-to-png/">JPEG XL → PNG</a>
+      <a class="conv-link" href="/en/png-to-jxl/">PNG → JPEG XL</a>
+      <a class="conv-link" href="/en/webp-to-jxl/">WebP → JPEG XL</a>
+      <a class="conv-link" href="/en/heic-to-jpg/">HEIC → JPG</a>
+      <a class="conv-link" href="/en/heic-to-png/">HEIC → PNG</a>
+      <a class="conv-link" href="/en/heic-to-jxl/">HEIC → JPEG XL</a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="#how">How to</a><a href="#faq">FAQ</a></nav>
+  </div>
+  <div class="legal"><span class="privacy-pill">🔒 Your files never leave your device</span><span class="flegal"><a href="/en/privacy/">Privacy</a> · <a href="/en/terms/">Terms</a></span><span>© 2026 JXL Convert</span></div>
+</div></footer>
+<script type="module" src="/assets/js/app.js?v=4"></script>
+</body>
+</html>

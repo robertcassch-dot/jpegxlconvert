@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HEIC to PNG — Free in-browser converter</title>
+<meta name="description" content="Convert HEIC to PNG for a lossless, universally supported image — ideal when you need maximum quality or transparency.">
+<link rel="canonical" href="https://jpegxlconvert.com/en/heic-to-png/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/heic-to-png/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/heic-a-png/">
+<link rel="alternate" hreflang="de" href="https://jpegxlconvert.com/de/heic-in-png/">
+<link rel="alternate" hreflang="fr" href="https://jpegxlconvert.com/fr/heic-en-png/">
+<link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/heic-to-png/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/heic-to-png/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HEIC to PNG — JXL Convert">
+<meta property="og:description" content="Convert HEIC to PNG for a lossless, universally supported image — ideal when you need maximum quality or transparency.">
+<meta property="og:url" content="https://jpegxlconvert.com/en/heic-to-png/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=5">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"PNG or JPG for my HEIC?","acceptedAnswer":{"@type":"Answer","text":"Use PNG for editing or maximum quality; JPG for smaller files you just want to share."}},{"@type":"Question","name":"Is it lossless?","acceptedAnswer":{"@type":"Answer","text":"Yes — PNG keeps every pixel of the decoded HEIC image."}},{"@type":"Question","name":"Is it free and private?","acceptedAnswer":{"@type":"Answer","text":"Yes — free, no sign-up, and your photos never leave your device."}},{"@type":"Question","name":"PNG or JPG for my iPhone photos?","acceptedAnswer":{"@type":"Answer","text":"PNG for editing and top quality; JPG for smaller files you just want to share. Both open everywhere."}},{"@type":"Question","name":"Is anything uploaded during conversion?","acceptedAnswer":{"@type":"Answer","text":"No — the HEIC is decoded and converted entirely in your browser, fully private."}}]}</script>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="#faq">FAQ</a></nav>
+    <details class="lang"><summary>🌐 EN</summary>
+      <div class="lang-menu">
+        <a class="active" href="/en/heic-to-png/"><span class="flag">🇬🇧</span> English</a>
+        <a href="/es/heic-a-png/"><span class="flag">🇪🇸</span> Español</a>
+        <a href="/de/heic-in-png/"><span class="flag">🇩🇪</span> Deutsch</a>
+        <a href="/fr/heic-en-png/"><span class="flag">🇫🇷</span> Français</a>
+        <a href="/ru/heic-to-png/"><span class="flag">🇷🇺</span> Русский</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">⚡ Free in-browser converter</span>
+  <h1>HEIC to PNG</h1>
+  <p class="sub">Convert HEIC to PNG for a lossless, universally supported image — ideal when you need maximum quality or transparency. Runs entirely in your browser, so your photos stay private.</p>
+  <div class="badges">
+    <span class="badge green">🔒 100% private</span><span class="badge">🚫 No sign-up</span>
+    <span class="badge">♾️ No limits</span><span class="badge">💧 No watermark</span><span class="badge">💸 Free</span>
+  </div>
+  <div class="tool">
+    <div class="dropzone" id="dropzone">
+      <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 16V4m0 0L7 9m5-5l5 5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke-linecap="round"/></svg>
+      <div class="dz-title">Drop your HEIC files here</div>
+      <div class="dz-hint">Converted instantly on your device</div>
+      <span class="dz-btn">Select files</span>
+      <input id="file-input" type="file" accept="image/*,.jxl,.heic,.heif" multiple hidden>
+      <div class="dz-privacy">🔒 100% in your browser — your files are never uploaded</div>
+    </div>
+    <div class="controls">
+      <div class="ctrl"><label>Convert to</label>
+        <div class="seg">
+          <button data-target="auto">Auto</button>
+          <button data-target="jxl">JPEG XL</button>
+          <button data-target="png" class="on">PNG</button>
+          <button data-target="jpeg">JPG</button>
+        </div>
+      </div>
+      <div class="ctrl"><label>Quality</label>
+        <div class="quality"><input type="range" id="quality" min="40" max="100" value="90"><output id="quality-val">90</output></div>
+      </div>
+      <div class="ctrl"><label>&nbsp;</label><label class="switch"><input type="checkbox" id="lossless"> Lossless</label></div>
+    </div>
+    <div class="results" id="results"></div>
+    <div class="results-actions" id="results-actions"></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>HEIC to PNG</h2>
+  <p class="lead">Convert HEIC to PNG for a lossless, universally supported image — ideal when you need maximum quality or transparency. Runs entirely in your browser, so your photos stay private.</p>
+  <div class="grid3">
+    <div class="feature"><div class="fi">✅</div><p>Lossless PNG — keeps every pixel of your HEIC photo.</p></div>
+    <div class="feature"><div class="fi">✅</div><p>Opens in any editor or app that can't read HEIC.</p></div>
+    <div class="feature"><div class="fi">✅</div><p>Perfect for editing, screenshots and graphics.</p></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap about">
+  <h2>Good to know</h2>
+  <p class="prose">Converting HEIC to PNG gives you a lossless copy of your iPhone photo that opens in any editor or app that can't read HEIC. Because PNG keeps every pixel exactly, it's the right choice when you plan to edit the image, need maximum quality, or want to drop it into design and screenshot workflows.</p>
+  <p class="prose">As with all conversions here, your photos stay completely private — everything is processed on your device with WebAssembly and nothing is uploaded. If you only want to share the photo and care about file size, JPG will be smaller; choose PNG when fidelity comes first.</p>
+</div></section>
+
+<section class="block alt" id="how"><div class="wrap">
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="step"><h3>Drop your files</h3><p>Drag them in or click to choose.</p></div>
+    <div class="step"><h3>Pick quality</h3><p>Use the slider or tick Lossless.</p></div>
+    <div class="step"><h3>Download</h3><p>Get your converted files instantly.</p></div>
+  </div>
+</div></section>
+
+<section class="block" id="faq"><div class="wrap">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <details open><summary>PNG or JPG for my HEIC?</summary><div class="ans">Use PNG for editing or maximum quality; JPG for smaller files you just want to share.</div></details>
+    <details><summary>Is it lossless?</summary><div class="ans">Yes — PNG keeps every pixel of the decoded HEIC image.</div></details>
+    <details><summary>Is it free and private?</summary><div class="ans">Yes — free, no sign-up, and your photos never leave your device.</div></details>
+    <details><summary>PNG or JPG for my iPhone photos?</summary><div class="ans">PNG for editing and top quality; JPG for smaller files you just want to share. Both open everywhere.</div></details>
+    <details><summary>Is anything uploaded during conversion?</summary><div class="ans">No — the HEIC is decoded and converted entirely in your browser, fully private.</div></details>
+  </div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>More conversions</h2>
+  <div class="conv-links">
+      <a class="conv-link" href="/en/jxl-to-jpg/">JPEG XL → JPG</a>
+      <a class="conv-link" href="/en/jxl-to-png/">JPEG XL → PNG</a>
+      <a class="conv-link" href="/en/jpg-to-jxl/">JPG → JPEG XL</a>
+      <a class="conv-link" href="/en/png-to-jxl/">PNG → JPEG XL</a>
+      <a class="conv-link" href="/en/webp-to-jxl/">WebP → JPEG XL</a>
+      <a class="conv-link" href="/en/heic-to-jpg/">HEIC → JPG</a>
+      <a class="conv-link" href="/en/heic-to-jxl/">HEIC → JPEG XL</a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="#how">How to</a><a href="#faq">FAQ</a></nav>
+  </div>
+  <div class="legal"><span class="privacy-pill">🔒 Your files never leave your device</span><span class="flegal"><a href="/en/privacy/">Privacy</a> · <a href="/en/terms/">Terms</a></span><span>© 2026 JXL Convert</span></div>
+</div></footer>
+<script type="module" src="/assets/js/app.js?v=4"></script>
+</body>
+</html>

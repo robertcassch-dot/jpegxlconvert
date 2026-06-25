@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visor JPEG XL — Abre y ve archivos .jxl online (gratis y privado)</title>
+<meta name="description" content="Abre y visualiza archivos .jxl (JPEG XL) en tu navegador — sin programas, sin subir nada, gratis. ¿No puedes abrir un .jxl? Míralo aquí al instante y guárdalo como JPG o PNG.">
+<link rel="canonical" href="https://jpegxlconvert.com/es/visor-jxl/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/jxl-viewer/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/visor-jxl/">
+<link rel="alternate" hreflang="de" href="https://jpegxlconvert.com/de/jxl-betrachter/">
+<link rel="alternate" hreflang="fr" href="https://jpegxlconvert.com/fr/visionneuse-jxl/">
+<link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/jxl-viewer/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/jxl-viewer/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Visor JPEG XL — abre y ve archivos .jxl online">
+<meta property="og:description" content="Visualiza archivos .jxl al instante en tu navegador. Sin subir nada, sin programas, gratis.">
+<meta property="og:url" content="https://jpegxlconvert.com/es/visor-jxl/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=4">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"¿Cómo abro un archivo .jxl?","acceptedAnswer":{"@type":"Answer","text":"Suelta el archivo .jxl en esta página y se abre al instante en tu navegador. No se sube nada."}},
+{"@type":"Question","name":"¿El visor JXL es privado?","acceptedAnswer":{"@type":"Answer","text":"Sí. El archivo se decodifica localmente en tu navegador y nunca sale de tu dispositivo."}},
+{"@type":"Question","name":"¿Puedo guardar el .jxl como JPG o PNG?","acceptedAnswer":{"@type":"Answer","text":"Sí. Tras verlo, puedes descargarlo como JPG o PNG con un clic."}}
+]}
+</script>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/es/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/es/">Conversor</a><a href="/es/jxl-a-jpg/">JXL a JPG</a><a href="#faq">FAQ</a></nav>
+    <details class="lang"><summary>🌐 ES</summary>
+      <div class="lang-menu">
+        <a href="/en/jxl-viewer/"><span class="flag">🇬🇧</span> English</a>
+        <a class="active" href="/es/visor-jxl/"><span class="flag">🇪🇸</span> Español</a>
+        <a href="/de/jxl-betrachter/"><span class="flag">🇩🇪</span> Deutsch</a>
+        <a href="/fr/visionneuse-jxl/"><span class="flag">🇫🇷</span> Français</a>
+        <a href="/ru/jxl-viewer/"><span class="flag">🇷🇺</span> Русский</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">👁️ Visor gratis en el navegador</span>
+  <h1>Visor JPEG&nbsp;XL</h1>
+  <p class="sub">Abre y visualiza archivos <strong>.jxl</strong> en tu navegador — sin programas, sin subir nada. Y guárdalos como JPG o PNG si lo necesitas.</p>
+  <div class="badges">
+    <span class="badge green">🔒 100% privado</span><span class="badge">⚡ Al instante</span>
+    <span class="badge">🚫 Sin registro</span><span class="badge">💸 Gratis</span>
+  </div>
+  <div class="tool">
+    <div class="dropzone" id="dropzone">
+      <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="3"/></svg>
+      <div class="dz-title">Suelta un archivo .jxl para verlo</div>
+      <div class="dz-hint">Se abre al instante en tu dispositivo — también JPG, PNG, WebP, GIF</div>
+      <span class="dz-btn">Seleccionar un archivo</span>
+      <input id="file-input" type="file" accept="image/*,.jxl" hidden>
+      <div class="dz-privacy">🔒 100% en tu navegador — tu archivo no se sube nunca</div>
+    </div>
+    <div class="viewer-stage" id="viewer-stage"><span class="ph-hint">Tu imagen aparecerá aquí</span></div>
+    <div class="viewer-info" id="viewer-info"></div>
+    <div class="viewer-dl" id="viewer-dl"></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>¿Por qué no se abre mi archivo .jxl?</h2>
+  <p class="lead">JPEG XL es un formato de imagen nuevo. La mayoría de navegadores, móviles y apps aún no lo activan, así que un <strong>.jxl</strong> descargado a menudo no se abre — aunque sea una imagen perfectamente válida. Este visor lo decodifica localmente para que lo veas al momento, y te deja guardar una copia universal en JPG o PNG. ¿Lo necesitas en otro formato de forma permanente? Usa el <a href="/es/jxl-a-jpg/">conversor JXL a JPG</a> o el <a href="/es/jxl-a-png/">conversor JXL a PNG</a>.</p>
+</div></section>
+
+<section class="block alt" id="faq"><div class="wrap">
+  <h2>Preguntas frecuentes</h2>
+  <div class="faq">
+    <details open><summary>¿Cómo abro un archivo .jxl?</summary><div class="ans">Suéltalo en esta página (o haz clic para elegirlo). Se abre al instante en tu navegador — no se sube nada.</div></details>
+    <details><summary>¿Es privado?</summary><div class="ans">Sí. El archivo se decodifica localmente en tu navegador y nunca sale de tu dispositivo.</div></details>
+    <details><summary>¿Puedo guardarlo como JPG o PNG?</summary><div class="ans">Sí — tras abrirlo, descárgalo como JPG o PNG con un clic.</div></details>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/es/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/es/">Conversor</a><a href="/es/visor-jxl/">Visor</a><a href="#faq">FAQ</a></nav>
+  </div>
+  <div class="legal">
+    <span class="privacy-pill">🔒 Tus archivos nunca salen de tu dispositivo</span>
+    <span class="flegal"><a href="/es/privacidad/">Privacidad</a> · <a href="/es/terminos/">Términos</a></span>
+    <span>© 2026 JXL Convert</span>
+  </div>
+</div></footer>
+<script type="module" src="/assets/js/viewer.js?v=4"></script>
+</body>
+</html>

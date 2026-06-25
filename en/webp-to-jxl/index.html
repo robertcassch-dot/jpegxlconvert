@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WebP to JPEG XL — Free in-browser converter</title>
+<meta name="description" content="Convert WebP to JPEG XL for better compression and a more future-proof, royalty-free format. Both lossless and lossy WebP are supported, all on your device.">
+<link rel="canonical" href="https://jpegxlconvert.com/en/webp-to-jxl/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/webp-to-jxl/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/webp-a-jxl/">
+<link rel="alternate" hreflang="de" href="https://jpegxlconvert.com/de/webp-in-jxl/">
+<link rel="alternate" hreflang="fr" href="https://jpegxlconvert.com/fr/webp-en-jxl/">
+<link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/webp-to-jxl/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/webp-to-jxl/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="WebP to JPEG XL — JXL Convert">
+<meta property="og:description" content="Convert WebP to JPEG XL for better compression and a more future-proof, royalty-free format.">
+<meta property="og:url" content="https://jpegxlconvert.com/en/webp-to-jxl/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=5">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"JXL vs WebP — which is better?","acceptedAnswer":{"@type":"Answer","text":"JPEG XL generally compresses better and supports higher bit depths and lossless JPEG transcoding."}},{"@type":"Question","name":"Can it stay lossless?","acceptedAnswer":{"@type":"Answer","text":"Yes — choose Lossless to keep perfect quality."}},{"@type":"Question","name":"Is it free and private?","acceptedAnswer":{"@type":"Answer","text":"Yes — free, no sign-up, and the file never leaves your device."}},{"@type":"Question","name":"Why pick JPEG XL over WebP?","acceptedAnswer":{"@type":"Answer","text":"JPEG XL generally compresses better, supports higher quality depths, and can losslessly repack JPEGs — it's designed as a long-term standard."}},{"@type":"Question","name":"Does it handle animated WebP?","acceptedAnswer":{"@type":"Answer","text":"This tool focuses on still images, so use it for regular photos and graphics."}}]}</script>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="#faq">FAQ</a></nav>
+    <details class="lang"><summary>🌐 EN</summary>
+      <div class="lang-menu">
+        <a class="active" href="/en/webp-to-jxl/"><span class="flag">🇬🇧</span> English</a>
+        <a href="/es/webp-a-jxl/"><span class="flag">🇪🇸</span> Español</a>
+        <a href="/de/webp-in-jxl/"><span class="flag">🇩🇪</span> Deutsch</a>
+        <a href="/fr/webp-en-jxl/"><span class="flag">🇫🇷</span> Français</a>
+        <a href="/ru/webp-to-jxl/"><span class="flag">🇷🇺</span> Русский</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">⚡ Free in-browser converter</span>
+  <h1>WebP to JPEG XL</h1>
+  <p class="sub">Convert WebP to JPEG XL for better compression and a more future-proof, royalty-free format. Both lossless and lossy WebP are supported, all on your device.</p>
+  <div class="badges">
+    <span class="badge green">🔒 100% private</span><span class="badge">🚫 No sign-up</span>
+    <span class="badge">♾️ No limits</span><span class="badge">💧 No watermark</span><span class="badge">💸 Free</span>
+  </div>
+  <div class="tool">
+    <div class="dropzone" id="dropzone">
+      <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 16V4m0 0L7 9m5-5l5 5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke-linecap="round"/></svg>
+      <div class="dz-title">Drop your WebP files here</div>
+      <div class="dz-hint">Converted instantly on your device</div>
+      <span class="dz-btn">Select files</span>
+      <input id="file-input" type="file" accept="image/*,.jxl,.heic,.heif" multiple hidden>
+      <div class="dz-privacy">🔒 100% in your browser — your files are never uploaded</div>
+    </div>
+    <div class="controls">
+      <div class="ctrl"><label>Convert to</label>
+        <div class="seg">
+          <button data-target="auto">Auto</button>
+          <button data-target="jxl" class="on">JPEG XL</button>
+          <button data-target="png">PNG</button>
+          <button data-target="jpeg">JPG</button>
+        </div>
+      </div>
+      <div class="ctrl"><label>Quality</label>
+        <div class="quality"><input type="range" id="quality" min="40" max="100" value="90"><output id="quality-val">90</output></div>
+      </div>
+      <div class="ctrl"><label>&nbsp;</label><label class="switch"><input type="checkbox" id="lossless"> Lossless</label></div>
+    </div>
+    <div class="results" id="results"></div>
+    <div class="results-actions" id="results-actions"></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>WebP to JPEG XL</h2>
+  <p class="lead">Convert WebP to JPEG XL for better compression and a more future-proof, royalty-free format. Both lossless and lossy WebP are supported, all on your device.</p>
+  <div class="grid3">
+    <div class="feature"><div class="fi">✅</div><p>Often smaller than WebP at the same quality.</p></div>
+    <div class="feature"><div class="fi">✅</div><p>Modern, royalty-free, designed to outlast WebP.</p></div>
+    <div class="feature"><div class="fi">✅</div><p>Batch, free and private.</p></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap about">
+  <h2>Good to know</h2>
+  <p class="prose">WebP was a useful step up from JPG and PNG, but JPEG XL goes further. Converting WebP to JPEG XL gives you better compression at the same quality, support for higher bit depths, and a format built as an open, royalty-free standard designed to outlast WebP. Both lossy and lossless WebP files are handled.</p>
+  <p class="prose">If you're maintaining an image library or a website, moving to JPEG XL is a sensible future-proofing step. As always, the conversion happens locally in your browser, so nothing is uploaded — you can batch-convert freely, with no limits and no watermark.</p>
+</div></section>
+
+<section class="block alt" id="how"><div class="wrap">
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="step"><h3>Drop your files</h3><p>Drag them in or click to choose.</p></div>
+    <div class="step"><h3>Pick quality</h3><p>Use the slider or tick Lossless.</p></div>
+    <div class="step"><h3>Download</h3><p>Get your converted files instantly.</p></div>
+  </div>
+</div></section>
+
+<section class="block" id="faq"><div class="wrap">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <details open><summary>JXL vs WebP — which is better?</summary><div class="ans">JPEG XL generally compresses better and supports higher bit depths and lossless JPEG transcoding.</div></details>
+    <details><summary>Can it stay lossless?</summary><div class="ans">Yes — choose Lossless to keep perfect quality.</div></details>
+    <details><summary>Is it free and private?</summary><div class="ans">Yes — free, no sign-up, and the file never leaves your device.</div></details>
+    <details><summary>Why pick JPEG XL over WebP?</summary><div class="ans">JPEG XL generally compresses better, supports higher quality depths, and can losslessly repack JPEGs — it's designed as a long-term standard.</div></details>
+    <details><summary>Does it handle animated WebP?</summary><div class="ans">This tool focuses on still images, so use it for regular photos and graphics.</div></details>
+  </div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>More conversions</h2>
+  <div class="conv-links">
+      <a class="conv-link" href="/en/jxl-to-jpg/">JPEG XL → JPG</a>
+      <a class="conv-link" href="/en/jxl-to-png/">JPEG XL → PNG</a>
+      <a class="conv-link" href="/en/jpg-to-jxl/">JPG → JPEG XL</a>
+      <a class="conv-link" href="/en/png-to-jxl/">PNG → JPEG XL</a>
+      <a class="conv-link" href="/en/heic-to-jpg/">HEIC → JPG</a>
+      <a class="conv-link" href="/en/heic-to-png/">HEIC → PNG</a>
+      <a class="conv-link" href="/en/heic-to-jxl/">HEIC → JPEG XL</a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="#how">How to</a><a href="#faq">FAQ</a></nav>
+  </div>
+  <div class="legal"><span class="privacy-pill">🔒 Your files never leave your device</span><span class="flegal"><a href="/en/privacy/">Privacy</a> · <a href="/en/terms/">Terms</a></span><span>© 2026 JXL Convert</span></div>
+</div></footer>
+<script type="module" src="/assets/js/app.js?v=4"></script>
+</body>
+</html>

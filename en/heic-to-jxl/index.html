@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HEIC to JPEG XL — Free in-browser converter</title>
+<meta name="description" content="Convert HEIC to JPEG XL to keep your photos small and high-quality in a modern, open format. JPEG XL matches HEIC's compression without the Apple lock-in.">
+<link rel="canonical" href="https://jpegxlconvert.com/en/heic-to-jxl/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/heic-to-jxl/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/heic-a-jxl/">
+<link rel="alternate" hreflang="de" href="https://jpegxlconvert.com/de/heic-in-jxl/">
+<link rel="alternate" hreflang="fr" href="https://jpegxlconvert.com/fr/heic-en-jxl/">
+<link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/heic-to-jxl/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/heic-to-jxl/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HEIC to JPEG XL — JXL Convert">
+<meta property="og:description" content="Convert HEIC to JPEG XL to keep your photos small and high-quality in a modern, open format.">
+<meta property="og:url" content="https://jpegxlconvert.com/en/heic-to-jxl/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=5">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why convert HEIC to JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"JPEG XL offers HEIC-like compression but is an open standard, not tied to Apple — Safari already supports it and Chrome is rolling it out."}},{"@type":"Question","name":"Can it stay lossless?","acceptedAnswer":{"@type":"Answer","text":"Yes — tick Lossless for perfect quality, or use the slider for smaller files."}},{"@type":"Question","name":"Is it free and private?","acceptedAnswer":{"@type":"Answer","text":"Yes — free, no sign-up, and your photos never leave your device."}},{"@type":"Question","name":"Is JPEG XL as small as HEIC?","acceptedAnswer":{"@type":"Answer","text":"JPEG XL offers compression in the same class as HEIC, with the big advantage of being an open standard rather than Apple-only."}},{"@type":"Question","name":"Lossless or lossy — which should I choose?","acceptedAnswer":{"@type":"Answer","text":"Tick Lossless for an exact copy; use the slider for smaller files when a tiny, invisible quality trade-off is fine."}}]}</script>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="#faq">FAQ</a></nav>
+    <details class="lang"><summary>🌐 EN</summary>
+      <div class="lang-menu">
+        <a class="active" href="/en/heic-to-jxl/"><span class="flag">🇬🇧</span> English</a>
+        <a href="/es/heic-a-jxl/"><span class="flag">🇪🇸</span> Español</a>
+        <a href="/de/heic-in-jxl/"><span class="flag">🇩🇪</span> Deutsch</a>
+        <a href="/fr/heic-en-jxl/"><span class="flag">🇫🇷</span> Français</a>
+        <a href="/ru/heic-to-jxl/"><span class="flag">🇷🇺</span> Русский</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">⚡ Free in-browser converter</span>
+  <h1>HEIC to JPEG XL</h1>
+  <p class="sub">Convert HEIC to JPEG XL to keep your photos small and high-quality in a modern, open format. JPEG XL matches HEIC's compression without the Apple lock-in. All in your browser.</p>
+  <div class="badges">
+    <span class="badge green">🔒 100% private</span><span class="badge">🚫 No sign-up</span>
+    <span class="badge">♾️ No limits</span><span class="badge">💧 No watermark</span><span class="badge">💸 Free</span>
+  </div>
+  <div class="tool">
+    <div class="dropzone" id="dropzone">
+      <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 16V4m0 0L7 9m5-5l5 5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke-linecap="round"/></svg>
+      <div class="dz-title">Drop your HEIC files here</div>
+      <div class="dz-hint">Converted instantly on your device</div>
+      <span class="dz-btn">Select files</span>
+      <input id="file-input" type="file" accept="image/*,.jxl,.heic,.heif" multiple hidden>
+      <div class="dz-privacy">🔒 100% in your browser — your files are never uploaded</div>
+    </div>
+    <div class="controls">
+      <div class="ctrl"><label>Convert to</label>
+        <div class="seg">
+          <button data-target="auto">Auto</button>
+          <button data-target="jxl" class="on">JPEG XL</button>
+          <button data-target="png">PNG</button>
+          <button data-target="jpeg">JPG</button>
+        </div>
+      </div>
+      <div class="ctrl"><label>Quality</label>
+        <div class="quality"><input type="range" id="quality" min="40" max="100" value="90"><output id="quality-val">90</output></div>
+      </div>
+      <div class="ctrl"><label>&nbsp;</label><label class="switch"><input type="checkbox" id="lossless"> Lossless</label></div>
+    </div>
+    <div class="results" id="results"></div>
+    <div class="results-actions" id="results-actions"></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>HEIC to JPEG XL</h2>
+  <p class="lead">Convert HEIC to JPEG XL to keep your photos small and high-quality in a modern, open format. JPEG XL matches HEIC's compression without the Apple lock-in. All in your browser.</p>
+  <div class="grid3">
+    <div class="feature"><div class="fi">✅</div><p>Modern, royalty-free format with HEIC-class compression.</p></div>
+    <div class="feature"><div class="fi">✅</div><p>Smaller than JPG at the same quality.</p></div>
+    <div class="feature"><div class="fi">✅</div><p>Future-proof your iPhone library — private and free.</p></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap about">
+  <h2>Good to know</h2>
+  <p class="prose">If you love how small HEIC photos are but hate that they only work properly on Apple devices, JPEG XL is the answer. Converting HEIC to JPEG XL keeps your photos compact and high-quality in a modern, open, royalty-free format that isn't locked to one company. Safari already supports it and Chrome is rolling it out.</p>
+  <p class="prose">You can keep things perfectly lossless or use the quality slider for even smaller files, and the whole conversion happens privately in your browser. It's an ideal way to future-proof an iPhone photo library without giving up compression or privacy.</p>
+</div></section>
+
+<section class="block alt" id="how"><div class="wrap">
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="step"><h3>Drop your files</h3><p>Drag them in or click to choose.</p></div>
+    <div class="step"><h3>Pick quality</h3><p>Use the slider or tick Lossless.</p></div>
+    <div class="step"><h3>Download</h3><p>Get your converted files instantly.</p></div>
+  </div>
+</div></section>
+
+<section class="block" id="faq"><div class="wrap">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <details open><summary>Why convert HEIC to JPEG XL?</summary><div class="ans">JPEG XL offers HEIC-like compression but is an open standard, not tied to Apple — Safari already supports it and Chrome is rolling it out.</div></details>
+    <details><summary>Can it stay lossless?</summary><div class="ans">Yes — tick Lossless for perfect quality, or use the slider for smaller files.</div></details>
+    <details><summary>Is it free and private?</summary><div class="ans">Yes — free, no sign-up, and your photos never leave your device.</div></details>
+    <details><summary>Is JPEG XL as small as HEIC?</summary><div class="ans">JPEG XL offers compression in the same class as HEIC, with the big advantage of being an open standard rather than Apple-only.</div></details>
+    <details><summary>Lossless or lossy — which should I choose?</summary><div class="ans">Tick Lossless for an exact copy; use the slider for smaller files when a tiny, invisible quality trade-off is fine.</div></details>
+  </div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>More conversions</h2>
+  <div class="conv-links">
+      <a class="conv-link" href="/en/jxl-to-jpg/">JPEG XL → JPG</a>
+      <a class="conv-link" href="/en/jxl-to-png/">JPEG XL → PNG</a>
+      <a class="conv-link" href="/en/jpg-to-jxl/">JPG → JPEG XL</a>
+      <a class="conv-link" href="/en/png-to-jxl/">PNG → JPEG XL</a>
+      <a class="conv-link" href="/en/webp-to-jxl/">WebP → JPEG XL</a>
+      <a class="conv-link" href="/en/heic-to-jpg/">HEIC → JPG</a>
+      <a class="conv-link" href="/en/heic-to-png/">HEIC → PNG</a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="#how">How to</a><a href="#faq">FAQ</a></nav>
+  </div>
+  <div class="legal"><span class="privacy-pill">🔒 Your files never leave your device</span><span class="flegal"><a href="/en/privacy/">Privacy</a> · <a href="/en/terms/">Terms</a></span><span>© 2026 JXL Convert</span></div>
+</div></footer>
+<script type="module" src="/assets/js/app.js?v=4"></script>
+</body>
+</html>

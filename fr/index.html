@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Convertisseur JPEG XL gratuit — vers et depuis JXL</title>
+<meta name="description" content="Convertissez des images vers et depuis JPEG XL (.jxl) dans votre navigateur. 100% privé — vos fichiers ne quittent jamais votre appareil. Sans inscription, sans limite, sans filigrane, gratuit.">
+<link rel="canonical" href="https://jpegxlconvert.com/fr/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/">
+<link rel="alternate" hreflang="de" href="https://jpegxlconvert.com/de/">
+<link rel="alternate" hreflang="fr" href="https://jpegxlconvert.com/fr/">
+<link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Convertisseur JPEG XL gratuit — vers &amp; depuis JXL dans le navigateur">
+<meta property="og:description" content="Convertisseur JPEG XL 100% privé, dans le navigateur. Sans inscription, sans limite, sans filigrane.">
+<meta property="og:url" content="https://jpegxlconvert.com/fr/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=4">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"JXL Convert","applicationCategory":"MultimediaApplication","operatingSystem":"Tout (navigateur web)","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"description":"Convertisseur JPEG XL gratuit dans le navigateur. Convertissez des images vers et depuis JPEG XL en toute confidentialité — les fichiers ne quittent jamais votre appareil."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Le convertisseur JPEG XL est-il gratuit ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Entièrement gratuit, sans inscription, sans limite et sans filigrane."}},
+{"@type":"Question","name":"Mes images sont-elles envoyées sur un serveur ?","acceptedAnswer":{"@type":"Answer","text":"Non. Toute la conversion se fait localement dans votre navigateur. Vos fichiers ne quittent jamais votre appareil."}},
+{"@type":"Question","name":"Qu'est-ce que JPEG XL ?","acceptedAnswer":{"@type":"Answer","text":"JPEG XL (.jxl) est un format d'image moderne offrant des fichiers plus petits à qualité égale ou supérieure à JPEG, PNG et WebP."}},
+{"@type":"Question","name":"Puis-je reconvertir un .jxl en JPG ou PNG ?","acceptedAnswer":{"@type":"Answer","text":"Oui. L'outil convertit dans les deux sens : images vers JPEG XL, et fichiers .jxl vers PNG ou JPG."}}
+]}
+</script>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/fr/">
+    <svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    JXL<span class="tld">Convert</span>
+  </a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/fr/visionneuse-jxl/">Visionneuse</a><a href="#what">Qu'est-ce que JXL</a><a href="#how">Comment</a><a href="#faq">FAQ</a></nav>
+    <details class="lang">
+      <summary>🌐 FR</summary>
+      <div class="lang-menu">
+        <a href="/en/"><span class="flag">🇬🇧</span> English</a>
+        <a href="/es/"><span class="flag">🇪🇸</span> Español</a>
+        <a href="/de/"><span class="flag">🇩🇪</span> Deutsch</a>
+        <a class="active" href="/fr/"><span class="flag">🇫🇷</span> Français</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">⚡ Convertisseur gratuit dans le navigateur</span>
+  <h1>Convertisseur JPEG&nbsp;XL</h1>
+  <p class="sub">Convertissez des images vers et depuis JPEG&nbsp;XL (.jxl) dans votre navigateur. Vos fichiers ne quittent jamais votre appareil.</p>
+  <div class="badges">
+    <span class="badge green">🔒 100% privé</span>
+    <span class="badge">🚫 Sans inscription</span>
+    <span class="badge">♾️ Sans limite</span>
+    <span class="badge">💧 Sans filigrane</span>
+    <span class="badge">💸 Gratuit</span>
+  </div>
+
+  <div class="tool">
+    <div class="dropzone" id="dropzone">
+      <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 16V4m0 0L7 9m5-5l5 5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke-linecap="round"/></svg>
+      <div class="dz-title">Déposez vos images ici</div>
+      <div class="dz-hint">JPG, PNG, WebP, HEIC, GIF ou .jxl — converties instantanément sur votre appareil</div>
+      <span class="dz-btn">Sélectionner des images</span>
+      <input id="file-input" type="file" accept="image/*,.jxl,.heic,.heif" multiple hidden>
+      <div class="dz-privacy">🔒 100% dans votre navigateur — vos fichiers ne sont jamais envoyés</div>
+    </div>
+
+    <div class="controls">
+      <div class="ctrl"><label>Convertir en</label>
+        <div class="seg">
+          <button data-target="auto" class="on">Auto</button>
+          <button data-target="jxl">JPEG XL</button>
+          <button data-target="png">PNG</button>
+          <button data-target="jpeg">JPG</button>
+        </div>
+      </div>
+      <div class="ctrl"><label>Qualité</label>
+        <div class="quality"><input type="range" id="quality" min="40" max="100" value="90"><output id="quality-val">90</output></div>
+      </div>
+      <div class="ctrl"><label>&nbsp;</label>
+        <label class="switch"><input type="checkbox" id="lossless"> Sans perte</label>
+      </div>
+    </div>
+
+    <noscript><div class="noscript-warn">Ce convertisseur nécessite JavaScript activé dans votre navigateur.</div></noscript>
+    <div class="results" id="results"></div>
+    <div class="results-actions" id="results-actions"></div>
+  </div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Conversions populaires</h2>
+  <div class="conv-links">
+      <a class="conv-link" href="/fr/jxl-en-jpg/">JXL → JPG</a>
+      <a class="conv-link" href="/fr/jxl-en-png/">JXL → PNG</a>
+      <a class="conv-link" href="/fr/jpg-en-jxl/">JPG → JXL</a>
+      <a class="conv-link" href="/fr/png-en-jxl/">PNG → JXL</a>
+      <a class="conv-link" href="/fr/webp-en-jxl/">WebP → JXL</a>
+      <a class="conv-link" href="/fr/heic-en-jpg/">HEIC → JPG</a>
+      <a class="conv-link" href="/fr/heic-en-png/">HEIC → PNG</a>
+      <a class="conv-link" href="/fr/heic-en-jxl/">HEIC → JXL</a>
+  </div>
+</div></section>
+
+<section class="block" id="what"><div class="wrap">
+  <h2>Qu'est-ce que JPEG XL ?</h2>
+  <p class="lead">JPEG XL (.jxl) est le successeur moderne du JPEG classique. Il produit des fichiers nettement plus petits à qualité égale — ou supérieure — à JPEG, PNG et WebP, et peut réduire vos JPEG existants d'environ 20% sans aucune perte de qualité.</p>
+  <div class="grid3">
+    <div class="feature"><div class="fi">📦</div><h3>Fichiers plus petits</h3><p>Conservez la même qualité visuelle en réduisant la taille : pages plus rapides, stockage qui dure plus longtemps.</p></div>
+    <div class="feature"><div class="fi">🎞️</div><h3>Un format pour tout</h3><p>Avec et sans perte, photos et graphiques, transparence et animation : le tout dans un seul format moderne.</p></div>
+    <div class="feature"><div class="fi">🔁</div><h3>Sans perte depuis JPEG</h3><p>Réencapsulez vos JPEG en JPEG XL et récupérez ~20% de taille sans toucher à la qualité.</p></div>
+  </div>
+</div></section>
+
+<section class="block alt" id="how"><div class="wrap">
+  <h2>Comment convertir en JPEG XL</h2>
+  <p class="lead">Aucun logiciel à installer, aucun compte, aucun envoi. Trois étapes, tout sur votre appareil.</p>
+  <div class="steps">
+    <div class="step"><h3>Déposez vos images</h3><p>Glissez une ou plusieurs images JPG, PNG, WebP ou GIF — ou cliquez pour les choisir.</p></div>
+    <div class="step"><h3>Choisissez la qualité</h3><p>Utilisez Auto, réglez le niveau de qualité ou cochez Sans perte pour une copie parfaite.</p></div>
+    <div class="step"><h3>Téléchargez</h3><p>Obtenez vos fichiers .jxl instantanément, avec la taille économisée pour chaque image.</p></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Pourquoi ce convertisseur</h2>
+  <p class="lead">La plupart des convertisseurs en ligne envoient vos photos sur leurs serveurs et limitent l'usage gratuit. Pas celui-ci.</p>
+  <table class="cmp">
+    <tr><th>Fonction</th><th>JXL Convert</th><th>Outils en ligne classiques</th></tr>
+    <tr><td>Traitement sur votre appareil</td><td class="y">Oui</td><td class="n">Envoi sur un serveur</td></tr>
+    <tr><td>Inscription requise</td><td class="y">Jamais</td><td class="n">Souvent</td></tr>
+    <tr><td>Limites quotidiennes / de taille</td><td class="y">Aucune</td><td class="n">Fréquentes</td></tr>
+    <tr><td>Filigrane</td><td class="y">Aucun</td><td class="n">Parfois</td></tr>
+    <tr><td>Prix</td><td class="y">Gratuit</td><td class="n">Gratuit + paywall</td></tr>
+  </table>
+</div></section>
+
+<section class="block alt" id="faq"><div class="wrap">
+  <h2>Questions fréquentes</h2>
+  <div class="faq">
+    <details open><summary>Est-ce vraiment gratuit ?</summary><div class="ans">Oui — entièrement gratuit, sans inscription, sans limite quotidienne et sans filigrane.</div></details>
+    <details><summary>Mes images sont-elles envoyées quelque part ?</summary><div class="ans">Non. Chaque conversion s'exécute localement dans votre navigateur via WebAssembly. Vos fichiers ne quittent jamais votre appareil — sûr même pour des documents et photos privés.</div></details>
+    <details><summary>Puis-je reconvertir un .jxl en JPG ou PNG ?</summary><div class="ans">Oui. L'outil fonctionne dans les deux sens : images vers JPEG XL, ou un fichier .jxl vers PNG ou JPG.</div></details>
+    <details><summary>Pourquoi mon navigateur n'ouvre-t-il pas encore les .jxl ?</summary><div class="ans">La plupart des navigateurs réintègrent seulement maintenant le support natif de JPEG XL (Chrome le déploie). En attendant, convertir un .jxl en PNG/JPG ici permet de l'afficher et le partager partout.</div></details>
+    <details><summary>Ça marche sur mon téléphone ?</summary><div class="ans">Oui. Cela fonctionne dans tout navigateur moderne sur ordinateur, Android et iOS.</div></details>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/fr/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="#what">Qu'est-ce que JXL</a><a href="#how">Comment</a><a href="#faq">FAQ</a></nav>
+  </div>
+  <div class="legal">
+    <span class="privacy-pill">🔒 Vos fichiers ne quittent jamais votre appareil</span>
+    <span class="flegal"><a href="/en/privacy/">Confidentialité</a> · <a href="/en/terms/">Conditions</a></span>
+    <span>© 2026 JXL Convert · Convertisseur JPEG XL gratuit</span>
+  </div>
+</div></footer>
+
+<script type="module" src="/assets/js/app.js?v=4"></script>
+</body>
+</html>

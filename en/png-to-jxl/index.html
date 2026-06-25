@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PNG to JPEG XL — Free in-browser converter</title>
+<meta name="description" content="Convert PNG to JPEG XL for dramatically smaller lossless files. JPEG XL keeps every pixel and transparency while cutting the size well below PNG.">
+<link rel="canonical" href="https://jpegxlconvert.com/en/png-to-jxl/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/png-to-jxl/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/png-a-jxl/">
+<link rel="alternate" hreflang="de" href="https://jpegxlconvert.com/de/png-in-jxl/">
+<link rel="alternate" hreflang="fr" href="https://jpegxlconvert.com/fr/png-en-jxl/">
+<link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/png-to-jxl/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/png-to-jxl/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PNG to JPEG XL — JXL Convert">
+<meta property="og:description" content="Convert PNG to JPEG XL for dramatically smaller lossless files.">
+<meta property="og:url" content="https://jpegxlconvert.com/en/png-to-jxl/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=5">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is JXL smaller than PNG?","acceptedAnswer":{"@type":"Answer","text":"Yes — JPEG XL's lossless mode is typically much smaller than PNG."}},{"@type":"Question","name":"Is transparency preserved?","acceptedAnswer":{"@type":"Answer","text":"Yes, the alpha channel is kept."}},{"@type":"Question","name":"Is it free and private?","acceptedAnswer":{"@type":"Answer","text":"Yes — free, no sign-up, and the file never leaves your device."}},{"@type":"Question","name":"How much smaller will my PNG get?","acceptedAnswer":{"@type":"Answer","text":"It varies by image, but JPEG XL's lossless mode is often significantly smaller than PNG, especially for photos and complex graphics."}},{"@type":"Question","name":"Is it truly lossless?","acceptedAnswer":{"@type":"Answer","text":"Yes — with Lossless enabled, every pixel and the alpha channel are preserved exactly."}}]}</script>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="#faq">FAQ</a></nav>
+    <details class="lang"><summary>🌐 EN</summary>
+      <div class="lang-menu">
+        <a class="active" href="/en/png-to-jxl/"><span class="flag">🇬🇧</span> English</a>
+        <a href="/es/png-a-jxl/"><span class="flag">🇪🇸</span> Español</a>
+        <a href="/de/png-in-jxl/"><span class="flag">🇩🇪</span> Deutsch</a>
+        <a href="/fr/png-en-jxl/"><span class="flag">🇫🇷</span> Français</a>
+        <a href="/ru/png-to-jxl/"><span class="flag">🇷🇺</span> Русский</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">⚡ Free in-browser converter</span>
+  <h1>PNG to JPEG XL</h1>
+  <p class="sub">Convert PNG to JPEG XL for dramatically smaller lossless files. JPEG XL keeps every pixel and transparency while cutting the size well below PNG. All in your browser.</p>
+  <div class="badges">
+    <span class="badge green">🔒 100% private</span><span class="badge">🚫 No sign-up</span>
+    <span class="badge">♾️ No limits</span><span class="badge">💧 No watermark</span><span class="badge">💸 Free</span>
+  </div>
+  <div class="tool">
+    <div class="dropzone" id="dropzone">
+      <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 16V4m0 0L7 9m5-5l5 5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke-linecap="round"/></svg>
+      <div class="dz-title">Drop your PNG files here</div>
+      <div class="dz-hint">Converted instantly on your device</div>
+      <span class="dz-btn">Select files</span>
+      <input id="file-input" type="file" accept="image/*,.jxl,.heic,.heif" multiple hidden>
+      <div class="dz-privacy">🔒 100% in your browser — your files are never uploaded</div>
+    </div>
+    <div class="controls">
+      <div class="ctrl"><label>Convert to</label>
+        <div class="seg">
+          <button data-target="auto">Auto</button>
+          <button data-target="jxl" class="on">JPEG XL</button>
+          <button data-target="png">PNG</button>
+          <button data-target="jpeg">JPG</button>
+        </div>
+      </div>
+      <div class="ctrl"><label>Quality</label>
+        <div class="quality"><input type="range" id="quality" min="40" max="100" value="90"><output id="quality-val">90</output></div>
+      </div>
+      <div class="ctrl"><label>&nbsp;</label><label class="switch"><input type="checkbox" id="lossless"> Lossless</label></div>
+    </div>
+    <div class="results" id="results"></div>
+    <div class="results-actions" id="results-actions"></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>PNG to JPEG XL</h2>
+  <p class="lead">Convert PNG to JPEG XL for dramatically smaller lossless files. JPEG XL keeps every pixel and transparency while cutting the size well below PNG. All in your browser.</p>
+  <div class="grid3">
+    <div class="feature"><div class="fi">✅</div><p>Much smaller than PNG, still fully lossless.</p></div>
+    <div class="feature"><div class="fi">✅</div><p>Transparency is kept.</p></div>
+    <div class="feature"><div class="fi">✅</div><p>Great for shrinking heavy graphics and screenshots.</p></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap about">
+  <h2>Good to know</h2>
+  <p class="prose">PNG is loved for being lossless, but it's also notoriously heavy — large screenshots and detailed graphics can balloon to several megabytes. Converting PNG to JPEG XL keeps the image perfectly lossless, including transparency, while typically cutting the file size dramatically. It's the easiest way to slim down a folder of PNGs without sacrificing a single pixel.</p>
+  <p class="prose">This matters for websites and storage: lighter lossless images load faster and take up less space. The conversion runs entirely on your device with WebAssembly, so even confidential graphics or unreleased designs never touch a server. Drop a batch, keep Lossless ticked, and download smaller .jxl files in seconds.</p>
+</div></section>
+
+<section class="block alt" id="how"><div class="wrap">
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="step"><h3>Drop your files</h3><p>Drag them in or click to choose.</p></div>
+    <div class="step"><h3>Pick quality</h3><p>Use the slider or tick Lossless.</p></div>
+    <div class="step"><h3>Download</h3><p>Get your converted files instantly.</p></div>
+  </div>
+</div></section>
+
+<section class="block" id="faq"><div class="wrap">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <details open><summary>Is JXL smaller than PNG?</summary><div class="ans">Yes — JPEG XL's lossless mode is typically much smaller than PNG.</div></details>
+    <details><summary>Is transparency preserved?</summary><div class="ans">Yes, the alpha channel is kept.</div></details>
+    <details><summary>Is it free and private?</summary><div class="ans">Yes — free, no sign-up, and the file never leaves your device.</div></details>
+    <details><summary>How much smaller will my PNG get?</summary><div class="ans">It varies by image, but JPEG XL's lossless mode is often significantly smaller than PNG, especially for photos and complex graphics.</div></details>
+    <details><summary>Is it truly lossless?</summary><div class="ans">Yes — with Lossless enabled, every pixel and the alpha channel are preserved exactly.</div></details>
+  </div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>More conversions</h2>
+  <div class="conv-links">
+      <a class="conv-link" href="/en/jxl-to-jpg/">JPEG XL → JPG</a>
+      <a class="conv-link" href="/en/jxl-to-png/">JPEG XL → PNG</a>
+      <a class="conv-link" href="/en/jpg-to-jxl/">JPG → JPEG XL</a>
+      <a class="conv-link" href="/en/webp-to-jxl/">WebP → JPEG XL</a>
+      <a class="conv-link" href="/en/heic-to-jpg/">HEIC → JPG</a>
+      <a class="conv-link" href="/en/heic-to-png/">HEIC → PNG</a>
+      <a class="conv-link" href="/en/heic-to-jxl/">HEIC → JPEG XL</a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="#how">How to</a><a href="#faq">FAQ</a></nav>
+  </div>
+  <div class="legal"><span class="privacy-pill">🔒 Your files never leave your device</span><span class="flegal"><a href="/en/privacy/">Privacy</a> · <a href="/en/terms/">Terms</a></span><span>© 2026 JXL Convert</span></div>
+</div></footer>
+<script type="module" src="/assets/js/app.js?v=4"></script>
+</body>
+</html>

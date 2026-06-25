@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JPG en JPEG XL — Convertisseur gratuit dans le navigateur</title>
+<meta name="description" content="Réencapsulez vos photos JPG en JPEG XL et récupérez environ 20% de taille, sans aucune perte de qualité.">
+<link rel="canonical" href="https://jpegxlconvert.com/fr/jpg-en-jxl/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/jpg-to-jxl/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/jpg-a-jxl/">
+<link rel="alternate" hreflang="de" href="https://jpegxlconvert.com/de/jpg-in-jxl/">
+<link rel="alternate" hreflang="fr" href="https://jpegxlconvert.com/fr/jpg-en-jxl/">
+<link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/jpg-to-jxl/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/jpg-to-jxl/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="JPG en JPEG XL — JXL Convert">
+<meta property="og:description" content="Réencapsulez vos photos JPG en JPEG XL et récupérez environ 20% de taille, sans aucune perte de qualité.">
+<meta property="og:url" content="https://jpegxlconvert.com/fr/jpg-en-jxl/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=5">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Convertir JPG en JXL perd-il en qualité ?","acceptedAnswer":{"@type":"Answer","text":"Non — le mode sans perte réencapsule le JPG existant : identique au pixel près, simplement plus petit."}},{"@type":"Question","name":"Où puis-je utiliser le .jxl ?","acceptedAnswer":{"@type":"Answer","text":"Safari le gère déjà et Chrome le déploie ; gardez vos originaux en attendant."}},{"@type":"Question","name":"Est-ce gratuit et privé ?","acceptedAnswer":{"@type":"Answer","text":"Oui — gratuit, sans inscription, et le fichier ne quitte jamais votre appareil."}},{"@type":"Question","name":"La qualité du JPG original est-elle modifiée ?","acceptedAnswer":{"@type":"Answer","text":"Non. La réencapsulation sans perte reconstruit les mêmes données JPEG dans le conteneur JPEG XL : mathématiquement identique, juste plus petit."}},{"@type":"Question","name":"Dois-je supprimer mes JPG après conversion ?","acceptedAnswer":{"@type":"Answer","text":"Gardez-les jusqu'à ce que JPEG XL soit pris en charge partout. Pour l'instant, le .jxl est idéal pour archiver et gagner de la place à côté de vos originaux."}}]}</script>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/fr/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/fr/">Convertisseur</a><a href="/fr/visionneuse-jxl/">Visionneuse</a><a href="#faq">FAQ</a></nav>
+    <details class="lang"><summary>🌐 FR</summary>
+      <div class="lang-menu">
+        <a href="/en/jpg-to-jxl/"><span class="flag">🇬🇧</span> English</a>
+        <a href="/es/jpg-a-jxl/"><span class="flag">🇪🇸</span> Español</a>
+        <a href="/de/jpg-in-jxl/"><span class="flag">🇩🇪</span> Deutsch</a>
+        <a class="active" href="/fr/jpg-en-jxl/"><span class="flag">🇫🇷</span> Français</a>
+        <a href="/ru/jpg-to-jxl/"><span class="flag">🇷🇺</span> Русский</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">⚡ Convertisseur gratuit dans le navigateur</span>
+  <h1>JPG en JPEG XL</h1>
+  <p class="sub">Réencapsulez vos photos JPG en JPEG XL et récupérez environ 20% de taille, sans aucune perte de qualité. Des fichiers plus petits, la même photo — converti en privé dans votre navigateur.</p>
+  <div class="badges">
+    <span class="badge green">🔒 100% privé</span><span class="badge">🚫 Sans inscription</span>
+    <span class="badge">♾️ Sans limite</span><span class="badge">💧 Sans filigrane</span><span class="badge">💸 Gratuit</span>
+  </div>
+  <div class="tool">
+    <div class="dropzone" id="dropzone">
+      <svg class="dz-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 16V4m0 0L7 9m5-5l5 5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke-linecap="round"/></svg>
+      <div class="dz-title">Déposez vos fichiers JPG ici</div>
+      <div class="dz-hint">Convertis instantanément sur votre appareil</div>
+      <span class="dz-btn">Sélectionner des fichiers</span>
+      <input id="file-input" type="file" accept="image/*,.jxl,.heic,.heif" multiple hidden>
+      <div class="dz-privacy">🔒 100% dans votre navigateur — vos fichiers ne sont jamais envoyés</div>
+    </div>
+    <div class="controls">
+      <div class="ctrl"><label>Convertir en</label>
+        <div class="seg">
+          <button data-target="auto">Auto</button>
+          <button data-target="jxl" class="on">JPEG XL</button>
+          <button data-target="png">PNG</button>
+          <button data-target="jpeg">JPG</button>
+        </div>
+      </div>
+      <div class="ctrl"><label>Qualité</label>
+        <div class="quality"><input type="range" id="quality" min="40" max="100" value="90"><output id="quality-val">90</output></div>
+      </div>
+      <div class="ctrl"><label>&nbsp;</label><label class="switch"><input type="checkbox" id="lossless"> Sans perte</label></div>
+    </div>
+    <div class="results" id="results"></div>
+    <div class="results-actions" id="results-actions"></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>JPG en JPEG XL</h2>
+  <p class="lead">Réencapsulez vos photos JPG en JPEG XL et récupérez environ 20% de taille, sans aucune perte de qualité. Des fichiers plus petits, la même photo — converti en privé dans votre navigateur.</p>
+  <div class="grid3">
+    <div class="feature"><div class="fi">✅</div><p>~20% plus petit sans perte de qualité (réencapsulation JPEG sans perte).</p></div>
+    <div class="feature"><div class="fi">✅</div><p>Pérennisez votre photothèque dans un format moderne.</p></div>
+    <div class="feature"><div class="fi">✅</div><p>Sans envoi, sans limite, sans filigrane.</p></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap about">
+  <h2>Bon à savoir</h2>
+  <p class="prose">Les téléphones modernes produisent de superbes JPG, mais loin d'être efficaces. Convertir JPG en JPEG XL avec réencapsulation sans perte réduit chaque fichier d'environ 20% tout en le gardant identique au pixel près à l'original — vous ne perdez littéralement rien et gagnez du stockage. Multipliez cela sur une photothèque de milliers d'images et les économies s'accumulent vite.</p>
+  <p class="prose">JPEG XL est le successeur moderne et libre de droits du JPG : Safari l'affiche déjà nativement et Chrome déploie la prise en charge, le format ne fera donc que gagner en utilité. Tout est converti en privé dans votre navigateur : vous pouvez pérenniser même vos photos personnelles sans les envoyer où que ce soit.</p>
+</div></section>
+
+<section class="block alt" id="how"><div class="wrap">
+  <h2>Comment ça marche</h2>
+  <div class="steps">
+    <div class="step"><h3>Déposez vos fichiers</h3><p>Glissez-les ou cliquez pour choisir.</p></div>
+    <div class="step"><h3>Choisissez la qualité</h3><p>Curseur ou cochez Sans perte.</p></div>
+    <div class="step"><h3>Téléchargez</h3><p>Obtenez vos fichiers instantanément.</p></div>
+  </div>
+</div></section>
+
+<section class="block" id="faq"><div class="wrap">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <details open><summary>Convertir JPG en JXL perd-il en qualité ?</summary><div class="ans">Non — le mode sans perte réencapsule le JPG existant : identique au pixel près, simplement plus petit.</div></details>
+    <details><summary>Où puis-je utiliser le .jxl ?</summary><div class="ans">Safari le gère déjà et Chrome le déploie ; gardez vos originaux en attendant.</div></details>
+    <details><summary>Est-ce gratuit et privé ?</summary><div class="ans">Oui — gratuit, sans inscription, et le fichier ne quitte jamais votre appareil.</div></details>
+    <details><summary>La qualité du JPG original est-elle modifiée ?</summary><div class="ans">Non. La réencapsulation sans perte reconstruit les mêmes données JPEG dans le conteneur JPEG XL : mathématiquement identique, juste plus petit.</div></details>
+    <details><summary>Dois-je supprimer mes JPG après conversion ?</summary><div class="ans">Gardez-les jusqu'à ce que JPEG XL soit pris en charge partout. Pour l'instant, le .jxl est idéal pour archiver et gagner de la place à côté de vos originaux.</div></details>
+  </div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Plus de conversions</h2>
+  <div class="conv-links">
+      <a class="conv-link" href="/fr/jxl-en-jpg/">JPEG XL → JPG</a>
+      <a class="conv-link" href="/fr/jxl-en-png/">JPEG XL → PNG</a>
+      <a class="conv-link" href="/fr/png-en-jxl/">PNG → JPEG XL</a>
+      <a class="conv-link" href="/fr/webp-en-jxl/">WebP → JPEG XL</a>
+      <a class="conv-link" href="/fr/heic-en-jpg/">HEIC → JPG</a>
+      <a class="conv-link" href="/fr/heic-en-png/">HEIC → PNG</a>
+      <a class="conv-link" href="/fr/heic-en-jxl/">HEIC → JPEG XL</a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/fr/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/fr/">Convertisseur</a><a href="#how">Comment</a><a href="#faq">FAQ</a></nav>
+  </div>
+  <div class="legal"><span class="privacy-pill">🔒 Vos fichiers ne quittent jamais votre appareil</span><span class="flegal"><a href="/en/privacy/">Confidentialité</a> · <a href="/en/terms/">Conditions</a></span><span>© 2026 JXL Convert</span></div>
+</div></footer>
+<script type="module" src="/assets/js/app.js?v=4"></script>
+</body>
+</html>
