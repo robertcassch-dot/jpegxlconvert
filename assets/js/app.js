@@ -53,16 +53,20 @@ const LANG = (document.documentElement.lang || "en").slice(0, 2);
 const T = {
   en: { converting: "Converting…", saved: "smaller", bigger: "bigger", download: "Download",
         downloadAll: "Download all", failed: "Could not convert this file", same: "same size",
-        drop: "Drop your images here" },
+        drop: "Drop your images here",
+        done: "Done", total: "Total", zipping: "Preparing ZIP…", share: "Share", linkCopied: "Link copied!", shareText: "Free in-browser JPEG XL converter — no upload, no sign-up." },
   es: { converting: "Convirtiendo…", saved: "más pequeño", bigger: "más grande", download: "Descargar",
         downloadAll: "Descargar todo", failed: "No se pudo convertir este archivo", same: "mismo tamaño",
-        drop: "Suelta tus imágenes aquí" },
+        drop: "Suelta tus imágenes aquí",
+        done: "Listo", total: "Total", zipping: "Preparando ZIP…", share: "Compartir", linkCopied: "¡Enlace copiado!", shareText: "Conversor JPEG XL gratis en el navegador — sin subidas, sin registro." },
   de: { converting: "Konvertiere…", saved: "kleiner", bigger: "größer", download: "Herunterladen",
         downloadAll: "Alle herunterladen", failed: "Datei konnte nicht konvertiert werden", same: "gleiche Größe",
-        drop: "Bilder hier ablegen" },
+        drop: "Bilder hier ablegen",
+        done: "Fertig", total: "Gesamt", zipping: "ZIP wird erstellt…", share: "Teilen", linkCopied: "Link kopiert!", shareText: "Kostenloser JPEG-XL-Konverter im Browser — kein Upload, keine Anmeldung." },
   fr: { converting: "Conversion…", saved: "plus petit", bigger: "plus grand", download: "Télécharger",
         downloadAll: "Tout télécharger", failed: "Impossible de convertir ce fichier", same: "même taille",
-        drop: "Déposez vos images ici" },
+        drop: "Déposez vos images ici",
+        done: "Terminé", total: "Total", zipping: "Préparation du ZIP…", share: "Partager", linkCopied: "Lien copié !", shareText: "Convertisseur JPEG XL gratuit dans le navigateur — sans téléversement, sans inscription." },
 };
 const t = (k) => (T[LANG] || T.en)[k];
 
@@ -76,6 +80,82 @@ const fmtBytes = (b) => {
   if (b < 1024 * 1024) return (b / 1024).toFixed(1) + " KB";
   return (b / 1024 / 1024).toFixed(2) + " MB";
 };
+
+// ---- ZIP (store method, no deps) + text manifest ----
+// A batch downloads as ONE .zip that also bundles a manifest.txt report, so the
+// user can check original vs output size (per file + total) before deleting the
+// originals. Store method (no deflate): the payloads are already-compressed
+// images, so compressing again only burns CPU for ~0 gain.
+const _crcTable = (() => {
+  const tbl = new Uint32Array(256);
+  for (let n = 0; n < 256; n++) {
+    let c = n;
+    for (let k = 0; k < 8; k++) c = (c & 1) ? (0xedb88320 ^ (c >>> 1)) : (c >>> 1);
+    tbl[n] = c >>> 0;
+  }
+  return tbl;
+})();
+function crc32(bytes) {
+  let c = 0xffffffff;
+  for (let i = 0; i < bytes.length; i++) c = _crcTable[(c ^ bytes[i]) & 0xff] ^ (c >>> 8);
+  return (c ^ 0xffffffff) >>> 0;
+}
+function zipStore(files) {
+  // files: [{ name, data: Uint8Array }] -> application/zip Blob
+  const enc = new TextEncoder();
+  const now = new Date();
+  const dosTime = ((now.getHours() & 0x1f) << 11) | ((now.getMinutes() & 0x3f) << 5) | ((now.getSeconds() >> 1) & 0x1f);
+  const dosDate = (((now.getFullYear() - 1980) & 0x7f) << 9) | (((now.getMonth() + 1) & 0x0f) << 5) | (now.getDate() & 0x1f);
+  const parts = [], central = [];
+  let offset = 0;
+  for (const f of files) {
+    const nameBytes = enc.encode(f.name);
+    const crc = crc32(f.data), size = f.data.length;
+    const lh = new DataView(new ArrayBuffer(30));
+    lh.setUint32(0, 0x04034b50, true); lh.setUint16(4, 20, true); lh.setUint16(6, 0x0800, true);
+    lh.setUint16(8, 0, true); lh.setUint16(10, dosTime, true); lh.setUint16(12, dosDate, true);
+    lh.setUint32(14, crc, true); lh.setUint32(18, size, true); lh.setUint32(22, size, true);
+    lh.setUint16(26, nameBytes.length, true); lh.setUint16(28, 0, true);
+    parts.push(new Uint8Array(lh.buffer), nameBytes, f.data);
+    const ch = new DataView(new ArrayBuffer(46));
+    ch.setUint32(0, 0x02014b50, true); ch.setUint16(4, 20, true); ch.setUint16(6, 20, true);
+    ch.setUint16(8, 0x0800, true); ch.setUint16(10, 0, true); ch.setUint16(12, dosTime, true);
+    ch.setUint16(14, dosDate, true); ch.setUint32(16, crc, true); ch.setUint32(20, size, true);
+    ch.setUint32(24, size, true); ch.setUint16(28, nameBytes.length, true); ch.setUint32(42, offset, true);
+    central.push(new Uint8Array(ch.buffer), nameBytes);
+    offset += 30 + nameBytes.length + size;
+  }
+  let centralSize = 0; for (const c of central) centralSize += c.length;
+  const eocd = new DataView(new ArrayBuffer(22));
+  eocd.setUint32(0, 0x06054b50, true); eocd.setUint16(8, files.length, true);
+  eocd.setUint16(10, files.length, true); eocd.setUint32(12, centralSize, true); eocd.setUint32(16, offset, true);
+  return new Blob([...parts, ...central, new Uint8Array(eocd.buffer)], { type: "application/zip" });
+}
+function buildManifest(rows) {
+  // rows: [{ from, to, origSize, outSize }]
+  const pad = (n) => String(n).padStart(2, "0");
+  const d = new Date();
+  const lines = [
+    "jpegxlconvert.com — conversion report",
+    `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`,
+    "",
+  ];
+  let to = 0, ot = 0;
+  for (const r of rows) {
+    to += r.origSize; ot += r.outSize;
+    const pct = r.origSize ? Math.round((1 - r.outSize / r.origSize) * 100) : 0;
+    const tag = pct > 0 ? `-${pct}%` : (pct < 0 ? `+${-pct}%` : "0%");
+    lines.push(`${r.from} (${fmtBytes(r.origSize)})  ->  ${r.to} (${fmtBytes(r.outSize)})   ${tag}`);
+  }
+  const totPct = to ? Math.round((1 - ot / to) * 100) : 0;
+  lines.push("");
+  lines.push(`TOTAL: ${fmtBytes(to)}  ->  ${fmtBytes(ot)}   ${totPct >= 0 ? "saved" : "added"} ${fmtBytes(Math.abs(to - ot))} (${totPct >= 0 ? "-" : "+"}${Math.abs(totPct)}%)`);
+  lines.push("");
+  lines.push("All conversions ran 100% in your browser — nothing was uploaded.");
+  lines.push("Lossless JPEG->JXL output is bit-identical to the source JPEG.");
+  lines.push("Check these numbers before deleting your originals.");
+  return new TextEncoder().encode(lines.join("\n"));
+}
 
 function makeCanvas(w, h) {
   if (typeof OffscreenCanvas !== "undefined") return new OffscreenCanvas(w, h);
@@ -194,6 +274,17 @@ function init() {
   });
 
   async function handleFiles(files) {
+    if (!files.length) return;
+    const prog = ensureProgress();
+    const bar = prog.querySelector(".cp-fill");
+    const plabel = prog.querySelector(".cp-label");
+    const total = files.length;
+    let done = 0;
+    prog.classList.add("on");
+    prog.classList.toggle("indet", total === 1);
+    bar.style.width = total === 1 ? "" : "0%";
+    plabel.textContent = `${t("converting")} 0/${total}`;
+
     for (const file of files) {
       const row = document.createElement("div");
       row.className = "result";
@@ -222,25 +313,104 @@ function init() {
         dl.className = "btn-dl"; dl.href = url; dl.download = outName; dl.textContent = t("download");
         row.appendChild(dl);
         if ((isJxl(file) || isHeic(file)) && thumb) thumb.src = url; // now we can preview decoded output
-        state.produced.push({ name: outName, url });
+        state.produced.push({ name: outName, url, blob, origName: file.name, origSize: file.size, outSize: blob.size });
         updateActions();
       } catch (err) {
         console.error(err);
         row.querySelector(".sizes").innerHTML = `<span class="err">${t("failed")}</span>`;
       }
+
+      done++;
+      if (total > 1) bar.style.width = Math.round((done / total) * 100) + "%";
+      plabel.textContent = done < total ? `${t("converting")} ${done}/${total}` : t("done");
     }
+
+    prog.classList.remove("indet");
+    bar.style.width = "100%";
+    setTimeout(() => { prog.classList.remove("on"); }, 700);
   }
 
   function updateActions() {
     if (!actions) return;
+    actions.innerHTML = "";
+    if (!state.produced.length) return;
     if (state.produced.length > 1) {
-      actions.innerHTML = "";
+      // aggregate size summary so the whole batch's saving is visible at a glance
+      const to = state.produced.reduce((s, p) => s + (p.origSize || 0), 0);
+      const ot = state.produced.reduce((s, p) => s + (p.outSize || 0), 0);
+      const pct = to ? Math.round((1 - ot / to) * 100) : 0;
+      const cls = pct > 0 ? "good" : (pct < 0 ? "bad" : "");
+      const word = pct === 0 ? t("same") : `${Math.abs(pct)}% ${pct > 0 ? t("saved") : t("bigger")}`;
+      const summary = document.createElement("div");
+      summary.className = "results-total";
+      summary.innerHTML = `${t("total")}: ${fmtBytes(to)} → <b>${fmtBytes(ot)}</b> · <span class="saved ${cls}">${word}</span>`;
+      actions.appendChild(summary);
+
       const all = document.createElement("button");
       all.className = "btn-dl ghost"; all.textContent = t("downloadAll");
-      all.addEventListener("click", () => state.produced.forEach((p, i) => {
-        setTimeout(() => { const a = document.createElement("a"); a.href = p.url; a.download = p.name; a.click(); }, i * 250);
-      }));
+      all.addEventListener("click", () => downloadZip(all));
       actions.appendChild(all);
+    }
+    // share-this-tool CTA, shown after at least one successful conversion
+    const share = document.createElement("button");
+    share.className = "btn-dl ghost share-btn"; share.textContent = t("share");
+    share.addEventListener("click", () => shareTool(share));
+    actions.appendChild(share);
+  }
+
+  // Bundle every converted file + a manifest.txt report into one .zip download.
+  async function downloadZip(btn) {
+    if (!state.produced.length) return;
+    const old = btn.textContent;
+    btn.disabled = true; btn.textContent = t("zipping");
+    try {
+      const used = new Map();
+      const files = [], rows = [];
+      for (const p of state.produced) {
+        let name = p.name;
+        if (used.has(name)) {           // dedupe names inside the archive
+          const n = used.get(name) + 1; used.set(name, n);
+          const dot = name.lastIndexOf(".");
+          name = dot > 0 ? `${name.slice(0, dot)} (${n})${name.slice(dot)}` : `${name} (${n})`;
+        } else used.set(name, 1);
+        files.push({ name, data: new Uint8Array(await p.blob.arrayBuffer()) });
+        rows.push({ from: p.origName, to: name, origSize: p.origSize, outSize: p.outSize });
+      }
+      files.push({ name: "manifest.txt", data: buildManifest(rows) });
+      const url = URL.createObjectURL(zipStore(files));
+      const a = document.createElement("a"); a.href = url; a.download = "jpegxlconvert.zip"; a.click();
+      setTimeout(() => URL.revokeObjectURL(url), 4000);
+    } catch (e) {
+      console.error(e);
+    } finally {
+      btn.disabled = false; btn.textContent = old;
+    }
+  }
+
+  function ensureProgress() {
+    let p = document.getElementById("conv-progress");
+    if (!p) {
+      p = document.createElement("div");
+      p.id = "conv-progress"; p.className = "conv-progress";
+      p.innerHTML = '<div class="cp-bar"><span class="cp-fill"></span></div><div class="cp-label"></div>';
+      results.parentNode.insertBefore(p, results);
+    }
+    return p;
+  }
+
+  async function shareTool(btn) {
+    const url = location.href;
+    if (navigator.share) {
+      try { await navigator.share({ title: document.title, text: t("shareText"), url }); return; }
+      catch (e) { if (e && e.name === "AbortError") return; }
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      const old = btn.textContent;
+      btn.textContent = t("linkCopied"); btn.classList.add("copied");
+      setTimeout(() => { btn.textContent = old; btn.classList.remove("copied"); }, 1800);
+    } catch (e) {
+      window.prompt(t("share"), url);
     }
   }
 }
