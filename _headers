@@ -1,9 +1,12 @@
 /assets/vendor/*
   Cache-Control: public, max-age=31536000, immutable
+# CSS y JS llevan versión en la URL (?v=N), así que un cambio genera una URL
+# nueva: se pueden cachear un año. Antes eran 300s y cada visitante recurrente
+# revalidaba los dos archivos cada 5 min (dos round-trips de más en cada visita).
 /assets/css/*
-  Cache-Control: public, max-age=300, must-revalidate
+  Cache-Control: public, max-age=31536000, immutable
 /assets/js/*
-  Cache-Control: public, max-age=300, must-revalidate
+  Cache-Control: public, max-age=31536000, immutable
 /assets/og-image*.png
   Cache-Control: public, max-age=86400
 

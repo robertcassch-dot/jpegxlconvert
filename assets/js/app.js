@@ -38,14 +38,49 @@ function loadScriptOnce(src) {
     document.head.appendChild(s);
   });
 }
-async function transcodeJpegToJxl(file) {
+async function getCjxl() {
   if (!_cjxlFactory) { await loadScriptOnce(CJXL_DIR + "cjxl.js"); _cjxlFactory = globalThis.createCjxl; }
   // Fresh module instance per file so batches stay clean.
-  const mod = await _cjxlFactory({ noInitialRun: true, locateFile: (p) => CJXL_DIR + p, print: () => {}, printErr: () => {} });
+  return _cjxlFactory({ noInitialRun: true, locateFile: (p) => CJXL_DIR + p, print: () => {}, printErr: () => {} });
+}
+async function transcodeJpegToJxl(file) {
+  const mod = await getCjxl();
   const bytes = new Uint8Array(await file.arrayBuffer());
   mod.FS.writeFile("in.jpg", bytes);
   try { mod.callMain(["in.jpg", "out.jxl", "--num_threads", "0", "--lossless_jpeg=1"]); } catch (e) { /* emscripten exits via throw */ }
   return mod.FS.readFile("out.jxl"); // Uint8Array
+}
+
+// Pixel → JXL encoding also goes through cjxl: the jSquash encoder WASM runs out
+// of heap and aborts somewhere between 12 and 16 MP (a 22 MP camera JPEG dies with
+// "RuntimeError: index out of bounds"), and at effort 7 it needs ~20 s for a 12 MP
+// photo anyway. cjxl fed with raw PPM/PAM pixels at effort 4 handles 22 MP in ~3 s.
+// The browser does the decoding, cjxl only encodes; PAM is used when alpha matters.
+async function encodePixelsViaCjxl(imageData, { quality, lossless }) {
+  const { width: w, height: h, data } = imageData;
+  let hasAlpha = false;
+  for (let i = 3; i < data.length; i += 4) if (data[i] !== 255) { hasAlpha = true; break; }
+  let name, input;
+  if (hasAlpha) {
+    const header = new TextEncoder().encode(`P7\nWIDTH ${w}\nHEIGHT ${h}\nDEPTH 4\nMAXVAL 255\nTUPLTYPE RGB_ALPHA\nENDHDR\n`);
+    input = new Uint8Array(header.length + data.length);
+    input.set(header, 0); input.set(data, header.length);
+    name = "in.pam";
+  } else {
+    const header = new TextEncoder().encode(`P6\n${w} ${h}\n255\n`);
+    input = new Uint8Array(header.length + w * h * 3);
+    input.set(header, 0);
+    for (let i = 0, o = header.length, n = w * h; i < n; i++) {
+      const s = i * 4;
+      input[o++] = data[s]; input[o++] = data[s + 1]; input[o++] = data[s + 2];
+    }
+    name = "in.ppm";
+  }
+  const mod = await getCjxl();
+  mod.FS.writeFile(name, input);
+  const q = lossless ? "100" : String(quality);
+  try { mod.callMain([name, "out.jxl", "--num_threads", "0", "-q", q, "-e", "4"]); } catch (e) { /* emscripten exits via throw */ }
+  return mod.FS.readFile("out.jxl"); // throws if cjxl produced nothing
 }
 
 // ---- tiny i18n for dynamic strings (keyed by <html lang>) ----
@@ -67,6 +102,10 @@ const T = {
         downloadAll: "Tout télécharger", failed: "Impossible de convertir ce fichier", same: "même taille",
         drop: "Déposez vos images ici",
         done: "Terminé", total: "Total", zipping: "Préparation du ZIP…", share: "Partager", linkCopied: "Lien copié !", shareText: "Convertisseur JPEG XL gratuit dans le navigateur — sans téléversement, sans inscription." },
+  ru: { converting: "Конвертируем…", saved: "меньше", bigger: "больше", download: "Скачать",
+        downloadAll: "Скачать все", failed: "Не удалось конвертировать этот файл", same: "тот же размер",
+        drop: "Перетащите изображения сюда",
+        done: "Готово", total: "Всего", zipping: "Готовим ZIP…", share: "Поделиться", linkCopied: "Ссылка скопирована!", shareText: "Бесплатный конвертер JPEG XL в браузере — без загрузки на сервер и без регистрации." },
 };
 const t = (k) => (T[LANG] || T.en)[k];
 
@@ -205,9 +244,16 @@ async function convert(file, { target, quality, lossless }) {
     }
     const imageData = fromJxl ? (await getJxl()).decode(await file.arrayBuffer()) : await fileToImageData(file);
     const id = (imageData instanceof Promise) ? await imageData : imageData;
-    const { encode } = await getJxl();
-    const buf = await encode(id, { quality: lossless ? 100 : quality });
-    return { blob: new Blob([buf], { type: "image/jxl" }), ext: "jxl" };
+    try {
+      const buf = await encodePixelsViaCjxl(id, { quality, lossless });
+      return { blob: new Blob([buf], { type: "image/jxl" }), ext: "jxl" };
+    } catch (e) {
+      // cjxl failed (bad load, unexpected input) — fall back to the jSquash
+      // encoder, which still covers small/medium images.
+      const { encode } = await getJxl();
+      const buf = await encode(id, { quality: lossless ? 100 : quality });
+      return { blob: new Blob([buf], { type: "image/jxl" }), ext: "jxl" };
+    }
   }
 
   // output PNG or JPEG

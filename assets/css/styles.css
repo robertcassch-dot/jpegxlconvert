@@ -278,7 +278,33 @@ footer.site .legal{margin-top:22px; padding-top:18px; border-top:1px solid #2430
 @media (max-width:820px){
   .hero h1{font-size:31px;} .hero p.sub{font-size:16px;}
   .grid3,.steps{grid-template-columns:1fr;}
-  .nav-links{display:none;}
+  /* Antes: .nav-links{display:none} — en movil el usuario se quedaba SIN
+     navegacion (ni hamburguesa ni nada), y en el visor no habia forma de llegar
+     al conversor salvo un enlace suelto dentro del texto. Ahora bajan a una
+     segunda fila de pastillas, deslizable, sin JS. */
+  /* height fija (62/66px) -> la segunda fila se salia del header y pisaba el hero */
+  .nav{flex-wrap:wrap; row-gap:10px; height:auto; min-height:62px; padding-block:10px;}
+  .nav-right{flex-wrap:wrap; gap:10px; justify-content:flex-end;}
+  .nav-links{
+    display:flex; order:2; width:100%;
+    gap:8px; margin:0;
+    overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch;
+  }
+  .nav-links::-webkit-scrollbar{display:none;}
+  .nav-links a{
+    flex:0 0 auto;
+    padding:9px 14px;              /* >=38px de alto: objetivo tactil correcto */
+    border:1px solid var(--line2);
+    border-radius:999px;
+    background:#fff;
+    font-size:14px; font-weight:600;
+    white-space:nowrap;
+  }
+}
+/* Pie: los enlaces legales quedaban por debajo del minimo tactil en movil */
+@media (max-width:820px){
+  footer.site .fnav a,
+  footer.site .flegal a{display:inline-block; padding:6px 2px;}
 }
 @media (max-width:520px){
   .controls{flex-direction:column; align-items:stretch;}
@@ -304,3 +330,12 @@ footer.site .legal{margin-top:22px; padding-top:18px; border-top:1px solid #2430
 .conv-progress .cp-label{margin-top:6px; font-size:12.5px; color:var(--brand-d); font-weight:600; text-align:center;}
 .share-btn.copied{color:var(--ok)!important; border-color:var(--ok)!important;}
 @media (prefers-reduced-motion:reduce){ .conv-progress.indet .cp-fill{animation:none; width:60%;} }
+
+/* inline code — used in the guide pages for flags, paths and file extensions */
+code{
+  font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  font-size:.9em; background:var(--bg-soft2); color:var(--ink);
+  border:1px solid var(--line); border-radius:6px; padding:.12em .4em;
+  word-break:break-word;
+}
+.cmp code{border:0; background:transparent; padding:0;}

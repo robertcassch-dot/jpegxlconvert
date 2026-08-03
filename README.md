@@ -13,7 +13,8 @@ A free, **100% client-side** JPEG XL converter and viewer. Convert images **to a
 - **Multilingual**: English, Español, Deutsch, Français, Русский — SEO-first with `hreflang`, canonical, structured data and Open Graph.
 
 ## How it works
-- **JPG/PNG/WebP/GIF → JXL**: decoded natively by the browser, encoded to JXL with [`@jsquash/jxl`](https://github.com/jamsinclair/jSquash) (libjxl in WebAssembly).
+- **JPG/PNG/WebP/GIF → JXL**: decoded natively by the browser, encoded with a custom single-thread `cjxl` WASM build (libjxl) fed with raw PPM/PAM pixels — handles large camera photos (22 MP+) that the jSquash encoder WASM cannot (heap abort above ~12-16 MP). [`@jsquash/jxl`](https://github.com/jamsinclair/jSquash) remains as encode fallback.
+- **Lossless JPG → JXL**: true bitstream transcoding via the same `cjxl` build (bit-identical, ~10-20% smaller).
 - **.jxl → PNG/JPG**: decoded with `@jsquash/jxl`, re-encoded natively via `<canvas>`.
 - **HEIC**: decoded in-browser, then converted.
 

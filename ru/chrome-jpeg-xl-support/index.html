@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Поддерживает ли Chrome JPEG XL? (Июль 2026)</title>
+<meta name="description" content="Коротко: по умолчанию нет. Chrome 145 вернул JPEG XL за флагом, и в Chrome 151 он всё ещё выключен. Рассказываем, как включить прямо сейчас.">
+<link rel="canonical" href="https://jpegxlconvert.com/ru/chrome-jpeg-xl-support/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/chrome-jpeg-xl-support/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/chrome-soporta-jpeg-xl/">
+<link rel="alternate" hreflang="de" href="https://jpegxlconvert.com/de/chrome-jpeg-xl-unterstuetzung/">
+<link rel="alternate" hreflang="fr" href="https://jpegxlconvert.com/fr/chrome-prend-il-en-charge-jpeg-xl/">
+<link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/chrome-jpeg-xl-support/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/chrome-jpeg-xl-support/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Поддерживает ли Chrome JPEG XL? — честный ответ (2026)">
+<meta property="og:description" content="Chrome 145 вернул декодер, но JPEG XL по-прежнему выключен по умолчанию. Как включить и что это значит для вас.">
+<meta property="og:url" content="https://jpegxlconvert.com/ru/chrome-jpeg-xl-support/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image-ru.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=8">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Открывает ли Chrome файлы .jxl в 2026 году?","acceptedAnswer":{"@type":"Answer","text":"Только если вы сами включите флаг. Из коробки Chrome 151 скачает файл .jxl, а не покажет его. Наш просмотрщик JPEG XL открывает его без единой настройки."}},
+{"@type":"Question","name":"Безопасно ли включать этот флаг?","acceptedAnswer":{"@type":"Answer","text":"Это официальный флаг Chrome, использующий собственный Rust-декодер Google, — не хак и не расширение. Но это всё ещё предрелизная механика: будьте готовы к отдельным шероховатостям и к тому, что флаг переименуют или уберут в следующих версиях."}},
+{"@type":"Question","name":"Почему Google вообще убрал JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"В 2022 году Google заявил, что формат даёт слишком мало дополнительной пользы по сравнению с существующими, чтобы оправдать поддержку. Безопасность памяти в C++-декодере тоже была постоянной претензией — поэтому формат и вернулся вместе с переписыванием на Rust."}},
+{"@type":"Question","name":"Поддерживает ли Edge JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"Edge построен на Chromium, поэтому в нём ровно тот же декодер за ровно тем же флагом по адресу edge://flags/#enable-jxl-image-format и то же поведение — по умолчанию выключено."}},
+{"@type":"Question","name":"А Firefox?","acceptedAnswer":{"@type":"Answer","text":"В Firefox реализация ведётся давно и в стабильных сборках остаётся отключённой. Заявленный интерес Mozilla вырос, когда безопасный по памяти декодер стал реальностью, но даты выпуска нет."}},
+{"@type":"Question","name":"Стоит ли уже переводить фотографии в JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"Для личного хранения и архива — да, уже имеет смысл, особенно переупаковка JPEG без потерь, которая уменьшает файлы вообще без изменения качества. Для изображений, которые вы публикуете в вебе, держите запасной JPEG, WebP или AVIF, пока Chrome не переключит флаг."}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Поддерживает ли Chrome JPEG XL?","dateModified":"2026-07-29","inLanguage":"ru","author":{"@type":"Organization","name":"JXL Convert"},"publisher":{"@type":"Organization","name":"JXL Convert"},"mainEntityOfPage":"https://jpegxlconvert.com/ru/chrome-jpeg-xl-support/"}
+</script>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/ru/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/ru/">Конвертер</a><a href="/ru/jxl-viewer/">Просмотрщик</a></nav>
+    <details class="lang"><summary>🌐 RU</summary>
+      <div class="lang-menu">
+        <a href="/en/chrome-jpeg-xl-support/"><span class="flag">🇬🇧</span> English</a>
+        <a href="/es/chrome-soporta-jpeg-xl/"><span class="flag">🇪🇸</span> Español</a>
+        <a href="/de/chrome-jpeg-xl-unterstuetzung/"><span class="flag">🇩🇪</span> Deutsch</a>
+        <a href="/fr/chrome-prend-il-en-charge-jpeg-xl/"><span class="flag">🇫🇷</span> Français</a>
+        <a class="active" href="/ru/chrome-jpeg-xl-support/"><span class="flag">🇷🇺</span> Русский</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">🌐 Обновлено 29 июля 2026</span>
+  <h1>Поддерживает ли Chrome JPEG&nbsp;XL?</h1>
+  <p class="sub"><strong>По умолчанию — нет, пока нет.</strong> Chrome 145 тихо вернул декодер JPEG&nbsp;XL в феврале 2026 года, но он спрятан за флагом и в Chrome&nbsp;151 <em>всё ещё</em> выключен. Ниже — как обстоят дела на самом деле и как включить его прямо сейчас.</p>
+  <div class="badges">
+    <span class="badge">🧪 За флагом с Chrome 145</span><span class="badge">🚫 В 151 выключен по умолчанию</span><span class="badge green">🍎 Safari: включён с 2023</span>
+  </div>
+  <div class="cta-row">
+    <a class="cta-card" href="/ru/jxl-viewer/"><span class="cta-ic">👁️</span><b>Нужно открыть .jxl прямо сейчас?</b><span class="cta-sub">Наш просмотрщик работает в любом браузере, с флагом и без →</span></a>
+    <a class="cta-card" href="/ru/jxl-to-jpg/"><span class="cta-ic">🔁</span><b>Или сконвертируйте в JPG</b><span class="cta-sub">Открывается везде, бесплатно, ничего не загружается →</span></a>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Короткий ответ</h2>
+  <p class="lead">Chrome <strong>умеет</strong> декодировать JPEG&nbsp;XL сегодня, но <strong>не станет</strong>, пока вы его не попросите. В декабре 2025 года Google добавил в Chromium <strong>jxl-rs</strong> — безопасный по работе с памятью декодер на Rust от официальной организации libjxl. В январе 2026 его подключили, а в стабильный канал он попал с <strong>Chrome 145 10 февраля 2026 года</strong>, спрятанный за флагом <code>enable-jxl-image-format</code>.</p>
+  <p class="lead">Там он и остался. По состоянию на <strong>июль 2026 года в Chrome 151 JPEG&nbsp;XL по-прежнему отключён по умолчанию</strong> — через пять стабильных выпусков после появления декодера. То есть если сегодня разместить <code>.jxl</code> на веб-странице, её практически никто из пользователей Chrome не увидит.</p>
+  <p class="lead">Именно эту деталь упускает большинство заголовков. «JPEG XL вернулся в Chrome» — правда про <em>код</em> и заблуждение про <em>практику</em>. Поставляется ≠ включено.</p>
+</div></section>
+
+<section class="block alt" id="enable"><div class="wrap">
+  <h2>Как включить JPEG XL в Chrome</h2>
+  <p class="lead">Займёт секунд пятнадцать. Затрагивает только <em>ваш</em> браузер — на посетителей вашего сайта это никак не влияет.</p>
+  <div class="steps">
+    <div class="step"><h3>Откройте страницу флагов</h3><p>Вставьте <code>chrome://flags/#enable-jxl-image-format</code> в адресную строку и нажмите Enter. Нужный флаг будет подсвечен.</p></div>
+    <div class="step"><h3>Переключите на Enabled</h3><p>В выпадающем списке рядом с «Enable JPEG XL image format» выберите <strong>Enabled</strong>.</p></div>
+    <div class="step"><h3>Перезапустите Chrome</h3><p>Нажмите появившуюся кнопку <strong>Relaunch</strong>. После этого Chrome показывает изображения <code>.jxl</code> нативно.</p></div>
+  </div>
+  <p class="lead">Те же шаги работают в <strong>Edge</strong>, <strong>Brave</strong>, <strong>Opera</strong> и <strong>Vivaldi</strong> — все они построены на Chromium и наследуют и декодер, и флаг. Используйте <code>edge://flags</code>, <code>brave://flags</code> и так далее.</p>
+  <p class="lead"><strong>Важная оговорка:</strong> флаг — это не обещание. Флаги Chrome переименовывают и убирают между версиями, а включение меняет только вашу собственную машину. Если <code>.jxl</code> должен открыться наверняка — на чужом компьютере, на телефоне, в письме — на это полагаться не стоит. Лучше <a href="/ru/jxl-viewer/">откройте файл в нашем просмотрщике</a> или <a href="/ru/jxl-to-jpg/">сконвертируйте в JPG</a>.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Поддержка JPEG XL браузерами в 2026 году</h2>
+  <table class="cmp">
+    <thead><tr><th>Браузер</th><th>Состояние</th><th>Включён по умолчанию?</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Safari</strong> (macOS и iOS)</td><td>Поддерживается с 2023</td><td class="y">Да</td></tr>
+      <tr><td><strong>Chrome</strong> 145+</td><td>Декодер есть, за флагом</td><td class="n">Нет</td></tr>
+      <tr><td><strong>Edge</strong> 145+</td><td>Тот же декодер и флаг Chromium</td><td class="n">Нет</td></tr>
+      <tr><td><strong>Firefox</strong></td><td>Реализация есть, в стабильной версии отключена</td><td class="n">Нет</td></tr>
+      <tr><td><strong>Brave / Opera / Vivaldi</strong></td><td>Наследуют флаг Chromium</td><td class="n">Нет</td></tr>
+    </tbody>
+  </table>
+  <p class="lead">В сумме Safari тянет формат почти в одиночку — около <strong>15% мирового веб-трафика</strong>. Именно эта цифра важна, если вы решаете, отдавать ли <code>.jxl</code> на сайте: пока ответ прежний — <em>не без запасного варианта</em>.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Как мы к этому пришли</h2>
+  <div class="grid3">
+    <div class="feature"><div class="fi">🧪</div><h3>2021 — первое появление</h3><p>В Chrome 91 появился экспериментальный декодер JPEG XL за флагом. Оптимизма было много.</p></div>
+    <div class="feature"><div class="fi">🗑️</div><h3>2022 — убрали</h3><p>Google объявил, что отказывается от JPEG XL, сославшись на недостаточный интерес экосистемы. К Chrome 110 код исчез. Решение приняли крайне негативно.</p></div>
+    <div class="feature"><div class="fi">📄</div><h3>2025 — поворот из-за PDF</h3><p>PDF Association назвала JPEG XL предпочтительным HDR-форматом для PDF. Встроенному в Chrome просмотрщику PDF понадобился бы декодер, чтобы соответствовать стандарту.</p></div>
+    <div class="feature"><div class="fi">🦀</div><h3>Дек 2025 — декодер на Rust</h3><p>Google добавил jxl-rs в Chromium. Выбор Rust вместо C++-библиотеки libjxl снял возражение о безопасности памяти, которое в первый раз помогло похоронить формат.</p></div>
+    <div class="feature"><div class="fi">🚢</div><h3>Фев 2026 — Chrome 145</h3><p>10 февраля декодер дошёл до стабильного канала, за флагом <code>enable-jxl-image-format</code>.</p></div>
+    <div class="feature"><div class="fi">⏳</div><h3>Сейчас — ждём</h3><p>Chrome 151, и по-прежнему выключено по умолчанию. Даты переключения Google не публиковал.</p></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Когда включат по умолчанию?</h2>
+  <p class="lead">За пределами Google этого не знает никто, и мы предпочтём сказать так, чем выдумывать дату. Чаще всего повторяют ожидание про <strong>вторую половину 2026 года</strong>, но оно уже один раз не сбылось: декодер лежит в стабильном Chrome с февраля и не включён.</p>
+  <p class="lead">Зато можно сказать, как выглядят оставшиеся препятствия. Декодер на Rust сейчас работает примерно на <strong>15–25% медленнее</strong> эталонной реализации на C++, а формат, который декодируется медленнее заменяемого, трудно продать браузеру, конкурирующему по скорости загрузки. Плюс кодирование, управление цветом и планка фаззинга для декодера, открытого всему вебу, тоже должны пройти проверку.</p>
+  <p class="lead">Зато в день переключения перемена будет резкой: Chrome и Edge вместе поднимут JPEG XL примерно с 15% браузеров почти до 90% за считанные недели.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Что это значит для вас</h2>
+  <div class="grid3">
+    <div class="feature"><div class="fi">📂</div><h3>Вам только что прислали .jxl</h3><p>Не возитесь с флагами. <a href="/ru/jxl-viewer/">Откройте файл в просмотрщике</a> — он декодирует прямо на вашем устройстве, в любом браузере, а сохранить можно в JPG или PNG.</p></div>
+    <div class="feature"><div class="fi">🌍</div><h3>Вы делаете сайты</h3><p>Пока нет, и не без запасного варианта. Отдавайте JPEG XL внутри элемента <code>&lt;picture&gt;</code> с AVIF, WebP или JPEG позади — либо оставьте всё как есть.</p></div>
+    <div class="feature"><div class="fi">📸</div><h3>Вы храните фотоархив</h3><p>Вот здесь JPEG XL уже окупается. Переупаковка JPEG без потерь экономит около 20%, исходные байты остаются восстановимыми — и ни один браузер для этого не нужен. <a href="/ru/jpg-to-jxl/">Попробуйте на своём JPEG</a>.</p></div>
+  </div>
+</div></section>
+
+<section class="block" id="faq"><div class="wrap">
+  <h2>Частые вопросы</h2>
+  <div class="faq">
+    <details open><summary>Открывает ли Chrome файлы .jxl в 2026 году?</summary><div class="ans">Только если вы сами включите флаг. Из коробки Chrome 151 скачает файл <code>.jxl</code>, а не покажет его. Наш <a href="/ru/jxl-viewer/">просмотрщик JPEG XL</a> открывает его без единой настройки.</div></details>
+    <details><summary>Безопасно ли включать этот флаг?</summary><div class="ans">Это официальный флаг Chrome, использующий собственный Rust-декодер Google, — не хак и не расширение. Но это всё ещё предрелизная механика: будьте готовы к отдельным шероховатостям и к тому, что флаг переименуют или уберут в следующих версиях.</div></details>
+    <details><summary>Почему Google вообще убрал JPEG XL?</summary><div class="ans">В 2022 году Google заявил, что формат даёт слишком мало дополнительной пользы по сравнению с существующими, чтобы оправдать поддержку. Безопасность памяти в C++-декодере тоже была постоянной претензией — поэтому формат и вернулся вместе с переписыванием на Rust.</div></details>
+    <details><summary>Поддерживает ли Edge JPEG XL?</summary><div class="ans">Edge построен на Chromium, поэтому в нём ровно тот же декодер за ровно тем же флагом по адресу <code>edge://flags/#enable-jxl-image-format</code> и то же поведение — по умолчанию выключено.</div></details>
+    <details><summary>А Firefox?</summary><div class="ans">В Firefox реализация ведётся давно и в стабильных сборках остаётся отключённой. Заявленный интерес Mozilla вырос, когда безопасный по памяти декодер стал реальностью, но даты выпуска нет.</div></details>
+    <details><summary>Стоит ли уже переводить фотографии в JPEG XL?</summary><div class="ans">Для личного хранения и архива — да, уже имеет смысл, особенно переупаковка JPEG без потерь, которая уменьшает файлы вообще без изменения качества. Для изображений, которые вы публикуете в вебе, держите запасной JPEG, WebP или AVIF, пока Chrome не переключит флаг.</div></details>
+  </div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Читать дальше</h2>
+  <div class="cta-row">
+    <a class="cta-card" href="/ru/what-is-jpeg-xl/"><span class="cta-ic">📘</span><b>Что такое JPEG XL?</b><span class="cta-sub">Формат простыми словами →</span></a>
+    <a class="cta-card" href="/ru/jpeg-xl-vs-webp/"><span class="cta-ic">⚖️</span><b>JPEG XL против WebP</b><span class="cta-sub">Что выбрать на самом деле? →</span></a>
+    <a class="cta-card" href="/ru/how-to-open-jxl/"><span class="cta-ic">📂</span><b>Как открыть файл .jxl</b><span class="cta-sub">На Windows, Mac, iPhone и Android →</span></a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/ru/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/ru/">Конвертер</a><a href="/ru/jxl-viewer/">Просмотрщик</a></nav>
+  </div>
+  <div class="legal">
+    <span class="privacy-pill">🔒 Ваши файлы никогда не покидают устройство</span>
+    <span class="flegal"><a href="/en/privacy/">Конфиденциальность</a> · <a href="/en/terms/">Условия</a></span>
+    <span>© 2026 JXL Convert</span>
+  </div>
+</div></footer>
+</body>
+</html>

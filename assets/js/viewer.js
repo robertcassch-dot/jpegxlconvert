@@ -13,6 +13,7 @@ const T = {
   es: { loading: "Abriendo…", fail: "No se pudo abrir este archivo", dl: "Descargar como", dim: "Dimensiones", size: "Tamaño" },
   de: { loading: "Öffne…", fail: "Datei konnte nicht geöffnet werden", dl: "Herunterladen als", dim: "Abmessungen", size: "Größe" },
   fr: { loading: "Ouverture…", fail: "Impossible d'ouvrir ce fichier", dl: "Télécharger en", dim: "Dimensions", size: "Taille" },
+  ru: { loading: "Открываем…", fail: "Не удалось открыть этот файл", dl: "Скачать как", dim: "Размеры", size: "Размер" },
 };
 const t = (k) => (T[LANG] || T.en)[k];
 const isJxl = (f) => /\.jxl$/i.test(f.name) || f.type === "image/jxl";
