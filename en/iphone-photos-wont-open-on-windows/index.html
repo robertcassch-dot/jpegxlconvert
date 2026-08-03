@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why Your iPhone Photos Won't Open on Windows (HEIC, Fixed)</title>
+<meta name="description" content="Your iPhone photos arrive as .heic and Windows won't open them. Here's why it happens, how to convert them right now, and the iPhone setting that stops it happening again.">
+<link rel="canonical" href="https://jpegxlconvert.com/en/iphone-photos-wont-open-on-windows/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/iphone-photos-wont-open-on-windows/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/iphone-photos-wont-open-on-windows/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iPhone photos won't open on Windows? Here's the fix">
+<meta property="og:description" content="What HEIC is, how to convert it to JPG in your browser, and the one iPhone setting that prevents it.">
+<meta property="og:url" content="https://jpegxlconvert.com/en/iphone-photos-wont-open-on-windows/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=8">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Can I just rename .heic to .jpg?","acceptedAnswer":{"@type":"Answer","text":"No. The extension is a label; the contents are encoded completely differently. Renaming produces a file that claims to be a JPEG and isn't, which fails to open just as thoroughly. It has to be genuinely converted."}},
+{"@type":"Question","name":"Why does emailing myself the photo sometimes work?","acceptedAnswer":{"@type":"Answer","text":"Because Apple converts on the way out. When you share a photo through Mail, Messages or AirDrop to a non-Apple device, iOS often quietly hands over a JPEG copy. Copying files directly off the phone with a cable gives you the untouched HEIC, which is why the cable route is the one that breaks."}},
+{"@type":"Question","name":"Is HEIC better than JPEG?","acceptedAnswer":{"@type":"Answer","text":"Technically yes — about half the size at the same quality, plus support for transparency, depth maps and 10-bit colour. Practically it depends on where the photo is going. Better format, worse compatibility, which has been the story of every image format since JPEG."}},
+{"@type":"Question","name":"Will I lose my Live Photos when converting?","acceptedAnswer":{"@type":"Answer","text":"The motion part, yes. A Live Photo is a still image plus a short video, and converting to JPG or PNG keeps only the still. If the movement matters, keep the original on the phone and treat the converted copy as a still export."}},
+{"@type":"Question","name":"Are my photos uploaded to your server when I convert?","acceptedAnswer":{"@type":"Answer","text":"No. The conversion happens in your browser using code compiled to WebAssembly — the file is read from your disk into the page and never sent anywhere. Open your browser's network tab during a conversion and you'll see nothing outbound."}},
+{"@type":"Question","name":"What about HEIF, HEIC and .hif — are they different?","acceptedAnswer":{"@type":"Answer","text":"Mostly naming. HEIF is the container standard, HEIC is Apple's implementation of it, and .hif is what some cameras (Canon and Sony among them) call the same thing. All three convert the same way here."}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Why iPhone Photos Won't Open on Windows","dateModified":"2026-08-03","inLanguage":"en","author":{"@type":"Organization","name":"JXL Convert"},"publisher":{"@type":"Organization","name":"JXL Convert"},"mainEntityOfPage":"https://jpegxlconvert.com/en/iphone-photos-wont-open-on-windows/"}
+</script>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Guides</a></nav>
+    <details class="lang"><summary>🌐 EN</summary>
+      <div class="lang-menu">
+        <a class="active" href="/en/iphone-photos-wont-open-on-windows/"><span class="flag">🇬🇧</span> English</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">📱 iPhone → Windows</span>
+  <h1>Why iPhone Photos Won't Open on Windows</h1>
+  <p class="sub">Your photos are saved as <code>.heic</code>, a format Apple switched to in 2017 that Windows still doesn't handle properly out of the box. The photos are perfectly fine — Windows just doesn't speak the language. There are three fixes, and one of them stops it happening ever again.</p>
+  <div class="badges">
+    <span class="badge green">🔁 Convert in seconds</span><span class="badge">🚫 No software to install</span><span class="badge">⚙️ Permanent fix included</span><span class="badge">🔒 Nothing uploaded</span>
+  </div>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/heic-to-jpg/"><span class="cta-ic">🖼️</span><b>Fix it right now</b><span class="cta-sub">Drop your .heic photos here → JPG →</span></a>
+    <a class="cta-card" href="/en/heic-to-png/"><span class="cta-ic">🎨</span><b>Need PNG instead?</b><span class="cta-sub">For screenshots and graphics →</span></a>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>What actually happened</h2>
+  <p class="lead">In 2017 Apple changed the default camera format on the iPhone from JPEG to <strong>HEIC</strong> (High Efficiency Image Container). It was a sensible decision: HEIC files are roughly half the size of the equivalent JPEG at the same quality, which is why your phone hasn't run out of storage years ago.</p>
+  <p class="lead">The problem is everything that isn't Apple. HEIC is built on HEVC, a video codec covered by a thicket of patents, and the licensing has made other companies reluctant to support it. Microsoft's position landed somewhere awkward: Windows can display HEIC, but only if you install a codec that Microsoft itself has at times charged for.</p>
+  <p class="lead">So the file lands on your desktop, Windows Photos shrugs, and you assume the transfer went wrong. It didn't. You just have a photo in a format your PC wasn't taught to read.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Three ways to fix it</h2>
+  <div class="steps">
+    <div class="step"><h3>Convert the photos you already have</h3><p>Fastest route, nothing to install: drop them into <a href="/en/heic-to-jpg/">the HEIC to JPG converter</a> and you get ordinary JPGs back in a second or two. It runs inside your browser, so the photos never leave your computer — which matters more than usual when the files are personal.</p></div>
+    <div class="step"><h3>Change the setting on your iPhone</h3><p>The permanent fix, and the one most people never find. On the iPhone: Settings → Camera → Formats → choose <strong>Most Compatible</strong>. From that moment the camera shoots JPEG instead of HEIC and Windows opens everything without complaint. You lose about half your storage efficiency, which on a modern phone rarely matters.</p></div>
+    <div class="step"><h3>Teach Windows to read HEIC</h3><p>If you want Windows Photos to open .heic files directly, install the HEIF Image Extensions from the Microsoft Store. Be aware that the companion HEVC Video Extensions — needed for some files — has historically carried a small charge, which is exactly why most people prefer one of the first two options.</p></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Which route should you take?</h2>
+  <table class="cmp">
+    <thead><tr><th>Your situation</th><th>Best fix</th></tr></thead>
+    <tbody>
+      <tr><td>A handful of photos, needed right now</td><td class="y">Convert them in the browser</td></tr>
+      <tr><td>It keeps happening every time you transfer</td><td class="y">Change the iPhone camera setting</td></tr>
+      <tr><td>You want Windows to just open them</td><td class="y">Install HEIF Image Extensions</td></tr>
+      <tr><td>Photos are sensitive or personal</td><td class="y">Convert in the browser — nothing is uploaded</td></tr>
+      <tr><td>Hundreds of photos at once</td><td class="y">Convert in the browser, batch them, download the ZIP</td></tr>
+    </tbody>
+  </table>
+  <p class="lead">One thing worth knowing before you change the iPhone setting: switching to Most Compatible affects new photos only. Everything already in your camera roll stays HEIC, so you'll still want to convert the backlog.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Does converting HEIC lose quality?</h2>
+  <p class="lead">Slightly, and it's worth being straight about it. HEIC and JPEG are both lossy, so re-encoding from one to the other means the image passes through compression twice. In practice, at the quality levels used here, the difference is invisible without pixel-peeping a magnified crop.</p>
+  <p class="lead">If you want to avoid any generational loss at all, convert to <strong>PNG</strong> instead — it's lossless, so no further quality is thrown away. The trade is file size: expect the PNG to be several times larger than the HEIC it came from. For photographs, JPG is almost always the right answer.</p>
+  <p class="lead">There's also a third option that most people don't consider: convert to <a href="/en/heic-to-jxl/">JPEG XL</a>. It keeps HEIC's small file sizes without the patent baggage, and it's a genuinely better format. The catch is the same one HEIC has — <a href="/en/chrome-jpeg-xl-support/">not everything opens it yet</a>.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <details open><summary>Can I just rename .heic to .jpg?</summary><div class="ans">No. The extension is a label; the contents are encoded completely differently. Renaming produces a file that claims to be a JPEG and isn't, which fails to open just as thoroughly. It has to be genuinely converted.</div></details>
+    <details><summary>Why does emailing myself the photo sometimes work?</summary><div class="ans">Because Apple converts on the way out. When you share a photo through Mail, Messages or AirDrop to a non-Apple device, iOS often quietly hands over a JPEG copy. Copying files directly off the phone with a cable gives you the untouched HEIC, which is why the cable route is the one that breaks.</div></details>
+    <details><summary>Is HEIC better than JPEG?</summary><div class="ans">Technically yes — about half the size at the same quality, plus support for transparency, depth maps and 10-bit colour. Practically it depends on where the photo is going. Better format, worse compatibility, which has been the story of every image format since JPEG.</div></details>
+    <details><summary>Will I lose my Live Photos when converting?</summary><div class="ans">The motion part, yes. A Live Photo is a still image plus a short video, and converting to JPG or PNG keeps only the still. If the movement matters, keep the original on the phone and treat the converted copy as a still export.</div></details>
+    <details><summary>Are my photos uploaded to your server when I convert?</summary><div class="ans">No. The conversion happens in your browser using code compiled to WebAssembly — the file is read from your disk into the page and never sent anywhere. Open your browser's network tab during a conversion and you'll see nothing outbound.</div></details>
+    <details><summary>What about HEIF, HEIC and .hif — are they different?</summary><div class="ans">Mostly naming. HEIF is the container standard, HEIC is Apple's implementation of it, and .hif is what some cameras (Canon and Sony among them) call the same thing. All three convert the same way here.</div></details>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Keep reading</h2>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/heic-to-jpg/"><span class="cta-ic">🖼️</span><b>HEIC to JPG</b><span class="cta-sub">The converter, no upload →</span></a>
+    <a class="cta-card" href="/en/jxl-file/"><span class="cta-ic">📄</span><b>What is a .jxl file?</b><span class="cta-sub">The other format that won't open →</span></a>
+    <a class="cta-card" href="/en/archive-photos-without-losing-quality/"><span class="cta-ic">🗄️</span><b>Archiving a photo library</b><span class="cta-sub">Storing thousands of photos properly →</span></a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Guides</a></nav>
+  </div>
+  <div class="legal">
+    <span class="privacy-pill">🔒 Your files never leave your device</span>
+    <span class="flegal"><a href="/en/privacy/">Privacy</a> · <a href="/en/terms/">Terms</a></span>
+    <span>© 2026 JXL Convert</span>
+  </div>
+</div></footer>
+</body>
+</html>

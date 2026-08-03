@@ -607,4 +607,34 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/jpeg-xl-vs-webp/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/jpeg-xl-vs-webp/"/>
   </url>
+  <url>
+    <loc>https://jpegxlconvert.com/en/guides/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/guides/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/guides/"/>
+  </url>
+  <url>
+    <loc>https://jpegxlconvert.com/en/jxl-file/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/jxl-file/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/jxl-file/"/>
+  </url>
+  <url>
+    <loc>https://jpegxlconvert.com/en/iphone-photos-wont-open-on-windows/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/iphone-photos-wont-open-on-windows/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/iphone-photos-wont-open-on-windows/"/>
+  </url>
+  <url>
+    <loc>https://jpegxlconvert.com/en/jpeg-xl-vs-avif/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/jpeg-xl-vs-avif/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/jpeg-xl-vs-avif/"/>
+  </url>
+  <url>
+    <loc>https://jpegxlconvert.com/en/archive-photos-without-losing-quality/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/archive-photos-without-losing-quality/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/archive-photos-without-losing-quality/"/>
+  </url>
+  <url>
+    <loc>https://jpegxlconvert.com/en/jpeg-xl-software-support/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/jpeg-xl-software-support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/jpeg-xl-software-support/"/>
+  </url>
 </urlset>

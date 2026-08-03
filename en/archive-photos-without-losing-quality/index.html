@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Archive a Huge Photo Library Without Losing Quality</title>
+<meta name="description" content="Shrink a photo archive by about 20% with zero quality loss, and store it so it's still readable in twenty years. What to convert, what to leave alone, and what to verify.">
+<link rel="canonical" href="https://jpegxlconvert.com/en/archive-photos-without-losing-quality/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/archive-photos-without-losing-quality/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/archive-photos-without-losing-quality/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Archiving a photo library without losing quality">
+<meta property="og:description" content="Reclaim ~20% of your disk with no quality cost, and store the result so it survives.">
+<meta property="og:url" content="https://jpegxlconvert.com/en/archive-photos-without-losing-quality/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=8">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How much space will I actually save?","acceptedAnswer":{"@type":"Answer","text":"On typical camera JPEGs, expect around 20%. Higher-quality and larger images tend to do slightly better, heavily compressed small ones slightly worse. On a 2 TB library that's roughly 400 GB — worth an afternoon of work."}},
+{"@type":"Question","name":"Is it really lossless, or lossless-ish?","acceptedAnswer":{"@type":"Answer","text":"Genuinely lossless for the JPEG re-packing case, in the strongest sense available: the reconstructed file is bit-identical to the original, same checksum. That is a stronger guarantee than 'visually identical', which is what most tools mean when they say lossless."}},
+{"@type":"Question","name":"What if JPEG XL dies?","acceptedAnswer":{"@type":"Answer","text":"You convert everything back to JPEG and lose nothing but the time. That is precisely why the byte-exact reconstruction matters — it's the escape hatch that makes the whole plan reversible."}},
+{"@type":"Question","name":"Can I do this in the browser instead of the command line?","acceptedAnswer":{"@type":"Answer","text":"For a few hundred photos, yes — the converter here does lossless JPEG re-packing and never uploads anything. For tens of thousands, use cjxl: a script won't get bored, and it can hash-verify as it goes."}},
+{"@type":"Question","name":"Does this work for scanned documents and artwork?","acceptedAnswer":{"@type":"Answer","text":"Yes, and it's a good fit. JPEG XL handles very large images — up to a billion pixels per side — so gigapixel scans stay in one file rather than being tiled."}},
+{"@type":"Question","name":"Should I strip EXIF data to save more space?","acceptedAnswer":{"@type":"Answer","text":"No. Metadata is a rounding error in file size and irreplaceable in an archive — dates, camera settings, sometimes location. Keep it. JPEG XL preserves it through the conversion."}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Archiving Photos Without Losing Quality","dateModified":"2026-08-03","inLanguage":"en","author":{"@type":"Organization","name":"JXL Convert"},"publisher":{"@type":"Organization","name":"JXL Convert"},"mainEntityOfPage":"https://jpegxlconvert.com/en/archive-photos-without-losing-quality/"}
+</script>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Guides</a></nav>
+    <details class="lang"><summary>🌐 EN</summary>
+      <div class="lang-menu">
+        <a class="active" href="/en/archive-photos-without-losing-quality/"><span class="flag">🇬🇧</span> English</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">🗄️ Long-term storage</span>
+  <h1>Archiving Photos Without Losing Quality</h1>
+  <p class="sub">If you have tens of thousands of photographs, there is a way to reclaim roughly <strong>a fifth of the disk space</strong> without altering a single pixel — and it's fully reversible. This is how to do it properly, and how to store the result so it's still readable long after the drive it's on has died.</p>
+  <div class="badges">
+    <span class="badge green">📦 ~20% smaller</span><span class="badge">🔒 Bit-exact reversible</span><span class="badge">✅ Verifiable</span><span class="badge">🕰️ Built to last</span>
+  </div>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/jpg-to-jxl/"><span class="cta-ic">🔁</span><b>Try it on one photo first</b><span class="cta-sub">Convert a JPEG losslessly and compare →</span></a>
+    <a class="cta-card" href="/en/what-is-jpeg-xl/"><span class="cta-ic">📘</span><b>New to JPEG XL?</b><span class="cta-sub">What the format is and why it does this →</span></a>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>The trick that makes this possible</h2>
+  <p class="lead">Almost every archive is mostly JPEGs, and almost every attempt to shrink one starts by re-compressing them — which quietly destroys quality every time you do it. JPEG&nbsp;XL offers something different: <strong>lossless JPEG re-packing</strong>.</p>
+  <p class="lead">Instead of decoding the picture and encoding it again, it takes the JPEG's existing compressed data and stores it more efficiently. The pixels are never touched. Typical saving is around 20%, and the original JPEG can be reconstructed <em>byte for byte</em> — not visually identical, literally the same file, checksum and all.</p>
+  <p class="lead">That last property is what makes this safe for an archive. You are not choosing between size and fidelity. You are storing the same data in a better container, and you can always take it back out.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>What to convert and what to leave alone</h2>
+  <div class="grid3">
+    <div class="feature"><div class="fi">✅</div><h3>JPEGs — convert them</h3><p>This is where the whole saving lives. Losslessly re-packed, fully reversible, no decision to regret later. If your archive is mostly holiday and family photos, this is nearly all of it.</p></div>
+    <div class="feature"><div class="fi">✅</div><h3>PNGs — convert them</h3><p>JPEG XL's lossless mode usually beats PNG, often substantially on photographic content. Still lossless, still reversible, though not byte-for-byte the way JPEG re-packing is — the pixels are identical, the original file isn't reconstructed.</p></div>
+    <div class="feature"><div class="fi">⚠️</div><h3>RAW files — leave them</h3><p>Your raw files are the negatives and they should stay exactly as the camera wrote them. Adobe's DNG already uses JPEG XL compression internally if you want the saving; converting proprietary raws yourself is not worth the risk.</p></div>
+    <div class="feature"><div class="fi">⚠️</div><h3>HEIC — think first</h3><p>Converting HEIC to JPEG XL means decoding and re-encoding, so it isn't lossless. Worth it if you want off Apple's format, but it is a genuine quality decision rather than free space.</p></div>
+    <div class="feature"><div class="fi">❌</div><h3>Anything you're about to share</h3><p>Keep working copies in JPEG. The archive is for storage; compatibility is for distribution. Mixing the two roles is how people end up unable to open their own photos.</p></div>
+    <div class="feature"><div class="fi">❌</div><h3>Video</h3><p>Different problem entirely, different tools. JPEG XL is a still image format and has nothing to offer here.</p></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Doing it properly</h2>
+  <div class="steps">
+    <div class="step"><h3>Test on a sample first</h3><p>Take a hundred representative photos — a mix of resolutions, cameras and ages. Convert them, reconstruct them, and confirm you get the originals back. <a href="/en/jpg-to-jxl/">The browser converter</a> is fine for a first look at what the size saving will be on your material.</p></div>
+    <div class="step"><h3>Verify with checksums, not with your eyes</h3><p>Before converting, record a hash of every original (<code>sha256sum</code> on Linux and macOS, <code>Get-FileHash</code> in PowerShell). After reconstructing, compare the hashes. Identical hashes mean the file came back exactly. This step is the entire reason you can trust the process.</p></div>
+    <div class="step"><h3>Convert in batches, keep the originals</h3><p>Work in batches you can afford to redo. Don't delete a single original until that batch has been converted, reconstructed and hash-verified. Disk space is cheaper than the photo of your grandmother.</p></div>
+    <div class="step"><h3>Store it where it'll survive</h3><p>Three copies, two different media, one off-site. It is an old rule because it keeps being right. A single drive full of beautifully compressed JPEG XL is one power surge away from being nothing at all.</p></div>
+    <div class="step"><h3>Write down what you did</h3><p>Put a plain text file in the archive root explaining what the .jxl files are, which tool made them, and how to reconstruct the originals. Your future self, or whoever inherits this, will not remember. This costs five minutes and is the difference between an archive and a puzzle.</p></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>The command line version</h2>
+  <p class="lead">For tens of thousands of files you want <code>cjxl</code>, the reference encoder from libjxl. Converting a JPEG is the simple case — lossless re-packing is the default behaviour, so no flags are needed:</p>
+  <p class="lead"><code>cjxl photo.jpg photo.jxl</code></p>
+  <p class="lead">And reconstructing the original JPEG from it:</p>
+  <p class="lead"><code>djxl photo.jxl restored.jpg</code></p>
+  <p class="lead">Compare the hashes of <code>photo.jpg</code> and <code>restored.jpg</code> and they will match. Run that check on your sample batch before you trust it on the whole library, and again on a random sample afterwards — verification you don't actually perform is just optimism.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>What you're trading away</h2>
+  <p class="lead">It would be dishonest to present this as free. The cost is compatibility, and it is a real cost that lands squarely in the future.</p>
+  <p class="lead">A folder of JPEGs opens on anything with a screen, and will keep doing so for decades — JPEG is the most widely supported format in the history of computing, and nothing is going to strand it. A folder of <code>.jxl</code> files needs software that understands JPEG XL, and today that is a much shorter list.</p>
+  <p class="lead">Two things make the risk tolerable. The format is an ISO standard with an open-source reference implementation, so the specification cannot be withdrawn and the decoder cannot be taken away. And the reconstruction is exact, meaning you can convert the entire archive back to ordinary JPEGs at any point, with no loss, if the format never takes off.</p>
+  <p class="lead">That's the honest framing: you're borrowing 20% of your disk against a small future inconvenience that you can undo. For an archive you control, it's a sensible trade. For files you're handing to other people, it isn't.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <details open><summary>How much space will I actually save?</summary><div class="ans">On typical camera JPEGs, expect around 20%. Higher-quality and larger images tend to do slightly better, heavily compressed small ones slightly worse. On a 2 TB library that's roughly 400 GB — worth an afternoon of work.</div></details>
+    <details><summary>Is it really lossless, or lossless-ish?</summary><div class="ans">Genuinely lossless for the JPEG re-packing case, in the strongest sense available: the reconstructed file is bit-identical to the original, same checksum. That is a stronger guarantee than 'visually identical', which is what most tools mean when they say lossless.</div></details>
+    <details><summary>What if JPEG XL dies?</summary><div class="ans">You convert everything back to JPEG and lose nothing but the time. That is precisely why the byte-exact reconstruction matters — it's the escape hatch that makes the whole plan reversible.</div></details>
+    <details><summary>Can I do this in the browser instead of the command line?</summary><div class="ans">For a few hundred photos, yes — the converter here does lossless JPEG re-packing and never uploads anything. For tens of thousands, use cjxl: a script won't get bored, and it can hash-verify as it goes.</div></details>
+    <details><summary>Does this work for scanned documents and artwork?</summary><div class="ans">Yes, and it's a good fit. JPEG XL handles very large images — up to a billion pixels per side — so gigapixel scans stay in one file rather than being tiled.</div></details>
+    <details><summary>Should I strip EXIF data to save more space?</summary><div class="ans">No. Metadata is a rounding error in file size and irreplaceable in an archive — dates, camera settings, sometimes location. Keep it. JPEG XL preserves it through the conversion.</div></details>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Keep reading</h2>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/jpeg-xl-vs-avif/"><span class="cta-ic">⚖️</span><b>JPEG XL vs AVIF</b><span class="cta-sub">Why AVIF isn't the archival choice →</span></a>
+    <a class="cta-card" href="/en/jpeg-xl-software-support/"><span class="cta-ic">🧰</span><b>Which apps support JPEG XL</b><span class="cta-sub">What will open your archive →</span></a>
+    <a class="cta-card" href="/en/what-is-jpeg-xl/"><span class="cta-ic">📘</span><b>What is JPEG XL?</b><span class="cta-sub">The format, from the beginning →</span></a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Guides</a></nav>
+  </div>
+  <div class="legal">
+    <span class="privacy-pill">🔒 Your files never leave your device</span>
+    <span class="flegal"><a href="/en/privacy/">Privacy</a> · <a href="/en/terms/">Terms</a></span>
+    <span>© 2026 JXL Convert</span>
+  </div>
+</div></footer>
+</body>
+</html>

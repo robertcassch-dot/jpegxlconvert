@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Which Apps Support JPEG XL in 2026? The Honest List</title>
+<meta name="description" content="Which programs actually open and export .jxl files: operating systems, browsers, photo editors and viewers — with the gaps stated plainly.">
+<link rel="canonical" href="https://jpegxlconvert.com/en/jpeg-xl-software-support/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/jpeg-xl-software-support/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/jpeg-xl-software-support/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Which apps support JPEG XL in 2026?">
+<meta property="og:description" content="The software that opens and exports .jxl today, and the notable holes.">
+<meta property="og:url" content="https://jpegxlconvert.com/en/jpeg-xl-software-support/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=8">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Why doesn't Windows Photos open .jxl?","acceptedAnswer":{"@type":"Answer","text":"Because Microsoft has never shipped the codec by default. Windows handles image formats through installable codec packages, and the JPEG XL one isn't part of a standard installation. It's an omission rather than a technical barrier."}},
+{"@type":"Question","name":"Is there a plugin to open .jxl in Photoshop?","acceptedAnswer":{"@type":"Answer","text":"Community plugins built on libjxl exist and are the usual route. Adobe's own support arrived first through Camera Raw and DNG rather than as a direct Photoshop file format, so check Camera Raw before hunting for a plugin."}},
+{"@type":"Question","name":"Will Chrome ever add it back?","acceptedAnswer":{"@type":"Answer","text":"Nobody outside Google knows. Support was removed in 2023 for lack of ecosystem interest; since then Apple shipped native support and a memory-safe implementation has been in progress, both of which weaken the original reasoning. The full story is here."}},
+{"@type":"Question","name":"What's the safest format to send someone?","acceptedAnswer":{"@type":"Answer","text":"JPEG, still, and it isn't close. Every device made in the last thirty years opens it. Use JPEG XL for what you keep and JPEG for what you send."}},
+{"@type":"Question","name":"Can Android open .jxl files?","acceptedAnswer":{"@type":"Answer","text":"Not reliably. Support depends on the manufacturer's image stack rather than on Android itself, so two phones on the same Android version can behave differently. The browser viewer works on any of them."}},
+{"@type":"Question","name":"Do I need to install anything to use this site?","acceptedAnswer":{"@type":"Answer","text":"No. The encoder and decoder are compiled to WebAssembly and load with the page, which is why it works in Chrome even though Chrome itself can't display JPEG XL. Your files stay on your device throughout."}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Which Apps Support JPEG XL?","dateModified":"2026-08-03","inLanguage":"en","author":{"@type":"Organization","name":"JXL Convert"},"publisher":{"@type":"Organization","name":"JXL Convert"},"mainEntityOfPage":"https://jpegxlconvert.com/en/jpeg-xl-software-support/"}
+</script>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Guides</a></nav>
+    <details class="lang"><summary>🌐 EN</summary>
+      <div class="lang-menu">
+        <a class="active" href="/en/jpeg-xl-software-support/"><span class="flag">🇬🇧</span> English</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">🧰 Software support</span>
+  <h1>Which Apps Support JPEG XL?</h1>
+  <p class="sub">Support has grown steadily since the format was standardised, but it is uneven in ways that surprise people: your phone may open a <code>.jxl</code> that your desktop can't. Here's the state of play, without the cheerleading.</p>
+  <div class="badges">
+    <span class="badge green">🍎 Apple: native</span><span class="badge">🪟 Windows: needs help</span><span class="badge">🌐 Chrome: still no</span><span class="badge">🧑‍💻 Tooling: excellent</span>
+  </div>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/jxl-viewer/"><span class="cta-ic">👁️</span><b>Don't want to install anything?</b><span class="cta-sub">Open your .jxl in this tab instead →</span></a>
+    <a class="cta-card" href="/en/jxl-to-jpg/"><span class="cta-ic">🔁</span><b>Just need it in a normal format?</b><span class="cta-sub">Convert to JPG in seconds →</span></a>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Operating systems</h2>
+  <p class="lead"><strong>Apple</strong> is the outlier, in a good way. macOS and iOS have handled JPEG&nbsp;XL natively since 2023 — Preview, Quick Look, Photos and Finder thumbnails all work with no extra software. If you're on a Mac, the format effectively already won.</p>
+  <p class="lead"><strong>Windows</strong> does not open <code>.jxl</code> out of the box. A JPEG XL extension has been available through the Microsoft Store, and various third-party codec packs add support to Explorer and Photos, but none of it is installed by default. Most Windows users meet the format as an error message.</p>
+  <p class="lead"><strong>Linux</strong> depends on your desktop. GNOME and KDE image viewers have gained support through their imaging libraries, and anything built on ImageMagick, libvips or GdkPixbuf with the right plugin will handle it. On a current distribution it usually works; on an older one it usually doesn't.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Browsers</h2>
+  <table class="cmp">
+    <thead><tr><th>Browser</th><th>Opens .jxl?</th></tr></thead>
+    <tbody>
+      <tr><td>Safari (macOS, iOS, iPadOS)</td><td class="y">Yes, natively</td></tr>
+      <tr><td>Chrome</td><td class="n">No — removed in 2023</td></tr>
+      <tr><td>Edge, Brave, Opera and other Chromium browsers</td><td class="n">No — same engine, same answer</td></tr>
+      <tr><td>Firefox</td><td class="n">Behind a flag in Nightly builds only</td></tr>
+      <tr><td>This site's viewer, in any browser</td><td class="y">Yes — decoder runs in the page</td></tr>
+    </tbody>
+  </table>
+  <p class="lead">The Chrome removal is the single biggest obstacle the format faces, and it has its own story worth reading if you're deciding whether to use JPEG XL on a website — <a href="/en/chrome-jpeg-xl-support/">the details are here</a>. The workaround this site uses is worth understanding too: the decoder is compiled to WebAssembly and shipped with the page, so it works in browsers that have no native support at all.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Photo editors and professional tools</h2>
+  <div class="grid3">
+    <div class="feature"><div class="fi">🎨</div><h3>Adobe</h3><p>Camera Raw reads JPEG XL, and Adobe's modern DNG raw files use JPEG XL compression internally — the format is already inside the Adobe pipeline. Direct open and export in Photoshop has historically needed a plugin rather than being built in.</p></div>
+    <div class="feature"><div class="fi">🖼️</div><h3>Affinity Photo</h3><p>Has offered JPEG XL import and export, which made it an early favourite among photographers who wanted to use the format seriously without waiting for Adobe.</p></div>
+    <div class="feature"><div class="fi">🐧</div><h3>GIMP</h3><p>Supports JPEG XL import and export in current versions through libjxl. If yours doesn't, you're on an older build — this is one of the cases where updating actually fixes it.</p></div>
+    <div class="feature"><div class="fi">📷</div><h3>darktable and RawTherapee</h3><p>The open-source raw workflow has picked up JPEG XL export, which matters for photographers who want an archival master that isn't a 100 MB TIFF.</p></div>
+    <div class="feature"><div class="fi">🔍</div><h3>XnView MP and IrfanView</h3><p>The two viewers most Windows users end up installing. Both read JPEG XL, both batch-convert, and both are free for personal use. If you handle .jxl files regularly on Windows, start here.</p></div>
+    <div class="feature"><div class="fi">⚙️</div><h3>ImageMagick and libvips</h3><p>Both handle JPEG XL when built with the delegate, which most current packages are. For scripted or server-side processing this is where the real work gets done.</p></div>
+  </div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>The reference tools</h2>
+  <p class="lead">Underneath nearly everything above sits <strong>libjxl</strong>, the open-source reference implementation, and its two command-line tools: <code>cjxl</code> to encode and <code>djxl</code> to decode. They are the most complete and up-to-date implementations that exist, and they're free.</p>
+  <p class="lead">For anyone processing images in bulk they're also simply the right tool — a GUI is a poor way to convert forty thousand files. <code>cjxl photo.jpg photo.jxl</code> losslessly re-packs an existing JPEG, and <code>djxl</code> reverses it exactly.</p>
+  <p class="lead">If that's the direction you're heading, the practical walkthrough is in <a href="/en/archive-photos-without-losing-quality/">archiving a photo library without losing quality</a>.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>What this means in practice</h2>
+  <div class="steps">
+    <div class="step"><h3>If you just received one file</h3><p>Install nothing. <a href="/en/jxl-viewer/">Open it here</a> or <a href="/en/jxl-to-jpg/">convert it to JPG</a> and get on with your day. Installing a codec to look at one photo is a poor trade.</p></div>
+    <div class="step"><h3>If you're on Windows and see them regularly</h3><p>Install XnView MP or IrfanView. Both open .jxl, both batch-convert, and both are lighter than adding system-wide codecs you'll forget you installed.</p></div>
+    <div class="step"><h3>If you're on a Mac</h3><p>You already have everything. Double-click the file. This is the one place where JPEG XL behaves like a normal format.</p></div>
+    <div class="step"><h3>If you're publishing images on the web</h3><p>Don't use JPEG XL as the only format — most of your visitors are on Chrome and will see nothing. Serve AVIF or WebP with a JPEG fallback, and read <a href="/en/jpeg-xl-vs-avif/">the AVIF comparison</a> before choosing.</p></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <details open><summary>Why doesn't Windows Photos open .jxl?</summary><div class="ans">Because Microsoft has never shipped the codec by default. Windows handles image formats through installable codec packages, and the JPEG XL one isn't part of a standard installation. It's an omission rather than a technical barrier.</div></details>
+    <details><summary>Is there a plugin to open .jxl in Photoshop?</summary><div class="ans">Community plugins built on libjxl exist and are the usual route. Adobe's own support arrived first through Camera Raw and DNG rather than as a direct Photoshop file format, so check Camera Raw before hunting for a plugin.</div></details>
+    <details><summary>Will Chrome ever add it back?</summary><div class="ans">Nobody outside Google knows. Support was removed in 2023 for lack of ecosystem interest; since then Apple shipped native support and a memory-safe implementation has been in progress, both of which weaken the original reasoning. <a href="/en/chrome-jpeg-xl-support/">The full story is here</a>.</div></details>
+    <details><summary>What's the safest format to send someone?</summary><div class="ans">JPEG, still, and it isn't close. Every device made in the last thirty years opens it. Use JPEG XL for what you keep and JPEG for what you send.</div></details>
+    <details><summary>Can Android open .jxl files?</summary><div class="ans">Not reliably. Support depends on the manufacturer's image stack rather than on Android itself, so two phones on the same Android version can behave differently. The browser viewer works on any of them.</div></details>
+    <details><summary>Do I need to install anything to use this site?</summary><div class="ans">No. The encoder and decoder are compiled to WebAssembly and load with the page, which is why it works in Chrome even though Chrome itself can't display JPEG XL. Your files stay on your device throughout.</div></details>
+  </div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Keep reading</h2>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/how-to-open-jxl/"><span class="cta-ic">📂</span><b>How to open a .jxl file</b><span class="cta-sub">Step by step, per device →</span></a>
+    <a class="cta-card" href="/en/jxl-file/"><span class="cta-ic">📄</span><b>What is a .jxl file?</b><span class="cta-sub">Where yours came from →</span></a>
+    <a class="cta-card" href="/en/chrome-jpeg-xl-support/"><span class="cta-ic">🌐</span><b>Does Chrome support JPEG XL?</b><span class="cta-sub">The 2026 answer →</span></a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Guides</a></nav>
+  </div>
+  <div class="legal">
+    <span class="privacy-pill">🔒 Your files never leave your device</span>
+    <span class="flegal"><a href="/en/privacy/">Privacy</a> · <a href="/en/terms/">Terms</a></span>
+    <span>© 2026 JXL Convert</span>
+  </div>
+</div></footer>
+</body>
+</html>
