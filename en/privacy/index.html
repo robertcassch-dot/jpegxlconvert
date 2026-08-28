@@ -3,59 +3,250 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy & Cookie Policy — JXL Convert</title>
-<meta name="description" content="How JXL Convert handles your data: your files are processed entirely in your browser and never uploaded. Cookies and analytics explained.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9791902883190551" crossorigin="anonymous"></script>
+<title>Privacy &amp; Cookie Policy — JXL Convert</title>
+<meta name="description" content="How JXL Convert handles your data: your files are converted entirely inside your browser and are never uploaded. What Google AdSense does, and how to say no to it.">
 <link rel="canonical" href="https://jpegxlconvert.com/en/privacy/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/privacy/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/privacidad/">
+<link rel="alternate" hreflang="de" href="https://jpegxlconvert.com/de/datenschutz/">
+<link rel="alternate" hreflang="fr" href="https://jpegxlconvert.com/fr/confidentialite/">
+<link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/privacy/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/privacy/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/css/styles.css?v=8">
 <meta name="robots" content="index,follow">
-<style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+<style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}.legal-page .tbl{overflow-x:auto;margin:14px 0 18px}.legal-page .tbl .cmp{max-width:100%;min-width:560px;margin:0}.legal-page .cmp td{vertical-align:top}.legal-page .cmp td em{color:var(--muted);font-style:normal;font-size:13.5px}</style>
 </head>
 <body>
 <header class="site"><div class="wrap nav">
   <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <details class="lang">
+      <summary>🌐 EN</summary>
+      <div class="lang-menu">
+        <a class="active" href="/en/privacy/"><span class="flag">🇬🇧</span> English</a>
+        <a href="/es/privacidad/"><span class="flag">🇪🇸</span> Español</a>
+        <a href="/de/datenschutz/"><span class="flag">🇩🇪</span> Deutsch</a>
+        <a href="/fr/confidentialite/"><span class="flag">🇫🇷</span> Français</a>
+        <a href="/ru/privacy/"><span class="flag">🇷🇺</span> Русский</a>
+      </div>
+    </details>
+  </div>
 </div></header>
 <main class="legal-page">
   <a class="back" href="/en/">← Back to the converter</a>
   <h1>Privacy &amp; Cookie Policy</h1>
-  <div class="updated">Last updated: June 2026</div>
+  <div class="updated">Last updated: 18 August 2026</div>
 
-  <h2>The short version</h2>
-  <p><strong>Your images and files are never uploaded.</strong> Every conversion runs entirely inside your own browser using WebAssembly. We never see, receive, store or transmit the files you convert.</p>
+  <h2 id="short">1. The short version</h2>
+  <p><strong>Your images and files are never uploaded.</strong> The converter and the viewer both run inside your own browser, using WebAssembly. The files you open here stay on your device. They are not sent to us, and there is nowhere on this site that could receive them.</p>
+  <p>There is no sign-up, no account, no contact form and no newsletter. We hold no database about you.</p>
+  <p>One thing on this site can identify you: Google's advertising system, which is what pays for the site. <a href="#advertising">Section 6</a> explains exactly what it does, and <a href="#consent">section 8</a> explains the consent message you are shown in the EEA, the UK and Switzerland, and how to say no from it. There is also anonymous audience measurement, which sets no cookie and no identifier — <a href="#data">section 5</a>.</p>
 
-  <h2>Who we are</h2>
-  <p>This website ("JXL Convert", jpegxlconvert.com) is operated by Robert Castillo. For any privacy question you can contact us at <a href="mailto:contact@jpegxlconvert.com">contact@jpegxlconvert.com</a>.</p>
+  <h2 id="controller">2. Who is responsible for your data</h2>
+  <p>This website (JXL Convert, jpegxlconvert.com) is run by one private individual, in a personal capacity. There is no company behind it, and none is involved in it.</p>
+  <p>Data controller: that same private individual. The way to reach them, for anything in this policy and to exercise the rights in <a href="#rights">section 12</a>, is <a href="mailto:contact@jpegxlconvert.com">contact@jpegxlconvert.com</a>. It is the same address in all five language versions.</p>
+  <p>There is no Data Protection Officer, because none of the situations listed in Article 37 GDPR applies here.</p>
 
-  <h2>What we do NOT collect</h2>
+  <h2 id="how">3. How the converter works, and why we never receive your files</h2>
+  <p>This is the part that makes everything else in this policy true, so here is the mechanism in plain words.</p>
   <ul>
-    <li>The images or files you convert — they stay on your device.</li>
-    <li>Account data — there is no sign-up and no login.</li>
-    <li>Names, addresses or payment data — the tool is free.</li>
+    <li>When you pick a file, your browser reads it straight off your own disk using the File API. Nothing is sent anywhere at that point.</li>
+    <li>The decoding and re-encoding is done by libjxl and libheif, compiled to WebAssembly. Those codecs are served from this same domain (<code>/assets/vendor/</code>) and then run in your computer's memory.</li>
+    <li>The converted image is handed back to you as a local download, from a blob your browser creates. It never travels.</li>
+  </ul>
+  <p>There is no upload endpoint anywhere on this site. The direct consequence is that your files cannot appear in the hosting logs, because they never leave your machine to begin with.</p>
+  <p>You do not have to take our word for it. Two things you can check yourself:</p>
+  <ul>
+    <li>Open the <strong>Network</strong> tab of your browser's developer tools and convert a file. You will see the codec being loaded from this domain, and no request carrying your image.</li>
+    <li>Convert one image, then <strong>disconnect from the internet</strong> and convert another. It still works: the codecs are already in your browser's cache and no further request is made. On a first visit the codec itself does have to be downloaded from this domain first, which is why the order matters — that download is the only thing on this page that needs the network.</li>
+  </ul>
+  <p>The two files that drive the converter and the viewer (<code>assets/js/app.js</code> and <code>assets/js/viewer.js</code>) contain not one network call: no <code>fetch</code>, no <code>XMLHttpRequest</code>, no <code>WebSocket</code>, no <code>sendBeacon</code>.</p>
+
+  <h2 id="not-collected">4. What we do not process</h2>
+  <ul>
+    <li>The images and files you convert or view. Their content never reaches us.</li>
+    <li>Their metadata and EXIF data. The tool reads the EXIF orientation locally so it does not rotate your photo the wrong way, and that is where it ends: nothing is sent anywhere.</li>
+    <li>Account data. There is no sign-up, no login and no password.</li>
+    <li>Your name, address or phone number.</li>
+    <li>Payment data. The tool is free.</li>
+    <li>There is no contact form and no newsletter.</li>
+    <li>This site sets no cookies of its own. The only thing that can be stored under this domain is the record of your own answer to the consent message, and that is written by Google's consent platform, not by our code — <a href="#consent">section 8</a>.</li>
   </ul>
 
-  <h2>What we may collect</h2>
+  <h2 id="data">5. What is processed, why, and on what legal basis</h2>
+  <p>This is the complete list of what is processed. The notes under the table cover the only other thing that leaves your browser.</p>
+  <div class="tbl"><table class="cmp">
+    <thead><tr><th>Data</th><th>Purpose</th><th>Legal basis</th><th>Kept for</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Connection data</strong><br>Your IP address, your browser's user-agent, the address requested, and the date and time.<br><em>Handled by a third party: Cloudflare Pages, our host. Not by us.</em></td>
+        <td>Delivering the page to you, keeping the site available, and blocking attacks and abuse.</td>
+        <td>Legitimate interest, Article 6(1)(f) GDPR. No web page can be served to you without them.</td>
+        <td>Whatever Cloudflare's own retention period is — see their <a href="https://www.cloudflare.com/privacypolicy/" rel="nofollow noopener">privacy policy</a>. The controller does not read, copy or download those logs.</td>
+      </tr>
+      <tr>
+        <td><strong>Advertising data</strong><br>Advertising cookies and identifiers, IP address, user-agent, the pages you visit here, and how you interact with the ads.<br><em>Handled by a third party: Google. We only ever see aggregate figures in the AdSense dashboard — impressions, clicks, earnings — never anything about you as an individual.</em></td>
+        <td>Showing and measuring ads, limiting how often you see the same ad, and preventing click fraud. And, <strong>only if you consent to it</strong>, personalising the ads you are shown.</td>
+        <td>Personalising ads requires your consent, Article 6(1)(a) GDPR, and so does storing or reading anything on your device (Article 22.2 LSSI in Spain, § 25 TDDDG in Germany). <strong>That consent is now asked for</strong>: visitors from the EEA, the UK and Switzerland are shown a consent message with three options — accept, refuse, or decide in detail — and only those who accept are shown personalised ads. See <a href="#consent">section 8</a>. If you refuse, ads are still served but are not personalised, and the identifiers behind frequency capping and fraud detection stay; for that part Google relies on legitimate interest, Article 6(1)(f) GDPR.</td>
+        <td>Set by Google, not by us. The longest-lived AdSense cookies (<code>__gads</code>, <code>__gpi</code>, <code>IDE</code>) expire after 13 months in the EEA and the UK, per <a href="https://business.safety.google/adscookies/" rel="nofollow noopener">Google's own cookie list</a>; what Google keeps afterwards is governed by its <a href="https://policies.google.com/privacy" rel="nofollow noopener">privacy policy</a>. The controller can set neither.</td>
+      </tr>
+      <tr>
+        <td><strong>Audience measurement data</strong><br>The address of the page you opened, the page that referred you, your user-agent, page-load timings, screen size, and the country inferred from your IP address.<br><em>Handled by a third party: Cloudflare Web Analytics. Cloudflare injects its script at the edge, from <code>static.cloudflareinsights.com</code>, so it is not visible in this site's own source code. It sets <strong>no cookie</strong> and stores no identifier on your device.</em></td>
+        <td>Counting visits in aggregate: how many pages get opened, which ones, and roughly from where.</td>
+        <td>Legitimate interest, Article 6(1)(f) GDPR. Nothing is written to or read from your device, so no consent is required for the storage itself.</td>
+        <td>Whatever period Cloudflare applies to Web Analytics. The controller sees aggregate charts only, and can neither lengthen nor shorten that period.</td>
+      </tr>
+    </tbody>
+  </table></div>
+  <p><strong>About that third row.</strong> It is the whole of the measurement on this site: no heat maps, no session recording, no A/B testing, no Google Analytics, no counter of our own. It works without cookies and without any identifier on your device, and the controller only ever sees aggregate charts — page views, top pages, countries — never anything that points at one visitor.</p>
+  <p>One more thing leaves your browser without any script being involved: Cloudflare sends the <code>NEL</code> and <code>Report-To</code> headers with every response, which asks your browser to report network errors — a failed connection, a timeout — to <code>a.nel.cloudflare.com</code>. Those reports carry the address requested, your IP address and the kind of error. They are part of the hosting, not of any measurement of ours.</p>
+
+  <h2 id="advertising">6. Advertising: Google AdSense</h2>
+  <p>This site is free and is paid for by advertising. It uses <strong>Google AdSense</strong>, publisher ID <code>ca-pub-9791902883190551</code>. The AdSense script is loaded on every content page of the site, including this one; the only page without it is the 404 error page.</p>
+  <p>What Google requires us to tell you, in Google's own words:</p>
   <ul>
-    <li><strong>Anonymous usage statistics</strong> (e.g. page views, country, device type) via a privacy-friendly analytics tool, to understand how the site is used.</li>
-    <li><strong>Advertising data:</strong> once advertising is enabled, third-party partners such as Google AdSense may use cookies to show ads. Google may use cookies to serve ads based on your prior visits to this or other websites.</li>
+    <li>Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this website or to other websites.</li>
+    <li>Google's use of advertising cookies enables Google and its partners to serve ads to you based on your visit to this site and/or other sites on the internet.</li>
+  </ul>
+  <p><strong>How to turn off personalised ads.</strong> If you are in the EEA, the UK or Switzerland, the shortest route is the consent message described in <a href="#consent">section 8</a>: refuse there, and no personalised advertising is served to you. You can revisit that answer whenever you like, from the <strong>Privacy settings</strong> link in the footer of every page. Wherever you are in the world, you can also switch ad personalisation off for your Google account or browser at <a href="https://myadcenter.google.com/" rel="nofollow noopener">My Ad Center</a>; Google still points to the older <a href="https://www.google.com/settings/ads" rel="nofollow noopener">Google Ads Settings</a> page as well, which works too.</p>
+  <p><strong>Be aware:</strong> turning personalisation off does not remove the ads. You will still see ads, they will just be non-personalised — chosen from the page content and rough location rather than from a profile. Non-personalised ads still need a cookie or similar identifier, to cap how often you see the same ad and to detect fraud.</p>
+  <p><strong>Where to read what Google actually does with the data:</strong></p>
+  <ul>
+    <li><a href="https://policies.google.com/technologies/partner-sites" rel="nofollow noopener">How Google uses information from sites or apps that use our services</a>. This is the page Google itself offers as the explanation of its own data use on sites like this one. <strong>That document forms part of this policy.</strong></li>
+    <li><a href="https://policies.google.com/privacy" rel="nofollow noopener">Google Privacy Policy</a></li>
+    <li><a href="https://policies.google.com/technologies/ads" rel="nofollow noopener">How Google uses cookies in advertising</a></li>
+    <li><a href="https://business.safety.google/adscookies/" rel="nofollow noopener">List of Google's advertising cookies</a></li>
+  </ul>
+  <p><strong>Industry-wide opt-outs</strong>, which cover many advertisers at once: <a href="https://www.youronlinechoices.eu/" rel="nofollow noopener">Your Online Choices</a> for the EU, and <a href="https://www.aboutads.info/choices/" rel="nofollow noopener">AboutAds / DAA</a> for the United States.</p>
+  <p>Google AdSense is the only advertising network on this site. If another one is ever added, it will be named here, with a link to its own privacy policy. Google requires that too.</p>
+
+  <h2 id="cookies">7. Cookies and storage on your device</h2>
+  <div class="tbl"><table class="cmp">
+    <thead><tr><th>Who sets it</th><th>What for</th><th>Type and lifetime</th><th>How to refuse it</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>This site — none</strong></td>
+        <td><strong>This site sets no cookies of its own, for any purpose.</strong></td>
+        <td>None.</td>
+        <td>Nothing to refuse.</td>
+      </tr>
+      <tr>
+        <td>Google (AdSense / DoubleClick)</td>
+        <td>Serving ads, capping repeat ads, detecting fraud, and — only with your consent — personalising ads.</td>
+        <td>Third-party cookies and advertising identifiers. Their names and lifetimes are set by Google and listed on its <a href="https://business.safety.google/adscookies/" rel="nofollow noopener">advertising cookies page</a>: 13 months in the EEA and the UK for the longest-lived ones (<code>__gads</code>, <code>__gpi</code>, <code>IDE</code>). In the EEA, the UK and Switzerland, what they may be used for follows the answer you give to the consent message — see <a href="#consent">section 8</a>.</td>
+        <td>From the consent message itself (<a href="#consent">section 8</a>), which you can reopen at any time from the <strong>Privacy settings</strong> link in the footer. And, anywhere in the world: <a href="https://myadcenter.google.com/" rel="nofollow noopener">My Ad Center</a>, blocking third-party cookies in your browser, or an ad blocker.</td>
+      </tr>
+      <tr>
+        <td>Google's consent message (the CMP)</td>
+        <td>Remembering the answer you gave, so that it can be honoured and so that you are not asked again on every page.</td>
+        <td>A TCF consent string, kept on your device by the consent platform — the TCF specification lets it use either a cookie or your browser's local storage — and limited to this domain, not shared with other websites. How it is stored, and for how long, is stated by the message itself under "Manage options", which is where the TCF rules require it to be declared.</td>
+        <td>There is nothing to refuse here: it is the record of your own decision, and without it you would be asked again on every page. Clearing this site's data in your browser deletes it, and the message comes back on your next visit.</td>
+      </tr>
+    </tbody>
+  </table></div>
+  <p>The converter itself uses no cookies, no <code>localStorage</code>, no <code>sessionStorage</code> and no <code>IndexedDB</code>. Nothing about your session is written to your device by us. That is checkable in this site's own JavaScript.</p>
+  <p><strong>Where consent is legally required, it is now asked for:</strong> the message described in <a href="#consent">section 8</a> is shown to visitors from the EEA, the UK and Switzerland, and their answer decides whether Google may personalise the advertising. Outside those countries no message appears, because the rules that require it do not apply there, and Google's advertising cookies are then governed by the law of your own country.</p>
+  <p>You can delete or block cookies at any time from your browser settings. Every major browser has a privacy or site-data section for it, and most offer a "block third-party cookies" switch, which turns the advertising cookies off and leaves the converter untouched.</p>
+  <p>We do not paste a generic list of cookie names copied from a template here. The only cookies that can appear are Google's, and Google's own page above is the authoritative list.</p>
+
+  <h2 id="consent">8. Your consent (EEA, UK and Switzerland)</h2>
+  <p>If you arrive from the European Economic Area, the United Kingdom or Switzerland, this site shows you a consent message before Google may personalise the advertising. It is run by Google's own consent management platform (CMP), which is certified by Google and integrated with the IAB's Transparency and Consent Framework (TCF). Google has required a certified, TCF-integrated CMP for serving ads in the EEA and the UK since <strong>16 January 2024</strong>, and in Switzerland since <strong>31 July 2024</strong>: without one, traffic from those countries is not eligible for personalised ads at all.</p>
+  <p><strong>The three options the message gives you</strong>, in its own words:</p>
+  <ul>
+    <li><strong>Consent</strong> — Google and the vendors listed in the message may store and read advertising identifiers on your device and use them to personalise the ads you are shown.</li>
+    <li><strong>Do not consent</strong> — refusing, in one click, on the same screen. It is a button sitting beside the other one, not something buried in a submenu, so saying no costs exactly the effort of saying yes. No dark patterns.</li>
+    <li><strong>Manage options</strong> — the detailed second layer, where you decide purpose by purpose and vendor by vendor, see who each vendor is, and read how your choices are stored on your device.</li>
+  </ul>
+  <p><strong>Refusing does not take the ads away — it takes the profiling away.</strong> You still see advertising, chosen from the content of the page and a rough location instead of from a profile built about you. Non-personalised ads still need an identifier of some kind, to cap how often you see the same ad and to detect click fraud; that part does not run on your consent, and Google relies on legitimate interest for it (<a href="#data">section 5</a>).</p>
+  <p><strong>Refusing does not break the converter either.</strong> The tool behaves identically with advertising refused. It has to: the conversion runs entirely in your browser and has nothing to do with the ads. Ad blockers remain expressly allowed by our <a href="/en/terms/">Terms of Use</a>.</p>
+  <p><strong>What the message stores, and where.</strong> Your answer is written to your own device as a <strong>TCF consent string</strong> — either in a cookie or in your browser's local storage, whichever the consent platform uses; the TCF specification leaves that choice to it. The string is scoped to this domain: it applies here and is not shared with other websites, TCF's old global scope having been withdrawn in September 2021. What it holds is the decision plus the context needed to read it back: the TCF version, when it was created and last updated, the identity and version of the consent platform, the screen and language you were shown, your consent for each purpose, the legitimate-interest signals, your consent for each individual vendor, the restrictions set by this site, and the list of vendors that were presented to you. There is no name in it, no email address, and nothing you typed into the converter.</p>
+  <p>That record exists so your decision can be honoured and evidenced — Google's <a href="https://www.google.com/about/company/user-consent-policy/" rel="nofollow noopener">EU User Consent Policy</a> requires naming every party that may receive your data, obtaining consent both for storage on your device and for ad personalisation, keeping a record of that consent, and giving clear instructions for taking it back — and so that you are not asked again on every page: once you have answered, the message stays away unless it is updated or consent has to be collected afresh. <strong>How long the record lasts is declared by the message itself</strong>, in the "Manage options" layer, which is where the TCF rules place that disclosure. We do not repeat a figure here that we cannot verify ourselves.</p>
+  <p><strong>How to change your mind.</strong> The footer of every page carries a <strong>"Privacy settings"</strong> link. It clears the answer stored on your device and reopens the message with the same three options, so withdrawing is as easy as giving — which is exactly what Article 7(3) GDPR requires. Withdrawing does not make what happened before it unlawful; it stops the processing from that moment on. AdSense also adds a revocation link of its own to sites that show this message, so you may find two routes to the same screen.</p>
+  <p>Two honest details about that link. It appears once Google's consent code has confirmed that these rules apply to you; if you are browsing from outside the EEA, the UK and Switzerland there is no message to reopen, and the link stays hidden. And if it is missing where you expect it, the usual cause is an ad blocker or a privacy extension blocking Google's consent code — in which case the message it would reopen has not run either. Your browser is the fallback: clearing this site's data deletes the stored answer, and the message returns on your next visit.</p>
+  <p><strong>Ways to say no that do not depend on the message at all</strong>, wherever you are: <a href="https://myadcenter.google.com/" rel="nofollow noopener">My Ad Center</a>, blocking third-party cookies in your browser settings, and ad blockers.</p>
+
+  <h2 id="sharing">9. Who your data is shared with</h2>
+  <p>Named recipients, not vague talk of "partners":</p>
+  <ul>
+    <li><strong>Google Ireland Ltd. / Google LLC</strong> — advertising (AdSense). For most of the advertising data Google acts as an <strong>independent controller</strong> under its own terms: it decides for itself what it does with that data. That is why requests about advertising data have to go to Google directly — the controller of this site cannot answer them and cannot instruct Google to.</li>
+    <li><strong>Cloudflare, Inc.</strong> — hosting and CDN (Cloudflare Pages), and audience measurement (Cloudflare Web Analytics). In both roles Cloudflare acts as a <strong>processor</strong>, on the controller's behalf and on its instructions.</li>
+  </ul>
+  <p>Nobody else. Nothing is sold. Nothing is handed to data brokers. There are no other transfers of any kind.</p>
+  <p>And the important one again: <strong>the files you convert are shared with no one</strong>, because they never leave your device in the first place.</p>
+
+  <h2 id="transfers">10. International transfers</h2>
+  <p>Google and Cloudflare are global companies, so the data described in section 5 may be processed in the United States and in other countries.</p>
+  <p>Those transfers rely on the EU–US Data Privacy Framework and/or on the Standard Contractual Clauses approved by the European Commission. Each provider sets out its own arrangements on its own page: <a href="https://policies.google.com/privacy/frameworks" rel="nofollow noopener">Google</a> and <a href="https://www.cloudflare.com/privacypolicy/" rel="nofollow noopener">Cloudflare</a>. Those pages are the live source. We do not restate the status of any particular adequacy decision here, because it can change.</p>
+
+  <h2 id="retention">11. How long data is kept</h2>
+  <p>The controller keeps nothing. There is no database, and no server of ours that receives anything from you. The periods below are therefore set by the providers; the criterion in every case is what each of them needs to deliver, protect or bill the service, and the controller has no way to lengthen or shorten any of them.</p>
+  <ul>
+    <li><strong>Hosting logs</strong> — kept by Cloudflare for its own period, under its <a href="https://www.cloudflare.com/privacypolicy/" rel="nofollow noopener">privacy policy</a>. The controller does not read, copy or download those logs and cannot extend their life.</li>
+    <li><strong>Audience measurement</strong> — kept by Cloudflare for the period it applies to Web Analytics. Only aggregate charts reach the controller, and nothing in them identifies a visitor.</li>
+    <li><strong>Advertising data</strong> — the cookies themselves expire on the schedule Google publishes: 13 months in the EEA and the UK for the longest-lived AdSense ones, per <a href="https://business.safety.google/adscookies/" rel="nofollow noopener">Google's cookie list</a>. What Google keeps afterwards follows its <a href="https://policies.google.com/privacy" rel="nofollow noopener">privacy policy</a>; AdSense gives publishers no control over it.</li>
+    <li><strong>Contact email</strong> — if you write to exercise a right, your message and the reply are kept for <strong>one year from the date of the reply</strong>, which is what it takes to be able to show the request was answered, and are then deleted.</li>
   </ul>
 
-  <h2>Cookies</h2>
-  <p>A cookie is a small file stored by your browser. We may use cookies for analytics and advertising. You can disable or delete cookies in your browser settings at any time. Where required, we ask for your consent before non-essential cookies are set.</p>
-  <p>Google's use of advertising cookies is governed by Google's policies. You can opt out of personalised advertising via <a href="https://www.google.com/settings/ads" rel="nofollow">Google Ads Settings</a>.</p>
+  <h2 id="rights">12. Your rights</h2>
+  <p>Under the GDPR you have the right to:</p>
+  <ul>
+    <li>access your data;</li>
+    <li>have it corrected;</li>
+    <li>have it erased;</li>
+    <li>have its processing restricted;</li>
+    <li>receive it in a portable format;</li>
+    <li>object to processing, including processing based on legitimate interest;</li>
+    <li>withdraw your consent at any time, without that affecting what was lawful before you withdrew it;</li>
+    <li>not be subject to automated decisions with legal effects. There are none here: the controller does no profiling and makes no automated decisions about you.</li>
+  </ul>
+  <p><strong>How to exercise them:</strong> write to <a href="mailto:contact@jpegxlconvert.com">contact@jpegxlconvert.com</a>. You will get an answer within one month.</p>
+  <p><strong>An honest limitation</strong> (Article 11 GDPR): because we store no identifier of any kind about you, in most cases we are simply unable to connect your request to any data of yours. We have nothing to look you up with, and we will not ask you for extra identity documents just to create a link that does not exist. In that case we will point you to whoever actually holds the data:</p>
+  <ul>
+    <li>Google — <a href="https://policies.google.com/privacy" rel="nofollow noopener">privacy policy and rights request forms</a>, and direct control of the advertising in <a href="https://myadcenter.google.com/" rel="nofollow noopener">My Ad Center</a>.</li>
+    <li>Cloudflare — <a href="https://www.cloudflare.com/gdpr/introduction/" rel="nofollow noopener">privacy portal and GDPR requests</a>.</li>
+  </ul>
+  <p><strong>Complaints:</strong> you can complain to the Spanish Data Protection Agency, <a href="https://www.aepd.es/" rel="nofollow noopener">www.aepd.es</a>, which is the controller's supervisory authority because the controller is established in Spain. You can also complain to the authority of your own country of residence. In the <strong>United Kingdom</strong> that is the Information Commissioner's Office, <a href="https://ico.org.uk/" rel="nofollow noopener">ico.org.uk</a>; for the rest of the EEA, the European Data Protection Board keeps <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" rel="nofollow noopener">the list of national authorities</a>.</p>
 
-  <h2>Your rights (GDPR)</h2>
-  <p>If you are in the EU/EEA, you have the right to access, correct, delete or restrict the processing of your personal data, and to object to processing or lodge a complaint with your data protection authority. To exercise any of these rights, contact <a href="mailto:contact@jpegxlconvert.com">contact@jpegxlconvert.com</a>.</p>
+  <h2 id="minors">13. Children</h2>
+  <p>This site is not aimed at children under 16 (under 14 in Spain, Article 7 LOPDGDD), and no data is knowingly collected from children. The advertising is configured as not directed to children.</p>
+  <p>If you are a parent or guardian and believe a child has provided personal data here, write to <a href="mailto:contact@jpegxlconvert.com">contact@jpegxlconvert.com</a>.</p>
 
-  <h2>Changes</h2>
-  <p>We may update this policy. The "last updated" date above reflects the latest version.</p>
+  <h2 id="links">14. Links to other sites</h2>
+  <p>Ads lead to third-party websites, and the footer of this site links to docuniversal.com. The moment you leave jpegxlconvert.com, this policy stops applying and the policy of the site you land on takes over. We have no control over what those sites do.</p>
+
+  <h2 id="changes">15. Changes to this policy</h2>
+  <p>The "last updated" date at the top of the page identifies the version in force. All five language versions carry the same date, each written in that language's own format.</p>
+  <p>Any substantial change affecting consent will reopen the consent message, so that you can decide again.</p>
+  <p>The five versions are updated together and say the same thing, except for the references specific to each country: the supervisory authority you can complain to, the local age of consent, and the national rule that mirrors the EU cookie rule. If they ever disagree on anything else, <strong>the Spanish version prevails</strong>, because the controller is established in Spain.</p>
+  <p>See also our <a href="/en/terms/">Terms of Use</a>.</p>
 </main>
 <footer class="site"><div class="wrap">
   <div class="legal">
     <span class="privacy-pill">🔒 Your files never leave your device</span>
-    <span class="flegal"><a href="/en/privacy/">Privacy</a> · <a href="/en/terms/">Terms</a></span>
+    <span class="flegal"><a href="/en/privacy/">Privacy</a> · <a href="/en/terms/">Terms</a><span id="revocation-link" style="display:none"> · <a href="javascript:window.googlefc.showRevocationMessage();">Privacy settings</a></span></span>
     <span>© 2026 JXL Convert</span>
   </div>
 
   <div class="sister"><a href="https://docuniversal.com/" rel="noopener" style="display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:100%;color:inherit;opacity:.72;font-size:13px"><svg width="18" height="18" viewBox="0 0 64 64" aria-hidden="true" style="border-radius:5px;flex:none"><defs><linearGradient id="duLogo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7cc4a0"/><stop offset="1" stop-color="#366d55"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#duLogo)"/><circle cx="32" cy="32" r="16" fill="none" stroke="#fff" stroke-width="4" opacity=".95"/><circle cx="32" cy="32" r="5" fill="#fff"/></svg><span>Working with PDFs? Try DocUniversal — free, in your browser</span></a></div></div></footer>
+<script>
+window.googlefc = window.googlefc || {};
+window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+window.googlefc.callbackQueue.push({
+  'CONSENT_API_READY':
+  () => __tcfapi('addEventListener', 0, (tcdata, success) => {
+    const revocationLink = document.getElementById('revocation-link');
+    if (!revocationLink) return;
+    if (!success || !tcdata) {
+      revocationLink.style.display = 'none';
+    } else if (tcdata.gdprApplies) {
+      revocationLink.style.display = 'inline';
+    } else {
+      revocationLink.style.display = 'none';
+    }
+  })
+});
+</script>
 </body>
 </html>

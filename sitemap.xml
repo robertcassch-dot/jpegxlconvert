@@ -473,6 +473,96 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/how-to-open-jxl/"/>
   </url>
   <url>
+    <loc>https://jpegxlconvert.com/en/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jpegxlconvert.com/de/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jpegxlconvert.com/fr/confidentialite/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/privacy/"/>
+  </url>
+  <url>
+    <loc>https://jpegxlconvert.com/es/privacidad/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jpegxlconvert.com/de/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jpegxlconvert.com/fr/confidentialite/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/privacy/"/>
+  </url>
+  <url>
+    <loc>https://jpegxlconvert.com/de/datenschutz/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jpegxlconvert.com/de/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jpegxlconvert.com/fr/confidentialite/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/privacy/"/>
+  </url>
+  <url>
+    <loc>https://jpegxlconvert.com/fr/confidentialite/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jpegxlconvert.com/de/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jpegxlconvert.com/fr/confidentialite/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/privacy/"/>
+  </url>
+  <url>
+    <loc>https://jpegxlconvert.com/ru/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jpegxlconvert.com/de/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jpegxlconvert.com/fr/confidentialite/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/privacy/"/>
+  </url>
+  <url>
+    <loc>https://jpegxlconvert.com/en/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/terminos/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jpegxlconvert.com/de/nutzungsbedingungen/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jpegxlconvert.com/fr/conditions-d-utilisation/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/terms/"/>
+  </url>
+  <url>
+    <loc>https://jpegxlconvert.com/es/terminos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/terminos/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jpegxlconvert.com/de/nutzungsbedingungen/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jpegxlconvert.com/fr/conditions-d-utilisation/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/terms/"/>
+  </url>
+  <url>
+    <loc>https://jpegxlconvert.com/de/nutzungsbedingungen/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/terminos/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jpegxlconvert.com/de/nutzungsbedingungen/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jpegxlconvert.com/fr/conditions-d-utilisation/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/terms/"/>
+  </url>
+  <url>
+    <loc>https://jpegxlconvert.com/fr/conditions-d-utilisation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/terminos/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jpegxlconvert.com/de/nutzungsbedingungen/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jpegxlconvert.com/fr/conditions-d-utilisation/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/terms/"/>
+  </url>
+  <url>
+    <loc>https://jpegxlconvert.com/ru/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/terminos/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jpegxlconvert.com/de/nutzungsbedingungen/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://jpegxlconvert.com/fr/conditions-d-utilisation/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/terms/"/>
+  </url>
+  <url>
     <loc>https://jpegxlconvert.com/en/what-is-jpeg-xl/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/what-is-jpeg-xl/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/que-es-jpeg-xl/"/>

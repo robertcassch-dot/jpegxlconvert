@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9791902883190551" crossorigin="anonymous"></script>
 <title>WebP a JPEG XL — Conversor gratis en el navegador</title>
 <meta name="description" content="Convierte WebP a JPEG XL para mejor compresión y un formato más preparado para el futuro y libre de regalías.">
 <link rel="canonical" href="https://jpegxlconvert.com/es/webp-a-jxl/">
@@ -144,9 +145,27 @@
     <a class="brand" href="/es/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
     <nav class="fnav"><a href="/es/">Conversor</a><a href="#how">Cómo</a><a href="#faq">FAQ</a></nav>
   </div>
-  <div class="legal"><span class="privacy-pill">🔒 Tus archivos nunca salen de tu dispositivo</span><span class="flegal"><a href="/es/privacidad/">Privacidad</a> · <a href="/es/terminos/">Términos</a></span><span>© 2026 JXL Convert</span></div>
-
-  <div class="sister"><a href="https://docuniversal.com/" rel="noopener" style="display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:100%;color:inherit;opacity:.72;font-size:13px"><svg width="18" height="18" viewBox="0 0 64 64" aria-hidden="true" style="border-radius:5px;flex:none"><defs><linearGradient id="duLogo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7cc4a0"/><stop offset="1" stop-color="#366d55"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#duLogo)"/><circle cx="32" cy="32" r="16" fill="none" stroke="#fff" stroke-width="4" opacity=".95"/><circle cx="32" cy="32" r="5" fill="#fff"/></svg><span>¿Trabajas con PDF? Prueba DocUniversal — gratis, en tu navegador</span></a></div></div></footer>
+  <div class="legal"><span class="privacy-pill">🔒 Tus archivos nunca salen de tu dispositivo</span><span class="flegal"><a href="/es/privacidad/">Privacidad</a> · <a href="/es/terminos/">Términos</a><span id="revocation-link" style="display:none"> · <a href="javascript:window.googlefc.showRevocationMessage();">Configuración de privacidad</a></span></span><span>© 2026 JXL Convert</span></div>
+  <div class="sister"><a href="https://docuniversal.com/" rel="noopener" style="display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:100%;color:inherit;opacity:.72;font-size:13px"><svg width="18" height="18" viewBox="0 0 64 64" aria-hidden="true" style="border-radius:5px;flex:none"><defs><linearGradient id="duLogo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7cc4a0"/><stop offset="1" stop-color="#366d55"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#duLogo)"/><circle cx="32" cy="32" r="16" fill="none" stroke="#fff" stroke-width="4" opacity=".95"/><circle cx="32" cy="32" r="5" fill="#fff"/></svg><span>¿Trabajas con PDF? Prueba DocUniversal — gratis, en tu navegador</span></a></div>
+</div></footer>
+<script>
+window.googlefc = window.googlefc || {};
+window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+window.googlefc.callbackQueue.push({
+  'CONSENT_API_READY':
+  () => __tcfapi('addEventListener', 0, (tcdata, success) => {
+    const revocationLink = document.getElementById('revocation-link');
+    if (!revocationLink) return;
+    if (!success || !tcdata) {
+      revocationLink.style.display = 'none';
+    } else if (tcdata.gdprApplies) {
+      revocationLink.style.display = 'inline';
+    } else {
+      revocationLink.style.display = 'none';
+    }
+  })
+});
+</script>
 <script type="module" src="/assets/js/app.js?v=9"></script>
 </body>
 </html>
