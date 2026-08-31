@@ -61,7 +61,7 @@
       <div class="dz-title">.jxl-Datei zum Ansehen ablegen</div>
       <div class="dz-hint">Öffnet sofort auf deinem Gerät — auch JPG, PNG, WebP, GIF</div>
       <span class="dz-btn">Datei auswählen</span>
-      <input id="file-input" type="file" accept="image/*,.jxl" hidden>
+      <input id="file-input" type="file" accept="image/*,.jxl,.heic,.heif,.jpg-large,.jpg-medium,.jpeg-large,.png-large" hidden>
       <div class="dz-privacy">🔒 100% in deinem Browser — deine Datei wird nie hochgeladen</div>
     </div>
     <div class="viewer-stage" id="viewer-stage"><span class="ph-hint">Dein Bild erscheint hier</span></div>
@@ -75,10 +75,37 @@
   <p class="lead">JPEG XL ist ein neues Bildformat. Die meisten Browser, Handys und Apps unterstützen es noch nicht, daher öffnet sich eine heruntergeladene <strong>.jxl</strong> oft nicht — obwohl sie ein gültiges Bild ist. Dieser Betrachter decodiert sie lokal, damit du sie sofort siehst, und lässt dich eine universelle Kopie als JPG oder PNG speichern. Brauchst du die Datei dauerhaft in einem anderen Format? Nutze den <a href="/de/jxl-in-jpg/">JXL-zu-JPG-Konverter</a> oder <a href="/de/jxl-in-png/">JXL-zu-PNG-Konverter</a>.</p>
 </div></section>
 
+<!-- viewer-extra -->
+<section class="block"><div class="wrap">
+  <h2>Was dieser Betrachter öffnet</h2>
+  <p class="lead">Der Betrachter dekodiert JPEG-XL-Dateien (<strong>.jxl</strong>) so, wie es ein Browser täte, der das Format nativ unterstützt — du siehst also das echte Bild und keine Vorschau oder Miniatur. Er öffnet auch die alltäglichen Formate JPG, PNG, WebP und GIF, praktisch, wenn du einen Ordner mit gemischten Dateien hast und nur nachsehen willst, was drin ist, ohne einen Editor zu starten.</p>
+  <p class="lead">Alles dekodiert dein eigenes Gerät. Es gibt keinen Upload, keine Warteschlange und keine temporäre Kopie auf irgendeinem Server — deshalb funktioniert der Betrachter auf einem streng abgesicherten Arbeitslaptop genauso wie zu Hause.</p>
+  <div class="grid3">
+    <div class="feature"><div class="fi">🖼️</div><h3>JPEG XL</h3><p>Verlustbehaftete und verlustfreie .jxl-Dateien, auch aus einem Original-JPEG neu verpackte.</p></div>
+    <div class="feature"><div class="fi">📷</div><h3>Die üblichen Formate</h3><p>JPG, PNG, WebP und GIF öffnen ebenfalls, sodass du sie direkt mit der .jxl vergleichen kannst.</p></div>
+    <div class="feature"><div class="fi">🎞️</div><h3>Animation und Transparenz</h3><p>Transparenz bleibt erhalten, und animierte Dateien werden im Betrachter abgespielt.</p></div>
+  </div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>So benutzt du ihn</h2>
+  <div class="steps">
+    <div class="step"><h3>Datei ablegen</h3><p>Zieh eine .jxl in das Feld oben oder klick darauf, um eine Datei vom Rechner oder Handy zu wählen.</p></div>
+    <div class="step"><h3>Bild ansehen</h3><p>Es wird auf deinem Gerät dekodiert und erscheint sofort — in voller Auflösung, nicht als Vorschau.</p></div>
+    <div class="step"><h3>Universelle Kopie sichern</h3><p>Musst du es jemandem schicken, lade es mit einem Klick als JPG oder PNG herunter.</p></div>
+  </div>
+  <p class="lead">Ein Betrachter löst das akute Problem: das Bild sehen. Soll die Datei dauerhaft überall lesbar sein, ist die Umwandlung die endgültige Lösung.</p>
+</div></section>
+
 <section class="block alt" id="faq"><div class="wrap">
   <h2>Häufige Fragen</h2>
   <div class="faq">
-    <details open><summary>Wie öffne ich eine .jxl-Datei?</summary><div class="ans">Lege sie auf dieser Seite ab (oder klicke zum Auswählen). Sie öffnet sich sofort im Browser — nichts wird hochgeladen.</div></details>
+    <details open><summary>Wie öffne ich eine .jxl-Datei?</summary><div class="ans">Lege sie auf dieser Seite ab (oder klicke zum Auswählen). Sie öffnet sich sofort im Browser — nichts wird hochgeladen.
+    <details><summary>Verändert der Betrachter meine Datei?</summary><div class="ans">Nein. Er dekodiert zur Anzeige eine Kopie im Arbeitsspeicher. Die originale .jxl auf deiner Festplatte bleibt exakt so, wie sie war.</div></details>
+    <details><summary>Gibt es eine Größenbeschränkung?</summary><div class="ans">Von der Seite aus nicht. Sehr große Bilder sind nur durch den verfügbaren Speicher deines Browsers begrenzt; Handyfotos in voller Auflösung sind problemlos machbar.</div></details>
+    <details><summary>Warum zeigt mein Handy ein graues Feld statt des Fotos?</summary><div class="ans">Meist lehnt das Betriebssystem das Format ab, nicht diese Seite. Hier zu öffnen umgeht das, weil die Dekodierung im Browser-Tab passiert.</div></details>
+    <details><summary>Funktioniert es offline?</summary><div class="ans">Ist die Seite einmal geladen, läuft die Dekodierung lokal — ein kurzer Verbindungsabbruch unterbricht das Ansehen einer bereits geöffneten Datei also nicht.</div></details>
+  </div></details>
     <details><summary>Ist es privat?</summary><div class="ans">Ja. Die Datei wird lokal im Browser decodiert und verlässt nie dein Gerät.</div></details>
     <details><summary>Kann ich sie als JPG oder PNG speichern?</summary><div class="ans">Ja — nach dem Öffnen mit einem Klick als JPG oder PNG herunterladen.</div></details>
   </div>
@@ -88,7 +115,7 @@
 <footer class="site"><div class="wrap">
   <div class="fcols">
     <a class="brand" href="/de/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
-    <nav class="fnav"><a href="/de/">Konverter</a><a href="/de/jxl-betrachter/">Betrachter</a><a href="#faq">FAQ</a></nav>
+    <nav class="fnav"><a href="/de/">Konverter</a><a href="/de/jxl-betrachter/">Betrachter</a><a href="#faq">FAQ</a><a href="/de/ueber-das-projekt/">Über das Projekt</a><a href="/de/kontakt/">Kontakt</a></nav>
   </div>
   <div class="legal">
     <span class="privacy-pill">🔒 Deine Dateien verlassen nie dein Gerät</span>

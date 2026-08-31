@@ -34,7 +34,7 @@
 <header class="site"><div class="wrap nav">
   <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
   <div class="nav-right">
-    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-to-jpg/">JXL to JPG</a><a href="#faq">FAQ</a></nav>
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-to-jpg/">JXL to JPG</a><a href="/en/guides/">Guides</a><a href="#faq">FAQ</a></nav>
     <details class="lang"><summary>🌐 EN</summary>
       <div class="lang-menu">
         <a class="active" href="/en/jxl-viewer/"><span class="flag">🇬🇧</span> English</a>
@@ -62,7 +62,7 @@
       <div class="dz-title">Drop a .jxl file to view it</div>
       <div class="dz-hint">Opens instantly on your device — also JPG, PNG, WebP, GIF</div>
       <span class="dz-btn">Select a file</span>
-      <input id="file-input" type="file" accept="image/*,.jxl" hidden>
+      <input id="file-input" type="file" accept="image/*,.jxl,.heic,.heif,.jpg-large,.jpg-medium,.jpeg-large,.png-large" hidden>
       <div class="dz-privacy">🔒 100% in your browser — your file is never uploaded</div>
     </div>
     <div class="viewer-stage" id="viewer-stage"><span class="ph-hint">Your image will appear here</span></div>
@@ -76,10 +76,37 @@
   <p class="lead">JPEG XL is a new image format. Most browsers, phones and apps haven't enabled it yet, so a downloaded <strong>.jxl</strong> often won't open — even though it's a perfectly valid image. This viewer decodes it locally so you can see it right away, and lets you save a universal copy as JPG or PNG. Need the file in another format permanently? Use the <a href="/en/jxl-to-jpg/">JXL to JPG converter</a> or <a href="/en/jxl-to-png/">JXL to PNG converter</a>.</p>
 </div></section>
 
+<!-- viewer-extra -->
+<section class="block"><div class="wrap">
+  <h2>What this viewer opens</h2>
+  <p class="lead">The viewer decodes JPEG XL (<strong>.jxl</strong>) files the way a browser would if it supported the format natively, so you see the real image rather than a preview or a thumbnail. It also opens the everyday formats — JPG, PNG, WebP and GIF — which is handy when you have a folder of mixed files and just want to check what is inside them without launching an editor.</p>
+  <p class="lead">Everything is decoded by your own device. There is no upload, no queue and no temporary copy sitting on someone's server, which is why the viewer works exactly the same on a locked-down work laptop as it does at home.</p>
+  <div class="grid3">
+    <div class="feature"><div class="fi">🖼️</div><h3>JPEG XL</h3><p>Both lossy and lossless .jxl files, including images repacked from an original JPEG.</p></div>
+    <div class="feature"><div class="fi">📷</div><h3>The usual formats</h3><p>JPG, PNG, WebP and GIF open too, so you can compare them side by side with the .jxl.</p></div>
+    <div class="feature"><div class="fi">🎞️</div><h3>Animation and transparency</h3><p>Transparency is preserved, and animated files play back in the viewer.</p></div>
+  </div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>How to use it</h2>
+  <div class="steps">
+    <div class="step"><h3>Drop the file in</h3><p>Drag a .jxl onto the box above, or click it to pick a file from your computer or phone.</p></div>
+    <div class="step"><h3>Look at the image</h3><p>It decodes on your device and appears immediately, at full resolution rather than as a preview.</p></div>
+    <div class="step"><h3>Save a universal copy</h3><p>If you need to send it to someone, download it as JPG or PNG with one click.</p></div>
+  </div>
+  <p class="lead">A viewer solves the immediate problem — seeing the picture. If you need the file to stay readable everywhere, converting it is the permanent fix.</p>
+</div></section>
+
 <section class="block alt" id="faq"><div class="wrap">
   <h2>FAQ</h2>
   <div class="faq">
-    <details open><summary>How do I open a .jxl file?</summary><div class="ans">Drop it onto this page (or click to select). It opens instantly in your browser — nothing is uploaded.</div></details>
+    <details open><summary>How do I open a .jxl file?</summary><div class="ans">Drop it onto this page (or click to select). It opens instantly in your browser — nothing is uploaded.
+    <details><summary>Does the viewer change my file?</summary><div class="ans">No. It decodes a copy in memory to display it. The original .jxl on your disk is left exactly as it was.</div></details>
+    <details><summary>Is there a file size limit?</summary><div class="ans">There is no limit imposed by the site. Very large images are limited only by the memory your browser has available, and full-resolution phone photos are handled comfortably.</div></details>
+    <details><summary>Why does my phone show a grey box instead of the photo?</summary><div class="ans">That usually means the operating system, not this page, is refusing the format. Opening it here bypasses that, because the decoding happens in the browser tab.</div></details>
+    <details><summary>Can I use it offline?</summary><div class="ans">Once the page has loaded, decoding runs locally, so a brief connection drop won't interrupt viewing a file you've already opened.</div></details>
+  </div></details>
     <details><summary>Is it private?</summary><div class="ans">Yes. The file is decoded locally in your browser and never leaves your device.</div></details>
     <details><summary>Can I save it as JPG or PNG?</summary><div class="ans">Yes — after it opens, download it as JPG or PNG with one click.</div></details>
   </div>
@@ -89,7 +116,7 @@
 <footer class="site"><div class="wrap">
   <div class="fcols">
     <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
-    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="#faq">FAQ</a><a href="/en/guides/">Guides</a></nav>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="#faq">FAQ</a><a href="/en/guides/">Guides</a><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/news/">What's new</a></nav>
   </div>
   <div class="legal">
     <span class="privacy-pill">🔒 Your files never leave your device</span>

@@ -64,7 +64,7 @@
       <div class="dz-title">Перетащите файл .jxl, чтобы посмотреть его</div>
       <div class="dz-hint">Открывается мгновенно на вашем устройстве — также JPG, PNG, WebP, GIF</div>
       <span class="dz-btn">Выбрать файл</span>
-      <input id="file-input" type="file" accept="image/*,.jxl" hidden>
+      <input id="file-input" type="file" accept="image/*,.jxl,.heic,.heif,.jpg-large,.jpg-medium,.jpeg-large,.png-large" hidden>
       <div class="dz-privacy">🔒 100% в вашем браузере — файл никогда не загружается на сервер</div>
     </div>
     <div class="viewer-stage" id="viewer-stage"><span class="ph-hint">Ваше изображение появится здесь</span></div>
@@ -78,10 +78,37 @@
   <p class="lead">JPEG XL — это новый формат изображений. Большинство браузеров, телефонов и приложений пока не включили его поддержку, поэтому скачанный <strong>.jxl</strong> часто не открывается — хотя это совершенно корректное изображение. Этот просмотрщик декодирует его локально, чтобы вы сразу увидели картинку, и позволяет сохранить универсальную копию в JPG или PNG. Нужен файл в другом формате навсегда? Используйте <a href="/ru/jxl-to-jpg/">конвертер JXL в JPG</a> или <a href="/ru/jxl-to-png/">конвертер JXL в PNG</a>.</p>
 </div></section>
 
+<!-- viewer-extra -->
+<section class="block"><div class="wrap">
+  <h2>Что открывает этот просмотрщик</h2>
+  <p class="lead">Просмотрщик декодирует файлы JPEG XL (<strong>.jxl</strong>) так же, как это делал бы браузер с встроенной поддержкой формата, поэтому вы видите настоящее изображение, а не превью или миниатюру. Он также открывает привычные форматы — JPG, PNG, WebP и GIF, — что удобно, когда у вас папка со смешанными файлами и нужно просто посмотреть, что внутри, не запуская редактор.</p>
+  <p class="lead">Всё декодирует ваше собственное устройство. Нет ни загрузки, ни очереди, ни временной копии на чьём-то сервере — именно поэтому просмотрщик одинаково работает и на строго ограниченном рабочем ноутбуке, и дома.</p>
+  <div class="grid3">
+    <div class="feature"><div class="fi">🖼️</div><h3>JPEG XL</h3><p>Файлы .jxl с потерями и без, включая переупакованные из исходного JPEG.</p></div>
+    <div class="feature"><div class="fi">📷</div><h3>Обычные форматы</h3><p>JPG, PNG, WebP и GIF тоже открываются — можно сравнить их с .jxl.</p></div>
+    <div class="feature"><div class="fi">🎞️</div><h3>Анимация и прозрачность</h3><p>Прозрачность сохраняется, а анимированные файлы воспроизводятся в просмотрщике.</p></div>
+  </div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Как пользоваться</h2>
+  <div class="steps">
+    <div class="step"><h3>Перетащите файл</h3><p>Перетащите .jxl в поле выше или нажмите, чтобы выбрать файл на компьютере или телефоне.</p></div>
+    <div class="step"><h3>Посмотрите изображение</h3><p>Оно декодируется на вашем устройстве и появляется сразу — в полном разрешении, а не как превью.</p></div>
+    <div class="step"><h3>Сохраните универсальную копию</h3><p>Если нужно кому-то отправить, скачайте в JPG или PNG одним нажатием.</p></div>
+  </div>
+  <p class="lead">Просмотрщик решает сиюминутную задачу — увидеть снимок. Если файл должен открываться везде и постоянно, окончательное решение — конвертация.</p>
+</div></section>
+
 <section class="block alt" id="faq"><div class="wrap">
   <h2>FAQ</h2>
   <div class="faq">
-    <details open><summary>Как открыть файл .jxl?</summary><div class="ans">Перетащите его на эту страницу (или нажмите, чтобы выбрать). Он откроется мгновенно в вашем браузере — ничего не загружается на сервер.</div></details>
+    <details open><summary>Как открыть файл .jxl?</summary><div class="ans">Перетащите его на эту страницу (или нажмите, чтобы выбрать). Он откроется мгновенно в вашем браузере — ничего не загружается на сервер.
+    <details><summary>Изменяет ли просмотрщик мой файл?</summary><div class="ans">Нет. Для показа он декодирует копию в памяти. Исходный .jxl на диске остаётся ровно таким, каким был.</div></details>
+    <details><summary>Есть ли ограничение по размеру?</summary><div class="ans">Со стороны сайта — нет. Очень большие изображения ограничены только доступной памятью браузера, а фотографии с телефона в полном разрешении обрабатываются спокойно.</div></details>
+    <details><summary>Почему телефон показывает серый квадрат вместо фото?</summary><div class="ans">Обычно это значит, что формат отвергает операционная система, а не эта страница. Открытие здесь обходит проблему, потому что декодирование идёт во вкладке браузера.</div></details>
+    <details><summary>Можно ли работать офлайн?</summary><div class="ans">После загрузки страницы декодирование выполняется локально, поэтому кратковременный обрыв связи не помешает просмотру уже открытого файла.</div></details>
+  </div></details>
     <details><summary>Это приватно?</summary><div class="ans">Да. Файл декодируется локально в вашем браузере и никогда не покидает устройство.</div></details>
     <details><summary>Можно ли сохранить его как JPG или PNG?</summary><div class="ans">Да — после открытия скачайте его как JPG или PNG в один клик.</div></details>
   </div>
@@ -91,7 +118,7 @@
 <footer class="site"><div class="wrap">
   <div class="fcols">
     <a class="brand" href="/ru/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
-    <nav class="fnav"><a href="/ru/">Конвертер</a><a href="/ru/jxl-viewer/">Просмотрщик</a><a href="#faq">FAQ</a></nav>
+    <nav class="fnav"><a href="/ru/">Конвертер</a><a href="/ru/jxl-viewer/">Просмотрщик</a><a href="#faq">FAQ</a><a href="/ru/about/">О проекте</a><a href="/ru/contact/">Контакты</a></nav>
   </div>
   <div class="legal">
     <span class="privacy-pill">🔒 Ваши файлы никогда не покидают устройство</span>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>JXL Convert — Guides</title>
+    <link>https://jpegxlconvert.com/en/guides/</link>
+    <atom:link href="https://jpegxlconvert.com/en/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Plain-English guides about JPEG XL, HEIC and image files that won&apos;t open.</description>
+    <language>en</language>
+    <lastBuildDate>Sat, 29 Aug 2026 12:00:00 +0000</lastBuildDate>
+    <item>
+      <title>What Is a .JPG-LARGE File?</title>
+      <link>https://jpegxlconvert.com/en/jpg-large-file/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/jpg-large-file/</guid>
+      <pubDate>Sat, 29 Aug 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>It&apos;s a normal JPEG with the wrong extension. Rename it, or open it here in one click.</description>
+    </item>
+    <item>
+      <title>What Is a HEIC File?</title>
+      <link>https://jpegxlconvert.com/en/what-is-heic/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/what-is-heic/</guid>
+      <pubDate>Sat, 29 Aug 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>The iPhone photo format explained: why it saves space and why Windows struggles with it.</description>
+    </item>
+    <item>
+      <title>HEIC vs JPG</title>
+      <link>https://jpegxlconvert.com/en/heic-vs-jpg/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/heic-vs-jpg/</guid>
+      <pubDate>Sat, 29 Aug 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>Half the size versus opens everywhere. Which to keep and which to send.</description>
+    </item>
+    <item>
+      <title>How to Open a HEIC File on Windows</title>
+      <link>https://jpegxlconvert.com/en/open-heic-on-windows/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/open-heic-on-windows/</guid>
+      <pubDate>Sat, 29 Aug 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>Windows asks you to pay for a codec to see iPhone photos. Here&apos;s how to skip that.</description>
+    </item>
+    <item>
+      <title>Is JPEG XL Lossless?</title>
+      <link>https://jpegxlconvert.com/en/is-jpeg-xl-lossless/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/is-jpeg-xl-lossless/</guid>
+      <pubDate>Sat, 29 Aug 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>Both lossy and lossless in one format — plus a mode that shrinks JPEGs reversibly.</description>
+    </item>
+    <item>
+      <title>What Is a .JXL File?</title>
+      <link>https://jpegxlconvert.com/en/jxl-file/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/jxl-file/</guid>
+      <pubDate>Mon, 03 Aug 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>What a .jxl file is, where it came from, and how to open it without installing anything.</description>
+    </item>
+    <item>
+      <title>Why iPhone Photos Won&apos;t Open on Windows</title>
+      <link>https://jpegxlconvert.com/en/iphone-photos-wont-open-on-windows/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/iphone-photos-wont-open-on-windows/</guid>
+      <pubDate>Mon, 03 Aug 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>What HEIC is, how to convert it to JPG in your browser, and the one iPhone setting that prevents it.</description>
+    </item>
+    <item>
+      <title>JPEG XL vs AVIF</title>
+      <link>https://jpegxlconvert.com/en/jpeg-xl-vs-avif/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/jpeg-xl-vs-avif/</guid>
+      <pubDate>Mon, 03 Aug 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>Which format wins on compression, speed and support, and which one you should use for what.</description>
+    </item>
+    <item>
+      <title>Archiving Photos Without Losing Quality</title>
+      <link>https://jpegxlconvert.com/en/archive-photos-without-losing-quality/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/archive-photos-without-losing-quality/</guid>
+      <pubDate>Mon, 03 Aug 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>Reclaim ~20% of your disk with no quality cost, and store the result so it survives.</description>
+    </item>
+    <item>
+      <title>Which Apps Support JPEG XL?</title>
+      <link>https://jpegxlconvert.com/en/jpeg-xl-software-support/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/jpeg-xl-software-support/</guid>
+      <pubDate>Mon, 03 Aug 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>The software that opens and exports .jxl today, and the notable holes.</description>
+    </item>
+    <item>
+      <title>What Is JPEG XL?</title>
+      <link>https://jpegxlconvert.com/en/what-is-jpeg-xl/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/what-is-jpeg-xl/</guid>
+      <pubDate>Wed, 29 Jul 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>What JPEG XL is, what it does that JPEG and WebP can&apos;t, and whether it&apos;s worth using yet.</description>
+    </item>
+    <item>
+      <title>Does Chrome Support JPEG XL?</title>
+      <link>https://jpegxlconvert.com/en/chrome-jpeg-xl-support/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/chrome-jpeg-xl-support/</guid>
+      <pubDate>Wed, 29 Jul 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>Chrome 145 brought the decoder back, but JPEG XL is still off by default. How to turn it on, and what it means for you.</description>
+    </item>
+    <item>
+      <title>JPEG XL vs WebP</title>
+      <link>https://jpegxlconvert.com/en/jpeg-xl-vs-webp/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/jpeg-xl-vs-webp/</guid>
+      <pubDate>Wed, 29 Jul 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>WebP wins on compatibility, JPEG XL on capability. An honest comparison for 2026.</description>
+    </item>
+  </channel>
+</rss>

@@ -60,7 +60,7 @@
       <div class="dz-title">Déposez un fichier .jxl pour le voir</div>
       <div class="dz-hint">S'ouvre instantanément sur votre appareil — aussi JPG, PNG, WebP, GIF</div>
       <span class="dz-btn">Sélectionner un fichier</span>
-      <input id="file-input" type="file" accept="image/*,.jxl" hidden>
+      <input id="file-input" type="file" accept="image/*,.jxl,.heic,.heif,.jpg-large,.jpg-medium,.jpeg-large,.png-large" hidden>
       <div class="dz-privacy">🔒 100% dans votre navigateur — votre fichier n'est jamais envoyé</div>
     </div>
     <div class="viewer-stage" id="viewer-stage"><span class="ph-hint">Votre image apparaîtra ici</span></div>
@@ -74,10 +74,37 @@
   <p class="lead">JPEG XL est un format d'image récent. La plupart des navigateurs, téléphones et apps ne l'activent pas encore, donc un <strong>.jxl</strong> téléchargé ne s'ouvre souvent pas — même s'il s'agit d'une image valide. Cette visionneuse le décode localement pour que vous le voyiez tout de suite, et vous permet d'enregistrer une copie universelle en JPG ou PNG. Besoin du fichier dans un autre format de façon permanente ? Utilisez le <a href="/fr/jxl-en-jpg/">convertisseur JXL en JPG</a> ou <a href="/fr/jxl-en-png/">JXL en PNG</a>.</p>
 </div></section>
 
+<!-- viewer-extra -->
+<section class="block"><div class="wrap">
+  <h2>Ce que cette visionneuse ouvre</h2>
+  <p class="lead">La visionneuse décode les fichiers JPEG XL (<strong>.jxl</strong>) comme le ferait un navigateur qui gère le format nativement : vous voyez la vraie image, pas un aperçu ni une miniature. Elle ouvre aussi les formats du quotidien — JPG, PNG, WebP et GIF —, pratique quand vous avez un dossier de fichiers mélangés et voulez simplement vérifier ce qu'il y a dedans sans lancer un éditeur.</p>
+  <p class="lead">Tout est décodé par votre propre appareil. Pas d'envoi, pas de file d'attente, pas de copie temporaire sur le serveur de quelqu'un : c'est pourquoi la visionneuse fonctionne aussi bien sur un portable d'entreprise verrouillé qu'à la maison.</p>
+  <div class="grid3">
+    <div class="feature"><div class="fi">🖼️</div><h3>JPEG XL</h3><p>Fichiers .jxl avec ou sans perte, y compris ceux réencapsulés depuis un JPEG d'origine.</p></div>
+    <div class="feature"><div class="fi">📷</div><h3>Les formats habituels</h3><p>JPG, PNG, WebP et GIF s'ouvrent aussi, pour les comparer côte à côte avec le .jxl.</p></div>
+    <div class="feature"><div class="fi">🎞️</div><h3>Animation et transparence</h3><p>La transparence est conservée et les fichiers animés sont lus dans la visionneuse.</p></div>
+  </div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Comment l'utiliser</h2>
+  <div class="steps">
+    <div class="step"><h3>Déposez le fichier</h3><p>Glissez un .jxl dans la zone ci-dessus, ou cliquez pour le choisir sur votre ordinateur ou votre téléphone.</p></div>
+    <div class="step"><h3>Regardez l'image</h3><p>Elle est décodée sur votre appareil et apparaît immédiatement, en pleine résolution et non en aperçu.</p></div>
+    <div class="step"><h3>Enregistrez une copie universelle</h3><p>Si vous devez l'envoyer, téléchargez-la en JPG ou PNG d'un clic.</p></div>
+  </div>
+  <p class="lead">Une visionneuse règle le problème immédiat : voir la photo. Si le fichier doit rester lisible partout de façon permanente, la conversion est la solution définitive.</p>
+</div></section>
+
 <section class="block alt" id="faq"><div class="wrap">
   <h2>Questions fréquentes</h2>
   <div class="faq">
-    <details open><summary>Comment ouvrir un fichier .jxl ?</summary><div class="ans">Déposez-le sur cette page (ou cliquez pour le choisir). Il s'ouvre instantanément dans votre navigateur — rien n'est envoyé.</div></details>
+    <details open><summary>Comment ouvrir un fichier .jxl ?</summary><div class="ans">Déposez-le sur cette page (ou cliquez pour le choisir). Il s'ouvre instantanément dans votre navigateur — rien n'est envoyé.
+    <details><summary>La visionneuse modifie-t-elle mon fichier ?</summary><div class="ans">Non. Elle décode une copie en mémoire pour l'afficher. Le .jxl d'origine sur votre disque reste exactement tel quel.</div></details>
+    <details><summary>Y a-t-il une limite de taille ?</summary><div class="ans">Aucune imposée par le site. Les très grandes images ne sont limitées que par la mémoire disponible de votre navigateur, et les photos de téléphone en pleine résolution passent sans souci.</div></details>
+    <details><summary>Pourquoi mon téléphone affiche-t-il un carré gris au lieu de la photo ?</summary><div class="ans">En général, c'est le système d'exploitation qui refuse le format, pas cette page. L'ouvrir ici contourne le problème, car le décodage a lieu dans l'onglet du navigateur.</div></details>
+    <details><summary>Peut-on l'utiliser hors ligne ?</summary><div class="ans">Une fois la page chargée, le décodage est local : une coupure brève n'interrompt donc pas l'affichage d'un fichier déjà ouvert.</div></details>
+  </div></details>
     <details><summary>Est-ce privé ?</summary><div class="ans">Oui. Le fichier est décodé localement dans votre navigateur et ne quitte jamais votre appareil.</div></details>
     <details><summary>Puis-je l'enregistrer en JPG ou PNG ?</summary><div class="ans">Oui — après l'ouverture, téléchargez-le en JPG ou PNG en un clic.</div></details>
   </div>
@@ -87,7 +114,7 @@
 <footer class="site"><div class="wrap">
   <div class="fcols">
     <a class="brand" href="/fr/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
-    <nav class="fnav"><a href="/fr/">Convertisseur</a><a href="/fr/visionneuse-jxl/">Visionneuse</a><a href="#faq">FAQ</a></nav>
+    <nav class="fnav"><a href="/fr/">Convertisseur</a><a href="/fr/visionneuse-jxl/">Visionneuse</a><a href="#faq">FAQ</a><a href="/fr/a-propos/">À propos</a><a href="/fr/contact/">Contact</a></nav>
   </div>
   <div class="legal">
     <span class="privacy-pill">🔒 Vos fichiers ne quittent jamais votre appareil</span>

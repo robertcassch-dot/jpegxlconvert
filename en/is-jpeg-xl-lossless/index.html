@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9791902883190551" crossorigin="anonymous"></script>
+<title>Is JPEG XL Lossless? Lossy and Lossless Modes Explained</title>
+<meta name="description" content="JPEG XL does both, in one format — including a lossless mode that shrinks an existing JPEG by about 20% and can rebuild the original byte for byte. Here's how each mode works and when to use it.">
+<link rel="canonical" href="https://jpegxlconvert.com/en/is-jpeg-xl-lossless/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/is-jpeg-xl-lossless/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/is-jpeg-xl-lossless/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Is JPEG XL lossless?">
+<meta property="og:description" content="Both lossy and lossless in one format — plus a mode that shrinks JPEGs reversibly.">
+<meta property="og:url" content="https://jpegxlconvert.com/en/is-jpeg-xl-lossless/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=8">
+<link rel="alternate" type="application/rss+xml" title="JXL Convert — Guides" href="/en/feed.xml">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How do I know if a .jxl file is lossless?","acceptedAnswer":{"@type":"Answer","text":"Nothing in the file announces it. If you created it by re-packing a JPEG it is lossless, and you can prove it by converting back and comparing file sizes."}},
+{"@type":"Question","name":"Is JPEG XL lossless or lossy?","acceptedAnswer":{"@type":"Answer","text":"It supports both, chosen per image. That flexibility is one of the format's main design goals, and it's why you'll find it described either way."}},
+{"@type":"Question","name":"Does converting JPG to JPEG XL lose quality?","acceptedAnswer":{"@type":"Answer","text":"Not in lossless re-packing mode, which is what this site uses. The image data is stored more efficiently but is mathematically identical, and the original JPEG can be rebuilt exactly."}},
+{"@type":"Question","name":"Can I get my original JPEG back?","acceptedAnswer":{"@type":"Answer","text":"Yes, if it was re-packed losslessly. The reconstruction is byte-for-byte identical to the file you started with."}},
+{"@type":"Question","name":"Is lossless JPEG XL smaller than PNG?","acceptedAnswer":{"@type":"Answer","text":"Usually by a wide margin — commonly 30-50% smaller for the same image, with no quality difference, because both are lossless."}},
+{"@type":"Question","name":"What does «distance» mean in JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"It's the quality setting, but inverted: 0 is mathematically lossless and higher numbers allow more deviation. Around 1.0 is the usual visually-lossless default."}},
+{"@type":"Question","name":"Is «visually lossless» the same as lossless?","acceptedAnswer":{"@type":"Answer","text":"No. Visually lossless means you won't notice the difference; data has still been discarded. True lossless means the decoded image is identical, bit for bit."}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Is JPEG XL Lossless?","datePublished":"2026-08-29","dateModified":"2026-08-29","inLanguage":"en","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/en/about/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/en/"},"mainEntityOfPage":"https://jpegxlconvert.com/en/is-jpeg-xl-lossless/"}
+</script>
+<style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Guides</a></nav>
+    <details class="lang"><summary>🌐 EN</summary>
+      <div class="lang-menu">
+        <a class="active" href="/en/is-jpeg-xl-lossless/"><span class="flag">🇬🇧</span> English</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">🔬 Lossy or lossless</span>
+  <h1>Is JPEG XL Lossless?</h1>
+  <p class="sub"><strong>Both.</strong> JPEG XL does lossless and lossy in a single format, and it has a third trick neither JPEG nor PNG can manage: shrinking an existing JPEG by around 20% while being able to rebuild the original <em>byte for byte</em>.</p>
+  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">by <a href="/en/about/" style="color:inherit">Robert Castillo</a> · Published <time datetime="2026-08-29">August 29, 2026</time></p>
+  <div class="badges">
+    <span class="badge green">✅ Lossless mode</span><span class="badge">📉 Lossy mode</span><span class="badge">🔄 Reversible JPEG re-packing</span>
+  </div>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/jpg-to-jxl/"><span class="cta-ic">📦</span><b>Re-pack a JPEG losslessly</b><span class="cta-sub">~20% smaller, nothing lost →</span></a>
+    <a class="cta-card" href="/en/what-is-jpeg-xl/"><span class="cta-ic">📘</span><b>What is JPEG XL?</b><span class="cta-sub">The format from the start →</span></a>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>The short answer</h2>
+  <p class="lead">Most image formats pick a side. PNG is always lossless: every pixel survives, and files are large. JPEG is always lossy: it throws away detail your eye probably won't miss, and files are small. You choose the format, and the format chooses the trade-off for you.</p>
+  <p class="lead">JPEG XL doesn't work that way. The same format handles both, so you pick the behaviour per image instead of picking a different format each time. That's why you'll see it described as lossless in one article and lossy in another — both are right.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>The three ways to save a JPEG XL</h2>
+  <div class="grid3">
+    <div class="feature"><div class="fi">🔒</div><h3>Fully lossless</h3><p>Every pixel preserved exactly, like PNG, but typically 30-50% smaller than the equivalent PNG.</p></div>
+    <div class="feature"><div class="fi">📉</div><h3>Lossy</h3><p>Detail discarded to save space, like JPEG, but noticeably better looking at the same file size.</p></div>
+    <div class="feature"><div class="fi">🔄</div><h3>Lossless JPEG re-packing</h3><p>Takes a JPEG you already have and stores it ~20% smaller, with the original recoverable byte for byte.</p></div>
+  </div>
+  <p class="lead">That third mode is the one people miss, and it's the most immediately useful of the three. It isn't converting your photo to a new format in the usual sense — it's storing the same JPEG data more efficiently, and it can be undone perfectly.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>How the quality setting actually works</h2>
+  <p class="lead">JPEG XL doesn't use a 0-100 «quality» slider like JPEG does. It uses a setting called <strong>distance</strong>, which describes how far the result is allowed to drift from the original. Lower means closer.</p>
+  <p class="lead">A distance of <strong>0</strong> is mathematically lossless: the decoded image is identical to what went in. Around <strong>1.0</strong> is the usual default and is generally described as visually lossless — you're extremely unlikely to tell the difference on screen, even though bits have been discarded. Higher numbers trade visible quality for smaller files.</p>
+  <table class="cmp">
+    <thead><tr><th>Distance</th><th>What you get</th><th>Use it for</th></tr></thead>
+    <tbody>
+      <tr><td>0</td><td>Mathematically identical to the original</td><td>Archiving, master copies, graphics</td></tr>
+      <tr><td>~1.0</td><td>Visually indistinguishable in normal viewing</td><td>The sensible default for photos</td></tr>
+      <tr><td>2-3</td><td>Small differences if you go looking</td><td>Web images where size matters</td></tr>
+      <tr><td>5+</td><td>Visible degradation</td><td>Thumbnails and previews only</td></tr>
+    </tbody>
+  </table>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>The re-packing trick, in plain terms</h2>
+  <p class="lead">A normal JPEG stores its image data in a way that was efficient in 1992. JPEG XL can take that exact same data and store it using a modern entropy coder — a better method of writing down the same information — without altering a single one of the values that describe the picture.</p>
+  <p class="lead">The result is a file roughly 20% smaller that contains, mathematically, the identical image. And because nothing was discarded, the process reverses: you can turn the .jxl back into the original .jpg and get a file identical to the one you started with, byte for byte. Not «looks the same» — the same.</p>
+  <p class="lead">For anyone sitting on a decade of phone photos, that's a fifth of the storage back with nothing given up and no decision to regret later.</p>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/jpg-to-jxl/"><span class="cta-ic">📦</span><b>Try it on a JPEG</b><span class="cta-sub">Re-pack losslessly in your browser →</span></a>
+    <a class="cta-card" href="/en/archive-photos-without-losing-quality/"><span class="cta-ic">🗄️</span><b>Archiving without losing quality</b><span class="cta-sub">The full method →</span></a>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Lossless compared to PNG</h2>
+  <p class="lead">If lossless is what you want, PNG is the format most people reach for, and JPEG XL beats it comfortably: lossless JPEG XL files are typically 30-50% smaller than the same image as PNG, with support for higher bit depths and, unlike PNG, sensible handling of photographic content.</p>
+  <p class="lead">PNG's advantage is that it opens absolutely everywhere, which is the same argument that keeps coming up with every modern format. If the file needs to be opened by other people or other software today, PNG is still the safer choice — see the software support guide for where JPEG XL currently stands.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>How to tell which one you have got</h2>
+  <p class="lead">There is no marking on the outside of a .jxl file that says «lossless», and nothing in the filename will tell you either. What you can do is reason from where the file came from, which in practice answers it.</p>
+  <p class="lead">If you re-packed an existing JPEG — the mode this site uses for JPG to JXL — it is lossless by definition, and you can prove it: convert the .jxl back to .jpg and compare the result against your original. The two files will be identical, right down to the size in bytes. If they match, nothing was lost.</p>
+  <p class="lead">If the file was exported from a camera or an editing application, it depends on the setting used at export, and only whoever saved it knows. As a rough rule, a .jxl that is dramatically smaller than the equivalent PNG of the same image is lossy; one that is merely somewhat smaller is probably lossless.</p>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/jxl-to-jpg/"><span class="cta-ic">🔁</span><b>Convert a .jxl back to JPG</b><span class="cta-sub">Compare it against your original →</span></a>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Common questions</h2>
+  <div class="faq">
+    <details open><summary>How do I know if a .jxl file is lossless?</summary><div class="ans">Nothing in the file announces it. If you created it by re-packing a JPEG it is lossless, and you can prove it by converting back and comparing file sizes.</div></details>
+    <details><summary>Is JPEG XL lossless or lossy?</summary><div class="ans">It supports both, chosen per image. That flexibility is one of the format's main design goals, and it's why you'll find it described either way.</div></details>
+    <details><summary>Does converting JPG to JPEG XL lose quality?</summary><div class="ans">Not in lossless re-packing mode, which is what this site uses. The image data is stored more efficiently but is mathematically identical, and the original JPEG can be rebuilt exactly.</div></details>
+    <details><summary>Can I get my original JPEG back?</summary><div class="ans">Yes, if it was re-packed losslessly. The reconstruction is byte-for-byte identical to the file you started with.</div></details>
+    <details><summary>Is lossless JPEG XL smaller than PNG?</summary><div class="ans">Usually by a wide margin — commonly 30-50% smaller for the same image, with no quality difference, because both are lossless.</div></details>
+    <details><summary>What does «distance» mean in JPEG XL?</summary><div class="ans">It's the quality setting, but inverted: 0 is mathematically lossless and higher numbers allow more deviation. Around 1.0 is the usual visually-lossless default.</div></details>
+    <details><summary>Is «visually lossless» the same as lossless?</summary><div class="ans">No. Visually lossless means you won't notice the difference; data has still been discarded. True lossless means the decoded image is identical, bit for bit.</div></details>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Keep reading</h2>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/archive-photos-without-losing-quality/"><span class="cta-ic">🗄️</span><b>Archive without losing quality</b><span class="cta-sub">Reclaim ~20% of your disk →</span></a>
+    <a class="cta-card" href="/en/jpeg-xl-vs-avif/"><span class="cta-ic">⚖️</span><b>JPEG XL vs AVIF</b><span class="cta-sub">How the two compare →</span></a>
+    <a class="cta-card" href="/en/jpeg-xl-software-support/"><span class="cta-ic">🧰</span><b>Which apps support JPEG XL?</b><span class="cta-sub">Before you commit to it →</span></a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Guides</a><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/news/">What's new</a></nav>
+  </div>
+  <div class="legal">
+    <span class="privacy-pill">🔒 Your files never leave your device</span>
+    <span class="flegal"><a href="/en/privacy/">Privacy</a> · <a href="/en/terms/">Terms</a><span id="revocation-link" style="display:none"> · <a href="javascript:window.googlefc.showRevocationMessage();">Privacy settings</a></span></span>
+    <span>© 2026 JXL Convert</span>
+  </div>
+  <div class="sister"><a href="https://docuniversal.com/" rel="noopener" style="display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:100%;color:inherit;opacity:.72;font-size:13px"><svg width="18" height="18" viewBox="0 0 64 64" aria-hidden="true" style="border-radius:5px;flex:none"><defs><linearGradient id="duLogo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7cc4a0"/><stop offset="1" stop-color="#366d55"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#duLogo)"/><circle cx="32" cy="32" r="16" fill="none" stroke="#fff" stroke-width="4" opacity=".95"/><circle cx="32" cy="32" r="5" fill="#fff"/></svg><span>Working with PDFs? Try DocUniversal — free, in your browser</span></a></div>
+</div></footer>
+<script>
+window.googlefc = window.googlefc || {};
+window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+window.googlefc.callbackQueue.push({
+  'CONSENT_API_READY':
+  () => __tcfapi('addEventListener', 0, (tcdata, success) => {
+    const revocationLink = document.getElementById('revocation-link');
+    if (!revocationLink) return;
+    if (!success || !tcdata) {
+      revocationLink.style.display = 'none';
+    } else if (tcdata.gdprApplies) {
+      revocationLink.style.display = 'inline';
+    } else {
+      revocationLink.style.display = 'none';
+    }
+  })
+});
+</script>
+</body>
+</html>

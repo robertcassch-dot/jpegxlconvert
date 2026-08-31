@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>JXL Convert — Guías</title>
+    <link>https://jpegxlconvert.com/es/guias/</link>
+    <atom:link href="https://jpegxlconvert.com/es/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Guías sin tecnicismos sobre JPEG XL, HEIC y archivos de imagen que no se abren.</description>
+    <language>es</language>
+    <lastBuildDate>Sat, 29 Aug 2026 12:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Qué es un archivo .JPG-LARGE</title>
+      <link>https://jpegxlconvert.com/es/archivo-jpg-large/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/es/archivo-jpg-large/</guid>
+      <pubDate>Sat, 29 Aug 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>Es un JPEG normal con la extensión cambiada. Renómbralo, o ábrelo aquí de un clic.</description>
+    </item>
+    <item>
+      <title>Qué es un archivo HEIC</title>
+      <link>https://jpegxlconvert.com/es/que-es-heic/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/es/que-es-heic/</guid>
+      <pubDate>Sat, 29 Aug 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>El formato de fotos del iPhone: por qué ahorra espacio y por qué Windows se atraganta con él.</description>
+    </item>
+    <item>
+      <title>HEIC o JPG</title>
+      <link>https://jpegxlconvert.com/es/heic-vs-jpg/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/es/heic-vs-jpg/</guid>
+      <pubDate>Sat, 29 Aug 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>La mitad de tamaño frente a abrirse en todas partes. Cuál guardar y cuál enviar.</description>
+    </item>
+    <item>
+      <title>Cómo abrir un archivo HEIC en Windows</title>
+      <link>https://jpegxlconvert.com/es/abrir-heic-en-windows/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/es/abrir-heic-en-windows/</guid>
+      <pubDate>Sat, 29 Aug 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>Windows te pide pagar un códec para ver las fotos del iPhone. Así te lo saltas.</description>
+    </item>
+    <item>
+      <title>¿Qué es un archivo .JXL?</title>
+      <link>https://jpegxlconvert.com/es/archivo-jxl/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/es/archivo-jxl/</guid>
+      <pubDate>Mon, 03 Aug 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>Qué es un archivo .jxl, de dónde viene y cómo abrirlo sin instalar nada.</description>
+    </item>
+    <item>
+      <title>¿Qué es JPEG XL?</title>
+      <link>https://jpegxlconvert.com/es/que-es-jpeg-xl/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/es/que-es-jpeg-xl/</guid>
+      <pubDate>Wed, 29 Jul 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>Qué es JPEG XL, qué hace que JPEG y WebP no pueden, y si merece la pena usarlo ya.</description>
+    </item>
+    <item>
+      <title>¿Chrome admite JPEG XL?</title>
+      <link>https://jpegxlconvert.com/es/chrome-soporta-jpeg-xl/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/es/chrome-soporta-jpeg-xl/</guid>
+      <pubDate>Wed, 29 Jul 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>Chrome 145 devolvió el descodificador, pero JPEG XL sigue desactivado por defecto. Cómo activarlo y qué significa para ti.</description>
+    </item>
+    <item>
+      <title>JPEG XL frente a WebP</title>
+      <link>https://jpegxlconvert.com/es/jpeg-xl-vs-webp/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/es/jpeg-xl-vs-webp/</guid>
+      <pubDate>Wed, 29 Jul 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>WebP gana en compatibilidad, JPEG XL en capacidades. Una comparación honesta para 2026.</description>
+    </item>
+  </channel>
+</rss>
