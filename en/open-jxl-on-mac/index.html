@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9791902883190551" crossorigin="anonymous"></script>
+<title>How to Open JPEG XL (.jxl) Files on a Mac in 2026</title>
+<meta name="description" content="macOS has read JPEG XL natively since Sonoma, but no Apple app can save it. What opens a .jxl on each macOS version, how to batch-convert, and what breaks.">
+<link rel="canonical" href="https://jpegxlconvert.com/en/open-jxl-on-mac/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/open-jxl-on-mac/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/abrir-jxl-en-mac/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/open-jxl-on-mac/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Opening .jxl files on a Mac: what works, version by version">
+<meta property="og:description" content="Preview, Quick Look and Safari read JPEG XL from macOS 14. Saving it is another story. Batch conversion, measured.">
+<meta property="og:url" content="https://jpegxlconvert.com/en/open-jxl-on-mac/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=8">
+<link rel="alternate" type="application/rss+xml" title="JXL Convert — Blog" href="/en/feed.xml">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Which macOS version do I need to open .jxl files?","acceptedAnswer":{"@type":"Answer","text":"macOS Sonoma (14) or later for full support in Preview, Quick Look and Finder. On Monterey and Ventura nothing built into macOS opens them, but Safari 17 or later, Firefox 158 and, on Ventura, Chrome 155 show them. On Big Sur and Catalina, use Firefox 158, which runs on macOS 10.15 or later, or our viewer."}},
+{"@type":"Question","name":"Can I make Preview save a picture as JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"No. Preview's export formats are HEIC, JPEG, JPEG-2000, OpenEXR, PDF, PNG and TIFF plus a few older ones, and the system's image engine can read JPEG XL but not write it. Use cjxl from Homebrew or an editor that supports the format."}},
+{"@type":"Question","name":"What's the free way to convert .jxl to JPG on a Mac?","acceptedAnswer":{"@type":"Answer","text":"Three are built in: Preview's File → Export (or Export Selected Images for many files), Finder's Quick Actions → Convert Image, and the sips command in Terminal. None needs anything installed on Sonoma or later."}},
+{"@type":"Question","name":"Does converting a .jxl to JPG lose quality?","acceptedAnswer":{"@type":"Answer","text":"A little, because JPEG is lossy. In our tests a JPEG at quality 90 scored a median of 86 on SSIMULACRA2 against the JPEG XL it came from, which the metric's authors describe as excellent. The exception is a .jxl made by repacking a JPEG: djxl gives you that original back exactly."}},
+{"@type":"Question","name":"Can I shrink my JPEG archive with JPEG XL without losing anything?","acceptedAnswer":{"@type":"Answer","text":"Yes. cjxl repacks JPEGs losslessly by default; on our ten iPhone photos it saved 17.1% and all ten came back byte-identical. Work on exported copies, though, never inside the Photos library package."}},
+{"@type":"Question","name":"Why does a .dng from my iPhone mention JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"Because the iPhone 16 Pro and later Pro models can compress ProRAW with JPEG XL. The file stays a .dng and macOS 14 or later opens it like any other ProRAW. More in the iPhone guide."}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"How to Open JPEG XL Files on a Mac","datePublished":"2026-10-15","dateModified":"2026-10-15","inLanguage":"en","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/en/about/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/en/"},"mainEntityOfPage":"https://jpegxlconvert.com/en/open-jxl-on-mac/"}
+</script>
+<style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+<style>.gtbl{max-width:720px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a></nav>
+    <details class="lang"><summary>🌐 EN</summary>
+      <div class="lang-menu">
+        <a class="active" href="/en/open-jxl-on-mac/"><span class="flag">🇬🇧</span> English</a>
+        <a href="/es/abrir-jxl-en-mac/"><span class="flag">🇪🇸</span> Español</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">🍎 macOS · updated October 2026</span>
+  <h1>How to Open JPEG&nbsp;XL Files on a Mac</h1>
+  <p class="sub"><strong>On macOS Sonoma (14) or later, you just double-click it.</strong> Preview, Quick Look, Finder thumbnails and Safari all read <code>.jxl</code>. What macOS can't do is the reverse: no Apple app can save one. Here's what works on each version, how to convert a whole folder, and the problems people actually hit.</p>
+  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">by <a href="/en/about/" style="color:inherit">Robert Castillo</a> · Published <time datetime="2026-10-15">October 15, 2026</time></p>
+  <div class="badges">
+    <span class="badge green">✅ Native since macOS 14</span><span class="badge">🚫 No Apple app saves .jxl</span><span class="badge">🧪 Measured on 10 iPhone photos</span><span class="badge">🔒 Nothing uploaded</span>
+  </div>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/jxl-viewer/"><span class="cta-ic">👁️</span><b>Older Mac, or Preview won't open it?</b><span class="cta-sub">Open it in the browser, nothing to install →</span></a>
+    <a class="cta-card" href="/en/jxl-to-jpg/"><span class="cta-ic">🔁</span><b>Need a normal JPG?</b><span class="cta-sub">Convert one file or a hundred →</span></a>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>The short answer</h2>
+  <p class="lead">If your Mac runs <strong>macOS Sonoma (14) or anything newer</strong> — Sequoia (15), Tahoe (26) or this autumn's macOS 27 — a <code>.jxl</code> behaves like any other photo. Double-click it and Preview opens it. Press the space bar in Finder and Quick Look shows it. Finder draws a thumbnail, and Safari displays it on web pages. Apple's own wording, shown next to the JPEG XL options in recent iPhone camera settings, is that JPEG XL files are supported on <em>macOS 14 and later</em>.</p>
+  <p class="lead">Support didn't arrive all at once, which is why you still find contradictory answers online. When Sonoma shipped in September 2023, Ars Technica's review found that Finder thumbnails and Quick Look worked but that <strong>Preview refused to open the files</strong>. Later Sonoma updates closed that gap, and by the time macOS 15 arrived users were reporting that Preview and Quick Look even rendered HDR JPEG XL images in HDR.</p>
+  <p class="lead">What has <em>not</em> changed in three years is the other direction. macOS reads JPEG XL, but it has no built-in way to write it: no Apple app saves or exports a <code>.jxl</code>. That one fact explains most of the confusion further down this page.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>What opens a .jxl, version by version</h2>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>macOS</th><th>Preview, Quick Look, Finder</th><th>Safari</th><th>Save as .jxl</th></tr></thead>
+    <tbody>
+      <tr><td>macOS 27, Tahoe 26, Sequoia 15</td><td class="y">Yes</td><td class="y">Yes</td><td class="n">No</td></tr>
+      <tr><td>Sonoma 14</td><td class="y">Yes (Preview only after the early updates)</td><td class="y">Yes, Safari 17</td><td class="n">No</td></tr>
+      <tr><td>Ventura 13, Monterey 12</td><td class="n">No</td><td class="y">Yes, with Safari 17 or later</td><td class="n">No</td></tr>
+      <tr><td>Big Sur 11 and older</td><td class="n">No</td><td class="n">No</td><td class="n">No</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">Two browser changes landed in the past fortnight. <strong>Chrome 155</strong>, released on 6 October 2026, decodes JPEG XL by default, as <a href="https://developer.chrome.com/blog/jpeg-xl-in-chrome" rel="nofollow noopener">Google announced the same day</a>. <strong>Firefox 158</strong>, released on 13 October, says in its <a href="https://www.firefox.com/en-US/firefox/158.0/releasenotes/" rel="nofollow noopener">release notes</a> that it now supports the format. Before that, both browsers downloaded a <code>.jxl</code> instead of showing it, so if yours still does, update it before you blame the file. Our <a href="/en/jpeg-xl-browser-test/">browser test</a> tells you in a second what your browser actually does, and the <a href="/en/firefox-jpeg-xl-support/">Firefox guide</a> covers the details there.</p>
+  <p class="lead">Safari has one limit: its JPEG XL support covers still images only, without progressive loading, so animated <code>.jxl</code> files don't play in it. For photographs that never matters.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Can Preview save or export JPEG XL?</h2>
+  <p class="lead">No — and neither can anything else Apple ships on the Mac. This is the question we get most from Mac users, so we checked it three separate ways rather than trust one forum post.</p>
+  <div class="grid3">
+    <div class="feature"><div class="fi">📖</div><h3>Preview's own manual</h3><p><a href="https://support.apple.com/guide/preview/convert-image-file-types-prvw1012/mac" rel="nofollow noopener">Apple's Preview guide</a> for macOS 27 lists the export formats as HEIC, JPEG, JPEG-2000, OpenEXR, PDF, PNG and TIFF, with some older formats hidden behind Option-click. JPEG XL isn't among the named ones.</p></div>
+    <div class="feature"><div class="fi">⚙️</div><h3>The system's image engine</h3><p><code>sips</code>, the command-line tool built on the same engine as Preview, read JPEG XL but couldn't write it in a test on macOS 27.0 published in September 2026. A separate developer check found JPEG XL missing from the list of formats macOS can save.</p></div>
+    <div class="feature"><div class="fi">🗂️</div><h3>Finder's Convert Image</h3><p>The Quick Action converts to JPEG, PNG or HEIF and nothing else. It's a fine way to get rid of a .jxl, but it can't create one.</p></div>
+  </div>
+  <p class="lead">The one place Apple does write JPEG XL is inside the iPhone camera: since iOS 18, the iPhone 16 Pro and later Pro models can store ProRAW photos with JPEG XL compression, but those arrive as <code>.dng</code> files, not <code>.jxl</code>. <a href="/en/open-jxl-on-iphone/">Our iPhone guide</a> explains how to spot them.</p>
+  <p class="lead">To <em>create</em> <code>.jxl</code> files on a Mac you need something else: <code>cjxl</code> from Homebrew (below), or an editor such as GIMP, GraphicConverter, XnView MP or Acorn, all of which the format's community site lists as JPEG XL-capable. Photoshop, Lightroom and GIMP each have their own guide here: <a href="/en/jpeg-xl-in-photoshop/">Photoshop</a>, <a href="/en/jpeg-xl-in-lightroom/">Lightroom</a>, <a href="/en/jpeg-xl-in-gimp/">GIMP</a>.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>On an older Mac (Monterey or Ventura)</h2>
+  <p class="lead">On <strong>Monterey or Ventura</strong>, nothing built into macOS opens a <code>.jxl</code>. Ars Technica put it bluntly in its 2023 review: on those versions basically no app other than Safari can touch the files. That means no Preview, no Quick Look and blank icons in Finder.</p>
+  <p class="lead">Browsers are the exception. Safari 17 or later shows JPEG XL on both systems. Firefox 158 does too, and it still runs on anything from macOS 10.15 Catalina up. Chrome 155 shows it as well, but current Chrome needs macOS 13 Ventura, so on Monterey it can't update that far.</p>
+  <p class="lead">Beyond the browser, from least to most effort: <a href="/en/jxl-viewer/">open it in our viewer</a>, which decodes the file inside any modern browser and lets you save it as JPG or PNG; or install XnView MP, which reads JPEG XL and runs on macOS 12 or later. If your Mac can take Sonoma, updating is the real fix, because it brings Preview, Quick Look and thumbnails along with it.</p>
+  <p class="lead">One historical wrinkle explains some old bug reports. During the 2023 beta, Apple deliberately switched JPEG XL off in Safari on Ventura and Monterey while it chased a rendering glitch (<a href="https://bugs.webkit.org/show_bug.cgi?id=258655" rel="nofollow noopener">WebKit bug 258655</a>). If Safari on an older Mac shows a broken image where a <code>.jxl</code> should be, run our <a href="/en/jpeg-xl-browser-test/">browser test</a> to see whether that copy of Safari decodes the format at all.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Converting a whole folder on a Mac</h2>
+  <p class="lead">Four ways, from no installation to full control. All of them run on your own machine; none needs an internet connection once installed.</p>
+  <div class="steps">
+    <div class="step"><h3>1. Preview (built in)</h3><p>Select the .jxl files in Finder and open them together in Preview. Click in the sidebar, press ⌘A, then choose <strong>File → Export Selected Images…</strong>. Click Options, pick JPEG or PNG under Format, set the quality and choose a destination folder. Apple documents the same sidebar trick for converting several images at once.</p></div>
+    <div class="step"><h3>2. Finder Quick Action (built in)</h3><p>Select the files, Control-click, choose <strong>Quick Actions → Convert Image</strong> (on macOS 27 it sits under More). Pick JPEG, PNG or HEIF and a size. It's the fastest route for a handful of photos, and it saves the copies next to the originals.</p></div>
+    <div class="step"><h3>3. Terminal with sips (built in)</h3><p><code>mkdir jpg &amp;&amp; sips -s format jpeg -s formatOptions 90 *.jxl --out jpg</code> turns every .jxl in the current folder into a JPEG at quality 90 inside a new <code>jpg</code> folder. sips reads JPEG XL from Sonoma onwards; it can't write it.</p></div>
+    <div class="step"><h3>4. Homebrew's jpeg-xl (most control)</h3><p><code>brew install jpeg-xl</code> installs <code>cjxl</code> and <code>djxl</code> from libjxl 0.12.0, the current official release. Then <code>for f in *.jxl; do djxl "$f" "${f%.jxl}.jpg" -q 90; done</code> converts the folder. Without <code>-q</code>, djxl rebuilds the original JPEG bit for bit when the .jxl was made from one, and uses quality 95 otherwise.</p></div>
+  </div>
+  <p class="lead">Going the other way, <code>cjxl photo.jpg photo.jxl</code> repacks a JPEG losslessly by default, so the original can always be recovered. Every flag that matters is in our <a href="/en/cjxl-djxl-command-line/">cjxl and djxl command-line guide</a>.</p>
+  <p class="lead">Two practical notes on Homebrew. It has ready-made packages of jpeg-xl for Apple Silicon Macs on Sequoia, Tahoe and macOS 27; on other set-ups it may have to compile the tools, which takes a while. And avoid ImageMagick for this particular job: Homebrew builds it without JPEG XL support (<a href="https://github.com/Homebrew/homebrew-core/blob/main/Formula/i/imagemagick.rb" rel="nofollow noopener">the formula</a> passes <code>--without-jxl</code>), so <code>magick photo.jxl photo.jpg</code> fails with a «no decode delegate» error. libvips (<code>brew install vips</code>) does include JPEG XL.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>What we measured</h2>
+  <p class="lead">To put real numbers on the Homebrew route we ran libjxl 0.12.0, the same version Homebrew installs, over ten public-domain (CC0) photos from Wikimedia Commons. All ten are 12-megapixel JPEGs straight out of iPhones, from the iPhone 11 to the 15 Pro. The test machine was a 6-core Linux server rather than a Mac, so treat the timings as a rough guide; file sizes on a Mac should land very close.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Test</th><th>Result</th></tr></thead>
+    <tbody>
+      <tr><td>JPEG → JXL, lossless repack (cjxl defaults)</td><td class="y">34.8 MB → 28.9 MB, 17.1% smaller (15.6–19.2% per photo)</td></tr>
+      <tr><td>That JXL → JPEG again (djxl)</td><td class="y">10 of 10 byte-identical to the original</td></tr>
+      <tr><td>Time for all 10 photos</td><td>cjxl 6–7.5 s, djxl 2–2.5 s</td></tr>
+      <tr><td>Lossy JXL from the pixels (-d 1) → JPEG quality 90</td><td>1.42× the size of the .jxl; SSIMULACRA2 median 86.2</td></tr>
+      <tr><td>Lossy JXL from the pixels (-d 1) → JPEG quality 95 (djxl default)</td><td>1.92× the size; SSIMULACRA2 median 88.8</td></tr>
+      <tr><td>EXIF date, camera, GPS, orientation</td><td class="y">Kept at every step, as was the Display P3 colour profile (with djxl, checked on one photo)</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">SSIMULACRA2 is the perceptual metric the JPEG XL developers use. On its published scale, 85 means «excellent» (no difference an average viewer notices comparing in place at 1:1) and 90 means visually lossless. Quality 90 is therefore plenty for photos you're sending to someone, and djxl's default of 95 buys a little extra fidelity for roughly a third more file size.</p>
+  <p class="lead">The lossless repack is the result worth remembering if you archive on a Mac: about a sixth of the space back, with every original JPEG recoverable byte for byte. One warning goes with the metadata row: with djxl, location data travels into the converted copies, so strip it before you share them anywhere public. The converter on this site behaves differently, because it redraws the image in the browser: its JPGs carry no date, camera or GPS data at all.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Problems you'll probably run into</h2>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>What happens</th><th>Why, and the fix</th></tr></thead>
+    <tbody>
+      <tr><td>Double-clicking opens the wrong app</td><td>Another app claimed the .jxl extension. Select the file, choose File → Get Info, pick Preview under «Open with» and click Change All.</td></tr>
+      <tr><td>Preview opens it but won't save your edits as .jxl</td><td>macOS has no JPEG XL writer. Use File → Export to save as JPEG, PNG or HEIC, and keep the original .jxl.</td></tr>
+      <tr><td>Blank icons, no Quick Look</td><td>You're on Ventura or older. Update to Sonoma or later, or use Safari, Firefox, our viewer or XnView MP.</td></tr>
+      <tr><td>magick says «no decode delegate»</td><td>Homebrew's ImageMagick is built without JPEG XL. Use djxl, sips or vips instead.</td></tr>
+      <tr><td>Chrome or Firefox downloads the file</td><td>An older version. Chrome 155 and Firefox 158, both released in October 2026, show JPEG XL by default. On Monterey, Chrome can't update to 155 (it needs macOS 13), so use Firefox or Safari.</td></tr>
+      <tr><td>An animated .jxl doesn't move in Safari</td><td>Safari's JPEG XL support covers still images only.</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Common questions</h2>
+  <div class="faq">
+    <details open><summary>Which macOS version do I need to open .jxl files?</summary><div class="ans">macOS Sonoma (14) or later for full support in Preview, Quick Look and Finder. On Monterey and Ventura nothing built into macOS opens them, but Safari 17 or later, Firefox 158 and, on Ventura, Chrome 155 show them. On Big Sur and Catalina, use Firefox 158, which runs on macOS 10.15 or later, or our viewer.</div></details>
+    <details><summary>Can I make Preview save a picture as JPEG XL?</summary><div class="ans">No. Preview's export formats are HEIC, JPEG, JPEG-2000, OpenEXR, PDF, PNG and TIFF plus a few older ones, and the system's image engine can read JPEG XL but not write it. Use cjxl from Homebrew or an editor that supports the format.</div></details>
+    <details><summary>What's the free way to convert .jxl to JPG on a Mac?</summary><div class="ans">Three are built in: Preview's File → Export (or Export Selected Images for many files), Finder's Quick Actions → Convert Image, and the <code>sips</code> command in Terminal. None needs anything installed on Sonoma or later.</div></details>
+    <details><summary>Does converting a .jxl to JPG lose quality?</summary><div class="ans">A little, because JPEG is lossy. In our tests a JPEG at quality 90 scored a median of 86 on SSIMULACRA2 against the JPEG XL it came from, which the metric's authors describe as excellent. The exception is a .jxl made by repacking a JPEG: djxl gives you that original back exactly.</div></details>
+    <details><summary>Can I shrink my JPEG archive with JPEG XL without losing anything?</summary><div class="ans">Yes. cjxl repacks JPEGs losslessly by default; on our ten iPhone photos it saved 17.1% and all ten came back byte-identical. Work on exported copies, though, never inside the Photos library package.</div></details>
+    <details><summary>Why does a .dng from my iPhone mention JPEG XL?</summary><div class="ans">Because the iPhone 16 Pro and later Pro models can compress ProRAW with JPEG XL. The file stays a .dng and macOS 14 or later opens it like any other ProRAW. <a href="/en/open-jxl-on-iphone/">More in the iPhone guide</a>.</div></details>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Keep reading</h2>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/jpeg-xl-browser-test/"><span class="cta-ic">🧪</span><b>Does your browser show JPEG XL?</b><span class="cta-sub">Test it in one second →</span></a>
+    <a class="cta-card" href="/en/open-jxl-on-windows/"><span class="cta-ic">🪟</span><b>Open .jxl on Windows</b><span class="cta-sub">When the file has to leave your Mac →</span></a>
+    <a class="cta-card" href="/en/jxl-file/"><span class="cta-ic">📄</span><b>What is a .jxl file?</b><span class="cta-sub">Where it came from and why it's small →</span></a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/news/">What's new</a></nav>
+  </div>
+  <div class="legal">
+    <span class="privacy-pill">🔒 Your files never leave your device</span>
+    <span class="flegal"><a href="/en/privacy/">Privacy</a> · <a href="/en/terms/">Terms</a><span id="revocation-link" style="display:none"> · <a href="javascript:window.googlefc.showRevocationMessage();">Privacy settings</a></span></span>
+    <span>© 2026 JXL Convert</span>
+  </div>
+  <div class="sister"><a href="https://docuniversal.com/" rel="noopener" style="display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:100%;color:inherit;opacity:.72;font-size:13px"><svg width="18" height="18" viewBox="0 0 64 64" aria-hidden="true" style="border-radius:5px;flex:none"><defs><linearGradient id="duLogo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7cc4a0"/><stop offset="1" stop-color="#366d55"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#duLogo)"/><circle cx="32" cy="32" r="16" fill="none" stroke="#fff" stroke-width="4" opacity=".95"/><circle cx="32" cy="32" r="5" fill="#fff"/></svg><span>Working with PDFs? Try DocUniversal — free, in your browser</span></a></div>
+</div></footer>
+<script>
+window.googlefc = window.googlefc || {};
+window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+window.googlefc.callbackQueue.push({
+  'CONSENT_API_READY':
+  () => __tcfapi('addEventListener', 0, (tcdata, success) => {
+    const revocationLink = document.getElementById('revocation-link');
+    if (!revocationLink) return;
+    if (!success || !tcdata) {
+      revocationLink.style.display = 'none';
+    } else if (tcdata.gdprApplies) {
+      revocationLink.style.display = 'inline';
+    } else {
+      revocationLink.style.display = 'none';
+    }
+  })
+});
+</script>
+</body>
+</html>

@@ -37,7 +37,7 @@
 <main class="legal-page">
   <a class="back" href="/en/">← Back to the converter</a>
   <h1>Privacy &amp; Cookie Policy</h1>
-  <div class="updated">Last updated: 18 August 2026</div>
+  <div class="updated">Last updated: 15 October 2026</div>
 
   <h2 id="short">1. The short version</h2>
   <p><strong>Your images and files are never uploaded.</strong> The converter and the viewer both run inside your own browser, using WebAssembly. The files you open here stay on your device. They are not sent to us, and there is nowhere on this site that could receive them.</p>
@@ -76,15 +76,15 @@
   </ul>
 
   <h2 id="data">5. What is processed, why, and on what legal basis</h2>
-  <p>This is the complete list of what is processed. The notes under the table cover the only other thing that leaves your browser.</p>
+  <p>This is the complete list of what is processed.</p>
   <div class="tbl"><table class="cmp">
     <thead><tr><th>Data</th><th>Purpose</th><th>Legal basis</th><th>Kept for</th></tr></thead>
     <tbody>
       <tr>
-        <td><strong>Connection data</strong><br>Your IP address, your browser's user-agent, the address requested, and the date and time.<br><em>Handled by a third party: Cloudflare Pages, our host. Not by us.</em></td>
+        <td><strong>Connection data</strong><br>Your IP address, your browser's user-agent, the address requested, the page that referred you, and the date and time. <strong>The IP address is shortened before it is written down</strong>: its last part is replaced with zeros (the last of the four numbers of an IPv4 address, the last 80 bits of an IPv6 one).<br><em>Kept in the access log of this site's own server, which is rented from Contabo GmbH and located in Germany.</em></td>
         <td>Delivering the page to you, keeping the site available, and blocking attacks and abuse.</td>
         <td>Legitimate interest, Article 6(1)(f) GDPR. No web page can be served to you without them.</td>
-        <td>Whatever Cloudflare's own retention period is — see their <a href="https://www.cloudflare.com/privacypolicy/" rel="nofollow noopener">privacy policy</a>. The controller does not read, copy or download those logs.</td>
+        <td><strong>14 days.</strong> The log is rotated every day and each day's file is deleted automatically after 14 days.</td>
       </tr>
       <tr>
         <td><strong>Advertising data</strong><br>Advertising cookies and identifiers, IP address, user-agent, the pages you visit here, and how you interact with the ads.<br><em>Handled by a third party: Google. We only ever see aggregate figures in the AdSense dashboard — impressions, clicks, earnings — never anything about you as an individual.</em></td>
@@ -93,7 +93,7 @@
         <td>Set by Google, not by us. The longest-lived AdSense cookies (<code>__gads</code>, <code>__gpi</code>, <code>IDE</code>) expire after 13 months in the EEA and the UK, per <a href="https://business.safety.google/adscookies/" rel="nofollow noopener">Google's own cookie list</a>; what Google keeps afterwards is governed by its <a href="https://policies.google.com/privacy" rel="nofollow noopener">privacy policy</a>. The controller can set neither.</td>
       </tr>
       <tr>
-        <td><strong>Audience measurement data</strong><br>The address of the page you opened, the page that referred you, your user-agent, page-load timings, screen size, and the country inferred from your IP address.<br><em>Handled by a third party: Cloudflare Web Analytics. Cloudflare injects its script at the edge, from <code>static.cloudflareinsights.com</code>, so it is not visible in this site's own source code. It sets <strong>no cookie</strong> and stores no identifier on your device.</em></td>
+        <td><strong>Audience measurement data</strong><br>The address of the page you opened, the page that referred you, your user-agent, page-load timings, screen size, and the country inferred from your IP address.<br><em>Handled by a third party: Cloudflare Web Analytics. Its script, loaded from <code>static.cloudflareinsights.com</code>, is added to each page as the page is sent, so it is not in this site's source files. It sets <strong>no cookie</strong> and stores no identifier on your device.</em></td>
         <td>Counting visits in aggregate: how many pages get opened, which ones, and roughly from where.</td>
         <td>Legitimate interest, Article 6(1)(f) GDPR. Nothing is written to or read from your device, so no consent is required for the storage itself.</td>
         <td>Whatever period Cloudflare applies to Web Analytics. The controller sees aggregate charts only, and can neither lengthen nor shorten that period.</td>
@@ -101,7 +101,7 @@
     </tbody>
   </table></div>
   <p><strong>About that third row.</strong> It is the whole of the measurement on this site: no heat maps, no session recording, no A/B testing, no Google Analytics, no counter of our own. It works without cookies and without any identifier on your device, and the controller only ever sees aggregate charts — page views, top pages, countries — never anything that points at one visitor.</p>
-  <p>One more thing leaves your browser without any script being involved: Cloudflare sends the <code>NEL</code> and <code>Report-To</code> headers with every response, which asks your browser to report network errors — a failed connection, a timeout — to <code>a.nel.cloudflare.com</code>. Those reports carry the address requested, your IP address and the kind of error. They are part of the hosting, not of any measurement of ours.</p>
+  <p>The server's access log, in the first row, is not used to count visitors either. It is there to deliver the pages, keep the site running and stop abuse.</p>
 
   <h2 id="advertising">6. Advertising: Google AdSense</h2>
   <p>This site is free and is paid for by advertising. It uses <strong>Google AdSense</strong>, publisher ID <code>ca-pub-9791902883190551</code>. The AdSense script is loaded on every content page of the site, including this one; the only page without it is the 404 error page.</p>
@@ -171,19 +171,20 @@
   <p>Named recipients, not vague talk of "partners":</p>
   <ul>
     <li><strong>Google Ireland Ltd. / Google LLC</strong> — advertising (AdSense). For most of the advertising data Google acts as an <strong>independent controller</strong> under its own terms: it decides for itself what it does with that data. That is why requests about advertising data have to go to Google directly — the controller of this site cannot answer them and cannot instruct Google to.</li>
-    <li><strong>Cloudflare, Inc.</strong> — hosting and CDN (Cloudflare Pages), and audience measurement (Cloudflare Web Analytics). In both roles Cloudflare acts as a <strong>processor</strong>, on the controller's behalf and on its instructions.</li>
+    <li><strong>Contabo GmbH</strong> (Munich, Germany) — the server this site runs on, which holds the access log described in <a href="#data">section 5</a>. Contabo acts as a <strong>processor</strong>, on the controller's behalf and on its instructions.</li>
+    <li><strong>Cloudflare, Inc.</strong> — audience measurement (Cloudflare Web Analytics), the domain's DNS, and forwarding the mail sent to the contact address. In those roles Cloudflare acts as a <strong>processor</strong>, on the controller's behalf and on its instructions.</li>
   </ul>
   <p>Nobody else. Nothing is sold. Nothing is handed to data brokers. There are no other transfers of any kind.</p>
   <p>And the important one again: <strong>the files you convert are shared with no one</strong>, because they never leave your device in the first place.</p>
 
   <h2 id="transfers">10. International transfers</h2>
-  <p>Google and Cloudflare are global companies, so the data described in section 5 may be processed in the United States and in other countries.</p>
+  <p>The server this site runs on is in Germany, inside the European Union, so the access log never leaves the EU. Google and Cloudflare, on the other hand, are global companies, so the data they handle may be processed in the United States and in other countries.</p>
   <p>Those transfers rely on the EU–US Data Privacy Framework and/or on the Standard Contractual Clauses approved by the European Commission. Each provider sets out its own arrangements on its own page: <a href="https://policies.google.com/privacy/frameworks" rel="nofollow noopener">Google</a> and <a href="https://www.cloudflare.com/privacypolicy/" rel="nofollow noopener">Cloudflare</a>. Those pages are the live source. We do not restate the status of any particular adequacy decision here, because it can change.</p>
 
   <h2 id="retention">11. How long data is kept</h2>
-  <p>The controller keeps nothing. There is no database, and no server of ours that receives anything from you. The periods below are therefore set by the providers; the criterion in every case is what each of them needs to deliver, protect or bill the service, and the controller has no way to lengthen or shorten any of them.</p>
+  <p>The controller keeps no database about you. The only thing this site's own server stores is its access log, with the IP address already shortened, and it deletes it on its own after 14 days. The other periods below are set by the providers; the criterion in every case is what each of them needs to deliver, protect or bill the service, and the controller has no way to lengthen or shorten them.</p>
   <ul>
-    <li><strong>Hosting logs</strong> — kept by Cloudflare for its own period, under its <a href="https://www.cloudflare.com/privacypolicy/" rel="nofollow noopener">privacy policy</a>. The controller does not read, copy or download those logs and cannot extend their life.</li>
+    <li><strong>Server access log</strong> — <strong>14 days</strong>, with the IP address shortened before it is written. Each day's file is deleted automatically when it reaches that age.</li>
     <li><strong>Audience measurement</strong> — kept by Cloudflare for the period it applies to Web Analytics. Only aggregate charts reach the controller, and nothing in them identifies a visitor.</li>
     <li><strong>Advertising data</strong> — the cookies themselves expire on the schedule Google publishes: 13 months in the EEA and the UK for the longest-lived AdSense ones, per <a href="https://business.safety.google/adscookies/" rel="nofollow noopener">Google's cookie list</a>. What Google keeps afterwards follows its <a href="https://policies.google.com/privacy" rel="nofollow noopener">privacy policy</a>; AdSense gives publishers no control over it.</li>
     <li><strong>Contact email</strong> — if you write to exercise a right, your message and the reply are kept for <strong>one year from the date of the reply</strong>, which is what it takes to be able to show the request was answered, and are then deleted.</li>
@@ -225,7 +226,7 @@
 <footer class="site"><div class="wrap">
   <div class="legal">
     <span class="privacy-pill">🔒 Your files never leave your device</span>
-    <span class="flegal"><a href="/en/guides/">Guides</a> · <a href="/en/about/">About</a> · <a href="/en/contact/">Contact</a> · <a href="/en/news/">What's new</a> · <a href="/en/privacy/">Privacy</a> · <a href="/en/terms/">Terms</a><span id="revocation-link" style="display:none"> · <a href="javascript:window.googlefc.showRevocationMessage();">Privacy settings</a></span></span>
+    <span class="flegal"><a href="/en/guides/">Blog</a> · <a href="/en/about/">About</a> · <a href="/en/contact/">Contact</a> · <a href="/en/news/">What's new</a> · <a href="/en/privacy/">Privacy</a> · <a href="/en/terms/">Terms</a><span id="revocation-link" style="display:none"> · <a href="javascript:window.googlefc.showRevocationMessage();">Privacy settings</a></span></span>
     <span>© 2026 JXL Convert</span>
   </div>
 

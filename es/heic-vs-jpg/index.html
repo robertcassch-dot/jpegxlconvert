@@ -18,11 +18,11 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/styles.css?v=8">
-<link rel="alternate" type="application/rss+xml" title="JXL Convert — Guías" href="/es/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="JXL Convert — Blog" href="/es/feed.xml">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"¿La conversión conserva la fecha y la ubicación?","acceptedAnswer":{"@type":"Answer","text":"Sí, una conversión normal mantiene los datos EXIF. Lo que no puede conservar son los extras exclusivos del HEIC, como los mapas de profundidad y las ediciones reversibles, que se aplanan en la imagen."}},
-{"@type":"Question","name":"¿El HEIC tiene mejor calidad que el JPG?","acceptedAnswer":{"@type":"Answer","text":"A igual tamaño de archivo, sí, y se nota. El HEIC además lleva color de 10 bits frente a los 8 del JPEG. Pero «mejor» deja de importar si el archivo no se abre donde lo necesitas."}},
+{"@type":"Question","name":"¿El HEIC tiene mejor calidad que el JPG?","acceptedAnswer":{"@type":"Answer","text":"A igual tamaño de archivo, sí, y se nota. El HEIC además puede llevar color de 10 bits frente a los 8 del JPEG, aunque muchas fotos de móvil se guardan en 8 bits de todos modos. Pero «mejor» deja de importar si el archivo no se abre donde lo necesitas."}},
 {"@type":"Question","name":"¿Convierto toda mi biblioteca de fotos a JPG?","acceptedAnswer":{"@type":"Answer","text":"No. Convierte las que vayas a enviar y conserva los originales. Convertirlo todo duplica el espacio que ocupas y pierde profundidad de color para siempre sin ninguna ventaja."}},
 {"@type":"Question","name":"¿Convertir de HEIC a JPG hace el archivo más grande?","acceptedAnswer":{"@type":"Answer","text":"Normalmente sí, a menudo casi el doble. El JPEG necesita más espacio para la misma foto porque su compresión es treinta años más antigua."}},
 {"@type":"Question","name":"¿Qué elijo en los ajustes del iPhone?","acceptedAnswer":{"@type":"Answer","text":"«Alta eficiencia» (HEIC) si te importa el espacio y te mueves sobre todo en el mundo Apple. «Más compatible» (JPEG) si mandas fotos constantemente a gente con Windows o Android."}},
@@ -31,15 +31,16 @@
 ]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"HEIC o JPG","datePublished":"2026-08-29","dateModified":"2026-08-29","inLanguage":"es","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/es/sobre-el-proyecto/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/es/"},"mainEntityOfPage":"https://jpegxlconvert.com/es/heic-vs-jpg/"}
+{"@context":"https://schema.org","@type":"Article","headline":"HEIC o JPG","datePublished":"2026-08-29","dateModified":"2026-10-15","inLanguage":"es","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/es/sobre-el-proyecto/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/es/"},"mainEntityOfPage":"https://jpegxlconvert.com/es/heic-vs-jpg/"}
 </script>
 <style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+<style>.gtbl{max-width:720px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
 </head>
 <body>
 <header class="site"><div class="wrap nav">
   <a class="brand" href="/es/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
   <div class="nav-right">
-    <nav class="nav-links"><a href="/es/">Conversor</a><a href="/es/visor-jxl/">Visor</a><a href="/es/guias/">Guías</a></nav>
+    <nav class="nav-links"><a href="/es/">Conversor</a><a href="/es/visor-jxl/">Visor</a><a href="/es/guias/">Blog</a></nav>
     <details class="lang"><summary>🌐 ES</summary>
       <div class="lang-menu">
         <a href="/en/heic-vs-jpg/"><span class="flag">🇬🇧</span> English</a>
@@ -54,7 +55,7 @@
   <span class="eyebrow">⚖️ La comparativa</span>
   <h1>HEIC o JPG</h1>
   <p class="sub">Uno te ahorra la mitad del almacenamiento. El otro <strong>se abre de verdad</strong>. Ese es todo el debate, y cuál gana depende por completo de qué vayas a hacer con la foto.</p>
-  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">por <a href="/es/sobre-el-proyecto/" style="color:inherit">Robert Castillo</a> · Publicado el <time datetime="2026-08-29">29 de agosto de 2026</time></p>
+  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">por <a href="/es/sobre-el-proyecto/" style="color:inherit">Robert Castillo</a> · Publicado el <time datetime="2026-08-29">29 de agosto de 2026</time> · actualizado el <time datetime="2026-10-15">15 de octubre de 2026</time></p>
   <div class="badges">
     <span class="badge green">💾 HEIC: la mitad de tamaño</span><span class="badge">🌍 JPG: se abre en todo</span><span class="badge">🔒 No se sube nada</span>
   </div>
@@ -72,11 +73,11 @@
 
 <section class="block alt"><div class="wrap">
   <h2>Uno al lado del otro</h2>
-  <table class="cmp">
+  <div class="gtbl"><table class="cmp">
     <thead><tr><th></th><th>HEIC</th><th>JPG</th></tr></thead>
     <tbody>
       <tr><td>Tamaño del archivo</td><td>Más o menos la mitad</td><td>Casi el doble para la misma calidad</td></tr>
-      <tr><td>Profundidad de color</td><td>10 bits, degradados más suaves</td><td>8 bits, puede hacer bandas en los cielos</td></tr>
+      <tr><td>Profundidad de color</td><td>Puede ser de 10 bits: degradados más suaves</td><td>8 bits, puede hacer bandas en los cielos</td></tr>
       <tr><td>Se abre en Windows</td><td>En Windows 11 normalmente; en Windows 10 a menudo no</td><td>Siempre</td></tr>
       <tr><td>Se abre en Android</td><td>Solo en versiones recientes</td><td>Siempre</td></tr>
       <tr><td>Subirlo a webs</td><td>Lo rechazan con frecuencia</td><td>Lo acepta todo el mundo</td></tr>
@@ -84,7 +85,7 @@
       <tr><td>Live Photos y ráfagas</td><td>Sí, varios fotogramas en un archivo</td><td>Una sola imagen fija</td></tr>
       <tr><td>Antigüedad</td><td>2015, basado en compresión de vídeo</td><td>1992</td></tr>
     </tbody>
-  </table>
+  </table></div>
   <p class="lead">Fíjate en la forma de esa tabla: el HEIC gana en casi todas las filas técnicas y pierde en las dos únicas que deciden si vas a poder usar la foto. Ese es el intercambio, resumido.</p>
 </div></section>
 
@@ -92,7 +93,7 @@
   <h2>Cuándo el HEIC es la respuesta correcta</h2>
   <div class="grid3">
     <div class="feature"><div class="fi">📱</div><h3>Fotos que se quedan en el móvil</h3><p>Miles de imágenes que no vas a mandar a ningún sitio. Reducirlas a la mitad es espacio gratis.</p></div>
-    <div class="feature"><div class="fi">🌇</div><h3>Cielos, atardeceres, degradados</h3><p>El color de 10 bits hace bastantes menos bandas en las transiciones suaves que el JPEG de 8 bits.</p></div>
+    <div class="feature"><div class="fi">🌇</div><h3>Cielos, atardeceres, degradados</h3><p>El HEIC puede guardar color de 10 bits, que hace bastantes menos bandas en las transiciones suaves que el JPEG de 8 bits — siempre que la cámara lo guarde así; muchas fotos de móvil siguen siendo de 8 bits.</p></div>
     <div class="feature"><div class="fi">🗄️</div><h3>Archivar los originales</h3><p>Si vas a conservar la copia maestra, conserva la que lleva más información dentro.</p></div>
   </div>
 </div></section>
@@ -114,8 +115,8 @@
 
 <section class="block alt"><div class="wrap">
   <h2>¿Y dónde encaja el JPEG XL?</h2>
-  <p class="lead">El JPEG XL es el formato que zanjaría esta discusión si el soporte le acompañara. Iguala la compresión del HEIC sin los problemas de patentes que llevaron a Windows a cobrar por un códec, maneja con pérdida y sin pérdida en un mismo formato, y puede reempaquetar un JPEG existente un 20% más pequeño <em>sin tocar un solo píxel</em>.</p>
-  <p class="lead">El problema en 2026 es el mismo que tiene el HEIC, solo que peor: Safari lo muestra, el resto del software todavía no. Es una elección excelente para archivar y muy mala para mandarle una foto a tu madre.</p>
+  <p class="lead">El JPEG XL es el formato que zanjaría esta discusión si el soporte le acompañara. Iguala la compresión del HEIC sin las licencias de patentes de HEVC (Windows cobra por su extensión HEVC, mientras que la de JPEG XL es gratis), maneja con pérdida y sin pérdida en un mismo formato, y puede reempaquetar un JPEG existente un 20% más pequeño <em>sin tocar un solo píxel</em>.</p>
+  <p class="lead">El problema es parecido al del HEIC: desde octubre de 2026 lo muestran Safari, Chrome y Firefox, pero buena parte del software (Edge, muchos visores y programas) todavía no. Es una elección excelente para archivar y muy mala para mandarle una foto a tu madre.</p>
   <div class="cta-row">
     <a class="cta-card" href="/es/que-es-jpeg-xl/"><span class="cta-ic">📘</span><b>Qué es JPEG XL</b><span class="cta-sub">El formato que quiere zanjar esto →</span></a>
     <a class="cta-card" href="/es/jpeg-xl-vs-webp/"><span class="cta-ic">⚖️</span><b>JPEG XL frente a WebP</b><span class="cta-sub">El otro candidato moderno →</span></a>
@@ -133,7 +134,7 @@
   <h2>Preguntas frecuentes</h2>
   <div class="faq">
     <details open><summary>¿La conversión conserva la fecha y la ubicación?</summary><div class="ans">Sí, una conversión normal mantiene los datos EXIF. Lo que no puede conservar son los extras exclusivos del HEIC, como los mapas de profundidad y las ediciones reversibles, que se aplanan en la imagen.</div></details>
-    <details><summary>¿El HEIC tiene mejor calidad que el JPG?</summary><div class="ans">A igual tamaño de archivo, sí, y se nota. El HEIC además lleva color de 10 bits frente a los 8 del JPEG. Pero «mejor» deja de importar si el archivo no se abre donde lo necesitas.</div></details>
+    <details><summary>¿El HEIC tiene mejor calidad que el JPG?</summary><div class="ans">A igual tamaño de archivo, sí, y se nota. El HEIC además puede llevar color de 10 bits frente a los 8 del JPEG, aunque muchas fotos de móvil se guardan en 8 bits de todos modos. Pero «mejor» deja de importar si el archivo no se abre donde lo necesitas.</div></details>
     <details><summary>¿Convierto toda mi biblioteca de fotos a JPG?</summary><div class="ans">No. Convierte las que vayas a enviar y conserva los originales. Convertirlo todo duplica el espacio que ocupas y pierde profundidad de color para siempre sin ninguna ventaja.</div></details>
     <details><summary>¿Convertir de HEIC a JPG hace el archivo más grande?</summary><div class="ans">Normalmente sí, a menudo casi el doble. El JPEG necesita más espacio para la misma foto porque su compresión es treinta años más antigua.</div></details>
     <details><summary>¿Qué elijo en los ajustes del iPhone?</summary><div class="ans">«Alta eficiencia» (HEIC) si te importa el espacio y te mueves sobre todo en el mundo Apple. «Más compatible» (JPEG) si mandas fotos constantemente a gente con Windows o Android.</div></details>
@@ -155,7 +156,7 @@
 <footer class="site"><div class="wrap">
   <div class="fcols">
     <a class="brand" href="/es/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
-    <nav class="fnav"><a href="/es/">Conversor</a><a href="/es/visor-jxl/">Visor</a><a href="/es/guias/">Guías</a><a href="/es/sobre-el-proyecto/">Sobre el proyecto</a><a href="/es/contacto/">Contacto</a><a href="/es/novedades/">Novedades</a></nav>
+    <nav class="fnav"><a href="/es/">Conversor</a><a href="/es/visor-jxl/">Visor</a><a href="/es/guias/">Blog</a><a href="/es/sobre-el-proyecto/">Sobre el proyecto</a><a href="/es/contacto/">Contacto</a><a href="/es/novedades/">Novedades</a></nav>
   </div>
   <div class="legal">
     <span class="privacy-pill">🔒 Tus archivos nunca salen de tu dispositivo</span>

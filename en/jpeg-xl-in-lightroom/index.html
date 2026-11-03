@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9791902883190551" crossorigin="anonymous"></script>
+<title>JPEG XL in Lightroom: Export Settings and DNG (2026)</title>
+<meta name="description" content="Lightroom Classic has exported JPEG XL since 13.0 (October 2023). Where the option is, what each setting does, and how JPEG XL shrinks lossy DNGs.">
+<link rel="canonical" href="https://jpegxlconvert.com/en/jpeg-xl-in-lightroom/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/jpeg-xl-in-lightroom/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/jpeg-xl-en-lightroom/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/jpeg-xl-in-lightroom/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JPEG XL in Lightroom Classic and Lightroom, explained">
+<meta property="og:description" content="Export settings one by one, measured file sizes, HDR, and the JPEG XL hiding inside lossy DNG files.">
+<meta property="og:url" content="https://jpegxlconvert.com/en/jpeg-xl-in-lightroom/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=8">
+<link rel="alternate" type="application/rss+xml" title="JXL Convert — Blog" href="/en/feed.xml">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Can Lightroom Classic export JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"Yes, since version 13.0 (October 2023). In the Export dialog, choose JPEG XL under File Settings › Image Format. Quality, a Lossless option, colour space, 8- or 16-bit and HDR Output are all available."}},
+{"@type":"Question","name":"What Quality should I use for JPEG XL in Lightroom?","acceptedAnswer":{"@type":"Answer","text":"Adobe doesn't publish how the slider maps to the encoder, so test: export one photo at a few values and compare at 100%. One user found that JPEG XL at 95 already came out smaller than his JPEG at 80, while 100 was huge. Don't read our table's quality column as Lightroom's slider: on libjxl's scale, quality 95 weighed 2.03 MB against 0.84 MB for the JPEG at 80. libjxl's quality 90 is a good starting point; on our high-detail photo it took 0.75 (≈93) to beat a quality-90 JPEG."}},
+{"@type":"Question","name":"Can Lightroom import .jxl files?","acceptedAnswer":{"@type":"Answer","text":"Yes. Adobe lists JPEG XL among the formats both Lightroom Classic and Lightroom import."}},
+{"@type":"Question","name":"Does Lightroom compress my raw files with JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"Only lossy DNGs and the DNGs created by Merge to HDR and Panorama — and, until Classic 14.4 (June 2025), the DNGs that Enhance wrote; since 14.4 those enhancements apply without a separate DNG. Your original raw files and standard (lossless) DNGs are not touched by it."}},
+{"@type":"Question","name":"Should I convert my raw archive to lossy DNG?","acceptedAnswer":{"@type":"Answer","text":"Not the photos you care about. A lossy DNG keeps the editing latitude of a demosaiced 16-bit image but loses the original sensor data, and fewer programs can open it. It's a good fit for rejects and duplicate libraries."}},
+{"@type":"Question","name":"Why export JPEG XL instead of JPEG?","acceptedAnswer":{"@type":"Answer","text":"Smaller files at the same visual quality, 16-bit and HDR support, and a true lossless mode. The catch is compatibility; see JPEG XL vs JPEG for when it's worth it."}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"JPEG XL in Lightroom","datePublished":"2026-10-15","dateModified":"2026-10-15","inLanguage":"en","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/en/about/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/en/"},"mainEntityOfPage":"https://jpegxlconvert.com/en/jpeg-xl-in-lightroom/"}
+</script>
+<style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+<style>.gtbl{max-width:720px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a></nav>
+    <details class="lang"><summary>🌐 EN</summary>
+      <div class="lang-menu">
+        <a class="active" href="/en/jpeg-xl-in-lightroom/"><span class="flag">🇬🇧</span> English</a>
+        <a href="/es/jpeg-xl-en-lightroom/"><span class="flag">🇪🇸</span> Español</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">📷 Lightroom Classic &amp; Lightroom · checked October 2026</span>
+  <h1>JPEG&nbsp;XL in Lightroom</h1>
+  <p class="sub"><strong>Lightroom Classic has exported and imported .jxl since version 13.0 (October 2023), and the cloud-based Lightroom since 7.0.</strong> The export option sits in the same File Settings panel as JPEG. The part most people miss is elsewhere: since 13.0, Lightroom's lossy DNGs are compressed with JPEG&nbsp;XL too.</p>
+  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">by <a href="/en/about/" style="color:inherit">Robert Castillo</a> · Published <time datetime="2026-10-15">October 15, 2026</time></p>
+  <div class="badges">
+    <span class="badge green">📤 Export since Classic 13.0</span><span class="badge">☁️ Lightroom 7.0 too</span><span class="badge">🗜️ Lossy DNG = JPEG XL inside</span><span class="badge">🧪 Sizes measured with libjxl</span>
+  </div>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/jpg-to-jxl/"><span class="cta-ic">🗜️</span><b>Already exported JPEGs?</b><span class="cta-sub">Re-pack them losslessly, no re-export →</span></a>
+    <a class="cta-card" href="/en/jxl-viewer/"><span class="cta-ic">👁️</span><b>Check a .jxl export</b><span class="cta-sub">Open it in your browser, nothing uploaded →</span></a>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>The short answer</h2>
+  <p class="lead">Yes, both Lightrooms do JPEG&nbsp;XL. <strong>Lightroom Classic 13.0</strong>, released on 10 October 2023, added JPEG&nbsp;XL and AVIF to the export formats alongside its new HDR editing, and Adobe's <a href="https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/hdr-output.html" rel="nofollow noopener">HDR guide</a> says that with HDR Output on, Classic 13 and later can open and save photos in AVIF, JPEG or JPEG&nbsp;XL. The cloud-based <strong>Lightroom 7.0</strong> arrived the same month with the same formats.</p>
+  <p class="lead">Importing works as well: Adobe's list of supported formats includes JPEG&nbsp;XL for both apps. In October 2026 the current Lightroom Classic is 15.6, and none of the release notes since 14.4 mention JPEG&nbsp;XL — the feature has been stable for a while.</p>
+  <p class="lead">The less visible change came in the same 13.0 release: <strong>lossy DNGs switched from JPEG to JPEG&nbsp;XL compression</strong>, and so did the DNGs Lightroom creates itself with Merge to HDR and Panorama — and, until Classic 14.4 (June 2025), the DNGs that Enhance wrote; since 14.4 those enhancements apply without a separate DNG. That is why some of your DNGs suddenly got much smaller — and why other programs may have stopped previewing them.</p>
+</div></section>
+
+<section class="block alt" id="export"><div class="wrap">
+  <h2>How to export JPEG XL from Lightroom Classic</h2>
+  <div class="steps">
+    <div class="step"><h3>Open the Export dialog</h3><p>Select the photos and choose <strong>File › Export</strong> (Ctrl+Shift+E on Windows, Cmd+Shift+E on a Mac). Set Export To: Hard Drive and pick the folder as usual.</p></div>
+    <div class="step"><h3>Choose the format</h3><p>In <strong>File Settings</strong>, open <strong>Image Format</strong> and pick <strong>JPEG XL</strong>. It sits in the same list as JPEG, AVIF, PSD, TIFF, PNG, DNG and Original.</p></div>
+    <div class="step"><h3>Set quality, colour and depth</h3><p>Use the <strong>Quality</strong> slider (0–100) or tick the <strong>Lossless</strong> option; then pick the <strong>Color Space</strong> and a <strong>Bit Depth</strong> of 8 or 16 bits per component.</p></div>
+    <div class="step"><h3>HDR only if you edited in HDR</h3><p>Tick <strong>HDR Output</strong> only for photos edited in HDR mode; add <strong>Maximize Compatibility</strong> to embed a gain map so non-HDR screens still get a proper image.</p></div>
+    <div class="step"><h3>Finish as for a JPEG</h3><p>Image Sizing, Output Sharpening, Metadata and Watermarking all work with JPEG&nbsp;XL. Click <strong>Add</strong> under the presets panel to save the settings, then <strong>Export</strong>.</p></div>
+  </div>
+  <p class="lead">One thing JPEG&nbsp;XL doesn't get is <strong>Limit File Size To</strong>, which Adobe documents for JPEG only. If you need exports under a fixed size, either stay with JPEG for that preset or find the Quality value that lands under your limit with a test batch.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Every JPEG XL setting, and what we'd pick</h2>
+  <p class="lead">The options below are the ones Adobe documents in its <a href="https://helpx.adobe.com/lightroom-classic/desktop/export-photos/export-files-disk-or-cd.html" rel="nofollow noopener">export reference</a>. The advice is ours, and it comes with the numbers in the next section.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Setting</th><th>What Adobe says it does</th><th>Our advice</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Quality</strong> 0–100</td><td>Amount of compression, as for JPEG</td><td>Start high and test; the numbers don't mean what they mean for JPEG</td></tr>
+      <tr><td><strong>Lossless</strong></td><td>Exports without any loss in quality</td><td>Masters and files you'll edit again; big with 16-bit raws</td></tr>
+      <tr><td><strong>Color Space</strong></td><td>sRGB, Adobe RGB, ProPhoto RGB, HDR spaces, or Other</td><td>sRGB or Display P3 for lossy; wide spaces with Lossless</td></tr>
+      <tr><td><strong>Bit Depth</strong> 8 / 16</td><td>Bits per channel in the file</td><td>16 is cheap with lossy, costly with Lossless</td></tr>
+      <tr><td><strong>HDR Output</strong></td><td>Keeps the HDR data of photos edited in HDR mode</td><td>Only for HDR edits; add Maximize Compatibility</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">The colour-space advice isn't fussiness. Since June 2024 users have reported coloured block artefacts in <strong>lossy</strong> JPEG&nbsp;XL exports in <strong>ProPhoto RGB</strong> and Adobe RGB — the first report came from Classic 13.3.1, and it was still being seen on 14.1.1 in January 2025. The workaround suggested in Adobe's forum is simple: sRGB, Display P3 or Rec. 2020 for lossy exports, and Lossless when you really need Adobe RGB or ProPhoto.</p>
+</div></section>
+
+<section class="block alt" id="measured"><div class="wrap">
+  <h2>Measured: Quality, Lossless and 16-bit in megabytes</h2>
+  <p class="lead">Lightroom doesn't say how its Quality slider maps onto the JPEG&nbsp;XL encoder, so we measured the encoder itself: <strong>libjxl 0.12.0</strong>, the reference implementation, on two public-domain photos (14 and 45 megapixels). Quality is scored with SSIMULACRA2, where 80 means no difference visible side by side at 1:1 and 90 means visually lossless. <strong>This approximates Lightroom's choices with libjxl; it isn't Lightroom's own output.</strong></p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Export (photo A, 14 MP)</th><th>Size</th><th>SSIMULACRA2</th></tr></thead>
+    <tbody>
+      <tr><td>JPEG, quality 90 (libjpeg-turbo)</td><td>1.52 MB</td><td>80.8</td></tr>
+      <tr><td>JPEG, quality 80</td><td>0.84 MB</td><td>75.1</td></tr>
+      <tr><td>JPEG XL, distance 0.5 (≈ libjxl quality 95)</td><td>2.03 MB</td><td>87.5</td></tr>
+      <tr><td>JPEG XL, distance 1.0 (≈ quality 90)</td><td>0.99 MB</td><td class="y">84.8</td></tr>
+      <tr><td>JPEG XL, distance 2.0 (≈ quality 79)</td><td>0.50 MB</td><td>78.6</td></tr>
+      <tr><td>JPEG XL, distance 1.0, <strong>16-bit</strong></td><td>0.99 MB</td><td>84.9</td></tr>
+      <tr><td>JPEG XL <strong>Lossless</strong>, 8-bit</td><td>10.25 MB</td><td>100</td></tr>
+      <tr><td>JPEG XL <strong>Lossless</strong>, 16-bit</td><td>10.39 MB</td><td>100</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">Three things stand out. First, on photo A, JPEG&nbsp;XL at distance 1.0 is <strong>a third smaller than a quality-90 JPEG and scores higher</strong>; at distance 2.0 it is a third of the JPEG's size for a score only two points lower. That is the gain you are exporting JPEG&nbsp;XL for. Photo B, a 45-megapixel portrait full of fabric and fine detail, is a harder test: there distance 1.0 came out 41% smaller than the quality-90 JPEG (2.91 against 4.92 MB) but scored a little lower, 77.2 against 78.6. Distance 0.75, about quality 93, beat the JPEG on both counts with 3.79 MB and 79.8, so detailed photos deserve a slightly higher setting.</p>
+  <p class="lead">Second, <strong>16-bit costs almost nothing with lossy compression</strong>: 990,980 bytes in 8-bit, 991,004 in 16-bit. The encoder works in floating point internally, so the extra precision is nearly free. Photo B told the same story: 2,914,782 bytes in 8-bit, 2,914,774 in 16-bit.</p>
+  <p class="lead">Third, the 16-bit Lossless row is misleading for raw files. Our sources are 8-bit JPEGs, so the extra bits carry no information and the file grew only 1.3% (1.6% on photo B). Export a 16-bit Lossless file from a real raw and the low bits are full of genuine detail and noise; expect sizes in TIFF territory. Lossless 16-bit is for masters, not for sharing.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Lightroom (the cloud version)</h2>
+  <p class="lead">The cloud-based Lightroom got JPEG&nbsp;XL in <strong>version 7.0</strong>, in the same October 2023 release that brought HDR editing. Adobe's help lists JPG, AVIF, JPEG&nbsp;XL, DNG, TIF and Original as export types. Choose <strong>Export › Custom Settings</strong>, pick the image type and, for photos edited in HDR, tick <strong>HDR Output</strong>.</p>
+  <p class="lead">The cloud app's export screen is simpler than Classic's, and Adobe's help doesn't document separate JPEG&nbsp;XL controls such as a Lossless box or bit depth there. If you need those, export from Classic, or export a 16-bit TIFF and convert it afterwards.</p>
+  <p class="lead">Both apps import .jxl files into the library. Early on, Classic 13.0 had a known issue where JPEG&nbsp;XL and AVIF files couldn't be picked out by file type in smart collections or the Metadata panel; it's worth checking that a smart collection catches your .jxl files before you rely on it.</p>
+</div></section>
+
+<section class="block alt" id="dng"><div class="wrap">
+  <h2>Lossy DNG: the JPEG XL inside your raw files</h2>
+  <p class="lead">DNG is Adobe's open raw format, and its <a href="https://helpx.adobe.com/content/dam/help/en/photoshop/pdf/DNG_Spec_1_7_1_0.pdf" rel="nofollow noopener">1.7 specification</a> (June 2023, revised as 1.7.1 in September 2023) added JPEG&nbsp;XL as a compression method, with tags to record its distance and effort. Lightroom Classic started using it in 13.0 for <strong>lossy</strong> DNGs: those you create with <strong>Use Lossy Compression</strong> when exporting or converting to DNG, as long as Compatibility is set to Camera Raw 15.3 or later; the DNGs that Merge to HDR and Panorama write for you; and, until Classic 14.4 (June 2025), the DNGs that Enhance (Denoise, Super Resolution) wrote. Since 14.4, Denoise, Raw Details and Super Resolution are ordinary Detail-panel edits and no longer create a separate DNG.</p>
+  <p class="lead">The effect on size is large. One user on Classic 13.3 converted a 22 MB raw to lossy DNG: about <strong>5 MB</strong> with JPEG&nbsp;XL, against about 10 MB with the older JPEG-based lossy DNG. Greg Benz, who writes widely on Lightroom, cites about 92% smaller with his 50+ MB raw files; what you save depends on the camera and how it compresses its raw. And the Denoise DNGs of that period, which in 12.5 often came out at four times the size of the raw, dropped to roughly twice its size.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>DNG type</th><th>What's inside</th><th>Who can open it</th></tr></thead>
+    <tbody>
+      <tr><td>Standard (lossless) DNG</td><td>Raw sensor data, losslessly compressed</td><td>Practically every raw developer</td></tr>
+      <tr><td>Lossy DNG, compatibility 14.0 or older</td><td>Demosaiced image, JPEG compression</td><td>Many raw developers (check yours)</td></tr>
+      <tr><td>Lossy DNG, compatibility <strong>Camera Raw 15.3 and later</strong></td><td>Demosaiced image, JPEG XL compression</td><td>Adobe apps and some others; not darktable</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">What it implies for your raw files: a lossy DNG is <strong>no longer a raw</strong> in the strict sense. Lightroom's lossy DNGs store an already demosaiced (linear) image instead of the sensor's colour-filter mosaic — the older JPEG-based ones did too — so the camera's original pattern is gone. Since Classic 14.0 Denoise also accepts linear DNGs, lossy ones included, but the original sensor data is gone, so keep the original raw for the photos that matter. Keep lossy DNGs for archives of rejects, second copies or travel libraries, not for the photos that matter most.</p>
+  <p class="lead">There's a compatibility price too. With JPEG&nbsp;XL, even the embedded preview can be JPEG&nbsp;XL, so Windows Explorer shows a generic icon and ordinary viewers can't open the file. darktable lists DNG 1.7 with JPEG&nbsp;XL among the formats it explicitly doesn't support. If a DNG has to open elsewhere, set <strong>Compatibility</strong> to Camera Raw 14.0 or earlier when exporting it, and accept the larger file.</p>
+</div></section>
+
+<section class="block" id="problems"><div class="wrap">
+  <h2>Common problems and their fixes</h2>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>What happens</th><th>Why</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td>Blocky colour artefacts in a lossy .jxl</td><td>ProPhoto or Adobe RGB with lossy JPEG XL</td><td>Export in sRGB, Display P3 or Rec. 2020, or use Lossless</td></tr>
+      <tr><td>A JPEG XL export is huge, even bigger than the DNG</td><td>Reported for very large panoramas and some Denoise/HDR DNGs</td><td>Export 16-bit TIFF, then convert; or try AVIF for that file</td></tr>
+      <tr><td>HDR Output changes nothing</td><td>It only applies to photos with HDR editing turned on</td><td>Turn on HDR in Develop first, or export SDR</td></tr>
+      <tr><td>No thumbnails for new lossy DNGs in Windows</td><td>The embedded preview is JPEG XL too</td><td>Compatibility 14.0 or older if others need it</td></tr>
+      <tr><td>Another program won't open a lossy DNG</td><td>No support for DNG 1.7 with JPEG XL</td><td>Keep a lossless DNG or the original raw</td></tr>
+      <tr><td>Clients can't open the .jxl you sent</td><td>Their viewer doesn't read JPEG XL yet</td><td>Send JPEG for delivery, keep JPEG XL for yourself</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">On the oversized exports, users reported the problem from September 2024, and Adobe set the bug to “Investigating” in October 2024; one reporter on Camera Raw 17.1 found it only affected panoramas above roughly 100 megapixels. If you meet it, the TIFF detour gets round it. For scale: in our measurements a normal photo at distance 1.0 came out about a third smaller than the same photo as a quality-90 JPEG, so a JPEG XL export several times larger than a JPEG points to this bug, not to the format.</p>
+</div></section>
+
+<section class="block alt" id="faq"><div class="wrap">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <details open><summary>Can Lightroom Classic export JPEG XL?</summary><div class="ans">Yes, since version 13.0 (October 2023). In the Export dialog, choose JPEG XL under File Settings › Image Format. Quality, a Lossless option, colour space, 8- or 16-bit and HDR Output are all available.</div></details>
+    <details><summary>What Quality should I use for JPEG XL in Lightroom?</summary><div class="ans">Adobe doesn't publish how the slider maps to the encoder, so test: export one photo at a few values and compare at 100%. One user found that JPEG XL at 95 already came out smaller than his JPEG at 80, while 100 was huge. Don't read our table's quality column as Lightroom's slider: on libjxl's scale, quality 95 weighed 2.03 MB against 0.84 MB for the JPEG at 80. libjxl's quality 90 is a good starting point; on our high-detail photo it took 0.75 (≈93) to beat a quality-90 JPEG.</div></details>
+    <details><summary>Can Lightroom import .jxl files?</summary><div class="ans">Yes. Adobe lists JPEG XL among the formats both Lightroom Classic and Lightroom import.</div></details>
+    <details><summary>Does Lightroom compress my raw files with JPEG XL?</summary><div class="ans">Only lossy DNGs and the DNGs created by Merge to HDR and Panorama — and, until Classic 14.4 (June 2025), the DNGs that Enhance wrote; since 14.4 those enhancements apply without a separate DNG. Your original raw files and standard (lossless) DNGs are not touched by it.</div></details>
+    <details><summary>Should I convert my raw archive to lossy DNG?</summary><div class="ans">Not the photos you care about. A lossy DNG keeps the editing latitude of a demosaiced 16-bit image but loses the original sensor data, and fewer programs can open it. It's a good fit for rejects and duplicate libraries.</div></details>
+    <details><summary>Why export JPEG XL instead of JPEG?</summary><div class="ans">Smaller files at the same visual quality, 16-bit and HDR support, and a true lossless mode. The catch is compatibility; see <a href="/en/jpeg-xl-vs-jpeg/">JPEG XL vs JPEG</a> for when it's worth it.</div></details>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Keep reading</h2>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/jpeg-xl-in-photoshop/"><span class="cta-ic">🎨</span><b>JPEG XL in Photoshop</b><span class="cta-sub">Native since 26.8, hidden in Save a Copy →</span></a>
+    <a class="cta-card" href="/en/jpeg-xl-in-gimp/"><span class="cta-ic">🖌️</span><b>JPEG XL in GIMP</b><span class="cta-sub">The free editor's export dialog, explained →</span></a>
+    <a class="cta-card" href="/en/jpeg-xl-vs-jpeg/"><span class="cta-ic">⚖️</span><b>JPEG XL vs JPEG</b><span class="cta-sub">When the switch is worth it →</span></a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/news/">What's new</a></nav>
+  </div>
+  <div class="legal">
+    <span class="privacy-pill">🔒 Your files never leave your device</span>
+    <span class="flegal"><a href="/en/privacy/">Privacy</a> · <a href="/en/terms/">Terms</a><span id="revocation-link" style="display:none"> · <a href="javascript:window.googlefc.showRevocationMessage();">Privacy settings</a></span></span>
+    <span>© 2026 JXL Convert</span>
+  </div>
+  <div class="sister"><a href="https://docuniversal.com/" rel="noopener" style="display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:100%;color:inherit;opacity:.72;font-size:13px"><svg width="18" height="18" viewBox="0 0 64 64" aria-hidden="true" style="border-radius:5px;flex:none"><defs><linearGradient id="duLogo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7cc4a0"/><stop offset="1" stop-color="#366d55"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#duLogo)"/><circle cx="32" cy="32" r="16" fill="none" stroke="#fff" stroke-width="4" opacity=".95"/><circle cx="32" cy="32" r="5" fill="#fff"/></svg><span>Working with PDFs? Try DocUniversal — free, in your browser</span></a></div>
+</div></footer>
+<script>
+window.googlefc = window.googlefc || {};
+window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+window.googlefc.callbackQueue.push({
+  'CONSENT_API_READY':
+  () => __tcfapi('addEventListener', 0, (tcdata, success) => {
+    const revocationLink = document.getElementById('revocation-link');
+    if (!revocationLink) return;
+    if (!success || !tcdata) {
+      revocationLink.style.display = 'none';
+    } else if (tcdata.gdprApplies) {
+      revocationLink.style.display = 'inline';
+    } else {
+      revocationLink.style.display = 'none';
+    }
+  })
+});
+</script>
+</body>
+</html>

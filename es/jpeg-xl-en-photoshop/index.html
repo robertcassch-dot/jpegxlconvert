@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9791902883190551" crossorigin="anonymous"></script>
+<title>JPEG XL en Photoshop: abrir y guardar .jxl (2026)</title>
+<meta name="description" content="Photoshop abre y guarda JPEG XL de serie desde la 26.8 (junio de 2025). Dónde está la opción, qué hace cada ajuste y qué hacer con versiones antiguas.">
+<link rel="canonical" href="https://jpegxlconvert.com/es/jpeg-xl-en-photoshop/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/jpeg-xl-in-photoshop/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/jpeg-xl-en-photoshop/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/jpeg-xl-in-photoshop/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JPEG XL en Photoshop: dónde está y qué hace">
+<meta property="og:description" content="De serie desde Photoshop 26.8, escondido en Guardar una copia. Las opciones explicadas y medidas, y qué hacer con versiones antiguas.">
+<meta property="og:url" content="https://jpegxlconvert.com/es/jpeg-xl-en-photoshop/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=8">
+<link rel="alternate" type="application/rss+xml" title="JXL Convert — Blog" href="/es/feed.xml">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"¿Photoshop admite JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"Sí. Desde la versión 26.8 (junio de 2025) abre, edita y guarda archivos .jxl de forma nativa, en Windows y en macOS. Para guardar, Archivo › Guardar una copia, o Archivo › Guardar como si el documento tiene una sola capa."}},
+{"@type":"Question","name":"¿El «sin pérdida» de Photoshop es lo mismo que convertir un JPEG sin pérdida?","acceptedAnswer":{"@type":"Answer","text":"No. Photoshop guarda los píxeles ya descodificados, así que partiendo de un JPEG el archivo suele salir más grande que el original. El reempaquetado sin pérdida conserva los datos del propio JPEG y ahorró un 12% y un 23% con estas dos fotos, y en torno a un 20% en las 16 fotos de nuestra comparativa con JPEG; Photoshop no lo hace, pero nuestro conversor sí."}},
+{"@type":"Question","name":"¿Qué calidad elijo con pérdida?","acceptedAnswer":{"@type":"Answer","text":"Adobe no documenta cómo se traduce su deslizador al codificador, así que no copies números de otros programas. Empieza alto, abre el resultado al 100% y ve bajando hasta que notes diferencia; entonces vuelve un paso atrás. Un usuario que lo comparó con detalle vio que la calidad 100 de Photoshop se parecía en tamaño y defectos a la calidad 90 de libjxl, así que si necesitas más, usa sin pérdida."}},
+{"@type":"Question","name":"¿Puede Photoshop convertir una carpeta entera a JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"No con el Procesador de imágenes, que solo escribe JPEG, PSD y TIFF. Para una carpeta es más rápido algo específico: cjxl en un script o nuestro conversor, que acepta muchos archivos a la vez."}},
+{"@type":"Question","name":"¿Puedo guardar una imagen CMYK como JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"Los usuarios cuentan que Photoshop no lo permite, aunque el formato en sí admite CMYK. Para imprenta, TIFF o PDF siguen siendo lo seguro; pasa una copia a RGB si necesitas un .jxl."}},
+{"@type":"Question","name":"¿Podrá abrir la gente el .jxl que le mande?","acceptedAnswer":{"@type":"Answer","text":"No siempre. El soporte en visores y navegadores sigue siendo irregular: compruébalo con nuestro test del navegador o manda un JPEG cuando no sepas qué usa quien lo recibe."}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"JPEG XL en Photoshop","datePublished":"2026-10-15","dateModified":"2026-10-15","inLanguage":"es","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/es/sobre-el-proyecto/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/es/"},"mainEntityOfPage":"https://jpegxlconvert.com/es/jpeg-xl-en-photoshop/"}
+</script>
+<style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+<style>.gtbl{max-width:720px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/es/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/es/">Conversor</a><a href="/es/visor-jxl/">Visor</a><a href="/es/guias/">Blog</a></nav>
+    <details class="lang"><summary>🌐 ES</summary>
+      <div class="lang-menu">
+        <a href="/en/jpeg-xl-in-photoshop/"><span class="flag">🇬🇧</span> English</a>
+        <a class="active" href="/es/jpeg-xl-en-photoshop/"><span class="flag">🇪🇸</span> Español</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">🎨 Adobe Photoshop · revisado en octubre de 2026</span>
+  <h1>JPEG&nbsp;XL en Photoshop</h1>
+  <p class="sub"><strong>Sí: Photoshop abre y guarda archivos .jxl por sí solo desde la versión 26.8, de junio de 2025.</strong> Lo que pasa es que no está donde casi todo el mundo lo busca: no en Exportar como, sino en <strong>Archivo › Guardar una copia</strong>. Aquí tienes la ruta exacta, qué hace cada opción con tu archivo y qué hacer si te has quedado en una versión anterior.</p>
+  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">por <a href="/es/sobre-el-proyecto/" style="color:inherit">Robert Castillo</a> · Publicado el <time datetime="2026-10-15">15 de octubre de 2026</time></p>
+  <div class="badges">
+    <span class="badge green">✅ De serie desde la 26.8</span><span class="badge">💾 Archivo › Guardar una copia</span><span class="badge">🚫 No está en Exportar como</span><span class="badge">🧪 Tamaños medidos con libjxl</span>
+  </div>
+  <div class="cta-row">
+    <a class="cta-card" href="/es/jpg-a-jxl/"><span class="cta-ic">🗜️</span><b>Encoge un JPEG sin tocarlo</b><span class="cta-sub">El reempaquetado sin pérdida que Photoshop no hace →</span></a>
+    <a class="cta-card" href="/es/visor-jxl/"><span class="cta-ic">👁️</span><b>¿No tienes Photoshop a mano?</b><span class="cta-sub">Abre el .jxl en el navegador →</span></a>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>La respuesta corta</h2>
+  <p class="lead">Photoshop abre y guarda JPEG&nbsp;XL por su cuenta desde la <strong>versión 26.8, publicada en junio de 2025</strong>. El resumen de novedades de Adobe para esa versión lo decía sin rodeos: ya se podían abrir, editar y guardar imágenes en AVIF y JPEG XL (JXL), con compresión con y sin pérdida y soporte HDR nativo. Sin plugins y sin pasar por Camera Raw.</p>
+  <p class="lead">Lo tiene cualquier versión de la 26.8 en adelante. En octubre de 2026 eso quiere decir toda la línea de Photoshop 2026, de la 27.0 a la actual 27.11 (mira las <a href="https://helpx.adobe.com/photoshop/desktop/whats-new/photoshop-on-desktop-release-notes.html" rel="nofollow noopener">notas de versión de Adobe</a>), y también la versión de soporte prolongado de Photoshop 2025 (la 26.11). Para saber cuál tienes, mira en <strong>Ayuda › Acerca de Photoshop</strong> en Windows o en <strong>Photoshop › Acerca de Photoshop</strong> en un Mac.</p>
+  <p class="lead">Lo que despista es <em>dónde</em> está el formato. JPEG&nbsp;XL no aparece en Exportar como, ni en Exportación rápida, ni en Guardar para Web. Está en <strong>Archivo › Guardar una copia</strong>, junto a TIFF y PNG, y en <strong>Archivo › Guardar como</strong> solo cuando el documento tiene una única capa, porque Guardar como solo muestra los formatos que conservan todo lo que hay en tu archivo.</p>
+</div></section>
+
+<section class="block alt" id="save"><div class="wrap">
+  <h2>Cómo guardar un JPEG XL desde Photoshop</h2>
+  <div class="steps">
+    <div class="step"><h3>Comprueba la versión</h3><p>Necesitas la 26.8 o posterior. Si tienes una anterior, actualiza desde la aplicación de escritorio de Creative Cloud. JPEG XL estuvo en la beta desde abril de 2025 y pasó a la versión normal en la de junio.</p></div>
+    <div class="step"><h3>Abre Guardar una copia</h3><p>Ve a <strong>Archivo › Guardar una copia</strong> y elige <strong>JPEG XL</strong> en el menú de formato. Photoshop guarda una copia; el documento en el que trabajas sigue abierto y sin cambios, con sus capas.</p></div>
+    <div class="step"><h3>Elige la compresión</h3><p>En el cuadro de opciones (en la interfaz en inglés, <strong>Color Compression</strong>) elige <strong>Lossless</strong>, sin pérdida, para conservar cada píxel tal cual, o <strong>Lossy</strong>, con pérdida, para un archivo muchísimo más pequeño. Solo la opción con pérdida muestra el control de <strong>calidad</strong>, que llega hasta 100 (Maximum en la interfaz inglesa).</p></div>
+    <div class="step"><h3>Vuelve a abrirlo y míralo</h3><p>Abre una vez el .jxl nuevo y revísalo al 100% antes de borrar nada. Si usaste compresión con pérdida, mira primero cielos, piel y texturas finas: es donde se nota.</p></div>
+  </div>
+  <p class="lead">Cuando salió, varios usuarios señalaron que JPEG&nbsp;XL no aparece ni en <strong>Exportar como</strong> ni en <strong>Guardar para Web (heredado)</strong>, así que no hay vista previa lado a lado para comparar calidades. Las notas de versión de Adobe no anuncian ningún cambio desde entonces: la de abril de 2026 (27.6) habla de «compatibilidad ampliada con formatos de archivo modernos» sin nombrar ninguno.</p>
+  <p class="lead">Adobe tampoco ha publicado una página de ayuda sobre el cuadro de diálogo de JPEG&nbsp;XL. Los nombres que te damos son los de la interfaz en inglés, tal como los citan los usuarios en los foros de Adobe; en un Photoshop en español verás su traducción, y si una versión futura añade ajustes, el camino por Guardar una copia seguirá siendo el mismo.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Sin pérdida, con pérdida y calidad: qué le hacen al archivo</h2>
+  <p class="lead">El cuadro de Photoshop es escueto, y Adobe no explica cómo se traduce su escala de calidad al codificador de JPEG&nbsp;XL. Lo que sí podemos contarte es qué significa en la práctica cada opción y cuándo conviene cada una.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Ajuste</th><th>Qué hace</th><th>Úsalo para</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Sin pérdida</strong> (Lossless)</td><td>Guarda los píxeles del documento exactamente. No hay control de calidad.</td><td>Originales y todo lo que vayas a volver a abrir</td></tr>
+      <tr><td><strong>Con pérdida</strong> (Lossy), calidad alta</td><td>Descarta detalle que el ojo difícilmente nota. El archivo se reduce varias veces.</td><td>Fotos terminadas para compartir, galerías, pruebas para clientes</td></tr>
+      <tr><td><strong>Con pérdida</strong>, calidad baja</td><td>Todavía más pequeño; empiezan a verse defectos en degradados y texturas.</td><td>Miniaturas y borradores, revisando al 100%</td></tr>
+      <tr><td>Profundidad de bits</td><td>Sin documentar: Adobe no dice si los documentos de 16 o 32 bits conservan su profundidad.</td><td>Si te importa, comprueba el archivo en otro programa</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">Adobe no documenta si un documento de 16 o 32 bits se guarda con esa profundidad. Su <a href="https://helpx.adobe.com/photoshop/desktop/save-and-export/export-files-to-different-formats/photoshop-file-formats-overview.html" rel="nofollow noopener">tabla de formatos</a> incluye JPEG&nbsp;XL entre los formatos de 32 bits, junto a PSD, PSB, TIFF, OpenEXR, Radiance y Portable Float Map, pero un usuario contó en noviembre de 2025 que Photoshop 2026 seguía sin poder guardarlo a 16 bits. Si te importa, compruébalo abriendo el archivo en otro programa.</p>
+  <p class="lead">Un caso del foro de Adobe enseña otra trampa relacionada. Una usuaria cuya impresora solo aceptaba JPEG normal vio que Photoshop únicamente le ofrecía JPEG&nbsp;XL: el documento estaba en 16 bits, y como el JPEG de siempre solo admite 8, desaparece de Guardar una copia mientras JPEG&nbsp;XL sigue ahí. Al pasar a 8 bits/canal le volvió a salir el JPEG.</p>
+</div></section>
+
+<section class="block alt" id="measured"><div class="wrap">
+  <h2>Medido: lo que pesa cada opción</h2>
+  <p class="lead">Para ponerle cifras codificamos dos fotos de dominio público con <strong>libjxl 0.12.0</strong>, el codificador de referencia de JPEG&nbsp;XL, con ajustes análogos a los dos modos de Photoshop: sin pérdida a partir de los píxeles y con pérdida a dos niveles de calidad. <strong>Es una aproximación con libjxl, no Photoshop en sí.</strong> Adobe usa sus propios ajustes de codificación, y en su foro hay usuarios que cuentan que los archivos de Photoshop salen varias veces más grandes que los de otros programas, así que toma estas cifras como lo que puede dar el formato, no como lo que va a escribir Photoshop.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Archivo</th><th>Foto A · 14 MP</th><th>Foto B · 45 MP</th></tr></thead>
+    <tbody>
+      <tr><td>JPEG original</td><td>8,38 MB</td><td>12,02 MB</td></tr>
+      <tr><td>PNG (sin pérdida, compresión máxima)</td><td>14,49 MB</td><td>32,97 MB</td></tr>
+      <tr><td>JPEG XL <strong>sin pérdida</strong> desde los píxeles</td><td>10,25 MB</td><td>18,68 MB</td></tr>
+      <tr><td>JPEG XL <strong>con pérdida</strong>, distancia 1,0 (≈ calidad 90 de libjxl)</td><td>0,99 MB</td><td>2,91 MB</td></tr>
+      <tr><td>JPEG XL <strong>con pérdida</strong>, distancia 2,0 (≈ calidad 79 de libjxl)</td><td>0,50 MB</td><td>1,32 MB</td></tr>
+      <tr><td>JPEG reempaquetado en JPEG XL (Photoshop no lo hace)</td><td class="y">7,34 MB</td><td class="y">9,30 MB</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">La sorpresa está en la tercera fila. Cuando la imagen nació como JPEG, la opción <strong>sin pérdida</strong> de Photoshop conserva exactamente los píxeles ya descodificados, defectos de compresión incluidos, y el resultado puede ser <strong>más grande que el JPEG que abriste</strong>: un 22% más en la foto A y un 55% más en la B. Aun así ocupa entre un 29% y un 43% menos que un PNG de los mismos píxeles, así que es un buen formato maestro para trabajo editado. Lo que no es, es una forma de encoger una carpeta de JPEG.</p>
+  <p class="lead">La última fila sí lo es. libjxl puede reempaquetar los datos comprimidos del propio JPEG sin descodificarlos y devolverte después el archivo original <strong>idéntico byte a byte</strong>; lo comprobamos con las dos fotos. Ahorró un 12% en la foto A y un 23% en la B, y en torno a un 20% en las 16 fotos de nuestra <a href="/es/jpeg-xl-vs-jpeg/">comparativa con JPEG</a>. Photoshop, Lightroom y GIMP descodifican siempre a píxeles primero, así que ninguno puede hacerlo; nuestro <a href="/es/jpg-a-jxl/">conversor de JPG a JPEG XL</a> y <a href="/es/cjxl-djxl-linea-de-comandos/">cjxl en la línea de comandos</a> sí pueden.</p>
+  <p class="lead">Con pérdida, la distancia 1,0 sacó <strong>84,8</strong> en SSIMULACRA2 con la foto A, y 85 significa diferencias que una persona normal no nota ni alternando original y copia en el mismo sitio, a tamaño real. Un JPEG de los mismos píxeles a calidad 90, hecho con libjpeg-turbo, pesó 1,52 MB y sacó 80,8. Con la foto B, mucho más detallada, la ventaja se estrechó: la distancia 1,0 pesó un 41% menos que el JPEG a calidad 90 pero puntuó algo por debajo (77,2 frente a 78,6), así que las fotos con mucho detalle piden un punto más de calidad.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>HDR y documentos de 32 bits</h2>
+  <p class="lead">JPEG&nbsp;XL es de los pocos formatos que pueden conservar los valores HDR sin el volumen de un TIFF de 32 bits. La tabla de formatos de Adobe lo pone en la lista de 32 bits, con una nota para guardar esos documentos mediante <strong>Guardar como</strong>; como decíamos arriba, no está documentado si el archivo conserva esa profundidad, así que comprueba una exportación HDR antes de fiarte.</p>
+  <p class="lead">Verlo en pantalla es otro asunto. En las versiones que revisamos, la guía de HDR de Camera Raw indica que hay que activar la gestión de color precisa para pantallas HDR en las preferencias de Photoshop (Ajustes en Mac), apartado <strong>Technology Previews</strong> en la interfaz inglesa, para que Photoshop muestre bien el contenido HDR, y además necesitas una pantalla HDR para que sirva de algo.</p>
+  <p class="lead">Camera Raw es la otra puerta. Desde <strong>Camera Raw 16.0</strong> (octubre de 2023) su botón de guardar imagen puede escribir JPEG&nbsp;XL, con una casilla de salida HDR en el apartado de espacio de color. Si tu edición parte de un RAW, guardar el JPEG&nbsp;XL directamente desde Camera Raw te ahorra la vuelta por el documento de Photoshop.</p>
+</div></section>
+
+<section class="block alt" id="older"><div class="wrap">
+  <h2>Con un Photoshop antiguo</h2>
+  <p class="lead">Si no puedes actualizar a la 26.8, lo que funciona depende de tu versión y de si usas Windows o Mac.</p>
+  <div class="grid3">
+    <div class="feature"><div class="fi">🎞️</div><h3>De Photoshop 2024 a la 26.7</h3><p>Con Camera Raw 16 o posterior el .jxl se abre, pero a través del cuadro de Camera Raw. Pulsa <strong>Abrir</strong> ahí para tener un documento normal. Para guardar hay que usar el botón de guardar de Camera Raw, no Guardar como.</p></div>
+    <div class="feature"><div class="fi">🧩</div><h3>Photoshop 2020–2023 en Windows</h3><p>El <a href="https://gitlab.com/SuperSaltyGamer/jpegxlformat" rel="nofollow noopener">plugin gratuito JpegXlFormat</a> añade abrir y guardar: copia <code>jpegxlformat.8bi</code> en la carpeta <code>Plug-ins</code> de Photoshop y reinicia. Con y sin pérdida, 8 y 16 bits, perfiles ICC, Exif/XMP y transparencia. Último cambio en el código: febrero de 2025.</p></div>
+    <div class="feature"><div class="fi">🍎</div><h3>Versiones antiguas en Mac</h3><p>No hemos encontrado ningún plugin para Mac que siga mantenido. Convierte antes el archivo —de <a href="/es/jxl-a-png/">JXL a PNG</a> no se pierde ni un píxel—, edítalo y vuelve a convertir si al final necesitas un .jxl.</p></div>
+  </div>
+  <p class="lead">Un aviso sobre las instrucciones del propio plugin: para que Camera Raw deje de quedarse con los .jxl, su README propone renombrar <code>Camera Raw.8bi</code>. Eso desactiva Camera Raw para todo, RAW incluidos, y es justo lo que casi ningún fotógrafo quiere. Ni lo toques salvo que sepas que no usas Camera Raw nunca.</p>
+</div></section>
+
+<section class="block" id="problems"><div class="wrap">
+  <h2>Problemas típicos y su arreglo</h2>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Lo que pasa</th><th>Por qué</th><th>Arreglo</th></tr></thead>
+    <tbody>
+      <tr><td>JPEG XL no sale en Guardar como</td><td>El documento tiene capas; Guardar como solo enseña formatos que las conservan</td><td>Usa <strong>Archivo › Guardar una copia</strong></td></tr>
+      <tr><td>No hay JPEG XL por ningún lado</td><td>Photoshop anterior a la 26.8</td><td>Actualiza o mira el apartado anterior</td></tr>
+      <tr><td>No está en Exportar como ni en Guardar para Web</td><td>No se ofreció ahí al salir</td><td>Guardar una copia; para carpetas, una herramienta por lotes</td></tr>
+      <tr><td>Solo aparece JPEG XL y falta el JPEG normal</td><td>Documento de 16 bits; el JPEG solo admite 8</td><td><strong>Imagen › Modo › 8 bits/canal</strong> y guarda</td></tr>
+      <tr><td>Un documento CMYK no se guarda como .jxl</td><td>Se viene contando desde junio de 2025</td><td>Pasa una copia a RGB o entrega TIFF para imprenta</td></tr>
+      <tr><td>Un .jxl se abre en Camera Raw</td><td>Casi siempre, Photoshop anterior a la 26.8</td><td>Pulsa Abrir en Camera Raw o actualiza</td></tr>
+      <tr><td>Alguien no puede abrir el .jxl que le mandaste</td><td>Su programa todavía no lo lee</td><td>Mándale un JPEG o un enlace a un visor</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">Uno raro: durante la beta, unos cuantos archivos de prueba poco corrientes del conjunto oficial de conformidad de libjxl (tintas planas, capas CMYK, alfa premultiplicado) no se abrían. A las fotos normales no les afecta, pero si un .jxl de un flujo de imprenta se niega a abrir, descodifícalo a PNG con <a href="/es/cjxl-djxl-linea-de-comandos/">djxl</a> o con nuestro <a href="/es/visor-jxl/">visor</a> y sigue trabajando.</p>
+</div></section>
+
+<section class="block alt" id="faq"><div class="wrap">
+  <h2>Preguntas frecuentes</h2>
+  <div class="faq">
+    <details open><summary>¿Photoshop admite JPEG XL?</summary><div class="ans">Sí. Desde la versión 26.8 (junio de 2025) abre, edita y guarda archivos .jxl de forma nativa, en Windows y en macOS. Para guardar, Archivo › Guardar una copia, o Archivo › Guardar como si el documento tiene una sola capa.</div></details>
+    <details><summary>¿El «sin pérdida» de Photoshop es lo mismo que convertir un JPEG sin pérdida?</summary><div class="ans">No. Photoshop guarda los píxeles ya descodificados, así que partiendo de un JPEG el archivo suele salir más grande que el original. El reempaquetado sin pérdida conserva los datos del propio JPEG y ahorró un 12% y un 23% con estas dos fotos, y en torno a un 20% en las 16 fotos de nuestra <a href="/es/jpeg-xl-vs-jpeg/">comparativa con JPEG</a>; Photoshop no lo hace, pero <a href="/es/jpg-a-jxl/">nuestro conversor</a> sí.</div></details>
+    <details><summary>¿Qué calidad elijo con pérdida?</summary><div class="ans">Adobe no documenta cómo se traduce su deslizador al codificador, así que no copies números de otros programas. Empieza alto, abre el resultado al 100% y ve bajando hasta que notes diferencia; entonces vuelve un paso atrás. Un usuario que lo comparó con detalle vio que la calidad 100 de Photoshop se parecía en tamaño y defectos a la calidad 90 de libjxl, así que si necesitas más, usa sin pérdida.</div></details>
+    <details><summary>¿Puede Photoshop convertir una carpeta entera a JPEG XL?</summary><div class="ans">No con el Procesador de imágenes, que solo escribe JPEG, PSD y TIFF. Para una carpeta es más rápido algo específico: <a href="/es/cjxl-djxl-linea-de-comandos/">cjxl</a> en un script o <a href="/es/jpg-a-jxl/">nuestro conversor</a>, que acepta muchos archivos a la vez.</div></details>
+    <details><summary>¿Puedo guardar una imagen CMYK como JPEG XL?</summary><div class="ans">Los usuarios cuentan que Photoshop no lo permite, aunque el formato en sí admite CMYK. Para imprenta, TIFF o PDF siguen siendo lo seguro; pasa una copia a RGB si necesitas un .jxl.</div></details>
+    <details><summary>¿Podrá abrir la gente el .jxl que le mande?</summary><div class="ans">No siempre. El soporte en visores y navegadores sigue siendo irregular: compruébalo con nuestro <a href="/es/test-jpeg-xl-navegador/">test del navegador</a> o manda un JPEG cuando no sepas qué usa quien lo recibe.</div></details>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Sigue leyendo</h2>
+  <div class="cta-row">
+    <a class="cta-card" href="/es/jpeg-xl-en-lightroom/"><span class="cta-ic">📷</span><b>JPEG XL en Lightroom</b><span class="cta-sub">Exportación, HDR y DNG con pérdida →</span></a>
+    <a class="cta-card" href="/es/jpeg-xl-en-gimp/"><span class="cta-ic">🖌️</span><b>JPEG XL en GIMP</b><span class="cta-sub">Cada ajuste del cuadro de exportación →</span></a>
+    <a class="cta-card" href="/es/cjxl-djxl-linea-de-comandos/"><span class="cta-ic">⌨️</span><b>cjxl y djxl</b><span class="cta-sub">La línea de comandos, para carpetas enteras →</span></a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/es/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/es/">Conversor</a><a href="/es/visor-jxl/">Visor</a><a href="/es/guias/">Blog</a><a href="/es/sobre-el-proyecto/">Sobre el proyecto</a><a href="/es/contacto/">Contacto</a><a href="/es/novedades/">Novedades</a></nav>
+  </div>
+  <div class="legal">
+    <span class="privacy-pill">🔒 Tus archivos nunca salen de tu dispositivo</span>
+    <span class="flegal"><a href="/es/privacidad/">Privacidad</a> · <a href="/es/terminos/">Términos</a><span id="revocation-link" style="display:none"> · <a href="javascript:window.googlefc.showRevocationMessage();">Configuración de privacidad</a></span></span>
+    <span>© 2026 JXL Convert</span>
+  </div>
+  <div class="sister"><a href="https://docuniversal.com/" rel="noopener" style="display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:100%;color:inherit;opacity:.72;font-size:13px"><svg width="18" height="18" viewBox="0 0 64 64" aria-hidden="true" style="border-radius:5px;flex:none"><defs><linearGradient id="duLogo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7cc4a0"/><stop offset="1" stop-color="#366d55"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#duLogo)"/><circle cx="32" cy="32" r="16" fill="none" stroke="#fff" stroke-width="4" opacity=".95"/><circle cx="32" cy="32" r="5" fill="#fff"/></svg><span>¿Trabajas con PDF? Prueba DocUniversal — gratis, en tu navegador</span></a></div>
+</div></footer>
+<script>
+window.googlefc = window.googlefc || {};
+window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+window.googlefc.callbackQueue.push({
+  'CONSENT_API_READY':
+  () => __tcfapi('addEventListener', 0, (tcdata, success) => {
+    const revocationLink = document.getElementById('revocation-link');
+    if (!revocationLink) return;
+    if (!success || !tcdata) {
+      revocationLink.style.display = 'none';
+    } else if (tcdata.gdprApplies) {
+      revocationLink.style.display = 'inline';
+    } else {
+      revocationLink.style.display = 'none';
+    }
+  })
+});
+</script>
+</body>
+</html>

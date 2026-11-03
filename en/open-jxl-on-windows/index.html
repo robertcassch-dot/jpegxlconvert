@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9791902883190551" crossorigin="anonymous"></script>
+<title>How to Open JXL Files on Windows 11 and 10 (2026)</title>
+<meta name="description" content="Windows 11 24H2 opens .jxl with Microsoft's free JPEG XL extension; Windows 10 can't install it. What works on each, tested in October 2026.">
+<link rel="canonical" href="https://jpegxlconvert.com/en/open-jxl-on-windows/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/open-jxl-on-windows/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/abrir-jxl-en-windows/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/open-jxl-on-windows/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to open a .jxl on Windows 11 and 10">
+<meta property="og:description" content="Microsoft's free extension, the viewers that work on Windows 10, and the fixes when thumbnails or Photos still fail.">
+<meta property="og:url" content="https://jpegxlconvert.com/en/open-jxl-on-windows/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=8">
+<link rel="alternate" type="application/rss+xml" title="JXL Convert — Blog" href="/en/feed.xml">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is Microsoft's JPEG XL extension free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Store lists «JPEG XL Image Extension» by Microsoft Corporation at no cost, unlike the HEVC extension people pay for to see iPhone photos. If a listing asks for money, it isn't this one."}},
+{"@type":"Question","name":"Does Windows 11 come with JPEG XL support built in?","acceptedAnswer":{"@type":"Answer","text":"Only halfway. Version 24H2 registers a JPEG XL decoder slot in the system, but the decoder itself arrives with the Store extension. Our fully updated 24H2 test PC, build 26100.9457, couldn't decode a .jxl until then."}},
+{"@type":"Question","name":"Can I install the extension on Windows 10?","acceptedAnswer":{"@type":"Answer","text":"No. The Store package requires Windows build 10.0.26100 or newer, which only Windows 11 24H2 and later have. On Windows 10, use XnView MP, IrfanView, ImageGlass, Paint.NET, Chrome 155+ or Firefox 158+, plus jxl-winthumb if you want thumbnails."}},
+{"@type":"Question","name":"Can I just rename a .jxl to .jpg?","acceptedAnswer":{"@type":"Answer","text":"No. A .jxl is a genuinely different format inside, so the renamed file still won't open and now has a misleading name. Convert it instead; that writes a real JPEG."}},
+{"@type":"Question","name":"Why does the same .jxl open in Chrome but not in Edge?","acceptedAnswer":{"@type":"Answer","text":"Chrome 155 decodes JPEG XL by default, while Edge 155 was built without the decoder, even though both run on Chromium 155. Use Chrome, Firefox 158 or the viewer here instead."}},
+{"@type":"Question","name":"What's the best setup if I get .jxl files every week?","acceptedAnswer":{"@type":"Answer","text":"On Windows 11 24H2 or later, Microsoft's extension: it's native, free and covers both File Explorer and Photos. On Windows 10, XnView MP for viewing and converting, plus jxl-winthumb if you want thumbnails."}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"How to Open a JXL File on Windows","datePublished":"2026-10-15","dateModified":"2026-10-15","inLanguage":"en","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/en/about/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/en/"},"mainEntityOfPage":"https://jpegxlconvert.com/en/open-jxl-on-windows/"}
+</script>
+<style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+<style>.gtbl{max-width:720px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a></nav>
+    <details class="lang"><summary>🌐 EN</summary>
+      <div class="lang-menu">
+        <a class="active" href="/en/open-jxl-on-windows/"><span class="flag">🇬🇧</span> English</a>
+        <a href="/es/abrir-jxl-en-windows/"><span class="flag">🇪🇸</span> Español</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">🪟 Windows · tested 15 October 2026</span>
+  <h1>How to Open a JXL File on Windows</h1>
+  <p class="sub">On Windows 11 24H2 or later, a free Microsoft extension makes a <code>.jxl</code> behave like any other photo: thumbnails in File Explorer, opens in Photos. On Windows 10 that extension won't install, so you need a program that brings its own decoder. Both routes, checked on a real PC in October 2026.</p>
+  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">by <a href="/en/about/" style="color:inherit">Robert Castillo</a> · Published <time datetime="2026-10-15">October 15, 2026</time></p>
+  <div class="badges">
+    <span class="badge green">🆓 Free Microsoft extension</span><span class="badge">🪟 Windows 11 24H2+</span><span class="badge">🧰 Windows 10: other viewers</span><span class="badge">🧪 Tested Oct 2026</span>
+  </div>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/jxl-viewer/"><span class="cta-ic">👁️</span><b>Just need to see it now?</b><span class="cta-sub">Open it in this tab, nothing installed →</span></a>
+    <a class="cta-card" href="/en/jxl-to-jpg/"><span class="cta-ic">🔁</span><b>Convert JXL to JPG</b><span class="cta-sub">Opens everywhere, nothing uploaded →</span></a>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>The short answer</h2>
+  <p class="lead">Whether a <code>.jxl</code> opens on your PC comes down to one number: your Windows build. Microsoft publishes a free <strong>JPEG XL Image Extension</strong> in the Microsoft Store, and once it's installed File Explorer draws thumbnails and the Photos app opens the file like any JPEG. The catch is that the Store listing requires <strong>build 26100</strong>, which is Windows 11 version 24H2, or newer. Windows 10 and older Windows 11 releases can't install it at all.</p>
+  <p class="lead">Nothing installs it for you, either. Our test PC, a Windows 11 Pro 24H2 machine fully updated to build 26100.9457 in October 2026, still couldn't decode a single .jxl. Windows Update doesn't bring the decoder; the Store does.</p>
+  <p class="lead">If you can't or don't want to install anything, three routes need no setup: Google Chrome, which decodes JPEG XL by default since version 155, Firefox, which does since version 158, and <a href="/en/jxl-viewer/">the viewer on this site</a>, which works in any browser and never uploads the file.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Your PC</th><th>What to use, and what you get</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Windows 11 24H2 or 25H2</strong></td><td>Microsoft's free JPEG XL Image Extension. You get thumbnails in File Explorer, and the file opens in an up-to-date Photos app.</td></tr>
+      <tr><td><strong>Windows 11 23H2 or older</strong></td><td>Update Windows if you can; otherwise a viewer such as XnView MP. Thumbnails only with jxl-winthumb, and Photos won't open it.</td></tr>
+      <tr><td><strong>Windows 10</strong></td><td>XnView MP, IrfanView, ImageGlass or Paint.NET. Thumbnails only with jxl-winthumb, and Photos won't open it.</td></tr>
+      <tr><td><strong>Any PC, nothing installed</strong></td><td>Chrome 155 or later, Firefox 158 or later, or this site's viewer. You see the picture, but File Explorer and Photos stay as they were.</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Windows 11 24H2 and later: install Microsoft's extension</h2>
+  <div class="steps">
+    <div class="step"><h3>1. Check your build</h3><p>Press <strong>Win + R</strong>, type <code>winver</code> and press Enter. You need «Version 24H2» (OS build 26100.xxxx) or «Version 25H2» (OS build 26200.xxxx). Anything lower and the Store will refuse the install.</p></div>
+    <div class="step"><h3>2. Get «JPEG XL Image Extension»</h3><p>Open its <a href="https://apps.microsoft.com/detail/9mzprth5c0tb" rel="nofollow noopener">Microsoft Store page</a> (product ID <code>9MZPRTH5C0TB</code>) and click <strong>Get</strong>. The publisher should read «Microsoft Corporation» and the price «Free». From a terminal, <code>winget install --id 9MZPRTH5C0TB --source msstore</code> does the same job.</p></div>
+    <div class="step"><h3>3. Reopen File Explorer and Photos</h3><p>Close any Explorer windows and the Photos app, then open them again. Signing out and back in is the surest way to get thumbnails immediately; otherwise they fill in as Explorer rebuilds its cache.</p></div>
+    <div class="step"><h3>4. Make sure Photos is recent</h3><p>Microsoft added JXL support to Photos in version 2025.11030.20006.0, a version that reached Windows Insiders in March 2025. If Photos still refuses the file, open the Store, go to <strong>Library → Get updates</strong>, and check the version in Photos under <strong>Settings → About</strong>. Our test PC had 2026.11090.22001.0.</p></div>
+  </div>
+  <p class="lead">The extension isn't an app: nothing appears in the Start menu and there's nothing to configure. Microsoft describes it as a plug-in that «Windows apps, such as Microsoft Photos and File Explorer» use to decode JPEG XL, built on the open-source libjxl library. The listing also mentions setting a .jxl as your desktop background and opening one in Windows Media Player Legacy. It's about 17 MB, runs on both x64 and ARM64 PCs, and its Store page shows the last update on 12 August 2026.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>What we found on a 24H2 PC without the extension</h2>
+  <p class="lead">Before installing anything, we looked at how a fully updated Windows 11 24H2 PC handles a .jxl on its own. Windows already knows the format exists. The registry maps <code>.jxl</code> to <code>image/jxl</code> and classes it as an image, and the Windows Imaging Component lists a «Microsoft JPEG XL Decoder» inside the system's own <code>windowscodecs.dll</code>, complete with the two byte signatures a JPEG XL file can start with.</p>
+  <p class="lead">It just can't decode anything. Asking Windows to open our two test files, one lossy and one repacked from a JPEG, failed both times with error <code>0x88982F8B</code>, which Windows defines as a component that failed to initialise. A random non-image file fails differently, with <code>0x88982F50</code>, «component not found». In plain terms: 24H2 has the slot for a JPEG XL decoder, and the Store extension is what fills it.</p>
+  <p class="lead">That explains a symptom people describe as «Windows half-recognises it»: File Explorer files the photo under a generic JXL type with no dimensions and no preview, even though it clearly knows it's dealing with a picture.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Windows 10 and older Windows 11: viewers with their own decoder</h2>
+  <p class="lead">Below build 26100 the Microsoft extension is off the table, so the job falls to programs that ship their own JPEG XL decoder. These are the ones we'd point a friend to in October 2026, with the version current on each project's own site:</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Program</th><th>Cost and what to know</th></tr></thead>
+    <tbody>
+      <tr><td><strong>XnView MP</strong> 1.12.2</td><td>Free for private use. Opens .jxl out of the box and can batch-convert a whole folder to JPG or PNG.</td></tr>
+      <tr><td><strong>IrfanView</strong> 4.76</td><td>Free for non-commercial use. Needs the separate PlugIns pack (4.76), whose JPEG_XL plugin reads and writes the format. Don't mix bitness: 64-bit plugins for 64-bit IrfanView.</td></tr>
+      <tr><td><strong>ImageGlass</strong> 10.0.6</td><td>Classic edition free (GPLv3). Opens and saves .jxl, though its own format list says not animated ones. Needs Windows 10 version 1809 or later.</td></tr>
+      <tr><td><strong>Paint.NET</strong> 5.1.12</td><td>Free from its own site, paid in the Store. JPEG XL built in since version 5.1.5 (March 2025). Needs Windows 10 21H2 or later and an x64 CPU with AVX2, or ARM64.</td></tr>
+      <tr><td><strong>Google Chrome</strong> 155+</td><td>Free. Decodes JPEG XL by default: drag the file onto a window. Runs on Windows 10 or later.</td></tr>
+      <tr><td><strong>Firefox</strong> 158+</td><td>Free. Shows JPEG XL by default since version 158, released on 13 October 2026.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">If the file arrived as a one-off, installing a program just to look at it is overkill: <a href="/en/jxl-viewer/">open it in this tab</a> or <a href="/en/jxl-to-jpg/">turn it into a JPG</a>. Neither uploads the file anywhere; the decoding runs on your own PC.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Thumbnails on Windows 10: jxl-winthumb</h2>
+  <p class="lead">Viewers open the file, but File Explorer will keep showing blank icons. The open-source project <a href="https://github.com/saschanaz/jxl-winthumb" rel="nofollow noopener">jxl-winthumb</a> fixes that by registering a JPEG XL decoder with the Windows Imaging Component, which Explorer uses for thumbnails and the preview pane. Its latest build, 0.2.12 from 30 August 2025, is based on version 0.12.4 of the jxl-oxide decoder.</p>
+  <div class="steps">
+    <div class="step"><h3>1. Download the right DLL</h3><p>From the project's Releases page, take <code>jxl_winthumb_x86_64.dll</code> for a normal 64-bit PC, <code>jxl_winthumb_aarch64.dll</code> for an ARM laptop, or <code>jxl_winthumb_i686.dll</code> for 32-bit Windows.</p></div>
+    <div class="step"><h3>2. Register it as administrator</h3><p>Move the DLL to a permanent folder first: Windows loads it from wherever you register it, so if it's later deleted from Downloads the thumbnails stop working. Then open Terminal or Command Prompt as administrator, change to that folder and run <code>regsvr32 jxl_winthumb_x86_64.dll</code> (with your file's name). A dialog confirms it worked.</p></div>
+    <div class="step"><h3>3. Restart File Explorer</h3><p>Sign out and back in, or restart «Windows Explorer» from Task Manager. Thumbnails appear as you reopen folders.</p></div>
+    <div class="step"><h3>4. To remove it later</h3><p>Run <code>regsvr32 /u</code> followed by the same file name from an administrator prompt, restart Explorer, and only then delete the DLL.</p></div>
+  </div>
+  <p class="lead">Three things to know before installing it. All 33 of its releases are flagged as pre-releases on GitHub. It does nothing for the Photos app: its author explains that Photos doesn't load third-party decoders and there's no public way to plug one in. And its issue tracker has open reports worth reading before you install, including HDR images whose thumbnails aren't tone-mapped, crashes on processors without AVX2, and one Explorer crash on 24H2.</p>
+  <p class="lead">Programs that use the Windows Imaging Component directly, such as the old Windows Photo Viewer where it's still enabled, can open .jxl through it too. If you're on 24H2 or later, skip it and use Microsoft's extension instead; there's no point running two decoders for the same format.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Browsers: Chrome and Firefox yes, Edge no</h2>
+  <p class="lead">Google <a href="https://developer.chrome.com/blog/jpeg-xl-in-chrome" rel="nofollow noopener">announced on 6 October 2026</a> that Chrome ships JPEG XL decoding «starting from Chrome 155», using a memory-safe Rust decoder called jxl-rs. In Chromium's source the change is easy to see: the JPEG XL feature is disabled by default in Chrome 145 and enabled by default from 155.</p>
+  <p class="lead">We checked it on our Windows 11 PC with Chrome 155.0.8059.40 and a brand-new profile, no flags touched: both test images decoded at full size, and opening a .jxl directly shows it in Chrome's own image view, titled with its dimensions. So on Windows 10 or 11 you can drag a .jxl onto a Chrome window, or right-click it and choose <strong>Open with → Choose another app → Google Chrome</strong>. If Chrome isn't in the list, use <strong>Choose an app on your PC</strong> and pick <code>chrome.exe</code>.</p>
+  <p class="lead"><strong>Microsoft Edge 155</strong>, released on 8 October 2026 on the same Chromium version, doesn't. Its web platform release notes don't mention JPEG XL, and in our test Edge 155.0.4283.45 failed both images even with the feature forced on from the command line; the feature's name doesn't appear anywhere in Edge's main library, so the decoder simply isn't in this build. Opening a .jxl in Edge just downloaded it.</p>
+  <p class="lead"><strong>Firefox 158</strong>, released on 13 October 2026, shows JPEG XL by default as well; which Firefox versions and forks have it is <a href="/en/firefox-jpeg-xl-support/">covered here</a>. Brave 1.97.56 and later show it too (we tested 1.97.57). For Opera, Vivaldi or anything else, it's quicker to <a href="/en/jpeg-xl-browser-test/">test your browser</a> than to guess.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>When it still won't open: symptoms and fixes</h2>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>What you see</th><th>Cause and fix</th></tr></thead>
+    <tbody>
+      <tr><td>The Store won't install the extension, or says it won't work on this device</td><td>Your build is below 26100: Windows 10, or Windows 11 23H2 and earlier. Update to 24H2 or 25H2 if your PC qualifies; otherwise use one of the viewers above.</td></tr>
+      <tr><td>Extension installed, but File Explorer still shows plain icons</td><td>Explorer hasn't reloaded, the thumbnail cache is stale, or thumbnails are switched off. Sign out and in. Run Disk Cleanup and tick «Thumbnails». In File Explorer Options → View, untick «Always show icons, never thumbnails», and use Medium icons or larger.</td></tr>
+      <tr><td>Photos says it can't open the file</td><td>Photos is older than 2025.11030.20006.0, or the extension isn't actually installed. In the Store, use Library → Get updates, and check the extension is listed in your Library as installed.</td></tr>
+      <tr><td>The picture is black, very dark or washed out</td><td>Usually an HDR or high-bit-depth image reaching a decoder that doesn't tone-map it; open jxl-winthumb reports describe exactly this. Open it in another program to see whether the file itself is fine. With libjxl's tools, <code>jxlinfo</code> prints «Transfer function: PQ» for an HDR file (<a href="/en/cjxl-djxl-command-line/">how to use them</a>). To share it, convert it to JPG or PNG.</td></tr>
+      <tr><td>Nothing opens it, not even XnView MP or the viewer here</td><td>It isn't really JPEG XL (a renamed file), or the download was cut short. A real .jxl starts with the bytes <code>FF 0A</code> or <code>00 00 00 0C 4A 58 4C 20</code>, the two signatures Windows' own decoder registers. Download it again or ask for the original.</td></tr>
+      <tr><td>Edge downloads the file instead of showing it</td><td>Edge 155 doesn't include a JPEG XL decoder. Use Chrome 155 or later, Firefox 158 or later, or the viewer on this site.</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Common questions</h2>
+  <div class="faq">
+    <details open><summary>Is Microsoft's JPEG XL extension free?</summary><div class="ans">Yes. The Store lists «JPEG XL Image Extension» by Microsoft Corporation at no cost, unlike the HEVC extension people pay for to see iPhone photos. If a listing asks for money, it isn't this one.</div></details>
+    <details><summary>Does Windows 11 come with JPEG XL support built in?</summary><div class="ans">Only halfway. Version 24H2 registers a JPEG XL decoder slot in the system, but the decoder itself arrives with the Store extension. Our fully updated 24H2 test PC, build 26100.9457, couldn't decode a .jxl until then.</div></details>
+    <details><summary>Can I install the extension on Windows 10?</summary><div class="ans">No. The Store package requires Windows build 10.0.26100 or newer, which only Windows 11 24H2 and later have. On Windows 10, use XnView MP, IrfanView, ImageGlass, Paint.NET, Chrome 155+ or Firefox 158+, plus jxl-winthumb if you want thumbnails.</div></details>
+    <details><summary>Can I just rename a .jxl to .jpg?</summary><div class="ans">No. A .jxl is a genuinely different format inside, so the renamed file still won't open and now has a misleading name. Convert it instead; that writes a real JPEG.</div></details>
+    <details><summary>Why does the same .jxl open in Chrome but not in Edge?</summary><div class="ans">Chrome 155 decodes JPEG XL by default, while Edge 155 was built without the decoder, even though both run on Chromium 155. Use Chrome, Firefox 158 or the viewer here instead.</div></details>
+    <details><summary>What's the best setup if I get .jxl files every week?</summary><div class="ans">On Windows 11 24H2 or later, Microsoft's extension: it's native, free and covers both File Explorer and Photos. On Windows 10, XnView MP for viewing and converting, plus jxl-winthumb if you want thumbnails.</div></details>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Keep reading</h2>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/jxl-file/"><span class="cta-ic">📄</span><b>What is a .jxl file?</b><span class="cta-sub">Where it came from and why it won't open →</span></a>
+    <a class="cta-card" href="/en/jpeg-xl-browser-test/"><span class="cta-ic">🧪</span><b>Does your browser show JPEG XL?</b><span class="cta-sub">Test it in one click →</span></a>
+    <a class="cta-card" href="/en/open-jxl-on-android/"><span class="cta-ic">🤖</span><b>Open JXL on Android</b><span class="cta-sub">What works on a phone →</span></a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/news/">What's new</a></nav>
+  </div>
+  <div class="legal">
+    <span class="privacy-pill">🔒 Your files never leave your device</span>
+    <span class="flegal"><a href="/en/privacy/">Privacy</a> · <a href="/en/terms/">Terms</a><span id="revocation-link" style="display:none"> · <a href="javascript:window.googlefc.showRevocationMessage();">Privacy settings</a></span></span>
+    <span>© 2026 JXL Convert</span>
+  </div>
+  <div class="sister"><a href="https://docuniversal.com/" rel="noopener" style="display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:100%;color:inherit;opacity:.72;font-size:13px"><svg width="18" height="18" viewBox="0 0 64 64" aria-hidden="true" style="border-radius:5px;flex:none"><defs><linearGradient id="duLogo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7cc4a0"/><stop offset="1" stop-color="#366d55"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#duLogo)"/><circle cx="32" cy="32" r="16" fill="none" stroke="#fff" stroke-width="4" opacity=".95"/><circle cx="32" cy="32" r="5" fill="#fff"/></svg><span>Working with PDFs? Try DocUniversal — free, in your browser</span></a></div>
+</div></footer>
+<script>
+window.googlefc = window.googlefc || {};
+window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+window.googlefc.callbackQueue.push({
+  'CONSENT_API_READY':
+  () => __tcfapi('addEventListener', 0, (tcdata, success) => {
+    const revocationLink = document.getElementById('revocation-link');
+    if (!revocationLink) return;
+    if (!success || !tcdata) {
+      revocationLink.style.display = 'none';
+    } else if (tcdata.gdprApplies) {
+      revocationLink.style.display = 'inline';
+    } else {
+      revocationLink.style.display = 'none';
+    }
+  })
+});
+</script>
+</body>
+</html>

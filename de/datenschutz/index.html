@@ -37,7 +37,7 @@
 <main class="legal-page">
   <a class="back" href="/de/">← Zurück zum Konverter</a>
   <h1>Datenschutzerklärung</h1>
-  <div class="updated">Letzte Aktualisierung: 18. August 2026</div>
+  <div class="updated">Letzte Aktualisierung: 15. Oktober 2026</div>
 
   <h2 id="kurz">1. Kurz gesagt</h2>
   <p><strong>Deine Bilder und Dateien werden niemals auf einen Server hochgeladen.</strong> Der Konverter und der Betrachter laufen vollständig in deinem Browser, mit WebAssembly. Die Datei wird von deiner Festplatte geöffnet, im Arbeitsspeicher deines Geräts verarbeitet und dir als Download zurückgegeben. Sie kommt zu keinem Zeitpunkt bei uns an.</p>
@@ -78,14 +78,14 @@
   </ul>
 
   <h2 id="daten">5. Welche Daten verarbeitet werden, wozu und auf welcher Rechtsgrundlage</h2>
-  <p>Das ist die vollständige Liste dessen, was verarbeitet wird. Unter der Tabelle steht das Einzige, was deinen Browser sonst noch verlässt.</p>
+  <p>Das ist die vollständige Liste dessen, was verarbeitet wird.</p>
   <div class="tbl"><table class="cmp">
     <tr><th>Daten</th><th>Zweck</th><th>Rechtsgrundlage</th><th>Speicherdauer</th></tr>
     <tr>
-      <td><strong>Verbindungsdaten</strong><br>IP-Adresse, User-Agent (Browser und System), aufgerufene Adresse sowie Datum und Uhrzeit.<br><em>Verarbeitet von einem Dritten: Cloudflare, dem Hoster der Website.</em></td>
+      <td><strong>Verbindungsdaten</strong><br>IP-Adresse, User-Agent (Browser und System), aufgerufene Adresse, verweisende Seite sowie Datum und Uhrzeit. <strong>Die IP-Adresse wird gekürzt, bevor sie gespeichert wird</strong>: Ihr letzter Teil wird durch Nullen ersetzt (bei einer IPv4-Adresse die letzte der vier Zahlen, bei einer IPv6-Adresse die letzten 80 Bit).<br><em>Gespeichert im Zugriffsprotokoll des eigenen Servers dieser Website, der bei der Contabo GmbH gemietet ist und in Deutschland steht.</em></td>
       <td>Dir die Seite ausliefern, den Dienst am Laufen halten und Missbrauch und Angriffe abwehren.</td>
       <td>Berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO): Ohne diese technischen Daten lässt sich keine Webseite ausliefern und nicht schützen.</td>
-      <td>Die von Cloudflare festgelegte — siehe deren <a href="https://www.cloudflare.com/privacypolicy/" rel="nofollow noopener">Datenschutzerklärung</a>. Der Verantwortliche dieser Website greift auf diese Protokolle nicht zu und lädt sie nicht herunter.</td>
+      <td><strong>14 Tage.</strong> Jeden Tag wird eine neue Protokolldatei begonnen, und jede wird nach 14 Tagen automatisch gelöscht.</td>
     </tr>
     <tr>
       <td><strong>Werbedaten</strong><br>Werbe-Cookies und Werbekennungen, IP-Adresse, User-Agent, die Seiten, die du hier besuchst, und deine Interaktion mit den Anzeigen.<br><em>Verarbeitet von einem Dritten: Google. Im AdSense-Konto sehen wir nur aggregierte Zahlen — Impressionen, Klicks, Einnahmen —, nie etwas über dich als Person.</em></td>
@@ -94,7 +94,7 @@
       <td>Legt Google fest, nicht wir: Die langlebigsten AdSense-Cookies (<code>__gads</code>, <code>__gpi</code>, <code>IDE</code>) laufen im EWR und im Vereinigten Königreich nach 13 Monaten ab, laut Googles <a href="https://business.safety.google/adscookies/" rel="nofollow noopener">eigener Cookie-Liste</a>; was Google danach aufbewahrt, richtet sich nach seiner <a href="https://policies.google.com/privacy" rel="nofollow noopener">Datenschutzerklärung</a>. Der Verantwortliche kann keine der beiden Fristen festlegen oder verkürzen.</td>
     </tr>
     <tr>
-      <td><strong>Daten zur Reichweitenmessung</strong><br>Adresse der aufgerufenen Seite, verweisende Seite, User-Agent, Ladezeiten, Bildschirmgröße und das aus der IP-Adresse abgeleitete Land.<br><em>Verarbeitet von einem Dritten: Cloudflare Web Analytics. Cloudflare bindet das Skript am Edge ein, von <code>static.cloudflareinsights.com</code>, weshalb es im Quelltext dieser Website nicht zu sehen ist. Es setzt <strong>kein Cookie</strong> und speichert keine Kennung auf deinem Gerät.</em></td>
+      <td><strong>Daten zur Reichweitenmessung</strong><br>Adresse der aufgerufenen Seite, verweisende Seite, User-Agent, Ladezeiten, Bildschirmgröße und das aus der IP-Adresse abgeleitete Land.<br><em>Verarbeitet von einem Dritten: Cloudflare Web Analytics. Das Skript, geladen von <code>static.cloudflareinsights.com</code>, wird jeder Seite beim Ausliefern hinzugefügt und steht deshalb nicht in den Quelldateien dieser Website. Es setzt <strong>kein Cookie</strong> und speichert keine Kennung auf deinem Gerät.</em></td>
       <td>Besuche aggregiert zählen: wie viele Seiten aufgerufen werden, welche, und ungefähr von wo.</td>
       <td>Berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO). Auf deinem Gerät wird nichts gespeichert und nichts ausgelesen, weshalb § 25 TDDDG hier keine Einwilligung verlangt.</td>
       <td>Die von Cloudflare für Web Analytics festgelegte. Der Verantwortliche sieht nur aggregierte Auswertungen und kann diese Frist weder verlängern noch verkürzen.</td>
@@ -107,8 +107,8 @@
     </tr>
   </table></div>
   <p><strong>Zu dieser dritten Zeile.</strong> Sie ist die gesamte Messung auf dieser Website: keine Heatmaps, keine Sitzungsaufzeichnung, keine A/B-Tests, kein Google Analytics, kein eigener Zähler. Sie kommt ohne Cookies und ohne jede Kennung auf deinem Gerät aus, und der Verantwortliche sieht ausschließlich aggregierte Auswertungen — Seitenaufrufe, meistbesuchte Seiten, Länder —, nie etwas, das auf einen einzelnen Besucher zeigt.</p>
-  <p>Eines verlässt deinen Browser noch, ganz ohne Skript: Cloudflare sendet mit jeder Antwort die Header <code>NEL</code> und <code>Report-To</code>. Sie weisen deinen Browser an, Netzwerkfehler — eine fehlgeschlagene Verbindung, eine Zeitüberschreitung — an <code>a.nel.cloudflare.com</code> zu melden. Diese Meldungen enthalten die angeforderte Adresse, deine IP-Adresse und die Art des Fehlers. Sie gehören zum Hosting, nicht zu irgendeiner Messung von uns.</p>
-  <p>Außer diesen vier Zeilen hat der Verantwortliche dieser Website keine Datenbank, keinen eigenen Server und kein System, das Daten von dir empfängt.</p>
+  <p>Auch das Zugriffsprotokoll des Servers aus der ersten Zeile wird nicht zum Zählen von Besuchern verwendet. Es dient dazu, die Seiten auszuliefern, die Website am Laufen zu halten und Missbrauch abzuwehren.</p>
+  <p>Außer diesen vier Zeilen hat der Verantwortliche dieser Website keine Datenbank und kein System, das Daten von dir empfängt.</p>
 
   <h2 id="werbung">6. Werbung: Google AdSense</h2>
   <p>Diese Website ist kostenlos und hat keine Bezahlversion: Sie finanziert sich über <strong>Google AdSense</strong>. Das AdSense-Skript mit der Publisher-Kennung <code>ca-pub-9791902883190551</code> wird auf <strong>allen</strong> Inhaltsseiten dieser Website geladen, auch auf dieser hier; die einzige Seite ohne das Skript ist die 404-Fehlerseite.</p>
@@ -171,23 +171,24 @@
   <p><strong>Wenn du den Hinweis nie zu sehen bekommst.</strong> Manche Werbeblocker und Datenschutz-Erweiterungen blockieren die Domain, von der die CMP geladen wird. Dann erscheint weder der Hinweis, noch wird der Link im Seitenfuß überhaupt eingeblendet: Er zeigt sich erst, wenn Googles Einwilligungscode bestätigt hat, dass diese Regeln für dich gelten — lädt dieser Code nicht, bleibt der Link verborgen. Personalisierte Werbung gibt es in diesem Fall aber ebenfalls nicht: Nach Googles eigenen Regeln kommt dafür im EWR, im Vereinigten Königreich und in der Schweiz nur Traffic in Frage, der über eine zertifizierte CMP eingewilligt hat; ohne diese Einwilligung bleiben nur nicht personalisierte oder eingeschränkte Anzeigen. Werbeblocker erlauben unsere <a href="/de/nutzungsbedingungen/">Nutzungsbedingungen</a> ausdrücklich.</p>
 
   <h2 id="empfaenger">9. Mit wem Daten geteilt werden</h2>
-  <p>Nur mit diesen beiden und mit sonst niemandem:</p>
+  <p>Nur mit diesen dreien und mit sonst niemandem:</p>
   <ul>
     <li><strong>Google Ireland Ltd. / Google LLC</strong> — Werbeanbieter (Google AdSense) und Betreiber der Consent-Management-Plattform, die den Einwilligungshinweis ausspielt (<a href="#einwilligung">Abschnitt 8</a>). Für den größten Teil der Werbedaten handelt Google nach seinen eigenen Bedingungen als <strong>eigenständig Verantwortlicher</strong> und entscheidet selbst, was damit geschieht. Deshalb müssen Betroffenenanfragen zu Werbedaten direkt an Google gerichtet werden: Der Verantwortliche dieser Website kann sie nicht beantworten und Google dazu auch nicht anweisen.</li>
-    <li><strong>Cloudflare, Inc.</strong> — Hosting der Website und Content-Delivery-Netzwerk (Cloudflare Pages) sowie Reichweitenmessung (Cloudflare Web Analytics). In beiden Rollen handelt Cloudflare als <strong>Auftragsverarbeiter</strong>, im Auftrag und nach Weisung des Verantwortlichen.</li>
+    <li><strong>Contabo GmbH</strong> (München, Deutschland) — Anbieter des Servers, auf dem diese Website läuft und auf dem das in <a href="#daten">Abschnitt 5</a> beschriebene Zugriffsprotokoll liegt. Contabo handelt als <strong>Auftragsverarbeiter</strong>, im Auftrag und nach Weisung des Verantwortlichen.</li>
+    <li><strong>Cloudflare, Inc.</strong> — Reichweitenmessung (Cloudflare Web Analytics), DNS der Domain und Weiterleitung der E-Mails, die an die Kontaktadresse gehen. In diesen Rollen handelt Cloudflare als <strong>Auftragsverarbeiter</strong>, im Auftrag und nach Weisung des Verantwortlichen.</li>
   </ul>
   <p>Es werden keine Daten verkauft. Es werden keine Daten an Vermittler oder Datenhändler weitergegeben. Es gibt keine weitere Übermittlung oder Offenlegung an Dritte.</p>
   <p>Und das Wichtigste: <strong>Die Dateien, die du umwandelst, werden mit niemandem geteilt, weil sie dein Gerät nicht verlassen.</strong> Es gibt nichts zu teilen.</p>
 
   <h2 id="uebermittlungen">10. Übermittlungen in Drittländer</h2>
-  <p>Google und Cloudflare sind Unternehmen mit Präsenz in den Vereinigten Staaten. Die Verbindungsdaten und die Werbedaten aus <a href="#daten">Abschnitt 5</a> können deshalb dort oder in anderen Ländern außerhalb des Europäischen Wirtschaftsraums verarbeitet werden.</p>
+  <p>Der Server, auf dem diese Website läuft, steht in Deutschland, also innerhalb der Europäischen Union; das Zugriffsprotokoll verlässt die EU daher nie. Google und Cloudflare dagegen sind Unternehmen mit Präsenz in den Vereinigten Staaten. Die Daten, die über sie laufen — darunter die Werbedaten und die Daten zur Reichweitenmessung aus <a href="#daten">Abschnitt 5</a> —, können deshalb dort oder in anderen Ländern außerhalb des Europäischen Wirtschaftsraums verarbeitet werden.</p>
   <p>Diese Übermittlungen stützen sich auf den EU-US-Datenschutzrahmen (Data Privacy Framework) und, soweit dieser nicht anwendbar ist, auf die von der Europäischen Kommission genehmigten Standardvertragsklauseln. Jeder Anbieter erläutert das auf seiner eigenen Seite: <a href="https://policies.google.com/privacy/frameworks" rel="nofollow noopener">Google</a> und <a href="https://www.cloudflare.com/privacypolicy/" rel="nofollow noopener">Cloudflare</a>.</p>
 
   <h2 id="speicherdauer">11. Wie lange Daten gespeichert werden</h2>
-  <p><strong>Der Verantwortliche dieser Website speichert nichts</strong>, weil er weder eine Datenbank noch einen Server hat, der Daten von dir empfängt.</p>
-  <p>Die Fristen legen die Anbieter fest. Das Kriterium ist jeweils, was der Anbieter braucht, um den Dienst auszuliefern, zu schützen oder abzurechnen; der Verantwortliche dieser Website kann keine davon verlängern oder verkürzen:</p>
+  <p><strong>Der Verantwortliche dieser Website führt keine Datenbank über dich.</strong> Das Einzige, was der eigene Server dieser Website speichert, ist sein Zugriffsprotokoll, mit bereits gekürzter IP-Adresse, und er löscht es nach 14 Tagen automatisch.</p>
+  <p>Die übrigen Fristen legen die Anbieter fest. Das Kriterium ist jeweils, was der Anbieter braucht, um den Dienst auszuliefern, zu schützen oder abzurechnen; der Verantwortliche dieser Website kann keine davon verlängern oder verkürzen:</p>
   <ul>
-    <li><strong>Protokolle des Hostings</strong> — speichert Cloudflare nach seinen eigenen Fristen (<a href="https://www.cloudflare.com/privacypolicy/" rel="nofollow noopener">Datenschutzerklärung</a>). Der Verantwortliche liest, kopiert und lädt diese Protokolle nicht herunter und kann ihre Speicherdauer auch nicht verlängern.</li>
+    <li><strong>Zugriffsprotokoll des Servers</strong> — <strong>14 Tage</strong>, mit IP-Adressen, die schon vor dem Speichern gekürzt werden. Die Datei jedes Tages wird automatisch gelöscht, sobald sie dieses Alter erreicht.</li>
     <li><strong>Reichweitenmessung</strong> — speichert Cloudflare nach der Frist, die es für Web Analytics anwendet. Beim Verantwortlichen kommen nur aggregierte Zahlen an, in denen nichts einen Besucher identifiziert.</li>
     <li><strong>Werbedaten</strong> — die Cookies laufen nach dem von Google veröffentlichten Zeitplan ab: 13 Monate im EWR und im Vereinigten Königreich für die langlebigsten AdSense-Cookies (<a href="https://business.safety.google/adscookies/" rel="nofollow noopener">Googles Cookie-Liste</a>). Was Google danach aufbewahrt, richtet sich nach seiner <a href="https://policies.google.com/privacy" rel="nofollow noopener">Datenschutzerklärung</a>; AdSense gibt Publishern darüber keine Kontrolle.</li>
     <li><strong>Deine Antwort auf den Einwilligungshinweis</strong> — bleibt auf deinem Gerät, bis du sie über den Link „Datenschutz-Einstellungen“ im Seitenfuß löschst, bis du die Daten deines Browsers löschst oder bis der Hinweis eine neue Entscheidung einholt. Wie lange die CMP sie höchstens aufbewahrt, legt sie in der zweiten Ebene des Hinweises offen (<a href="#einwilligung">Abschnitt 8</a>); der Verantwortliche dieser Website legt diese Frist nicht fest.</li>

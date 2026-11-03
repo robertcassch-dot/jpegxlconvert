@@ -21,7 +21,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/styles.css?v=8">
-<link rel="alternate" type="application/rss+xml" title="JXL Convert — Guides" href="/en/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="JXL Convert — Blog" href="/en/feed.xml">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"Will JPEG XL replace WebP?","acceptedAnswer":{"@type":"Answer","text":"Not soon, and possibly never outright. WebP is entrenched, works everywhere and is good enough for most web images. JPEG XL's realistic path is to win storage, archival and professional workflows first, and web delivery only if and when browser support becomes universal."}},
@@ -32,15 +32,16 @@
 ]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"JPEG XL vs WebP","datePublished":"2026-07-29","dateModified":"2026-07-29","inLanguage":"en","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/en/about/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/en/"},"mainEntityOfPage":"https://jpegxlconvert.com/en/jpeg-xl-vs-webp/"}
+{"@context":"https://schema.org","@type":"Article","headline":"JPEG XL vs WebP","datePublished":"2026-07-29","dateModified":"2026-10-15","inLanguage":"en","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/en/about/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/en/"},"mainEntityOfPage":"https://jpegxlconvert.com/en/jpeg-xl-vs-webp/"}
 </script>
 <style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+<style>.gtbl{max-width:720px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
 </head>
 <body>
 <header class="site"><div class="wrap nav">
   <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
   <div class="nav-right">
-    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Guides</a></nav>
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a></nav>
     <details class="lang"><summary>🌐 EN</summary>
       <div class="lang-menu">
         <a class="active" href="/en/jpeg-xl-vs-webp/"><span class="flag">🇬🇧</span> English</a>
@@ -58,7 +59,7 @@
   <span class="eyebrow">⚖️ Honest comparison</span>
   <h1>JPEG&nbsp;XL vs WebP</h1>
   <p class="sub"><strong>JPEG&nbsp;XL is the better format. WebP is the more useful one.</strong> That contradiction is the entire comparison, and which side of it matters depends on one question: does the image need to open on someone else's computer?</p>
-  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">by <a href="/en/about/" style="color:inherit">Robert Castillo</a> · Published <time datetime="2026-07-29">July 29, 2026</time></p>
+  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">by <a href="/en/about/" style="color:inherit">Robert Castillo</a> · Published <time datetime="2026-07-29">July 29, 2026</time> · updated <time datetime="2026-10-15">October 15, 2026</time></p>
   <div class="badges">
     <span class="badge green">🌍 WebP: works everywhere</span><span class="badge">🏆 JPEG XL: better compression</span><span class="badge">🌈 JPEG XL: HDR &amp; 16-bit+</span>
   </div>
@@ -70,17 +71,17 @@
 
 <section class="block"><div class="wrap">
   <h2>The verdict, up front</h2>
-  <p class="lead"><strong>Publishing images on a website?</strong> Use WebP. Every browser in use today renders it, and <a href="/en/chrome-jpeg-xl-support/">Chrome still has JPEG XL turned off by default</a>. A better format that your visitors cannot see is not a better format.</p>
+  <p class="lead"><strong>Publishing images on a website?</strong> Use WebP, or serve JPEG&nbsp;XL with WebP as the fallback. Every browser in use today renders WebP. JPEG&nbsp;XL is now on by default in <a href="/en/chrome-jpeg-xl-support/">Chrome 155</a>, <a href="/en/firefox-jpeg-xl-support/">Firefox 158</a> and Safari 17, but Edge still doesn't show it, and nor does any browser that hasn't been updated. A better format that some of your visitors cannot see is not, on its own, a better format.</p>
   <p class="lead"><strong>Storing, archiving or editing your own photos?</strong> Use JPEG&nbsp;XL. It compresses harder at the quality levels you'd actually keep photos at, it holds HDR and high bit depths that WebP simply discards, and it can re-pack your existing JPEG library losslessly — which WebP cannot do at all.</p>
 </div></section>
 
 <section class="block alt"><div class="wrap">
   <h2>Feature by feature</h2>
-  <table class="cmp">
+  <div class="gtbl"><table class="cmp">
     <thead><tr><th>&nbsp;</th><th>WebP</th><th>JPEG XL</th></tr></thead>
     <tbody>
       <tr><td>Released</td><td>2010</td><td>2021–22 (ISO/IEC 18181)</td></tr>
-      <tr><td>Browser support</td><td class="y">Universal</td><td class="n">Safari only by default</td></tr>
+      <tr><td>Browser support</td><td class="y">Universal</td><td class="n">Chrome 155+, Firefox 158+, Safari 17+; not Edge</td></tr>
       <tr><td>Compression at high quality</td><td>Good</td><td class="y">Better</td></tr>
       <tr><td>Compression at very low quality</td><td>Competitive</td><td>Competitive</td></tr>
       <tr><td>Lossless mode</td><td class="y">Yes</td><td class="y">Yes, stronger</td></tr>
@@ -92,7 +93,7 @@
       <tr><td>Re-packs existing JPEGs losslessly</td><td class="n">No</td><td class="y">Yes, ~20% smaller</td></tr>
       <tr><td>Royalty-free</td><td class="y">Yes</td><td class="y">Yes</td></tr>
     </tbody>
-  </table>
+  </table></div>
 </div></section>
 
 <section class="block"><div class="wrap">
@@ -112,7 +113,7 @@
 <section class="block"><div class="wrap">
   <h2>Which one should you pick?</h2>
   <div class="grid3">
-    <div class="feature"><div class="fi">🌍</div><h3>Website images → WebP</h3><p>Universal support, good compression, no fallback machinery to maintain. Revisit this when Chrome enables JPEG XL by default.</p></div>
+    <div class="feature"><div class="fi">🌍</div><h3>Website images → WebP</h3><p>Universal support, good compression, no fallback machinery to maintain. Since Chrome 155 switched JPEG XL on by default (6 October 2026), you can also serve JPEG XL first and keep WebP as the fallback for Edge and older browsers.</p></div>
     <div class="feature"><div class="fi">📸</div><h3>Photo archive → JPEG XL</h3><p>Lossless JPEG re-packing, HDR preserved, better compression where it counts. You control the software that opens them.</p></div>
     <div class="feature"><div class="fi">🎨</div><h3>Graphics &amp; screenshots → JPEG XL</h3><p>WebP's lossy mode is locked to 4:2:0 chroma, which smears coloured text and sharp edges. JPEG XL can keep full colour resolution.</p></div>
     <div class="feature"><div class="fi">🖼️</div><h3>Huge panoramas → JPEG XL</h3><p>WebP stops at 16,383 pixels per side. Stitched panoramas and high-resolution scans hit that wall regularly.</p></div>
@@ -145,7 +146,7 @@
 <footer class="site"><div class="wrap">
   <div class="fcols">
     <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
-    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Guides</a><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/news/">What's new</a></nav>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/news/">What's new</a></nav>
   </div>
   <div class="legal">
     <span class="privacy-pill">🔒 Your files never leave your device</span>

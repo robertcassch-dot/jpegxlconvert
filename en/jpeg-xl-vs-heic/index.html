@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9791902883190551" crossorigin="anonymous"></script>
+<title>JPEG XL vs HEIC: Which Is Better? We Measured</title>
+<meta name="description" content="HEIC and JPEG XL encoded at equal quality on 16 photos: where each wins, the ceiling HEIC hits, 16-bit and HDR, support and HEVC patents.">
+<link rel="canonical" href="https://jpegxlconvert.com/en/jpeg-xl-vs-heic/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/jpeg-xl-vs-heic/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/jpeg-xl-vs-heic/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/jpeg-xl-vs-heic/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JPEG XL vs HEIC, measured">
+<meta property="og:description" content="16 photos at equal visual quality, plus bit depth, support and patents. The honest result.">
+<meta property="og:url" content="https://jpegxlconvert.com/en/jpeg-xl-vs-heic/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=8">
+<link rel="alternate" type="application/rss+xml" title="JXL Convert — Blog" href="/en/feed.xml">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is JPEG XL better than HEIC?","acceptedAnswer":{"@type":"Answer","text":"At high quality, yes: in our test it was 7% smaller at a score of 85 and 23% smaller at visually lossless. At a score of 80, where libheif's default quality lands, they were level, and at lower quality JPEG XL was 4% to 9% larger. JPEG XL is also royalty-free, keeps more bits and is shown by more browsers; HEIC is what iPhones already use."}},
+{"@type":"Question","name":"Should I convert my iPhone HEIC photos to JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"Usually not. HEIC has no reversible re-packing like JPEG does, so converting means either a lossless JPEG XL that is much bigger or a lossy one that adds a second round of compression. Convert copies when you need them to open somewhere HEIC doesn't."}},
+{"@type":"Question","name":"Why doesn't Chrome open HEIC when it opens JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"Whatever the reason, Chrome doesn't display HEIC, and neither does Firefox; only Safari shows HEIC in web pages. Chrome 155 did switch JPEG XL on by default in October 2026. HEIC relies on HEVC, which is licensed for a fee, while JPEG XL's reference implementation is royalty-free."}},
+{"@type":"Question","name":"Does HEIC support 10-bit and HDR?","acceptedAnswer":{"@type":"Answer","text":"Yes. In our test the x265 encoder wrote 8-, 10- and 12-bit HEIC files but refused 16-bit, while JPEG XL stored the full 16 bits losslessly. On Android, decoding 10-bit HEIC depends on an optional HEVC profile, so not every phone opens it."}},
+{"@type":"Question","name":"Which needs less work to encode?","acceptedAnswer":{"@type":"Answer","text":"JPEG XL. x265 used roughly four to seven times more processor time at scores of 80 to 90. Phones use their own encoders, so this only matters when you convert on a computer."}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"JPEG XL vs HEIC","datePublished":"2026-10-15","dateModified":"2026-10-15","inLanguage":"en","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/en/about/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/en/"},"mainEntityOfPage":"https://jpegxlconvert.com/en/jpeg-xl-vs-heic/"}
+</script>
+<style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+<style>.gtbl{max-width:720px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a></nav>
+    <details class="lang"><summary>🌐 EN</summary>
+      <div class="lang-menu">
+        <a class="active" href="/en/jpeg-xl-vs-heic/"><span class="flag">🇬🇧</span> English</a>
+        <a href="/es/jpeg-xl-vs-heic/"><span class="flag">🇪🇸</span> Español</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">📏 Measured on our own server</span>
+  <h1>JPEG&nbsp;XL vs HEIC</h1>
+  <p class="sub">Both promise photos at about half the size of JPEG. We encoded 16 photos with each to the same visual quality: <strong>at the quality libheif uses by default they tie, at higher quality JPEG&nbsp;XL wins, at lower quality HEIC does.</strong> The differences that decide it are support, bit depth and patents.</p>
+  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">by <a href="/en/about/" style="color:inherit">Robert Castillo</a> · Published <time datetime="2026-10-15">October 15, 2026</time></p>
+  <div class="badges">
+    <span class="badge">🤝 Level at a score of 80</span><span class="badge green">🏆 JXL −23% at visually lossless</span><span class="badge">📱 HEIC: built into iPhone</span><span class="badge">🆓 JXL: royalty-free</span>
+  </div>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/heic-to-jxl/"><span class="cta-ic">🔁</span><b>HEIC to JPEG XL</b><span class="cta-sub">Convert in your browser, nothing uploaded →</span></a>
+    <a class="cta-card" href="/en/heic-to-jpg/"><span class="cta-ic">👁️</span><b>Need to see a .heic?</b><span class="cta-sub">See a .heic: turn it into a JPG in your browser →</span></a>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>The short answer</h2>
+  <p class="lead"><strong>On file size it is closer than either side likes to admit.</strong> At an SSIMULACRA2 score of 80, which is where libheif's default quality (50) lands, they came out level: the median difference across 16 photos was 0.1%, and each format won on half of them. Push the quality higher and JPEG&nbsp;XL pulls ahead, up to 23% smaller at visually lossless. Drop it lower and HEIC is the smaller one: JPEG&nbsp;XL came out 4% to 9% larger in the median, and much larger on a few photos.</p>
+  <p class="lead"><strong>The real differences are elsewhere.</strong> HEIC is what an iPhone already produces and what Apple's devices open without thinking, but it depends on HEVC, a patent-licensed video codec, and outside Safari no major browser shows it. JPEG&nbsp;XL is royalty-free, opens by default in Chrome, Firefox and Safari since October 2026, kept a full 16 bits where x265, the HEIC encoder we used, stopped at 12, and needed between a half and a seventh of HEIC's processor time to encode, depending on the quality.</p>
+</div></section>
+
+<section class="block alt" id="results"><div class="wrap">
+  <h2>Same visual quality: which file is smaller?</h2>
+  <p class="lead">We reduced 16 photos (seven from phones, nine from cameras) to 2048 pixels on the long side and encoded each one at many quality settings as HEIC, with libheif and the x265 encoder, and as JPEG&nbsp;XL. Every file was decoded and scored against the original with SSIMULACRA2, and for each photo we worked out how big each format has to be to reach the same score. We ran HEIC twice: with libheif's default 4:2:0 colour subsampling, which halves the colour resolution, and with full 4:4:4 colour.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Score</th><th>HEIC 4:2:0</th><th>HEIC 4:4:4</th><th>JPEG XL (vs HEIC 4:2:0)</th></tr></thead>
+    <tbody>
+      <tr><td>60 · artefacts visible</td><td class="y">149 KB</td><td>157 KB</td><td class="n">168 KB<br>(+9%, 6/16)</td></tr>
+      <tr><td>70 · high quality</td><td class="y">219 KB</td><td>228 KB</td><td class="n">239 KB<br>(+4%, 7/16)</td></tr>
+      <tr><td>80 · identical side by side</td><td>372 KB</td><td>378 KB</td><td>382 KB<br>(level, 8/16)</td></tr>
+      <tr><td>85 · identical when flipping</td><td>561 KB</td><td>554 KB</td><td class="y">535 KB<br>(−7%, 13/16)</td></tr>
+      <tr><td>90 · visually lossless</td><td class="n">1,216 KB*</td><td>1,123 KB</td><td class="y">964 KB<br>(−23%, 14/14)</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">Sizes are the median across the 16 photos, scaled to a 2048 × 1536 picture (3.1 megapixels). HEIC 4:2:0 is libheif's default. In brackets under JPEG&nbsp;XL: its median difference against default HEIC, worked out photo by photo (so it does not always match the gap between the medians), and on how many photos JPEG&nbsp;XL was the smaller file. *Only 14 of the 16 photos reached 90 as default HEIC.</p>
+  <p class="lead">Two things stand out. First, the crossover sits right around 80, and that is exactly where libheif's default quality of 50 lands: our photos scored a median just under 80 with it. Second, HEIC with its default settings hits a ceiling: on 2 of the 16 photos it never reached 90, even at quality 95, the highest we tried, because of the halved colour resolution. Full 4:4:4 colour got every photo there and narrowed the gap at 90 to 13%, but JPEG&nbsp;XL was still smaller on all 16.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Which photos favour which format</h2>
+  <p class="lead">The median hides a lot of spread, and the spread follows the content of the picture.</p>
+  <p class="lead"><strong>HEIC wins clearly on smooth and dark images at lower quality.</strong> The two swans against a plain blue sky needed 73% more bytes as JPEG&nbsp;XL than as HEIC at a score of 70, and the two night scenes needed 26% to 29% more. HEVC was built to squeeze video into low bitrates, where keeping flat areas clean is most of the job, and at modest quality that shows.</p>
+  <p class="lead"><strong>JPEG&nbsp;XL wins on fine detail and as quality rises.</strong> The rural landscape and the aquarium came out smaller as JPEG&nbsp;XL at every level we tested. And by a score of 85 the picture flips for almost everything: JPEG&nbsp;XL was smaller on 13 of 16 photos, including the swans, which ended up 43% smaller than HEIC. Only the shop front at night stayed clearly in HEIC's favour (11%); the train station (3%) and the locomotive (level) were close calls.</p>
+  <p class="lead">So if you mostly keep compact, "good enough" copies of skies and night shots, HEIC was the more efficient of the two in our sample (one sky and two night shots). If you keep high-quality masters, JPEG&nbsp;XL is.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Lossless: where HEIC falls behind</h2>
+  <p class="lead">HEIC can be lossless too, though almost nobody uses it that way. We tried it with the recipe heif-enc itself recommends (full 4:4:4 colour, RGB instead of YCbCr) on 8 of the photos and our 5 screenshots, and checked every result pixel by pixel. It really was lossless: zero pixels changed. It just wasn't small.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Images</th><th>Best PNG</th><th>HEIC lossless</th><th>JPEG XL lossless</th></tr></thead>
+    <tbody>
+      <tr><td>8 photos</td><td>32.14 MB</td><td class="n">36.59 MB</td><td class="y">21.55 MB</td></tr>
+      <tr><td>5 screenshots</td><td class="y">0.74 MB</td><td class="n">2.27 MB</td><td>0.92 MB</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">Lossless HEIC came out 14% bigger than a well-optimised PNG on photos and three times bigger on screenshots. JPEG&nbsp;XL at its default effort was 41% smaller than lossless HEIC on the photos and 60% smaller on the screenshots, and on the photos it used about a third of the processor time. If you need an exact copy of an image, HEIC is the wrong tool.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Converting the HEIC photos you already have</h2>
+  <p class="lead">With JPEG there is a trick: JPEG&nbsp;XL can re-pack an existing JPEG without touching a pixel and give the original back later. There is no equivalent for HEIC. Converting a HEIC means decoding it to pixels and encoding again, and we measured what that costs on 8 photos saved as HEIC at quality 60, which on our photos gave a high median score of 86.</p>
+  <p class="lead"><strong>Lossless JPEG&nbsp;XL keeps the HEIC's quality exactly, but the file is about three times bigger</strong> (2.9 times in total), because it faithfully stores every compression artefact the HEIC already had. <strong>Lossy JPEG&nbsp;XL at its default setting came out 9.5% smaller than the HEIC in total (9.0% in the median), but the score dropped from 86 to 82 in the median</strong>: a second round of compression always costs something.</p>
+  <p class="lead">So converting your iPhone library to JPEG&nbsp;XL to save space doesn't work. Convert copies when you need a photo to open somewhere HEIC doesn't, such as Chrome, Firefox or a Windows PC without the HEVC extension, and keep the originals. Our <a href="/en/heic-to-jxl/">HEIC to JPEG XL converter</a> does that in the browser without uploading anything.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Encoding effort</h2>
+  <p class="lead">HEIC borrows a video encoder, and video encoders are slow when you ask for quality. At a score of 80, x265 used a median of 3.0 seconds of processor time per megapixel with 4:2:0 colour and 3.6 with 4:4:4, against 0.77 for <code>cjxl</code> at its default effort. At 90 it was 5.0 seconds against 0.67. That is roughly four to seven times more work for HEIC; at the lowest level we tested, 60, the gap shrank to about two times.</p>
+  <p class="lead">Two caveats. x265 spreads that work across several threads, so the wait is shorter than the processor time suggests, and libheif runs it with the <em>slow</em> preset by default; faster presets exist and trade compression for speed. And phones don't use x265: an iPhone uses Apple's own encoder, so these numbers say nothing about how fast your phone saves a photo. They matter when you convert or export on a computer.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Bit depth and HDR: what we could actually store</h2>
+  <p class="lead">Both formats are sold as HDR-ready, and both are. The difference shows up at the edges. We took one of our photos as a 16-bit PNG and tried to keep all 16 bits.</p>
+  <p class="lead"><strong>Our HEIC encoder topped out at 12 bits.</strong> The limit is x265's, not necessarily HEVC's: with libheif 1.17.6 and the x265 3.5 encoder, <code>heif-enc</code> happily wrote 8-, 10- and 12-bit files, and refused 16-bit outright with "Bit depth not supported by x265". Its default for a 16-bit input is 10 bits, so if you don't ask, you get 10. Even the "lossless" mode stores 10 or 12 bits of a 16-bit source, which is not lossless.</p>
+  <p class="lead"><strong>JPEG&nbsp;XL kept all 16 bits in lossless mode</strong>, and in lossy mode the file is still a 16-bit file, as <code>jxlinfo</code> reports, instead of being cut down to 10 or 12 bits. The format goes further still, up to 32-bit floating point, which matters to people editing HDR or scientific images rather than to anyone taking holiday photos.</p>
+  <p class="lead">There is also a practical catch on the HEIC side: Google's own documentation says that on Android, 10-bit HEIF decoding "requires optional HEVC Main10 profile", so a phone may open the 8-bit version of a picture and not the 10-bit one. For phone HDR photos, both formats can carry the gain maps that newer phones use; libjxl added its gain map API in version 0.11 (September 2024).</p>
+</div></section>
+
+<section class="block alt" id="support"><div class="wrap">
+  <h2>Support in October 2026</h2>
+  <p class="lead">Here HEIC and JPEG&nbsp;XL have almost opposite strengths: HEIC is built into phones and operating systems, JPEG&nbsp;XL is now in the browsers.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Where</th><th>HEIC</th><th>JPEG XL</th></tr></thead>
+    <tbody>
+      <tr><td>iPhone, iPad, Mac</td><td class="y">Native since iOS 11 and macOS High Sierra (2017); the default camera format</td><td class="y">From iOS 17 and macOS 14 Sonoma, according to Apple; Safari 17 shows it</td></tr>
+      <tr><td>Android</td><td class="y">Decoding since Android 9, saving since Android 10; 10-bit is optional per device</td><td class="n">Not in Android's official format list</td></tr>
+      <tr><td>Windows 11</td><td class="n">Free HEIF extension plus the HEVC Video Extensions, $0.99 in the Microsoft Store</td><td class="y">Free JPEG XL Image Extension from Microsoft, version 24H2 or later</td></tr>
+      <tr><td>Chrome</td><td class="n">No</td><td class="y">Yes, by default since Chrome 155 (6 October 2026)</td></tr>
+      <tr><td>Firefox</td><td class="n">No</td><td class="y">Yes, since Firefox 158 (13 October 2026)</td></tr>
+      <tr><td>Edge</td><td class="n">No</td><td class="n">No: Edge 155 uses Chrome's engine but doesn't display it</td></tr>
+      <tr><td>Safari</td><td class="y">Yes, since Safari 17</td><td class="y">Yes, since Safari 17 (no progressive loading or animation)</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">So the honest summary is: if the photo stays inside Apple's world, HEIC is the path of least resistance, because the camera already made it. The moment it has to appear in a web page, JPEG&nbsp;XL now works in Chrome, Firefox and Safari, and HEIC only in Safari. Edge 155 uses Chrome's engine but doesn't display JPEG&nbsp;XL (Microsoft withdrew it from its release notes on 9 October 2026), so <a href="/en/jpeg-xl-browser-test/">test your own browser</a> before relying on it.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Patents and licences</h2>
+  <p class="lead">This is the least visible difference and, long term, maybe the most important one.</p>
+  <p class="lead">HEIC is a container (HEIF) holding an image compressed with HEVC, the H.265 video codec, and HEVC is covered by patents licensed for a fee. Licensing is split across patent pools and individual holders: <a href="https://accessadvance.com/licensing-programs/hevc-advance/" rel="nofollow noopener">Access Advance</a> describes its HEVC Advance pool as covering "many thousands of essential, high-quality patents", and the <a href="https://www.via-la.com/licensing-programs/hevc-vvc/" rel="nofollow noopener">HEVC/VVC pool</a> that Via LA ran until Access Advance took it over in December 2025 publishes a rate of $0.30 per device in region 1 and $0.20 in region 2 after the first 100,000 units, with an annual cap of $30 million. Whatever the exact reasons behind each company's decision, the visible result is that Windows charges $0.99 for its HEVC extension while the JPEG&nbsp;XL one is free, and that Chrome and Firefox now display JPEG&nbsp;XL but still not HEIC.</p>
+  <p class="lead">JPEG&nbsp;XL was standardised by the JPEG committee as ISO/IEC 18181 with a royalty-free reference implementation. The reference library, libjxl, is BSD-licensed and comes with a <a href="https://github.com/libjxl/libjxl/blob/main/PATENTS" rel="nofollow noopener">patent grant</a> in which Google gives every user a "perpetual, worldwide, non-exclusive, no-charge, royalty-free" licence to the patents it holds on that implementation. As with any format, nobody can promise that no third party will ever claim a patent; what we can say is that we know of no patent pool or fee for JPEG&nbsp;XL, while HEVC is licensed through at least two pool programs.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Which one should you use?</h2>
+  <div class="grid3">
+    <div class="feature"><div class="fi">📱</div><h3>Photos on your iPhone</h3><p>Leave them as HEIC. The camera made them that way, Apple opens them everywhere, and re-encoding gains little.</p></div>
+    <div class="feature"><div class="fi">🌐</div><h3>Photos for a web page</h3><p>JPEG XL, with a JPEG fallback in a <code>&lt;picture&gt;</code> element. HEIC only displays in Safari.</p></div>
+    <div class="feature"><div class="fi">🗄️</div><h3>High-quality masters</h3><p>JPEG XL. At visually lossless quality it was smaller on every photo, and it can keep 16 bits.</p></div>
+    <div class="feature"><div class="fi">🌙</div><h3>Compact copies of skies and night shots</h3><p>In our sample (one sky and two night shots) HEIC was more efficient there at modest quality, if the places you open them support it.</p></div>
+    <div class="feature"><div class="fi">🪟</div><h3>Sharing with Windows users</h3><p>Neither is ideal. Windows needs an extension for each; JPEG XL's is free, HEIC's video part costs $0.99.</p></div>
+    <div class="feature"><div class="fi">📤</div><h3>Sending to anyone</h3><p>Neither: send a JPEG. It is still the only format every device and every app opens.</p></div>
+  </div>
+</div></section>
+
+<section class="block" id="method"><div class="wrap">
+  <h2>How we measured</h2>
+  <p class="lead"><strong>Photos:</strong> 16 JPEGs exactly as they were uploaded to Wikimedia Commons, all public domain (CC0): seven from phones (iPhone 13, iPhone 12, Pixel 7, Galaxy S21 Ultra) and nine from Fujifilm, Canon, Olympus, Nikon and Sony cameras. Each was reduced to 2048 pixels on its long side with ImageMagick (<code>convert photo.jpg -auto-orient -resize 2048x2048 -strip</code>), which erases most of the traces of its original JPEG compression, and that PNG is the reference everything is compared with.</p>
+  <p class="lead"><strong>Tools:</strong> libheif 1.17.6 with the x265 3.5 encoder (Ubuntu 24.04 packages; libheif's x265 defaults are preset <em>slow</em>, tune <em>ssim</em>, 4:2:0 colour) and libjxl 0.12.0. Commands: <code>heif-enc -q Q ref.png -o out.heic</code> at qualities 5 to 95, the same with <code>-p chroma=444</code>, and <code>cjxl ref.png out.jxl -d D --num_threads=0</code> at distances 0.2 to 15. HEIC files were decoded with <code>heif-convert</code>, JPEG&nbsp;XL with <code>djxl</code>, and every result was scored against the reference with <code>ssimulacra2</code> from libjxl 0.12.0. For each photo we interpolated the size each format needs to reach the same score.</p>
+  <p class="lead"><strong>Lossless and conversion tests:</strong> <code>heif-enc -L -p chroma=444 --matrix_coefficients=0</code>, the recipe printed by heif-enc's own help, against <code>cjxl -d 0</code>, with a pixel-by-pixel check of the decoded result (ImageMagick <code>compare -metric AE</code>). For the conversion test, HEIC files made at <code>-q 60</code> were decoded with <code>heif-convert</code> and re-encoded with <code>cjxl -d 0</code> and <code>cjxl -d 1</code>. These two tests used 8 of the 16 photos (four from phones, four from cameras): halfway through, we had to slow everything down and run one command at a time, memory-capped, because the server also hosts websites.</p>
+  <p class="lead"><strong>Timing:</strong> processor time (user plus system) per command on a shared server with 6 virtual AMD EPYC cores. x265 uses several threads and cjxl ran single-threaded; processor time adds up the work of all threads, so the comparison is about effort, not about how long you wait.</p>
+  <p class="lead"><strong>Limits:</strong> 16 photos is a small sample, not a study. SSIMULACRA2 comes from the team that created JPEG&nbsp;XL, and x265 is only one HEVC encoder; Apple's own encoder on an iPhone is a different program with different tuning, and we could not test it on a server. Our references come from JPEGs, not raw files, and are 8-bit. All scripts, results per setting as CSV, and the source and licence of every photo are kept with the measurements; the links to the 16 photos are in the method of our <a href="/en/jpeg-xl-vs-jpeg/#method">JPEG XL vs JPEG test</a>.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Common questions</h2>
+  <div class="faq">
+    <details open><summary>Is JPEG XL better than HEIC?</summary><div class="ans">At high quality, yes: in our test it was 7% smaller at a score of 85 and 23% smaller at visually lossless. At a score of 80, where libheif's default quality lands, they were level, and at lower quality JPEG XL was 4% to 9% larger. JPEG XL is also royalty-free, keeps more bits and is shown by more browsers; HEIC is what iPhones already use.</div></details>
+    <details><summary>Should I convert my iPhone HEIC photos to JPEG XL?</summary><div class="ans">Usually not. HEIC has no reversible re-packing like JPEG does, so converting means either a lossless JPEG XL that is much bigger or a lossy one that adds a second round of compression. Convert copies when you need them to open somewhere HEIC doesn't.</div></details>
+    <details><summary>Why doesn't Chrome open HEIC when it opens JPEG XL?</summary><div class="ans">Whatever the reason, Chrome doesn't display HEIC, and neither does Firefox; only Safari shows HEIC in web pages. Chrome 155 did switch JPEG XL on by default in October 2026. HEIC relies on HEVC, which is licensed for a fee, while JPEG XL's reference implementation is royalty-free.</div></details>
+    <details><summary>Does HEIC support 10-bit and HDR?</summary><div class="ans">Yes. In our test the x265 encoder wrote 8-, 10- and 12-bit HEIC files but refused 16-bit, while JPEG XL stored the full 16 bits losslessly. On Android, decoding 10-bit HEIC depends on an optional HEVC profile, so not every phone opens it.</div></details>
+    <details><summary>Which needs less work to encode?</summary><div class="ans">JPEG XL. x265 used roughly four to seven times more processor time at scores of 80 to 90. Phones use their own encoders, so this only matters when you convert on a computer.</div></details>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Keep reading</h2>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/jpeg-xl-vs-jpeg/"><span class="cta-ic">📏</span><b>JPEG XL vs JPEG</b><span class="cta-sub">Same 16 photos, the 20% re-pack →</span></a>
+    <a class="cta-card" href="/en/jpeg-xl-vs-png/"><span class="cta-ic">🖼️</span><b>JPEG XL vs PNG</b><span class="cta-sub">Lossless, screenshots and transparency →</span></a>
+    <a class="cta-card" href="/en/what-is-jpeg-xl/"><span class="cta-ic">📘</span><b>What is JPEG XL?</b><span class="cta-sub">The format explained first →</span></a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/news/">What's new</a></nav>
+  </div>
+  <div class="legal">
+    <span class="privacy-pill">🔒 Your files never leave your device</span>
+    <span class="flegal"><a href="/en/privacy/">Privacy</a> · <a href="/en/terms/">Terms</a><span id="revocation-link" style="display:none"> · <a href="javascript:window.googlefc.showRevocationMessage();">Privacy settings</a></span></span>
+    <span>© 2026 JXL Convert</span>
+  </div>
+  <div class="sister"><a href="https://docuniversal.com/" rel="noopener" style="display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:100%;color:inherit;opacity:.72;font-size:13px"><svg width="18" height="18" viewBox="0 0 64 64" aria-hidden="true" style="border-radius:5px;flex:none"><defs><linearGradient id="duLogo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7cc4a0"/><stop offset="1" stop-color="#366d55"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#duLogo)"/><circle cx="32" cy="32" r="16" fill="none" stroke="#fff" stroke-width="4" opacity=".95"/><circle cx="32" cy="32" r="5" fill="#fff"/></svg><span>Working with PDFs? Try DocUniversal — free, in your browser</span></a></div>
+</div></footer>
+<script>
+window.googlefc = window.googlefc || {};
+window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+window.googlefc.callbackQueue.push({
+  'CONSENT_API_READY':
+  () => __tcfapi('addEventListener', 0, (tcdata, success) => {
+    const revocationLink = document.getElementById('revocation-link');
+    if (!revocationLink) return;
+    if (!success || !tcdata) {
+      revocationLink.style.display = 'none';
+    } else if (tcdata.gdprApplies) {
+      revocationLink.style.display = 'inline';
+    } else {
+      revocationLink.style.display = 'none';
+    }
+  })
+});
+</script>
+</body>
+</html>

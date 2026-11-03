@@ -18,27 +18,28 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/styles.css?v=8">
-<link rel="alternate" type="application/rss+xml" title="JXL Convert — Guides" href="/en/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="JXL Convert — Blog" href="/en/feed.xml">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"Is HEIC better than JPEG?","acceptedAnswer":{"@type":"Answer","text":"Technically yes — same quality in about half the space, with better colour depth. In practice JPEG wins on compatibility, which is often what matters more."}},
 {"@type":"Question","name":"Does converting HEIC to JPG lose quality?","acceptedAnswer":{"@type":"Answer","text":"A little. JPEG is a lossy format and older, so a converted file is slightly worse and larger. For sharing, nobody will see the difference."}},
-{"@type":"Question","name":"Why does Windows ask me to pay for a codec?","acceptedAnswer":{"@type":"Answer","text":"Because HEVC, the compression inside HEIC, is patented. Microsoft charged for the extension that decodes it. Converting the file sidesteps that entirely."}},
+{"@type":"Question","name":"Why does Windows ask me to pay for a codec?","acceptedAnswer":{"@type":"Answer","text":"Because HEVC, the compression inside HEIC, is patented. Microsoft charges for the extension that decodes it ($0.99 in the US store on 15 October 2026). Converting the file sidesteps that entirely."}},
 {"@type":"Question","name":"Can I stop my iPhone saving HEIC?","acceptedAnswer":{"@type":"Answer","text":"Yes. Settings → Camera → Formats → «Most Compatible». Existing photos stay HEIC; new ones are JPEG."}},
 {"@type":"Question","name":"Will I lose my Live Photos if I convert?","acceptedAnswer":{"@type":"Answer","text":"Converting produces a single still image. The original .heic keeps the extra frames, so don't delete it if the movement matters to you."}},
 {"@type":"Question","name":"Is HEIC the same as HEIF?","acceptedAnswer":{"@type":"Answer","text":"Almost. HEIF is the container; HEIC is a HEIF file whose images are compressed with HEVC. Apple's photos are HEIC."}}
 ]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"What Is a HEIC File?","datePublished":"2026-08-29","dateModified":"2026-08-29","inLanguage":"en","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/en/about/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/en/"},"mainEntityOfPage":"https://jpegxlconvert.com/en/what-is-heic/"}
+{"@context":"https://schema.org","@type":"Article","headline":"What Is a HEIC File?","datePublished":"2026-08-29","dateModified":"2026-10-15","inLanguage":"en","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/en/about/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/en/"},"mainEntityOfPage":"https://jpegxlconvert.com/en/what-is-heic/"}
 </script>
 <style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+<style>.gtbl{max-width:720px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
 </head>
 <body>
 <header class="site"><div class="wrap nav">
   <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
   <div class="nav-right">
-    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Guides</a></nav>
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a></nav>
     <details class="lang"><summary>🌐 EN</summary>
       <div class="lang-menu">
         <a class="active" href="/en/what-is-heic/"><span class="flag">🇬🇧</span> English</a>
@@ -53,7 +54,7 @@
   <span class="eyebrow">📱 The iPhone format</span>
   <h1>What Is a HEIC File?</h1>
   <p class="sub"><strong>HEIC</strong> is the format an iPhone saves your photos in. It stores the same picture in roughly <strong>half the space</strong> of a JPEG — and it's the single most common reason a photo from a relative won't open on your PC.</p>
-  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">by <a href="/en/about/" style="color:inherit">Robert Castillo</a> · Published <time datetime="2026-08-29">August 29, 2026</time></p>
+  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">by <a href="/en/about/" style="color:inherit">Robert Castillo</a> · Published <time datetime="2026-08-29">August 29, 2026</time> · updated <time datetime="2026-10-15">October 15, 2026</time></p>
   <div class="badges">
     <span class="badge green">📱 Apple's default since 2017</span><span class="badge">💾 About half the size of JPEG</span><span class="badge">⚠️ Awkward outside Apple</span>
   </div>
@@ -83,9 +84,9 @@
 
 <section class="block"><div class="wrap">
   <h2>So why won't it open?</h2>
-  <p class="lead">The compression inside HEIC is covered by a thicket of patents. Playing or decoding HEVC requires licences, and that has a very visible consequence on Windows: for years Microsoft charged for the «HEVC Video Extensions» needed to display these files, and Windows would offer you a paid Store listing rather than simply showing the photo.</p>
+  <p class="lead">The compression inside HEIC is covered by a thicket of patents. Playing or decoding HEVC requires licences, and that has a very visible consequence on Windows: Microsoft still charges for the «HEVC Video Extensions» needed to display these files ($0.99 in the US Microsoft Store when we checked on 15 October 2026), and Windows offers you that paid Store listing rather than simply showing the photo.</p>
   <p class="lead">Everything downstream inherits the problem. Plenty of websites won't accept a .heic upload, older Android phones can't display one, email clients show a broken icon, and photo software that hasn't licensed the codec silently refuses. The file is fine; the ecosystem around it isn't.</p>
-  <table class="cmp">
+  <div class="gtbl"><table class="cmp">
     <thead><tr><th>Where</th><th>Does HEIC open?</th></tr></thead>
     <tbody>
       <tr><td>iPhone, iPad, Mac</td><td>Yes — it's the native format</td></tr>
@@ -94,7 +95,7 @@
       <tr><td>Android</td><td>Recent versions yes, older ones no</td></tr>
       <tr><td>Websites and email</td><td>Frequently rejected on upload</td></tr>
     </tbody>
-  </table>
+  </table></div>
 </div></section>
 
 <section class="block"><div class="wrap">
@@ -125,7 +126,7 @@
   <div class="faq">
     <details open><summary>Is HEIC better than JPEG?</summary><div class="ans">Technically yes — same quality in about half the space, with better colour depth. In practice JPEG wins on compatibility, which is often what matters more.</div></details>
     <details><summary>Does converting HEIC to JPG lose quality?</summary><div class="ans">A little. JPEG is a lossy format and older, so a converted file is slightly worse and larger. For sharing, nobody will see the difference.</div></details>
-    <details><summary>Why does Windows ask me to pay for a codec?</summary><div class="ans">Because HEVC, the compression inside HEIC, is patented. Microsoft charged for the extension that decodes it. Converting the file sidesteps that entirely.</div></details>
+    <details><summary>Why does Windows ask me to pay for a codec?</summary><div class="ans">Because HEVC, the compression inside HEIC, is patented. Microsoft charges for the extension that decodes it ($0.99 in the US store on 15 October 2026). Converting the file sidesteps that entirely.</div></details>
     <details><summary>Can I stop my iPhone saving HEIC?</summary><div class="ans">Yes. Settings → Camera → Formats → «Most Compatible». Existing photos stay HEIC; new ones are JPEG.</div></details>
     <details><summary>Will I lose my Live Photos if I convert?</summary><div class="ans">Converting produces a single still image. The original .heic keeps the extra frames, so don't delete it if the movement matters to you.</div></details>
     <details><summary>Is HEIC the same as HEIF?</summary><div class="ans">Almost. HEIF is the container; HEIC is a HEIF file whose images are compressed with HEVC. Apple's photos are HEIC.</div></details>
@@ -145,7 +146,7 @@
 <footer class="site"><div class="wrap">
   <div class="fcols">
     <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
-    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Guides</a><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/news/">What's new</a></nav>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/news/">What's new</a></nav>
   </div>
   <div class="legal">
     <span class="privacy-pill">🔒 Your files never leave your device</span>

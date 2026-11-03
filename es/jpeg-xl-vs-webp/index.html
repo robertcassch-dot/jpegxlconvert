@@ -21,7 +21,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/styles.css?v=8">
-<link rel="alternate" type="application/rss+xml" title="JXL Convert — Guías" href="/es/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="JXL Convert — Blog" href="/es/feed.xml">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"¿JPEG XL sustituirá a WebP?","acceptedAnswer":{"@type":"Answer","text":"No pronto, y puede que nunca del todo. WebP está asentado, funciona en todas partes y es suficiente para la mayoría de imágenes web. El camino realista de JPEG XL es ganar primero el almacenamiento, el archivo y los flujos profesionales, y la entrega web solo si el soporte de navegadores llega a ser universal."}},
@@ -32,15 +32,16 @@
 ]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"JPEG XL frente a WebP","datePublished":"2026-07-29","dateModified":"2026-07-29","inLanguage":"es","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/es/sobre-el-proyecto/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/es/"},"mainEntityOfPage":"https://jpegxlconvert.com/es/jpeg-xl-vs-webp/"}
+{"@context":"https://schema.org","@type":"Article","headline":"JPEG XL frente a WebP","datePublished":"2026-07-29","dateModified":"2026-10-15","inLanguage":"es","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/es/sobre-el-proyecto/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/es/"},"mainEntityOfPage":"https://jpegxlconvert.com/es/jpeg-xl-vs-webp/"}
 </script>
 <style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+<style>.gtbl{max-width:720px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
 </head>
 <body>
 <header class="site"><div class="wrap nav">
   <a class="brand" href="/es/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
   <div class="nav-right">
-    <nav class="nav-links"><a href="/es/">Conversor</a><a href="/es/visor-jxl/">Visor</a><a href="/es/guias/">Guías</a></nav>
+    <nav class="nav-links"><a href="/es/">Conversor</a><a href="/es/visor-jxl/">Visor</a><a href="/es/guias/">Blog</a></nav>
     <details class="lang"><summary>🌐 ES</summary>
       <div class="lang-menu">
         <a href="/en/jpeg-xl-vs-webp/"><span class="flag">🇬🇧</span> English</a>
@@ -58,7 +59,7 @@
   <span class="eyebrow">⚖️ Comparación honesta</span>
   <h1>JPEG&nbsp;XL frente a WebP</h1>
   <p class="sub"><strong>JPEG&nbsp;XL es el formato mejor. WebP es el más útil.</strong> Esa contradicción es toda la comparación, y de qué lado te importa depende de una sola pregunta: ¿la imagen tiene que abrirse en el ordenador de otra persona?</p>
-  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">por <a href="/es/sobre-el-proyecto/" style="color:inherit">Robert Castillo</a> · Publicado el <time datetime="2026-07-29">29 de julio de 2026</time></p>
+  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">por <a href="/es/sobre-el-proyecto/" style="color:inherit">Robert Castillo</a> · Publicado el <time datetime="2026-07-29">29 de julio de 2026</time> · actualizado el <time datetime="2026-10-15">15 de octubre de 2026</time></p>
   <div class="badges">
     <span class="badge green">🌍 WebP: funciona en todas partes</span><span class="badge">🏆 JPEG XL: mejor compresión</span><span class="badge">🌈 JPEG XL: HDR y más de 8 bits</span>
   </div>
@@ -70,17 +71,17 @@
 
 <section class="block"><div class="wrap">
   <h2>El veredicto, por delante</h2>
-  <p class="lead"><strong>¿Publicas imágenes en una web?</strong> Usa WebP. Lo muestra cualquier navegador que se use hoy, y <a href="/es/chrome-soporta-jpeg-xl/">Chrome sigue teniendo JPEG XL desactivado por defecto</a>. Un formato mejor que tus visitantes no pueden ver no es un formato mejor.</p>
+  <p class="lead"><strong>¿Publicas imágenes en una web?</strong> Usa WebP, o sirve JPEG&nbsp;XL con WebP de respaldo. WebP lo muestra cualquier navegador que se use hoy. JPEG&nbsp;XL ya viene activado de serie en <a href="/es/chrome-soporta-jpeg-xl/">Chrome 155</a>, <a href="/es/firefox-soporta-jpeg-xl/">Firefox 158</a> y Safari 17, pero Edge sigue sin mostrarlo, y tampoco lo muestra ningún navegador sin actualizar. Un formato mejor que parte de tus visitantes no puede ver no es, por sí solo, un formato mejor.</p>
   <p class="lead"><strong>¿Guardas, archivas o editas tus propias fotos?</strong> Usa JPEG&nbsp;XL. Comprime más en los niveles de calidad a los que de verdad guardarías fotos, conserva el HDR y las profundidades de bits que WebP simplemente tira, y puede reempaquetar tu fototeca de JPEG sin pérdida, cosa que WebP no puede hacer en absoluto.</p>
 </div></section>
 
 <section class="block alt"><div class="wrap">
   <h2>Característica por característica</h2>
-  <table class="cmp">
+  <div class="gtbl"><table class="cmp">
     <thead><tr><th>&nbsp;</th><th>WebP</th><th>JPEG XL</th></tr></thead>
     <tbody>
       <tr><td>Lanzamiento</td><td>2010</td><td>2021–22 (ISO/IEC 18181)</td></tr>
-      <tr><td>Compatibilidad de navegadores</td><td class="y">Universal</td><td class="n">Solo Safari por defecto</td></tr>
+      <tr><td>Compatibilidad de navegadores</td><td class="y">Universal</td><td class="n">Chrome 155+, Firefox 158+ y Safari 17+; Edge no</td></tr>
       <tr><td>Compresión en calidad alta</td><td>Buena</td><td class="y">Mejor</td></tr>
       <tr><td>Compresión en calidad muy baja</td><td>Competitiva</td><td>Competitiva</td></tr>
       <tr><td>Modo sin pérdida</td><td class="y">Sí</td><td class="y">Sí, más potente</td></tr>
@@ -92,7 +93,7 @@
       <tr><td>Reempaqueta JPEG sin pérdida</td><td class="n">No</td><td class="y">Sí, ~20% menos</td></tr>
       <tr><td>Libre de regalías</td><td class="y">Sí</td><td class="y">Sí</td></tr>
     </tbody>
-  </table>
+  </table></div>
 </div></section>
 
 <section class="block"><div class="wrap">
@@ -112,7 +113,7 @@
 <section class="block"><div class="wrap">
   <h2>¿Cuál eliges?</h2>
   <div class="grid3">
-    <div class="feature"><div class="fi">🌍</div><h3>Imágenes de web → WebP</h3><p>Compatibilidad universal, buena compresión y ninguna maquinaria de respaldo que mantener. Revísalo cuando Chrome active JPEG XL por defecto.</p></div>
+    <div class="feature"><div class="fi">🌍</div><h3>Imágenes de web → WebP</h3><p>Compatibilidad universal, buena compresión y ninguna maquinaria de respaldo que mantener. Desde que Chrome 155 activó JPEG XL de serie (6 de octubre de 2026), también puedes servir primero JPEG XL y dejar WebP de respaldo para Edge y los navegadores antiguos.</p></div>
     <div class="feature"><div class="fi">📸</div><h3>Archivo de fotos → JPEG XL</h3><p>Reempaquetado de JPEG sin pérdida, HDR conservado y mejor compresión donde importa. Tú controlas el software que las abre.</p></div>
     <div class="feature"><div class="fi">🎨</div><h3>Gráficos y capturas → JPEG XL</h3><p>El modo con pérdida de WebP está atado a croma 4:2:0, que emborrona el texto de color y los bordes nítidos. JPEG XL puede mantener toda la resolución de color.</p></div>
     <div class="feature"><div class="fi">🖼️</div><h3>Panorámicas enormes → JPEG XL</h3><p>WebP se para en 16.383 píxeles por lado. Las panorámicas cosidas y los escaneos de alta resolución se dan contra ese muro a menudo.</p></div>
@@ -145,7 +146,7 @@
 <footer class="site"><div class="wrap">
   <div class="fcols">
     <a class="brand" href="/es/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
-    <nav class="fnav"><a href="/es/">Conversor</a><a href="/es/visor-jxl/">Visor</a><a href="/es/guias/">Guías</a><a href="/es/sobre-el-proyecto/">Sobre el proyecto</a><a href="/es/contacto/">Contacto</a><a href="/es/novedades/">Novedades</a></nav>
+    <nav class="fnav"><a href="/es/">Conversor</a><a href="/es/visor-jxl/">Visor</a><a href="/es/guias/">Blog</a><a href="/es/sobre-el-proyecto/">Sobre el proyecto</a><a href="/es/contacto/">Contacto</a><a href="/es/novedades/">Novedades</a></nav>
   </div>
   <div class="legal">
     <span class="privacy-pill">🔒 Tus archivos nunca salen de tu dispositivo</span>

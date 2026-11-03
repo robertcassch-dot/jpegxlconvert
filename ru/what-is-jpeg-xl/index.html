@@ -26,16 +26,17 @@
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"Что означает JXL?","acceptedAnswer":{"@type":"Answer","text":"Это просто краткая форма JPEG XL, где XL — «extra large» в смысле расширенных возможностей, а не размеров изображения. Расширение файла — .jxl, MIME-тип — image/jxl."}},
 {"@type":"Question","name":"JPEG XL — это то же самое, что JPEG 2000?","acceptedAnswer":{"@type":"Answer","text":"Нет, хотя спутать легко. JPEG 2000 (.jp2) — гораздо более старый и никак не связанный формат, который так и не прижился за пределами узких областей вроде медицинской визуализации и кино. JPEG XL — отдельная разработка начиная с 2018 года."}},
-{"@type":"Question","name":"JPEG XL лучше, чем AVIF?","acceptedAnswer":{"@type":"Answer","text":"Они близки, и победитель зависит от изображения и настроек. Грубо говоря: AVIF обычно лучше на очень низком качестве, JPEG XL — на высоком и без потерь, и JPEG XL кодирует заметно быстрее, зато у AVIF сегодня есть реальная поддержка в браузерах."}},
+{"@type":"Question","name":"JPEG XL лучше, чем AVIF?","acceptedAnswer":{"@type":"Answer","text":"Они близки, и победитель зависит от изображения и настроек. Грубо говоря: AVIF обычно лучше на очень низком качестве, JPEG XL — на высоком и без потерь, и JPEG XL кодирует заметно быстрее, зато AVIF дольше присутствует в браузерах: JPEG XL включили по умолчанию в Chrome и Firefox только в октябре 2026 года, а Edge его до сих пор не показывает."}},
 {"@type":"Question","name":"Теряется ли качество при конвертации в JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"Только если вы сами этого захотите. В JPEG XL есть настоящий режим без потерь, сохраняющий каждый пиксель в точности. Переупаковка существующего JPEG без потерь полностью обратима. Режим с потерями теряет качество по своей природе, как любой такой формат."}},
 {"@type":"Question","name":"JPEG XL бесплатный?","acceptedAnswer":{"@type":"Answer","text":"Да. Он свободен от отчислений и имеет открытую эталонную реализацию (libjxl). Именно поэтому столь многие продвигали его вместо альтернатив, обременённых патентами."}},
 {"@type":"Question","name":"Как создать файл .jxl?","acceptedAnswer":{"@type":"Answer","text":"Перетащите любое изображение в наш конвертер и выберите JPEG XL. Всё работает прямо в браузере — изображение никуда не загружается."}}
 ]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Что такое JPEG XL?","datePublished":"2026-07-29","dateModified":"2026-07-29","inLanguage":"ru","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/ru/about/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/ru/"},"mainEntityOfPage":"https://jpegxlconvert.com/ru/what-is-jpeg-xl/"}
+{"@context":"https://schema.org","@type":"Article","headline":"Что такое JPEG XL?","datePublished":"2026-07-29","dateModified":"2026-10-15","inLanguage":"ru","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/ru/about/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/ru/"},"mainEntityOfPage":"https://jpegxlconvert.com/ru/what-is-jpeg-xl/"}
 </script>
 <style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+<style>.gtbl{max-width:720px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
 </head>
 <body>
 <header class="site"><div class="wrap nav">
@@ -59,7 +60,7 @@
   <span class="eyebrow">📘 Формат простыми словами</span>
   <h1>Что такое JPEG&nbsp;XL?</h1>
   <p class="sub"><strong>JPEG&nbsp;XL</strong> — современный формат изображений с расширением <code>.jxl</code>, созданный на замену JPEG. Он даёт заметно меньшие файлы при том же качестве и умеет то, чего JPEG не мог никогда: прозрачность, анимацию, HDR и настоящее сжатие без потерь. Формат свободен от отчислений и стандартизован как <strong>ISO/IEC 18181</strong>.</p>
-  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">— <a href="/ru/about/" style="color:inherit">Robert Castillo</a> · Опубликовано <time datetime="2026-07-29">29 июля 2026</time></p>
+  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">— <a href="/ru/about/" style="color:inherit">Robert Castillo</a> · Опубликовано <time datetime="2026-07-29">29 июля 2026</time> · обновлено <time datetime="2026-10-15">15 октября 2026</time></p>
   <div class="badges">
     <span class="badge green">📦 Файлы меньше</span><span class="badge">🆓 Без лицензионных отчислений</span><span class="badge">🔁 Переупаковка JPEG без потерь</span><span class="badge">🎞️ Один формат на всё</span>
   </div>
@@ -73,7 +74,7 @@
   <h2>Коротко</h2>
   <p class="lead">Любой формат изображений — это компромисс между размером файла, качеством картинки и тем, сколько программ способны его открыть. JPEG выигрывает третий пункт с 1992 года, постепенно проигрывая первые два.</p>
   <p class="lead">JPEG&nbsp;XL спроектировали так, чтобы уверенно выиграть первые два, не выбрасывая то, чем был полезен JPEG. Он вырос из двух проектов, объединившихся в 2018 году, — <strong>PIK</strong> от Google и <strong>FUIF</strong> от Cloudinary — и стал международным стандартом. Важная деталь: он <strong>свободен от отчислений</strong>, платить некому. Во многом поэтому его так хотели видеть победителем.</p>
-  <p class="lead">Загвоздка — в третьем пункте. Формат стоит ровно столько, сколько стоят программы, которые его открывают, и здесь JPEG&nbsp;XL всё ещё борется. <a href="/ru/chrome-jpeg-xl-support/">В Chrome он по-прежнему выключен по умолчанию</a>.</p>
+  <p class="lead">Загвоздка — в третьем пункте. Формат стоит ровно столько, сколько стоят программы, которые его открывают, и здесь JPEG&nbsp;XL всё ещё догоняет. Главный шаг случился в октябре 2026 года: <a href="/ru/chrome-jpeg-xl-support/">Chrome 155 включил его по умолчанию 6 октября</a>, а Firefox 158 — 13 октября. Microsoft Edge по-прежнему его не показывает.</p>
 </div></section>
 
 <section class="block alt"><div class="wrap">
@@ -90,7 +91,7 @@
 
 <section class="block"><div class="wrap">
   <h2>JPEG XL против форматов, которыми вы уже пользуетесь</h2>
-  <table class="cmp">
+  <div class="gtbl"><table class="cmp">
     <thead><tr><th>Возможность</th><th>JPEG</th><th>PNG</th><th>WebP</th><th>JPEG XL</th></tr></thead>
     <tbody>
       <tr><td>Сжатие с потерями</td><td class="y">Да</td><td class="n">Нет</td><td class="y">Да</td><td class="y">Да</td></tr>
@@ -101,7 +102,7 @@
       <tr><td>Переупаковывает JPEG без потерь</td><td class="n">—</td><td class="n">Нет</td><td class="n">Нет</td><td class="y">Да</td></tr>
       <tr><td>Открывается везде сегодня</td><td class="y">Да</td><td class="y">Да</td><td class="y">Да</td><td class="n">Пока нет</td></tr>
     </tbody>
-  </table>
+  </table></div>
   <p class="lead">Последняя строка — это вся суть. По технике JPEG&nbsp;XL выигрывает таблицу; по единственной строке, которая важна для постороннего человека, получившего ваш файл, — проигрывает. Самое близкое сравнение — <a href="/ru/jpeg-xl-vs-webp/">JPEG XL против WebP</a>.</p>
 </div></section>
 
@@ -109,14 +110,14 @@
   <h2>Так использовать или нет?</h2>
   <div class="grid3">
     <div class="feature"><div class="fi">✅</div><h3>Да — для своего хранилища</h3><p>Фотоархив, резервные копии, долгое хранение. Вы сами решаете, чем их открывать, а переупаковка без потерь возвращает около 20% диска без потери качества и без привязки к формату.</p></div>
-    <div class="feature"><div class="fi">⚠️</div><h3>Осторожно — на сайте</h3><p>Большинство посетителей сидят в Chrome, а Chrome сегодня не покажет <code>.jxl</code>. Используйте только внутри <code>&lt;picture&gt;</code> с запасным WebP или JPEG.</p></div>
+    <div class="feature"><div class="fi">⚠️</div><h3>Осторожно — на сайте</h3><p>Chrome 155+, Firefox 158+ и Safari 17+ показывают <code>.jxl</code>, а Edge — нет, как и любой браузер, который не обновили. Используйте только внутри <code>&lt;picture&gt;</code> с запасным WebP или JPEG.</p></div>
     <div class="feature"><div class="fi">❌</div><h3>Нет — если отправляете кому-то</h3><p>Отправьте JPEG или PNG. А если <em>вам</em> прислали <code>.jxl</code>, наш <a href="/ru/jxl-viewer/">просмотрщик</a> его откроет, а <a href="/ru/jxl-to-jpg/">конвертер</a> превратит во что-то привычное.</p></div>
   </div>
 </div></section>
 
 <section class="block"><div class="wrap">
   <h2>Где вам попадутся файлы .jxl</h2>
-  <p class="lead">Даже при медлительности браузеров JPEG&nbsp;XL тихо прижился там, где размер и точность важнее универсальной совместимости. <strong>Apple</strong> поддерживает его в Safari и macOS. <strong>Adobe</strong> применяет сжатие JPEG&nbsp;XL внутри современных файлов DNG. <strong>PDF Association</strong> сделала его предпочтительным форматом для HDR-изображений в PDF. В съёмочных и сканирующих процессах его используют для архивных мастеров.</p>
+  <p class="lead">Задолго до того, как его включили Chrome и Firefox, JPEG&nbsp;XL тихо прижился там, где размер и точность важнее универсальной совместимости. <strong>Apple</strong> поддерживает его в Safari и macOS. <strong>Adobe</strong> применяет сжатие JPEG&nbsp;XL внутри современных файлов DNG. <strong>PDF Association</strong> сделала его предпочтительным форматом для HDR-изображений в PDF. В съёмочных и сканирующих процессах его используют для архивных мастеров.</p>
   <p class="lead">Именно так большинство и знакомится с форматом: не выбирая его, а получив <code>.jxl</code>, который не открывается. Если это ваш случай — <a href="/ru/how-to-open-jxl/">вот как открыть его на любом устройстве</a>.</p>
 </div></section>
 
@@ -125,7 +126,7 @@
   <div class="faq">
     <details open><summary>Что означает JXL?</summary><div class="ans">Это просто краткая форма JPEG XL, где XL — «extra large» в смысле расширенных возможностей, а не размеров изображения. Расширение файла — <code>.jxl</code>, MIME-тип — <code>image/jxl</code>.</div></details>
     <details><summary>JPEG XL — это то же самое, что JPEG 2000?</summary><div class="ans">Нет, хотя спутать легко. JPEG 2000 (<code>.jp2</code>) — гораздо более старый и никак не связанный формат, который так и не прижился за пределами узких областей вроде медицинской визуализации и кино. JPEG XL — отдельная разработка начиная с 2018 года.</div></details>
-    <details><summary>JPEG XL лучше, чем AVIF?</summary><div class="ans">Они близки, и победитель зависит от изображения и настроек. Грубо говоря: AVIF обычно лучше на очень низком качестве, JPEG XL — на высоком и без потерь, и JPEG XL кодирует заметно быстрее, зато у AVIF сегодня есть реальная поддержка в браузерах.</div></details>
+    <details><summary>JPEG XL лучше, чем AVIF?</summary><div class="ans">Они близки, и победитель зависит от изображения и настроек. Грубо говоря: AVIF обычно лучше на очень низком качестве, JPEG XL — на высоком и без потерь, и JPEG XL кодирует заметно быстрее, зато AVIF дольше присутствует в браузерах: JPEG XL включили по умолчанию в Chrome и Firefox только в октябре 2026 года, а Edge его до сих пор не показывает.</div></details>
     <details><summary>Теряется ли качество при конвертации в JPEG XL?</summary><div class="ans">Только если вы сами этого захотите. В JPEG XL есть настоящий режим без потерь, сохраняющий каждый пиксель в точности. Переупаковка существующего JPEG без потерь полностью обратима. Режим с потерями теряет качество по своей природе, как любой такой формат.</div></details>
     <details><summary>JPEG XL бесплатный?</summary><div class="ans">Да. Он свободен от отчислений и имеет открытую эталонную реализацию (libjxl). Именно поэтому столь многие продвигали его вместо альтернатив, обременённых патентами.</div></details>
     <details><summary>Как создать файл .jxl?</summary><div class="ans">Перетащите любое изображение в <a href="/ru/">наш конвертер</a> и выберите JPEG XL. Всё работает прямо в браузере — изображение никуда не загружается.</div></details>

@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9791902883190551" crossorigin="anonymous"></script>
-<title>Unterstützt Chrome JPEG XL? (Stand Juli 2026)</title>
-<meta name="description" content="Kurze Antwort: nicht standardmäßig. Chrome 145 brachte JPEG XL hinter einem Flag zurück, in Chrome 151 ist es weiter aus. So schaltest du es heute ein.">
+<title>Unterstützt Chrome JPEG XL? Ja, seit Chrome 155</title>
+<meta name="description" content="Ja: Chrome 155 (6. Oktober 2026) zeigt JPEG XL standardmäßig an. Das Flag in Chrome 145–154, was hilft, wenn es noch aus ist, und warum Edge 155 es nicht kann.">
 <link rel="canonical" href="https://jpegxlconvert.com/de/chrome-jpeg-xl-unterstuetzung/">
 <link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/chrome-jpeg-xl-support/">
 <link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/chrome-soporta-jpeg-xl/">
@@ -14,8 +14,8 @@
 <link rel="alternate" hreflang="ru" href="https://jpegxlconvert.com/ru/chrome-jpeg-xl-support/">
 <link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/chrome-jpeg-xl-support/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Unterstützt Chrome JPEG XL? — die ehrliche Antwort (2026)">
-<meta property="og:description" content="Chrome 145 brachte den Decoder zurück, JPEG XL bleibt aber standardmäßig aus. Wie du es einschaltest und was das für dich bedeutet.">
+<meta property="og:title" content="Unterstützt Chrome JPEG XL? Ja — seit Chrome 155">
+<meta property="og:description" content="Seit 6. Oktober 2026 standardmäßig an, nach zehn Versionen hinter einem Flag. Ältere Versionen, der Schalter, Edge, Firefox und was das für Websites heißt.">
 <meta property="og:url" content="https://jpegxlconvert.com/de/chrome-jpeg-xl-unterstuetzung/">
 <meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -24,18 +24,19 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Öffnet Chrome 2026 .jxl-Dateien?","acceptedAnswer":{"@type":"Answer","text":"Nur wenn du das Flag selbst aktivierst. Ab Werk lädt Chrome 151 eine .jxl-Datei herunter, statt sie anzuzeigen. Unser JPEG-XL-Betrachter öffnet sie ganz ohne Einstellungen."}},
-{"@type":"Question","name":"Ist es sicher, das Flag einzuschalten?","acceptedAnswer":{"@type":"Answer","text":"Es ist ein offizielles Chrome-Flag mit Googles eigenem Rust-Decoder, also kein Hack und keine Erweiterung. Trotzdem ist es Technik vor der Freigabe — rechne mit gelegentlichen Ecken und damit, dass das Flag zwischen Versionen umbenannt wird oder verschwindet."}},
-{"@type":"Question","name":"Warum hat Google JPEG XL überhaupt entfernt?","acceptedAnswer":{"@type":"Answer","text":"2022 erklärte Google, das Format bringe gegenüber den vorhandenen zu wenig zusätzlichen Nutzen, um die Pflege zu rechtfertigen. Auch die Speichersicherheit des C++-Decoders war ein wiederkehrender Kritikpunkt — weshalb das Format nun auf dem Rücken einer Rust-Neuentwicklung zurückkam."}},
-{"@type":"Question","name":"Unterstützt Edge JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"Edge basiert auf Chromium und hat damit exakt denselben Decoder hinter exakt demselben Flag, unter edge://flags/#enable-jxl-image-format, mit demselben Verhalten: standardmäßig aus."}},
-{"@type":"Question","name":"Und Firefox?","acceptedAnswer":{"@type":"Answer","text":"Firefox arbeitet seit Langem an einer Implementierung und lässt sie in stabilen Builds deaktiviert. Mozillas erklärtes Interesse wuchs, als ein speichersicherer Decoder realistisch wurde, ein Termin existiert aber nicht."}},
-{"@type":"Question","name":"Soll ich meine Fotos jetzt zu JPEG XL umwandeln?","acceptedAnswer":{"@type":"Answer","text":"Für private Ablage und Archiv lohnt es sich bereits — vor allem das verlustfreie Neuverpacken von JPEGs, das Dateien ganz ohne Qualitätsänderung schrumpft. Für Bilder, die du im Web veröffentlichst, behalte einen JPEG-, WebP- oder AVIF-Fallback, bis Chrome den Schalter umlegt."}}
+{"@type":"Question","name":"Öffnet Chrome jetzt .jxl-Dateien?","acceptedAnswer":{"@type":"Answer","text":"Ja, ab Chrome 155 (6. Oktober 2026), ohne dass du etwas einstellen musst: am Computer und unter Android in Webseiten. Ein auf dem Handy gespeichertes .jxl öffnet Chrome dort weiterhin nicht. Chrome 145 bis 154 kann es, wenn du das Flag einschaltest; Chrome 110 bis 144 kann es gar nicht. In all diesen Fällen, in Edge und für eine Datei auf dem Handy öffnet unser JPEG-XL-Betrachter die Datei, ohne deine Einstellungen anzufassen."}},
+{"@type":"Question","name":"Wie heißt das JPEG-XL-Flag in Chrome?","acceptedAnswer":{"@type":"Answer","text":"Enable JXL image format, unter chrome://flags/#enable-jxl-image-format. In Chrome 145 bis 154 stellst du es auf Enabled; in Chrome 155 lässt du es auf Default, das ist bereits an. Es soll nach Chrome 158 ablaufen."}},
+{"@type":"Question","name":"Unterstützt Microsoft Edge JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"Nein. Edge 155 zeigt JPEG XL nicht an, obwohl es auf Chromium basiert, und kein Flag ändert das: Microsoft hat JPEG XL am 9. Oktober 2026 aus den Versionshinweisen zu Edge 155 gestrichen, und unser eigener Test bestätigt das. Für .jxl-Bilder nimm Chrome, Firefox oder Brave, oder öffne sie in einem Betrachter."}},
+{"@type":"Question","name":"Unterstützt Chrome unter Android JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"Ja, für Bilder in Webseiten. Chrome 155 bringt es auch unter Android, ebenso Android WebView 155, mit dem viele Apps Webseiten in sich anzeigen. Eine auf dem Handy gespeicherte .jxl-Datei ist etwas anderes: Die öffnet Chrome weiterhin nicht. Samsung Internet, der vorinstallierte Browser auf Samsung-Handys, ist ein eigenes Produkt und nicht bestätigt."}},
+{"@type":"Question","name":"Kann Chrome Bilder als JPEG XL speichern oder umwandeln?","acceptedAnswer":{"@type":"Answer","text":"Nein. Chrome kann JPEG XL anzeigen, aber nicht erzeugen; verlangst du von einem Canvas ein JPEG XL, bekommst du ein PNG. Zum Erstellen nimm JPG in JXL oder PNG in JXL; beides läuft in deinem Browser, ohne etwas hochzuladen."}},
+{"@type":"Question","name":"Kann ich JPEG XL jetzt auf meiner Website einsetzen?","acceptedAnswer":{"@type":"Answer","text":"Ja, solange du einen Fallback behältst. Mit einem sauber gebauten &lt;picture&gt; fordern Browser ohne Unterstützung das .jxl gar nicht erst an, niemand sieht also ein kaputtes Bild. Googles eigene Ankündigung empfiehlt, AVIF und JPEG XL auszuprobieren und das zu behalten, was bei deinen Bildern besser abschneidet."}}
 ]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Unterstützt Chrome JPEG XL?","datePublished":"2026-07-29","dateModified":"2026-07-29","inLanguage":"de","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/de/ueber-das-projekt/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/de/"},"mainEntityOfPage":"https://jpegxlconvert.com/de/chrome-jpeg-xl-unterstuetzung/"}
+{"@context":"https://schema.org","@type":"Article","headline":"Unterstützt Chrome JPEG XL?","datePublished":"2026-07-29","dateModified":"2026-10-15","inLanguage":"de","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/de/ueber-das-projekt/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/de/"},"mainEntityOfPage":"https://jpegxlconvert.com/de/chrome-jpeg-xl-unterstuetzung/"}
 </script>
 <style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+<style>.gtbl{max-width:720px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
 </head>
 <body>
 <header class="site"><div class="wrap nav">
@@ -56,90 +57,121 @@
 
 <main>
 <section class="hero"><div class="wrap">
-  <span class="eyebrow">🌐 Aktualisiert am 29. Juli 2026</span>
+  <span class="eyebrow">🌐 Aktualisiert am 15. Oktober 2026</span>
   <h1>Unterstützt Chrome JPEG&nbsp;XL?</h1>
-  <p class="sub"><strong>Standardmäßig nicht — noch nicht.</strong> Chrome 145 hat den JPEG-XL-Decoder im Februar 2026 klammheimlich zurückgebracht, doch er steckt hinter einem Flag und ist in Chrome&nbsp;151 <em>immer noch</em> ausgeschaltet. Hier steht, wie es wirklich aussieht — und wie du ihn sofort aktivierst.</p>
-  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">von <a href="/de/ueber-das-projekt/" style="color:inherit">Robert Castillo</a> · Veröffentlicht am <time datetime="2026-07-29">29. Juli 2026</time></p>
+  <p class="sub"><strong>Ja — seit Chrome 155, erschienen am 6. Oktober 2026.</strong> JPEG&nbsp;XL ist in Chrome auf dem Desktop und unter Android jetzt standardmäßig aktiv, mit einem in Rust geschriebenen Decoder. Dafür brauchte es eine Streichung, ein Comeback hinter einem Flag und zehn Versionen Wartezeit. Hier steht, was sich geändert hat, was du tust, wenn dein Chrome ein <code>.jxl</code> immer noch nicht zeigt, und warum ausgerechnet Microsoft Edge, gebaut auf demselben Code, die Ausnahme ist.</p>
+  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">von <a href="/de/ueber-das-projekt/" style="color:inherit">Robert Castillo</a> · Veröffentlicht am <time datetime="2026-07-29">29. Juli 2026</time> · aktualisiert am <time datetime="2026-10-15">15. Oktober 2026</time></p>
   <div class="badges">
-    <span class="badge">🧪 Hinter einem Flag seit Chrome 145</span><span class="badge">🚫 In 151 standardmäßig aus</span><span class="badge green">🍎 Safari: an seit 2023</span>
+    <span class="badge green">✅ Chrome 155: standardmäßig an</span><span class="badge">🧪 Chrome 145–154: hinter einem Flag</span><span class="badge">🚫 Edge 155: nein</span><span class="badge green">🦊 Firefox 158 · 🍎 Safari 17: ja</span>
   </div>
   <div class="cta-row">
-    <a class="cta-card" href="/de/jxl-betrachter/"><span class="cta-ic">👁️</span><b>Jetzt sofort ein .jxl öffnen?</b><span class="cta-sub">Unser Betrachter läuft in jedem Browser, mit oder ohne Flag →</span></a>
-    <a class="cta-card" href="/de/jxl-in-jpg/"><span class="cta-ic">🔁</span><b>Oder in JPG umwandeln</b><span class="cta-sub">Läuft überall, kostenlos, nichts wird hochgeladen →</span></a>
+    <a class="cta-card" href="/de/jxl-betrachter/"><span class="cta-ic">👁️</span><b>Edge oder ein älteres Chrome?</b><span class="cta-sub">Öffne das .jxl in unserem Betrachter, in jedem Browser →</span></a>
+    <a class="cta-card" href="/de/jxl-in-jpg/"><span class="cta-ic">🔁</span><b>Soll die Datei überall aufgehen?</b><span class="cta-sub">JXL in JPG umwandeln, nichts wird hochgeladen →</span></a>
   </div>
 </div></section>
 
 <section class="block"><div class="wrap">
   <h2>Die kurze Antwort</h2>
-  <p class="lead">Chrome <strong>kann</strong> JPEG&nbsp;XL heute dekodieren, tut es aber <strong>nicht</strong>, solange du es nicht verlangst. Im Dezember 2025 holte Google <strong>jxl-rs</strong> nach Chromium — einen speichersicheren Rust-Decoder aus der offiziellen libjxl-Organisation. Im Januar 2026 wurde er angebunden und erreichte mit <strong>Chrome 145 am 10. Februar 2026</strong> den Stable-Kanal, versteckt hinter dem Flag <code>enable-jxl-image-format</code>.</p>
-  <p class="lead">Dort ist er geblieben. Stand <strong>Juli 2026 hat Chrome 151 JPEG&nbsp;XL weiterhin standardmäßig deaktiviert</strong> — fünf Stable-Versionen nach dem Einzug des Decoders. Wer heute ein <code>.jxl</code> auf eine Webseite stellt, wird von Chrome-Nutzern also praktisch von niemandem gesehen.</p>
-  <p class="lead">Genau dieses Detail übersehen die meisten Schlagzeilen. "JPEG XL ist zurück in Chrome" stimmt für den <em>Code</em> und führt bei der <em>Praxis</em> in die Irre. Ausgeliefert heißt nicht aktiviert.</p>
+  <p class="lead">Ja. <strong>Chrome 155</strong>, seit dem <strong>6. Oktober 2026</strong> im Stable-Kanal, zeigt JPEG-XL-Bilder ohne jede Einstellung an. Google hat das am selben Tag im <a href="https://developer.chrome.com/blog/jpeg-xl-in-chrome" rel="nofollow noopener">Entwicklerblog</a> angekündigt, und der <a href="https://chromestatus.com/feature/5114042131808256" rel="nofollow noopener">Chromestatus-Eintrag</a> führt die Funktion als ausgeliefert für den Desktop, für Android und für Android WebView, die Komponente, mit der viele Apps Webinhalte anzeigen. Es gibt nichts zu installieren und nichts einzuschalten.</p>
+  <p class="lead">Wir haben es selbst unter Windows&nbsp;11 mit Chrome 155.0.8059.40 geprüft. Chrome zeigte ein <code>.jxl</code>, das über einen Link geöffnet wurde, ebenso wie eines direkt von der Festplatte, wählte in einem <code>&lt;picture&gt;</code>-Element die JPEG-XL-Variante und teilte Servern mit, dass es das Format versteht: Es setzt <code>image/jxl</code> in den <code>Accept</code>-Header, den es mit Bildanfragen schickt.</p>
+  <p class="lead">Damit endet ein langer Umweg. Chrome hatte JPEG&nbsp;XL mit Version 110 im Jahr 2023 entfernt. Mit <strong>Chrome 145</strong> (10. Februar 2026) kam es mit einem neuen Decoder namens <strong>jxl-rs</strong> zurück, geschrieben in Rust, aber versteckt hinter einem Flag, das zehn Versionen lang aus blieb, von 145 bis 154. Version 155 ist die erste, in der es einfach an ist. Als wir diesen Ratgeber im Juli veröffentlicht haben, lautete die Antwort noch Nein; jetzt lautet sie Ja.</p>
 </div></section>
 
-<section class="block alt" id="enable"><div class="wrap">
-  <h2>JPEG XL in Chrome aktivieren</h2>
-  <p class="lead">Dauert etwa fünfzehn Sekunden. Es betrifft nur <em>deinen</em> Browser — Besucher deiner Website merken nichts davon.</p>
+<section class="block alt"><div class="wrap">
+  <h2>Welches Chrome hast du?</h2>
+  <p class="lead">Alles hängt an der Versionsnummer. Chrome aktualisiert sich im Hintergrund selbst, meist reicht also ein Neustart des Browsers, um auf Version 155 zu kommen. Rechner, die selten neu gestartet werden, oder Firmenrechner, deren Updates jemand anderes steuert, können hinterherhinken.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Chrome-Version</th><th>JPEG XL</th><th>Was tun</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Chrome 155</strong> und neuer (Desktop und Android)</td><td class="y">Standardmäßig an</td><td>Nichts</td></tr>
+      <tr><td><strong>Chrome 145 bis 154</strong></td><td class="n">Eingebaut, aber aus</td><td>Aktualisieren oder das Flag einschalten</td></tr>
+      <tr><td><strong>Chrome 110 bis 144</strong></td><td class="n">Entfernt</td><td>Aktualisieren: keine Einstellung hilft</td></tr>
+      <tr><td><strong>Chrome auf iPhone und iPad</strong></td><td class="y">Ja, über Apples Engine</td><td>Braucht iOS / iPadOS 17 oder neuer</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">Am Computer siehst du deine Version im Menü unter <strong>⋮ → Hilfe → Über Google Chrome</strong> oder wenn du <code>chrome://settings/help</code> in die Adressleiste eingibst. Dieselbe Seite sucht nach Updates und installiert sie; klicke auf <strong>Neu starten</strong>, wenn sie dazu auffordert. Unter Android kommen die Updates über Google Play. Chrome erscheint inzwischen alle zwei Wochen in einer neuen Version — Chrome 156 ist für den 20. Oktober geplant —, da liegt man schnell ein, zwei Versionen zurück, ohne es zu merken.</p>
+  <p class="lead">Chrome auf iPhone und iPad ist ein Sonderfall: Es läuft dort mit Apples Engine WebKit statt mit der eigenen, zeigt JPEG&nbsp;XL also ab iOS 17 unabhängig von seiner Versionsnummer an, genau wie Safari.</p>
+</div></section>
+
+<section class="block" id="enable"><div class="wrap">
+  <h2>Chrome 145 bis 154: mit dem Flag einschalten</h2>
+  <p class="lead">Wenn du aktualisieren kannst, tu das: Es ist die eigentliche Lösung, und du musst dir keine Einstellung merken. Wenn nicht, enthalten die Versionen 145 bis 154 den Decoder bereits, es fehlt nur ein Schalter. Das dauert keine Minute und betrifft nur deinen eigenen Browser.</p>
   <div class="steps">
-    <div class="step"><h3>Flags-Seite öffnen</h3><p><code>chrome://flags/#enable-jxl-image-format</code> in die Adressleiste einfügen und Enter drücken. Das Flag wird hervorgehoben.</p></div>
-    <div class="step"><h3>Auf Enabled stellen</h3><p>Im Auswahlfeld neben "Enable JPEG XL image format" auf <strong>Enabled</strong> umstellen.</p></div>
-    <div class="step"><h3>Chrome neu starten</h3><p>Auf die erscheinende Schaltfläche <strong>Relaunch</strong> klicken. Danach stellt Chrome <code>.jxl</code>-Bilder nativ dar.</p></div>
+    <div class="step"><h3>Flag öffnen</h3><p><code>chrome://flags/#enable-jxl-image-format</code> in die Adressleiste einfügen und Enter drücken. Die Flags-Seite ist immer auf Englisch, egal in welcher Sprache Chrome läuft, und der richtige Eintrag wird hervorgehoben.</p></div>
+    <div class="step"><h3>Auf den Namen achten</h3><p>Der Eintrag heißt <strong>Enable JXL image format</strong>. Viele Anleitungen schreiben „Enable JPEG XL image format“, das wirst du so nicht finden; wenn du auf der Seite suchst, such nach <em>JXL</em>.</p></div>
+    <div class="step"><h3>Auf Enabled stellen und neu starten</h3><p>Im Auswahlfeld daneben <strong>Enabled</strong> wählen und unten auf <strong>Relaunch</strong> klicken. Den Tab zu schließen reicht nicht: Flags greifen erst nach dem Neustart von Chrome.</p></div>
   </div>
-  <p class="lead">Dieselben Schritte funktionieren in <strong>Edge</strong>, <strong>Brave</strong>, <strong>Opera</strong> und <strong>Vivaldi</strong> — alle bauen auf Chromium auf und erben damit Decoder und Flag. Dort <code>edge://flags</code>, <code>brave://flags</code> und so weiter verwenden.</p>
-  <p class="lead"><strong>Ein wichtiger Haken:</strong> ein Flag ist kein Versprechen. Chrome-Flags werden zwischen Versionen umbenannt und entfernt, und das Einschalten ändert nur deinen eigenen Rechner. Wenn ein <code>.jxl</code> zuverlässig aufgehen muss — auf einem fremden Rechner, auf dem Handy, in einer E-Mail — verlass dich nicht darauf. Öffne die Datei lieber <a href="/de/jxl-betrachter/">in unserem Betrachter</a> oder <a href="/de/jxl-in-jpg/">wandle sie in JPG um</a>.</p>
+  <p class="lead">Danach prüfen, ob es geklappt hat: Lade die Seite neu, die das Bild nicht gezeigt hat, oder zieh eine <code>.jxl</code>-Datei in einen leeren Tab. Erscheint sie als Bild, ist JPEG&nbsp;XL aktiv.</p>
+  <p class="lead">Opera hat laut caniuse denselben Schalter unter <code>opera://flags/#enable-jxl-image-format</code>, weil es auf einem älteren Chromium aufbaut als Chrome; die Oktober-Version haben wir selbst nicht geprüft. Microsoft Edge hat überhaupt keinen solchen Schalter — mehr dazu weiter unten.</p>
+</div></section>
+
+<section class="block alt" id="fix"><div class="wrap">
+  <h2>Chrome 155 und trotzdem kein JPEG XL?</h2>
+  <div class="steps">
+    <div class="step"><h3>Version bestätigen</h3><p>Öffne <code>chrome://settings/help</code>. Steht dort 154 oder niedriger, lass das Update laufen und starte neu; das allein löst die meisten Fälle.</p></div>
+    <div class="step"><h3>Das Flag ansehen</h3><p>Öffne <code>chrome://flags/#enable-jxl-image-format</code>. In Chrome 155 sollte dort <strong>Default</strong> stehen, und das bedeutet jetzt: an. Steht dort <strong>Disabled</strong>, hat es jemand von Hand ausgeschaltet: Stell es zurück auf <strong>Default</strong> und starte neu. In unserem Test verlor Chrome 155 mit abgeschalteter Funktion JPEG XL vollständig: kein Bild und kein <code>image/jxl</code> in den Anfragen.</p></div>
+    <div class="step"><h3>Das Flag ist nur vorübergehend da</h3><p>Laut Chromium läuft das Flag nach Version 158 ab und verschwindet dann aus der Liste. Bis dahin ist Default die richtige Einstellung; es gibt keinen Grund, es auf Enabled zu zwingen.</p></div>
+    <div class="step"><h3>Datei und Website ausschließen</h3><p>Zieh die Datei in einen leeren Tab. Zeigt Chrome 155 sie dort nicht, ist sie vermutlich gar kein echtes JPEG XL, etwa ein umbenanntes Bild in einem anderen Format. Zeigt Chrome sie dort an, liegt es an der Website, die Chrome womöglich ein anderes Format schickt.</p></div>
+  </div>
 </div></section>
 
 <section class="block"><div class="wrap">
-  <h2>JPEG-XL-Browserunterstützung 2026</h2>
-  <table class="cmp">
-    <thead><tr><th>Browser</th><th>Status</th><th>Standardmäßig an?</th></tr></thead>
+  <h2>Und die anderen Browser?</h2>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Browser</th><th>JPEG XL</th><th>Hinweise</th></tr></thead>
     <tbody>
-      <tr><td><strong>Safari</strong> (macOS &amp; iOS)</td><td>Unterstützt seit 2023</td><td class="y">Ja</td></tr>
-      <tr><td><strong>Chrome</strong> 145+</td><td>Decoder vorhanden, hinter einem Flag</td><td class="n">Nein</td></tr>
-      <tr><td><strong>Edge</strong> 145+</td><td>Gleicher Chromium-Decoder und -Flag</td><td class="n">Nein</td></tr>
-      <tr><td><strong>Firefox</strong></td><td>Implementierung vorhanden, in Stable deaktiviert</td><td class="n">Nein</td></tr>
-      <tr><td><strong>Brave / Opera / Vivaldi</strong></td><td>Erben das Chromium-Flag</td><td class="n">Nein</td></tr>
+      <tr><td><strong>Safari 17+</strong> (Mac, iPhone, iPad)</td><td class="y">Ja, standardmäßig</td><td>Seit September 2023; nur Standbilder, ohne Animation und progressives Laden</td></tr>
+      <tr><td><strong>Firefox 158+</strong></td><td class="y">Ja, standardmäßig</td><td>Seit 13. Oktober 2026, Desktop und Android</td></tr>
+      <tr><td><strong>Firefox 152–157</strong>, ESR 153</td><td class="n">Eingebaut, aus</td><td>Firefox Labs oder <code>about:config</code></td></tr>
+      <tr><td><strong>Microsoft Edge 155</strong></td><td class="n">Nein</td><td>Auch kein Flag; ein .jxl wird heruntergeladen statt angezeigt</td></tr>
+      <tr><td><strong>Brave 1.97.56+</strong></td><td class="y">Ja, standardmäßig</td><td>Basiert auf Chromium 155; getestet mit 1.97.57</td></tr>
+      <tr><td><strong>Opera</strong></td><td class="n">Hinter einem Flag</td><td><code>opera://flags</code> laut caniuse; im Oktober nicht geprüft</td></tr>
+      <tr><td><strong>Vivaldi, Samsung Internet</strong></td><td>Nicht bestätigt</td><td>Erst selbst testen</td></tr>
     </tbody>
-  </table>
-  <p class="lead">Unter dem Strich trägt Safari das Format fast allein — rund <strong>15% des weltweiten Surfens</strong>. Das ist die Zahl, die zählt, wenn du überlegst, <code>.jxl</code> auf einer Website auszuliefern: die Antwort lautet vorerst weiterhin <em>nicht ohne Fallback</em>.</p>
+  </table></div>
+  <p class="lead"><strong>Edge ist die Ausnahme</strong> — und der Grund, warum ältere Anleitungen, auch diese hier im Juli, danebenlagen. Edge basiert auf Chromium, also lag monatelang die Annahme nahe, dass es Chrome folgen würde. Das tat es nicht. Microsoft hatte JPEG&nbsp;XL in den Versionshinweisen zu Edge 155 aufgeführt und den Eintrag dann <a href="https://github.com/MicrosoftDocs/edge-developer/pull/3973" rel="nofollow noopener">am 9. Oktober 2026 gestrichen</a>. In unserem Test konnte Edge 155.0.4283.45 JPEG&nbsp;XL nicht anzeigen, selbst als wir die Chromium-Funktion per Kommandozeile erzwangen, und ein geöffnetes <code>.jxl</code> wurde einfach heruntergeladen. Anleitungen, die dir raten, es unter <code>edge://flags</code> einzuschalten, sind veraltet.</p>
+  <p class="lead"><strong>Firefox</strong> zog eine Woche nach Chrome nach. Firefox 158, erschienen am 13. Oktober 2026, zeigt JPEG&nbsp;XL standardmäßig an, mit einem Rust-Decoder aus derselben Familie. Die Versionen 152 bis 157 und Firefox ESR 153 enthalten ihn, lassen ihn aber aus: In 152 bis 157 setzt du unter Einstellungen → Firefox Labs das Häkchen bei <strong>Media: JPEG XL</strong>, in ESR 153 setzt du <code>image.jxl.enabled</code> in <code>about:config</code> auf <code>true</code>. ESR 140 und ESR 115 haben gar keinen Decoder.</p>
+  <p class="lead"><strong>Safari</strong> kann JPEG&nbsp;XL seit Version 17 vom September 2023: auf dem Mac ab macOS Sonoma 14, auf iPhone und iPad ab iOS bzw. iPadOS 17. Dort nutzen Chrome, Firefox und alle anderen Browser Apples Engine WebKit und zeigen es deshalb ebenfalls an. Safaris Unterstützung umfasst nur Standbilder, ohne Animation und ohne progressives Laden.</p>
 </div></section>
 
 <section class="block alt"><div class="wrap">
   <h2>Wie es dazu kam</h2>
   <div class="grid3">
-    <div class="feature"><div class="fi">🧪</div><h3>2021 — erster Anlauf</h3><p>Chrome 91 lieferte einen experimentellen JPEG-XL-Decoder hinter einem Flag aus. Die Zuversicht war groß.</p></div>
-    <div class="feature"><div class="fi">🗑️</div><h3>2022 — entfernt</h3><p>Google kündigte an, JPEG XL zu streichen, mit Verweis auf zu geringes Interesse im Ökosystem. Mit Chrome 110 war der Code weg. Die Entscheidung kam sehr schlecht an.</p></div>
-    <div class="feature"><div class="fi">📄</div><h3>2025 — die PDF-Wende</h3><p>Die PDF Association erklärte JPEG XL zum bevorzugten HDR-Format für PDF. Chromes eingebauter PDF-Betrachter bräuchte einen Decoder, um konform zu bleiben.</p></div>
-    <div class="feature"><div class="fi">🦀</div><h3>Dez 2025 — ein Rust-Decoder</h3><p>Google holte jxl-rs nach Chromium. Rust statt des C++-libjxl beantwortete den Speichersicherheits-Einwand, der das Format beim ersten Mal mit zu Fall brachte.</p></div>
-    <div class="feature"><div class="fi">🚢</div><h3>Feb 2026 — Chrome 145</h3><p>Am 10. Februar erreichte der Decoder den Stable-Kanal, hinter <code>enable-jxl-image-format</code>.</p></div>
-    <div class="feature"><div class="fi">⏳</div><h3>Jetzt — Warten</h3><p>Chrome 151, und weiterhin standardmäßig aus. Google hat kein Datum für das Umlegen des Schalters genannt.</p></div>
+    <div class="feature"><div class="fi">🧪</div><h3>2021 — erster Anlauf</h3><p>Chrome 91 brachte einen experimentellen JPEG-XL-Decoder hinter einem Flag, auf Basis von libjxl, der C++-Referenzbibliothek. Über das Flag kam er nie hinaus.</p></div>
+    <div class="feature"><div class="fi">🗑️</div><h3>2022–2023 — gestrichen</h3><p>Ende 2022 erklärte Google, das Format bringe gegenüber den vorhandenen zu wenig, um die Pflege zu rechtfertigen. Mit Chrome 110 war der Code 2023 weg. Bei Entwicklern kam das sehr schlecht an.</p></div>
+    <div class="feature"><div class="fi">📄</div><h3>2025 — der Druck wächst</h3><p>Safari hatte JPEG XL seit 2023, und 2025 gab die PDF Association bekannt, JPEG XL als bevorzugtes Format für HDR-Bilder in PDF gewählt zu haben. Entwickler forderten es weiter von den Browsern.</p></div>
+    <div class="feature"><div class="fi">↩️</div><h3>Nov. 2025 — die Kehrtwende</h3><p>Das Chromium-Team erklärte, es würde einen schnellen, speichersicheren JPEG-XL-Decoder aufnehmen. Kandidat war jxl-rs, eine Rust-Neuentwicklung aus dem libjxl-Projekt, die den Sicherheitseinwand gegen einen großen C++-Decoder entkräftete.</p></div>
+    <div class="feature"><div class="fi">🚢</div><h3>Feb. 2026 — Chrome 145</h3><p>jxl-rs erreichte am 10. Februar den Stable-Kanal, hinter <code>enable-jxl-image-format</code> und ausgeschaltet. So blieb es zehn Versionen lang.</p></div>
+    <div class="feature"><div class="fi">✅</div><h3>Okt. 2026 — Chrome 155</h3><p>Seit dem 6. Oktober standardmäßig an. Google nennt als Gründe die beständigen Wünsche von Webentwicklern und das browserübergreifende Interop-Projekt. Firefox 158 folgte eine Woche später.</p></div>
   </div>
 </div></section>
 
 <section class="block"><div class="wrap">
-  <h2>Wann wird es standardmäßig aktiv?</h2>
-  <p class="lead">Außerhalb von Google weiß das niemand, und das sagen wir lieber, als ein Datum zu erfinden. Am häufigsten wird die <strong>zweite Jahreshälfte 2026</strong> genannt, doch diese Erwartung ist bereits einmal verstrichen: der Decoder sitzt seit Februar im stabilen Chrome, ohne eingeschaltet zu werden.</p>
-  <p class="lead">Sagen lässt sich, wie die verbleibenden Hürden aussehen. Der Rust-Decoder läuft derzeit bei etwa <strong>15–25% der Geschwindigkeit</strong> der C++-Referenzimplementierung, und ein Format, das langsamer dekodiert als das abgelöste, ist für einen Browser, der über Ladezeiten konkurriert, schwer zu verkaufen. Auch Kodierung, Farbmanagement und die Fuzzing-Hürde für einen Decoder im offenen Web müssen die Prüfung bestehen.</p>
-  <p class="lead">Wenn der Schalter aber fällt, geht es schlagartig: Chrome und Edge zusammen würden JPEG XL binnen weniger Wochen von rund 15% der Browser auf annähernd 90% heben.</p>
+  <h2>Was Chromes JPEG XL kann — und was nicht</h2>
+  <p class="lead"><strong>Es liest JPEG&nbsp;XL, schreibt es aber nicht.</strong> Chromes Decoder dekodiert nur. In unserem Test lieferte ein Canvas auf die Anfrage nach <code>image/jxl</code> per <code>toBlob()</code> stillschweigend ein PNG, so wie Browser es bei Formaten tun, die sie nicht kodieren können. Um <code>.jxl</code>-Dateien zu erzeugen, brauchst du weiterhin einen Encoder wie <code>cjxl</code> oder <a href="/de/jpg-in-jxl/">einen Konverter</a>.</p>
+  <p class="lead"><strong>Es sagt Servern, dass es kann.</strong> Mit eingeschaltetem JPEG&nbsp;XL führt Chrome <code>image/jxl</code> im <code>Accept</code>-Header seiner Bildanfragen auf. Ein Server oder CDN kann Chrome also ein <code>.jxl</code> schicken und anderen Browsern etwas anderes. Bei abgeschalteter Funktion fehlt dieser Eintrag.</p>
+  <p class="lead"><strong>Keine Geschwindigkeitszahlen von Google.</strong> Die Ankündigung erklärt, wie der Decoder optimiert wurde, und Google verfolgt seine Leistung auf einem <a href="https://jxl-rs-perf.lucaversari.it/" rel="nofollow noopener">öffentlichen Dashboard</a>, nennt aber keine Zahl dazu, wie schnell JPEG&nbsp;XL im Vergleich zu anderen Formaten dekodiert. Wir auch nicht: Frühere Fassungen dieses Ratgebers nannten einen Prozentwert, den wir keiner verlässlichen Quelle zuordnen konnten.</p>
+  <p class="lead"><strong>Sicherheit war die Eintrittskarte.</strong> Bilddecoder gehören zu den meistangegriffenen Teilen eines Browsers. Google gibt an, jxl-rs unter anderem mit Fuzzing geprüft zu haben, zusätzlich zu Chromes Sandbox. Rust statt der C++-Bibliothek libjxl, die Chrome 2023 entfernt hatte, war Teil dieser Antwort.</p>
 </div></section>
 
 <section class="block alt"><div class="wrap">
   <h2>Was das für dich bedeutet</h2>
   <div class="grid3">
-    <div class="feature"><div class="fi">📂</div><h3>Du hast gerade ein .jxl bekommen</h3><p>Lass die Flags. <a href="/de/jxl-betrachter/">Öffne es im Betrachter</a> — er dekodiert auf deinem Gerät, in jedem Browser, und du kannst es als JPG oder PNG sichern.</p></div>
-    <div class="feature"><div class="fi">🌍</div><h3>Du baust Websites</h3><p>Noch nicht, und nicht ohne Fallback. Liefere JPEG XL in einem <code>&lt;picture&gt;</code>-Element mit AVIF, WebP oder JPEG dahinter aus — oder bleib bei dem, was du hast.</p></div>
-    <div class="feature"><div class="fi">📸</div><h3>Du archivierst Fotos</h3><p>Hier zahlt sich JPEG XL schon heute aus. Verlustfreies Neuverpacken spart rund 20%, die Originalbytes bleiben wiederherstellbar — und kein Browser muss mitspielen. <a href="/de/jpg-in-jxl/">Probier es an einem JPEG</a>.</p></div>
+    <div class="feature"><div class="fi">📂</div><h3>Du hast ein .jxl bekommen</h3><p>Am Computer mit Chrome 155 oder neuer ziehst du es in einen Tab, und es öffnet sich wie jedes Foto. Auf dem Handy, in Edge, einem älteren Chrome oder auf einem fremden Rechner nimmst du <a href="/de/jxl-betrachter/">unseren Betrachter</a>: Er dekodiert die Datei auf deinem Gerät, in jedem Browser, und kann sie als JPG oder PNG speichern.</p></div>
+    <div class="feature"><div class="fi">🌍</div><h3>Du baust Websites</h3><p>Nutze JPEG XL, aber mit Fallback. Chrome 155+, Firefox 158+ und Safari 17+ zeigen es an; Edge nicht, Samsung Internet ist unbestätigt, und viele haben noch nicht aktualisiert. Pack das <code>.jxl</code> in ein <code>&lt;picture&gt;</code> mit AVIF, WebP oder JPEG dahinter, oder wähle das Format auf dem Server anhand des <code>Accept</code>-Headers.</p></div>
+    <div class="feature"><div class="fi">📸</div><h3>Du archivierst Fotos</h3><p>Hier lohnte sich JPEG XL schon, bevor sich irgendein Browser dafür interessierte. Verlustfreies Neuverpacken verkleinert vorhandene JPEGs — das libjxl-Projekt spricht von rund 20% —, und die Originaldatei lässt sich bitgenau wiederherstellen. <a href="/de/jpg-in-jxl/">Probier es an einem JPEG</a>.</p></div>
   </div>
 </div></section>
 
 <section class="block" id="faq"><div class="wrap">
   <h2>Häufige Fragen</h2>
   <div class="faq">
-    <details open><summary>Öffnet Chrome 2026 .jxl-Dateien?</summary><div class="ans">Nur wenn du das Flag selbst aktivierst. Ab Werk lädt Chrome 151 eine <code>.jxl</code>-Datei herunter, statt sie anzuzeigen. Unser <a href="/de/jxl-betrachter/">JPEG-XL-Betrachter</a> öffnet sie ganz ohne Einstellungen.</div></details>
-    <details><summary>Ist es sicher, das Flag einzuschalten?</summary><div class="ans">Es ist ein offizielles Chrome-Flag mit Googles eigenem Rust-Decoder, also kein Hack und keine Erweiterung. Trotzdem ist es Technik vor der Freigabe — rechne mit gelegentlichen Ecken und damit, dass das Flag zwischen Versionen umbenannt wird oder verschwindet.</div></details>
-    <details><summary>Warum hat Google JPEG XL überhaupt entfernt?</summary><div class="ans">2022 erklärte Google, das Format bringe gegenüber den vorhandenen zu wenig zusätzlichen Nutzen, um die Pflege zu rechtfertigen. Auch die Speichersicherheit des C++-Decoders war ein wiederkehrender Kritikpunkt — weshalb das Format nun auf dem Rücken einer Rust-Neuentwicklung zurückkam.</div></details>
-    <details><summary>Unterstützt Edge JPEG XL?</summary><div class="ans">Edge basiert auf Chromium und hat damit exakt denselben Decoder hinter exakt demselben Flag, unter <code>edge://flags/#enable-jxl-image-format</code>, mit demselben Verhalten: standardmäßig aus.</div></details>
-    <details><summary>Und Firefox?</summary><div class="ans">Firefox arbeitet seit Langem an einer Implementierung und lässt sie in stabilen Builds deaktiviert. Mozillas erklärtes Interesse wuchs, als ein speichersicherer Decoder realistisch wurde, ein Termin existiert aber nicht.</div></details>
-    <details><summary>Soll ich meine Fotos jetzt zu JPEG XL umwandeln?</summary><div class="ans">Für private Ablage und Archiv lohnt es sich bereits — vor allem das verlustfreie Neuverpacken von JPEGs, das Dateien ganz ohne Qualitätsänderung schrumpft. Für Bilder, die du im Web veröffentlichst, behalte einen JPEG-, WebP- oder AVIF-Fallback, bis Chrome den Schalter umlegt.</div></details>
+    <details open><summary>Öffnet Chrome jetzt .jxl-Dateien?</summary><div class="ans">Ja, ab Chrome 155 (6. Oktober 2026), ohne dass du etwas einstellen musst: am Computer und unter Android in Webseiten. Ein auf dem Handy gespeichertes .jxl öffnet Chrome dort weiterhin nicht. Chrome 145 bis 154 kann es, wenn du das Flag einschaltest; Chrome 110 bis 144 kann es gar nicht. In all diesen Fällen, in Edge und für eine Datei auf dem Handy öffnet unser <a href="/de/jxl-betrachter/">JPEG-XL-Betrachter</a> die Datei, ohne deine Einstellungen anzufassen.</div></details>
+    <details><summary>Wie heißt das JPEG-XL-Flag in Chrome?</summary><div class="ans"><strong>Enable JXL image format</strong>, unter <code>chrome://flags/#enable-jxl-image-format</code>. In Chrome 145 bis 154 stellst du es auf Enabled; in Chrome 155 lässt du es auf Default, das ist bereits an. Es soll nach Chrome 158 ablaufen.</div></details>
+    <details><summary>Unterstützt Microsoft Edge JPEG XL?</summary><div class="ans">Nein. Edge 155 zeigt JPEG XL nicht an, obwohl es auf Chromium basiert, und kein Flag ändert das: Microsoft hat JPEG XL am 9. Oktober 2026 aus den Versionshinweisen zu Edge 155 gestrichen, und unser eigener Test bestätigt das. Für .jxl-Bilder nimm Chrome, Firefox oder Brave, oder öffne sie in einem Betrachter.</div></details>
+    <details><summary>Unterstützt Chrome unter Android JPEG XL?</summary><div class="ans">Ja, für Bilder in Webseiten. Chrome 155 bringt es auch unter Android, ebenso Android WebView 155, mit dem viele Apps Webseiten in sich anzeigen. Eine auf dem Handy gespeicherte .jxl-Datei ist etwas anderes: Die öffnet Chrome weiterhin nicht. Samsung Internet, der vorinstallierte Browser auf Samsung-Handys, ist ein eigenes Produkt und nicht bestätigt.</div></details>
+    <details><summary>Kann Chrome Bilder als JPEG XL speichern oder umwandeln?</summary><div class="ans">Nein. Chrome kann JPEG XL anzeigen, aber nicht erzeugen; verlangst du von einem Canvas ein JPEG XL, bekommst du ein PNG. Zum Erstellen nimm <a href="/de/jpg-in-jxl/">JPG in JXL</a> oder <a href="/de/png-in-jxl/">PNG in JXL</a>; beides läuft in deinem Browser, ohne etwas hochzuladen.</div></details>
+    <details><summary>Kann ich JPEG XL jetzt auf meiner Website einsetzen?</summary><div class="ans">Ja, solange du einen Fallback behältst. Mit einem sauber gebauten <code>&lt;picture&gt;</code> fordern Browser ohne Unterstützung das .jxl gar nicht erst an, niemand sieht also ein kaputtes Bild. Googles eigene Ankündigung empfiehlt, AVIF und JPEG XL auszuprobieren und das zu behalten, was bei deinen Bildern besser abschneidet.</div></details>
   </div>
 </div></section>
 
@@ -148,6 +180,7 @@
   <div class="cta-row">
     <a class="cta-card" href="/de/was-ist-jpeg-xl/"><span class="cta-ic">📘</span><b>Was ist JPEG XL?</b><span class="cta-sub">Das Format verständlich erklärt →</span></a>
     <a class="cta-card" href="/de/jpeg-xl-vs-webp/"><span class="cta-ic">⚖️</span><b>JPEG XL vs WebP</b><span class="cta-sub">Was solltest du wirklich nehmen? →</span></a>
+    <a class="cta-card" href="/de/jxl-betrachter/"><span class="cta-ic">👁️</span><b>JXL-Betrachter</b><span class="cta-sub">.jxl-Dateien in jedem Browser öffnen →</span></a>
   </div>
 </div></section>
 </main>

@@ -23,7 +23,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/styles.css?v=8">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Теряется ли качество при конвертации JPG в JXL?","acceptedAnswer":{"@type":"Answer","text":"Нет — режим без потерь переупаковывает существующий JPG, поэтому он идентичен пиксель в пиксель, просто меньше."}},{"@type":"Question","name":"Где можно использовать .jxl?","acceptedAnswer":{"@type":"Answer","text":"Safari уже поддерживает его, а в Chrome 145 декодер появился, но по умолчанию отключён. Пока сохраняйте оригиналы."}},{"@type":"Question","name":"Это бесплатно и приватно?","acceptedAnswer":{"@type":"Answer","text":"Да — бесплатно, без регистрации, и файл не покидает ваше устройство."}},{"@type":"Question","name":"Меняется ли качество исходного JPG?","acceptedAnswer":{"@type":"Answer","text":"Нет. Переупаковка без потерь пересобирает те же данные JPEG внутри контейнера JPEG XL, поэтому он математически идентичен — просто меньше."}},{"@type":"Question","name":"Стоит ли удалять JPG после конвертации?","acceptedAnswer":{"@type":"Answer","text":"Сохраняйте их, пока поддержка JPEG XL не станет повсеместной. Пока что .jxl отлично подходит для архивирования и экономии места рядом с оригиналами."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Теряется ли качество при конвертации JPG в JXL?","acceptedAnswer":{"@type":"Answer","text":"Нет — режим без потерь переупаковывает существующий JPG, поэтому он идентичен пиксель в пиксель, просто меньше."}},{"@type":"Question","name":"Где можно использовать .jxl?","acceptedAnswer":{"@type":"Answer","text":"Safari 17+, Chrome 155+ (с 6 октября 2026 года) и Firefox 158+ (с 13 октября 2026 года) показывают его по умолчанию; Microsoft Edge — нет. Пока сохраняйте оригиналы, а на сайте отдавайте .jxl с запасным JPG или WebP."}},{"@type":"Question","name":"Это бесплатно и приватно?","acceptedAnswer":{"@type":"Answer","text":"Да — бесплатно, без регистрации, и файл не покидает ваше устройство."}},{"@type":"Question","name":"Меняется ли качество исходного JPG?","acceptedAnswer":{"@type":"Answer","text":"Нет. Переупаковка без потерь пересобирает те же данные JPEG внутри контейнера JPEG XL, поэтому он математически идентичен — просто меньше."}},{"@type":"Question","name":"Стоит ли удалять JPG после конвертации?","acceptedAnswer":{"@type":"Answer","text":"Сохраняйте их, пока поддержка JPEG XL не станет повсеместной. Пока что .jxl отлично подходит для архивирования и экономии места рядом с оригиналами."}}]}</script>
 <style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
 </head>
 <body>
@@ -73,7 +73,7 @@
       <div class="ctrl"><label>Качество</label>
         <div class="quality"><input type="range" id="quality" min="40" max="100" value="90"><output id="quality-val">90</output></div>
       </div>
-      <div class="ctrl"><label>&nbsp;</label><label class="switch"><input type="checkbox" id="lossless"> Без потерь</label></div>
+      <div class="ctrl"><label>&nbsp;</label><label class="switch"><input type="checkbox" id="lossless" checked> Без потерь</label></div>
     </div>
     <div class="results" id="results"></div>
     <div class="results-actions" id="results-actions"></div>
@@ -93,7 +93,7 @@
 <section class="block"><div class="wrap about">
   <h2>Полезно знать</h2>
   <p class="prose">Современные телефоны создают великолепные JPG, но они далеко не эффективны. Конвертация JPG в JPEG XL с переупаковкой без потерь уменьшает каждый файл примерно на 20%, сохраняя его пиксель в пиксель идентичным оригиналу — вы буквально ничего не теряете и выигрываете в объёме хранилища. Умножьте это на библиотеку из тысяч изображений, и экономия быстро накапливается.</p>
-  <p class="prose">JPEG XL — это современный, свободный от лицензионных отчислений преемник JPG: Safari уже отображает его нативно, а Chrome внедряет поддержку, поэтому формат будет только полезнее. Всё конвертируется приватно в вашем браузере, так что вы можете подготовить к будущему даже личные фото, никуда их не загружая.</p>
+  <p class="prose">JPEG XL — это современный, свободный от лицензионных отчислений преемник JPG: Safari уже отображает его нативно, а Chrome 155 и Firefox 158 включили его по умолчанию в октябре 2026 года, поэтому формат будет только полезнее. Всё конвертируется приватно в вашем браузере, так что вы можете подготовить к будущему даже личные фото, никуда их не загружая.</p>
 </div></section>
 
 <section class="block alt" id="how"><div class="wrap">
@@ -109,7 +109,7 @@
   <h2>FAQ</h2>
   <div class="faq">
     <details open><summary>Теряется ли качество при конвертации JPG в JXL?</summary><div class="ans">Нет — режим без потерь переупаковывает существующий JPG, поэтому он идентичен пиксель в пиксель, просто меньше.</div></details>
-    <details><summary>Где можно использовать .jxl?</summary><div class="ans">Safari уже поддерживает его, а в Chrome 145 декодер появился, но по умолчанию отключён. Пока сохраняйте оригиналы.</div></details>
+    <details><summary>Где можно использовать .jxl?</summary><div class="ans">Safari 17+, Chrome 155+ (с 6 октября 2026 года) и Firefox 158+ (с 13 октября 2026 года) показывают его по умолчанию; Microsoft Edge — нет. Пока сохраняйте оригиналы, а на сайте отдавайте .jxl с запасным JPG или WebP.</div></details>
     <details><summary>Это бесплатно и приватно?</summary><div class="ans">Да — бесплатно, без регистрации, и файл не покидает ваше устройство.</div></details>
     <details><summary>Меняется ли качество исходного JPG?</summary><div class="ans">Нет. Переупаковка без потерь пересобирает те же данные JPEG внутри контейнера JPEG XL, поэтому он математически идентичен — просто меньше.</div></details>
     <details><summary>Стоит ли удалять JPG после конвертации?</summary><div class="ans">Сохраняйте их, пока поддержка JPEG XL не станет повсеместной. Пока что .jxl отлично подходит для архивирования и экономии места рядом с оригиналами.</div></details>
@@ -166,6 +166,6 @@ window.googlefc.callbackQueue.push({
   })
 });
 </script>
-<script type="module" src="/assets/js/app.js?v=9"></script>
+<script type="module" src="/assets/js/app.js?v=10"></script>
 </body>
 </html>

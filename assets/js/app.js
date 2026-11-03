@@ -302,10 +302,13 @@ function init() {
   const qOut = document.getElementById("quality-val");
   if (qRange) qRange.addEventListener("input", () => { state.quality = +qRange.value; qOut.textContent = qRange.value; });
   const lossless = document.getElementById("lossless");
-  if (lossless) lossless.addEventListener("change", () => {
+  const syncLossless = () => {
     state.lossless = lossless.checked;
     if (qRange) qRange.disabled = lossless.checked;
-  });
+  };
+  // La pagina JPG -> JXL trae la casilla marcada (promete reempaquetar sin perdida);
+  // y el navegador puede restaurarla al volver atras: se lee al arrancar, no solo al cambiar.
+  if (lossless) { syncLossless(); lossless.addEventListener("change", syncLossless); }
 
   // file selection
   dz.addEventListener("click", () => input.click());

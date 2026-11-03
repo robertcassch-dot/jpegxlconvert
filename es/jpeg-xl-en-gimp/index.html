@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9791902883190551" crossorigin="anonymous"></script>
+<title>JPEG XL en GIMP: abrir y exportar .jxl (2.10 y 3.x)</title>
+<meta name="description" content="GIMP abre .jxl desde la 2.10.32, pero solo GIMP 3 exporta con opciones de verdad. Cada ajuste, medido, y el arreglo del «Tipo de archivo desconocido».">
+<link rel="canonical" href="https://jpegxlconvert.com/es/jpeg-xl-en-gimp/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/jpeg-xl-in-gimp/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/jpeg-xl-en-gimp/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/jpeg-xl-in-gimp/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JPEG XL en GIMP: cada ajuste de exportación, explicado">
+<meta property="og:description" content="Qué versiones de GIMP leen y escriben .jxl, qué hace cada opción del cuadro de exportación y por qué algunas instalaciones dicen «Tipo de archivo desconocido».">
+<meta property="og:url" content="https://jpegxlconvert.com/es/jpeg-xl-en-gimp/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=8">
+<link rel="alternate" type="application/rss+xml" title="JXL Convert — Blog" href="/es/feed.xml">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"¿GIMP admite JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"Sí. Abre .jxl desde la 2.10.32 y exporta desde la 2.10.34 (solo 8 bits sin pérdida). GIMP 3.0 y posteriores, incluida la actual 3.2.6, exportan con opciones con y sin pérdida, preajustes de esfuerzo y 16 bits."}},
+{"@type":"Question","name":"¿Por qué GIMP dice «Tipo de archivo desconocido» con un .jxl?","acceptedAnswer":{"@type":"Answer","text":"O tu GIMP es anterior a la 2.10.32, o se compiló sin la biblioteca libjxl. Las versiones oficiales de gimp.org y el Flatpak de Flathub la incluyen; instalar una de ellas arregla el error."}},
+{"@type":"Question","name":"¿Qué significa Compresión/errorMax?","acceptedAnswer":{"@type":"Answer","text":"Es la distancia butteraugli, la medida de diferencia visible de libjxl. El 1,0 por defecto es lo que la ayuda emergente de GIMP llama visualmente sin pérdida y equivale a calidad 90 en la escala de libjxl; en nuestra prueba sacó 84,8 y 77,2 en SSIMULACRA2, por debajo del 90 que esa métrica considera visualmente sin pérdida. 0,5 es más o menos calidad 95 y 2,0 alrededor de 79."}},
+{"@type":"Question","name":"¿Qué preajuste de Esfuerzo/Velocidad uso?","acceptedAnswer":{"@type":"Answer","text":"El que viene, ardilla. En nuestras pruebas, con pérdida, la tortuga tardó quince veces más y usó diez veces más memoria para un archivo un 6% menor y nada mejor; sin pérdida ahorró un 1–3%. Relámpago vale para pruebas rápidas."}},
+{"@type":"Question","name":"¿Puede GIMP pasar un JPEG a JPEG XL sin ninguna pérdida?","acceptedAnswer":{"@type":"Answer","text":"No sin recodificar. GIMP descodifica antes el JPEG a píxeles, así que su exportación sin pérdida pesa más que el JPEG. El reempaquetado exacto del JPEG —un 12% y un 23% más pequeño con estas dos fotos, en torno a un 20% en las 16 fotos de nuestra comparativa con JPEG— necesita cjxl o nuestro conversor."}},
+{"@type":"Question","name":"¿Necesito un complemento para GIMP 2.10?","acceptedAnswer":{"@type":"Answer","text":"Para abrir, no: la 2.10.32 y posteriores ya leen .jxl. Para tener ajustes de exportación de verdad, la respuesta es GIMP 3; el viejo complemento de libjxl para la 2.10 ya no se mantiene. Los límites de la 2.10 están en las notas de la 2.10.34."}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"JPEG XL en GIMP","datePublished":"2026-10-15","dateModified":"2026-10-15","inLanguage":"es","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/es/sobre-el-proyecto/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/es/"},"mainEntityOfPage":"https://jpegxlconvert.com/es/jpeg-xl-en-gimp/"}
+</script>
+<style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+<style>.gtbl{max-width:720px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/es/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/es/">Conversor</a><a href="/es/visor-jxl/">Visor</a><a href="/es/guias/">Blog</a></nav>
+    <details class="lang"><summary>🌐 ES</summary>
+      <div class="lang-menu">
+        <a href="/en/jpeg-xl-in-gimp/"><span class="flag">🇬🇧</span> English</a>
+        <a class="active" href="/es/jpeg-xl-en-gimp/"><span class="flag">🇪🇸</span> Español</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">🖌️ GIMP · revisado en octubre de 2026</span>
+  <h1>JPEG&nbsp;XL en GIMP</h1>
+  <p class="sub"><strong>GIMP lee archivos .jxl desde la 2.10.32 y los escribe desde la 2.10.34, pero solo GIMP 3 trae un cuadro de exportación de verdad</strong>, con sin pérdida, calidad, esfuerzo y 16 bits. Aquí tienes qué hace cada ajuste, medido, qué compilaciones incluyen JPEG&nbsp;XL y cómo arreglar el «Tipo de archivo desconocido».</p>
+  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">por <a href="/es/sobre-el-proyecto/" style="color:inherit">Robert Castillo</a> · Publicado el <time datetime="2026-10-15">15 de octubre de 2026</time></p>
+  <div class="badges">
+    <span class="badge green">📂 Abre desde la 2.10.32</span><span class="badge">💾 Exportación completa en la 3.x</span><span class="badge">🐧 Windows · macOS · Linux · Flatpak</span><span class="badge">🧪 Ajustes medidos con libjxl</span>
+  </div>
+  <div class="cta-row">
+    <a class="cta-card" href="/es/jpg-a-jxl/"><span class="cta-ic">🗜️</span><b>Pasa JPEG a JPEG XL sin pérdida</b><span class="cta-sub">El reempaquetado exacto que GIMP no hace →</span></a>
+    <a class="cta-card" href="/es/visor-jxl/"><span class="cta-ic">👁️</span><b>¿GIMP dice «Tipo de archivo desconocido»?</b><span class="cta-sub">Abre el .jxl en el navegador →</span></a>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>La respuesta corta</h2>
+  <p class="lead">Sí, GIMP trabaja con JPEG&nbsp;XL, pero lo bien que lo haga depende por completo de la versión. El complemento lo escribió Daniel Novomeský para la serie de desarrollo de GIMP 3 en 2021, y la rama 2.10 solo recibió partes después. En octubre de 2026 la versión actual es <strong>GIMP 3.2.6</strong> (10 de septiembre de 2026), y trae la versión completa.</p>
+  <p class="lead">Si sigues en la 2.10, puedes abrir .jxl desde la <strong>2.10.32</strong> (junio de 2022) y exportarlos desde la <strong>2.10.34</strong> (febrero de 2023), pero esa exportación no tiene ningún ajuste: todos los archivos salen <strong>en 8 bits y sin pérdida</strong>, lo que pesa mucho y descarta la precisión extra de las imágenes de 16 bits. El cuadro completo, con compresión con pérdida, esfuerzo y 16 bits, llegó con <strong>GIMP 3.0</strong> el 16 de marzo de 2025, y GIMP 3.2 mantuvo exactamente las mismas opciones.</p>
+  <p class="lead">Hay una condición más: GIMP solo incluye JPEG&nbsp;XL si se compiló con la biblioteca libjxl. Las descargas oficiales para Windows y macOS la llevan; los paquetes de algunas distribuciones y las compilaciones antiguas pueden no llevarla. De ahí sale el mensaje de «Tipo de archivo desconocido».</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Versión</th><th>Abrir .jxl</th><th>Exportar .jxl</th></tr></thead>
+    <tbody>
+      <tr><td>2.10.30 y anteriores</td><td class="n">No</td><td class="n">No</td></tr>
+      <tr><td>2.10.32 (jun 2022)</td><td class="y">Sí</td><td class="n">No</td></tr>
+      <tr><td>2.10.34 – 2.10.38</td><td class="y">Sí, con metadatos</td><td>Solo 8 bits sin pérdida, sin opciones</td></tr>
+      <tr><td>3.0 (mar 2025) – 3.2.6 (sep 2026)</td><td class="y">Sí</td><td class="y">Cuadro completo: con y sin pérdida, esfuerzo, 16 bits, CMYK</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<section class="block alt" id="export"><div class="wrap">
+  <h2>Cómo exportar un JPEG XL en GIMP 3</h2>
+  <div class="steps">
+    <div class="step"><h3>Exportar, no guardar</h3><p><strong>Archivo › Guardar</strong> solo escribe el .xcf propio de GIMP. Usa <strong>Archivo › Exportar como…</strong> (Mayús+Ctrl+E, o Mayús+Cmd+E en Mac).</p></div>
+    <div class="step"><h3>Elige el formato</h3><p>Escribe un nombre que acabe en <strong>.jxl</strong> o despliega <strong>Seleccione el tipo de archivo</strong> y elige <strong>Imagen JPEG XL</strong>. Si no aparece en la lista, tu compilación no trae JPEG XL: mira el apartado de problemas.</p></div>
+    <div class="step"><h3>Ajusta las opciones</h3><p>Pulsa Exportar y se abre el cuadro <strong>Exportar imagen como JPEG XL</strong>. Elige sin pérdida o un valor de compresión, un preajuste de esfuerzo y la profundidad de bits; el apartado siguiente explica cada uno.</p></div>
+    <div class="step"><h3>Guarda también el .xcf</h3><p>Al exportar, GIMP combina las capas visibles en una sola imagen. Tu trabajo por capas solo sobrevive en el .xcf, así que guárdalo también.</p></div>
+  </div>
+</div></section>
+
+<section class="block" id="settings"><div class="wrap">
+  <h2>El cuadro de exportación, ajuste por ajuste</h2>
+  <p class="lead">Estas son exactamente las opciones de GIMP 3.0 a 3.2.6, sacadas del <a href="https://gitlab.gnome.org/GNOME/gimp/-/blob/GIMP_3_2_6/plug-ins/common/file-jpegxl.c" rel="nofollow noopener">código fuente del complemento</a>, con sus valores por defecto y su nombre en el GIMP en español. GIMP se las pasa casi tal cual a libjxl, el codificador de referencia.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Opción</th><th>Rango y valor por defecto</th><th>Qué hace</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Sin pérdida</strong></td><td>Desactivada por defecto</td><td>Guarda cada píxel exactamente y deja en gris la compresión</td></tr>
+      <tr><td><strong>Compresión/errorMax</strong></td><td>De 0,1 a 15; por defecto <strong>1,0</strong></td><td>La distancia butteraugli: cuanto más baja, más calidad y más peso; la ayuda emergente de GIMP llama a 1,0 «visualmente sin pérdida»</td></tr>
+      <tr><td><strong>Esfuerzo/Velocidad</strong></td><td>De relámpago (1) a tortuga (9); por defecto <strong>ardilla (7)</strong></td><td>Cuánto trabaja el codificador: tiempo frente a precisión y tamaño</td></tr>
+      <tr><td><strong>Profundidad de bit</strong></td><td>8 bit/canal (por defecto) o 16 bit/canal</td><td>Precisión que se guarda en el archivo</td></tr>
+      <tr><td><strong>Exportar como CMYK</strong></td><td>Solo con un perfil de prueba CMYK</td><td>Escribe un JPEG XL en CMYK con ese perfil</td></tr>
+      <tr><td><strong>Guardar Exif</strong> / <strong>Guardar XMP</strong></td><td>Según tus preferencias</td><td>Copia los metadatos de la foto al archivo</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">Los preajustes de esfuerzo tienen nombres en lugar de números: <strong>relámpago</strong> (1, el más rápido), trueno (2), <strong>halcón</strong> (3), guepardo (4), liebre (5), wombat (6), <strong>ardilla</strong> (7), gatito (8) y <strong>tortuga</strong> (9, el más lento). Son los niveles de esfuerzo de libjxl, los mismos que acepta <code>cjxl -e</code> en la línea de comandos.</p>
+  <p class="lead">Si piensas en números de «calidad» de otros programas, la conversión que usa libjxl es distancia = 0,1 + (100 − calidad) × 0,09. Así que el 1,0 por defecto de GIMP equivale a calidad 90, una distancia de 0,5 a calidad 95 aproximadamente y 2,0 a una 79. Y 1,0 es lo que la ayuda emergente de GIMP llama «visualmente sin pérdida»; en SSIMULACRA2 sacó 84,8 y 77,2 en nuestra prueba, por debajo del 90 que esa métrica considera visualmente sin pérdida.</p>
+</div></section>
+
+<section class="block alt" id="measured"><div class="wrap">
+  <h2>Medido: lo que hacen los ajustes con una foto real</h2>
+  <p class="lead">GIMP le pasa estos ajustes a libjxl, así que pasamos los mismos valores por <strong>libjxl 0.12.0</strong> con dos fotos de dominio público de 14 y 45 megapíxeles. Es la misma biblioteca de codificación, no GIMP en sí, así que los tamaños pueden variar un poco según tu compilación de GIMP. La calidad se puntúa con SSIMULACRA2: 80 significa que no se ve diferencia lado a lado a tamaño real, y 90 equivale a visualmente sin pérdida.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Compresión/errorMax</th><th>Foto A · 14 MP</th><th>Foto B · 45 MP</th></tr></thead>
+    <tbody>
+      <tr><td>JPEG original, como referencia</td><td>8,38 MB</td><td>12,02 MB</td></tr>
+      <tr><td>0,5</td><td>2,03 MB · 87,5</td><td>5,34 MB · 83,0</td></tr>
+      <tr><td><strong>1,0</strong> (por defecto)</td><td class="y">0,99 MB · 84,8</td><td class="y">2,91 MB · 77,2</td></tr>
+      <tr><td>2,0</td><td>0,50 MB · 78,6</td><td>1,32 MB · 69,5</td></tr>
+      <tr><td>3,0</td><td>0,33 MB · 73,1</td><td>0,81 MB · 61,9</td></tr>
+      <tr><td>Sin pérdida, 8 bits</td><td>10,25 MB</td><td>18,68 MB</td></tr>
+      <tr><td>PNG, como referencia</td><td>14,49 MB</td><td>32,97 MB</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">Cada cifra es el tamaño del archivo seguido de la puntuación SSIMULACRA2. En la foto A, el 1,0 por defecto sacó 84,8 con menos de un mega, mientras que un JPEG a calidad 90 de los mismos píxeles necesitó 1,52 MB para llegar a 80,8, y con 2,0 el archivo volvió a partirse por la mitad sin dejar de ser «alta calidad». La foto B, un retrato de 45 megapíxeles lleno de textura de tela, es más difícil: cada escalón puntúa menos, 77,2 con 1,0 y 69,5 con 2,0, justo por debajo de la marca de «alta calidad», que está en 70. Con 0,75 subió a 79,8 en 3,79 MB, todavía menos que su JPEG a calidad 90 (4,92 MB y 78,6). En fotos con mucho detalle, baja un poco el valor en vez de subirlo.</p>
+  <p class="lead">Sin pérdida es otro mundo: entre seis y diez veces el tamaño del archivo con pérdida por defecto, pero aun así entre un 29% y un 43% más pequeño que un PNG de los mismos píxeles. Eso lo convierte en la opción buena para capturas, gráficos y originales, no para mandar fotos.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Esfuerzo/Velocidad: ¿compensa la tortuga?</h2>
+  <p class="lead">Codificamos las dos fotos a la distancia por defecto de 1,0 con preajustes de toda la escala. Cada casilla da el tamaño del archivo y la puntuación SSIMULACRA2; los tiempos son de la foto A en un servidor compartido de seis hilos y con carga, así que tómalos como relativos, no absolutos.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Esfuerzo/Velocidad</th><th>Foto A · 14 MP</th><th>Foto B · 45 MP</th><th>Tiempo (A)</th></tr></thead>
+    <tbody>
+      <tr><td>relámpago (1)</td><td>0,91 MB · 83,4</td><td>3,79 MB · 80,3</td><td>1,0 s</td></tr>
+      <tr><td>halcón (3)</td><td>0,81 MB · 83,4</td><td>3,28 MB · 80,3</td><td>1,0 s</td></tr>
+      <tr><td>liebre (5)</td><td>0,96 MB · 84,7</td><td>2,86 MB · 77,1</td><td>3,0 s</td></tr>
+      <tr><td><strong>ardilla (7)</strong>, por defecto</td><td class="y">0,99 MB · 84,8</td><td class="y">2,91 MB · 77,2</td><td>6,2 s</td></tr>
+      <tr><td>tortuga (9)</td><td>0,93 MB · 84,6</td><td class="n">sin memoria (más de 7,5 GB)</td><td>92,2 s</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">Si esperabas que más lento significara más pequeño, la tabla dice otra cosa. Con la misma Compresión/errorMax, el esfuerzo cambia sobre todo cómo reparte el codificador los bits, y hacia dónde depende de la foto: en la foto A los preajustes rápidos dieron archivos más pequeños que puntuaban algo menos, y en la B, archivos entre un 12% y un 30% más grandes que puntuaban más. Liebre y ardilla quedan en el mismo sitio en las dos. La tortuga tardó quince veces más que la ardilla en la foto A para un archivo un 6% menor y nada mejor.</p>
+  <p class="lead">Además gasta memoria. En la foto A, la tortuga llegó a <strong>unos 4 GB de RAM</strong> frente a 0,4 GB de la ardilla; en la foto B pasó de 7,5 GB y el sistema la cortó, en un servidor de 12 GB compartido con otros trabajos, mientras que la ardilla se apañó con 0,7 GB. Si tu ordenador va justo de memoria, la tortuga con fotos grandes puede colgar GIMP. Déjalo en ardilla.</p>
+  <p class="lead">Donde el esfuerzo sí se nota es sin pérdida. En la foto A, relámpago hizo un archivo de 13,77 MB en medio segundo, ardilla uno de 10,25 MB en unos diez y tortuga uno de 9,98 MB en cincuenta. En la foto B, ardilla se quedó en 18,68 MB y tortuga en 18,48 MB tras más de dos minutos. Para unos cuantos archivos, ardilla o gatito; la tortuga, solo para archivos que escribes una vez y guardas.</p>
+  <p class="lead">La profundidad de 16 bits apenas cambió nada con nuestras fotos de 8 bits: entre un 1,3% y un 1,6% más sin pérdida, y el mismo tamaño con pérdida. Elige 16 cuando la imagen sea de verdad de 16 bits, sacada de un revelador RAW o de un escáner, y deja 8 para todo lo demás.</p>
+</div></section>
+
+<section class="block alt" id="systems"><div class="wrap">
+  <h2>Windows, macOS, Linux y Flatpak</h2>
+  <p class="lead">Que tu GIMP pueda hacer todo esto depende de cómo se compiló: el sistema de compilación de GIMP solo incluye JPEG&nbsp;XL si encuentra libjxl, y si no, lo deja fuera sin avisar.</p>
+  <div class="grid3">
+    <div class="feature"><div class="fi">🪟</div><h3>Windows</h3><p>El instalador de <a href="https://www.gimp.org/downloads/" rel="nofollow noopener">gimp.org</a> se compila con libjxl, así que la 3.x abre y exporta .jxl tal cual viene. Si una 2.10 antigua en Windows se resiste, actualiza en vez de buscar complementos.</p></div>
+    <div class="feature"><div class="fi">🍎</div><h3>macOS</h3><p>El .dmg oficial también incluye libjxl. Las versiones recientes de macOS ya muestran los .jxl en Finder y en Vista Previa (<a href="/es/abrir-jxl-en-mac/">aquí lo explicamos</a>), así que GIMP solo hace falta para editar o para elegir los ajustes de exportación.</p></div>
+    <div class="feature"><div class="fi">🐧</div><h3>Distribuciones Linux</h3><p>Ubuntu 22.04 trae GIMP 2.10.30, sin nada de JPEG XL. Ubuntu 24.04 (2.10.36) y Debian 12 (2.10.34) incluyen el complemento, con la exportación limitada de la 2.10. Debian 13 trae la 3.0.4, y Ubuntu 26.04 la 3.2.2.</p></div>
+    <div class="feature"><div class="fi">📦</div><h3>Flatpak</h3><p>La versión de Flathub es GIMP 3.2.6. Toma libjxl del entorno de ejecución de GNOME sobre el que funciona, que incluye la biblioteca desde la base 24.08, así que un Flatpak actual exporta JPEG XL con el cuadro completo.</p></div>
+  </div>
+  <p class="lead">En una distribución antigua, el Flatpak es el camino más corto a un GIMP moderno sin tocar los paquetes del sistema: <code>flatpak install flathub org.gimp.GIMP</code>. Y si solo necesitas ver un archivo, nuestro <a href="/es/visor-jxl/">visor</a> lo abre en cualquier navegador sin instalar nada.</p>
+</div></section>
+
+<section class="block" id="problems"><div class="wrap">
+  <h2>Problemas típicos y su arreglo</h2>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Lo que pasa</th><th>Por qué</th><th>Arreglo</th></tr></thead>
+    <tbody>
+      <tr><td>«La apertura de “…jxl” ha fallado: Tipo de archivo desconocido»</td><td>GIMP 2.10.30 o anterior, o una compilación sin libjxl</td><td>Instala la 3.x de gimp.org o de Flathub</td></tr>
+      <tr><td>JPEG XL no sale en «Seleccione el tipo de archivo»</td><td>La misma causa; exportar exige además la 2.10.34 o posterior</td><td>El mismo arreglo</td></tr>
+      <tr><td>La exportación no tiene opciones y el archivo es enorme</td><td>GIMP 2.10 exporta siempre en 8 bits sin pérdida</td><td>Usa GIMP 3, o cjxl para archivos con pérdida</td></tr>
+      <tr><td>«Exportar como CMYK» está en gris</td><td>No hay un perfil de prueba CMYK asignado</td><td><strong>Imagen › Gestión del color › Perfil de la prueba…</strong></td></tr>
+      <tr><td>Un .jxl con pérdida se abre en coma flotante de 32 bits</td><td>Los archivos con pérdida se descodifican con toda su precisión</td><td><strong>Imagen › Codificación › Entero de 8 bits</strong> si te importa la memoria</td></tr>
+      <tr><td>Tus capas han desaparecido en el .jxl</td><td>Exportar combina las capas visibles</td><td>Guarda el .xcf para seguir editando</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">Todavía circula un consejo caducado: instalar el complemento de JPEG&nbsp;XL que venía con la propia libjxl (empaquetado como <code>libjxl-gimp-plugin</code>). Se escribió para GIMP 2.10, en la 2.10.32 incluso tenía preferencia sobre el complemento de GIMP, y libjxl lo eliminó del todo en su versión 0.12.0 (julio de 2026). Con GIMP 3 no lo necesitas; con la 2.10, actualizar GIMP es mejor solución.</p>
+  <p class="lead">Lo de los 32 bits merece una explicación. libjxl guarda los archivos con pérdida en su propio espacio de color perceptual, y el cargador de GIMP los descodifica en coma flotante para no redondear nada. Es lo correcto, pero una imagen de 45 megapíxeles en 32 bits come mucha memoria. Si solo vas a recortar y volver a exportar, pasar la codificación a entero de 8 bits aligera GIMP de forma notable. Los archivos que el propio GIMP exportó sin pérdida se vuelven a abrir con sus 8 o 16 bits.</p>
+</div></section>
+
+<section class="block alt" id="faq"><div class="wrap">
+  <h2>Preguntas frecuentes</h2>
+  <div class="faq">
+    <details open><summary>¿GIMP admite JPEG XL?</summary><div class="ans">Sí. Abre .jxl desde la 2.10.32 y exporta desde la 2.10.34 (solo 8 bits sin pérdida). GIMP 3.0 y posteriores, incluida la actual 3.2.6, exportan con opciones con y sin pérdida, preajustes de esfuerzo y 16 bits.</div></details>
+    <details><summary>¿Por qué GIMP dice «Tipo de archivo desconocido» con un .jxl?</summary><div class="ans">O tu GIMP es anterior a la 2.10.32, o se compiló sin la biblioteca libjxl. Las versiones oficiales de gimp.org y el Flatpak de Flathub la incluyen; instalar una de ellas arregla el error.</div></details>
+    <details><summary>¿Qué significa Compresión/errorMax?</summary><div class="ans">Es la distancia butteraugli, la medida de diferencia visible de libjxl. El 1,0 por defecto es lo que la ayuda emergente de GIMP llama visualmente sin pérdida y equivale a calidad 90 en la escala de libjxl; en nuestra prueba sacó 84,8 y 77,2 en SSIMULACRA2, por debajo del 90 que esa métrica considera visualmente sin pérdida. 0,5 es más o menos calidad 95 y 2,0 alrededor de 79.</div></details>
+    <details><summary>¿Qué preajuste de Esfuerzo/Velocidad uso?</summary><div class="ans">El que viene, ardilla. En nuestras pruebas, con pérdida, la tortuga tardó quince veces más y usó diez veces más memoria para un archivo un 6% menor y nada mejor; sin pérdida ahorró un 1–3%. Relámpago vale para pruebas rápidas.</div></details>
+    <details><summary>¿Puede GIMP pasar un JPEG a JPEG XL sin ninguna pérdida?</summary><div class="ans">No sin recodificar. GIMP descodifica antes el JPEG a píxeles, así que su exportación sin pérdida pesa más que el JPEG. El reempaquetado exacto del JPEG —un 12% y un 23% más pequeño con estas dos fotos, en torno a un 20% en las 16 fotos de nuestra <a href="/es/jpeg-xl-vs-jpeg/">comparativa con JPEG</a>— necesita <a href="/es/cjxl-djxl-linea-de-comandos/">cjxl</a> o <a href="/es/jpg-a-jxl/">nuestro conversor</a>.</div></details>
+    <details><summary>¿Necesito un complemento para GIMP 2.10?</summary><div class="ans">Para abrir, no: la 2.10.32 y posteriores ya leen .jxl. Para tener ajustes de exportación de verdad, la respuesta es GIMP 3; el viejo complemento de libjxl para la 2.10 ya no se mantiene. Los límites de la 2.10 están en las <a href="https://www.gimp.org/news/2023/02/27/gimp-2-10-34-released/" rel="nofollow noopener">notas de la 2.10.34</a>.</div></details>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Sigue leyendo</h2>
+  <div class="cta-row">
+    <a class="cta-card" href="/es/jpeg-xl-en-photoshop/"><span class="cta-ic">🎨</span><b>JPEG XL en Photoshop</b><span class="cta-sub">De serie desde la 26.8, escondido en Guardar una copia →</span></a>
+    <a class="cta-card" href="/es/jpeg-xl-en-lightroom/"><span class="cta-ic">📷</span><b>JPEG XL en Lightroom</b><span class="cta-sub">Ajustes de exportación y DNG con pérdida →</span></a>
+    <a class="cta-card" href="/es/cjxl-djxl-linea-de-comandos/"><span class="cta-ic">⌨️</span><b>cjxl y djxl</b><span class="cta-sub">El mismo codificador, todas las opciones, carpetas enteras →</span></a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/es/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/es/">Conversor</a><a href="/es/visor-jxl/">Visor</a><a href="/es/guias/">Blog</a><a href="/es/sobre-el-proyecto/">Sobre el proyecto</a><a href="/es/contacto/">Contacto</a><a href="/es/novedades/">Novedades</a></nav>
+  </div>
+  <div class="legal">
+    <span class="privacy-pill">🔒 Tus archivos nunca salen de tu dispositivo</span>
+    <span class="flegal"><a href="/es/privacidad/">Privacidad</a> · <a href="/es/terminos/">Términos</a><span id="revocation-link" style="display:none"> · <a href="javascript:window.googlefc.showRevocationMessage();">Configuración de privacidad</a></span></span>
+    <span>© 2026 JXL Convert</span>
+  </div>
+  <div class="sister"><a href="https://docuniversal.com/" rel="noopener" style="display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:100%;color:inherit;opacity:.72;font-size:13px"><svg width="18" height="18" viewBox="0 0 64 64" aria-hidden="true" style="border-radius:5px;flex:none"><defs><linearGradient id="duLogo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7cc4a0"/><stop offset="1" stop-color="#366d55"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#duLogo)"/><circle cx="32" cy="32" r="16" fill="none" stroke="#fff" stroke-width="4" opacity=".95"/><circle cx="32" cy="32" r="5" fill="#fff"/></svg><span>¿Trabajas con PDF? Prueba DocUniversal — gratis, en tu navegador</span></a></div>
+</div></footer>
+<script>
+window.googlefc = window.googlefc || {};
+window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+window.googlefc.callbackQueue.push({
+  'CONSENT_API_READY':
+  () => __tcfapi('addEventListener', 0, (tcdata, success) => {
+    const revocationLink = document.getElementById('revocation-link');
+    if (!revocationLink) return;
+    if (!success || !tcdata) {
+      revocationLink.style.display = 'none';
+    } else if (tcdata.gdprApplies) {
+      revocationLink.style.display = 'inline';
+    } else {
+      revocationLink.style.display = 'none';
+    }
+  })
+});
+</script>
+</body>
+</html>

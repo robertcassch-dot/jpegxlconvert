@@ -32,9 +32,10 @@
 ]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"JPEG XL vs WebP","datePublished":"2026-07-29","dateModified":"2026-07-29","inLanguage":"de","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/de/ueber-das-projekt/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/de/"},"mainEntityOfPage":"https://jpegxlconvert.com/de/jpeg-xl-vs-webp/"}
+{"@context":"https://schema.org","@type":"Article","headline":"JPEG XL vs WebP","datePublished":"2026-07-29","dateModified":"2026-10-15","inLanguage":"de","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/de/ueber-das-projekt/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/de/"},"mainEntityOfPage":"https://jpegxlconvert.com/de/jpeg-xl-vs-webp/"}
 </script>
 <style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+<style>.gtbl{max-width:720px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
 </head>
 <body>
 <header class="site"><div class="wrap nav">
@@ -58,7 +59,7 @@
   <span class="eyebrow">⚖️ Ehrlicher Vergleich</span>
   <h1>JPEG&nbsp;XL vs WebP</h1>
   <p class="sub"><strong>JPEG&nbsp;XL ist das bessere Format. WebP ist das nützlichere.</strong> Dieser Widerspruch ist der ganze Vergleich, und welche Seite zählt, hängt an einer einzigen Frage: muss sich das Bild auf einem fremden Rechner öffnen lassen?</p>
-  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">von <a href="/de/ueber-das-projekt/" style="color:inherit">Robert Castillo</a> · Veröffentlicht am <time datetime="2026-07-29">29. Juli 2026</time></p>
+  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">von <a href="/de/ueber-das-projekt/" style="color:inherit">Robert Castillo</a> · Veröffentlicht am <time datetime="2026-07-29">29. Juli 2026</time> · aktualisiert am <time datetime="2026-10-15">15. Oktober 2026</time></p>
   <div class="badges">
     <span class="badge green">🌍 WebP: läuft überall</span><span class="badge">🏆 JPEG XL: bessere Kompression</span><span class="badge">🌈 JPEG XL: HDR &amp; mehr als 8 Bit</span>
   </div>
@@ -70,17 +71,17 @@
 
 <section class="block"><div class="wrap">
   <h2>Das Fazit vorweg</h2>
-  <p class="lead"><strong>Bilder für eine Website?</strong> Nimm WebP. Jeder heute genutzte Browser stellt es dar, und <a href="/de/chrome-jpeg-xl-unterstuetzung/">Chrome hat JPEG XL weiterhin standardmäßig aus</a>. Ein besseres Format, das deine Besucher nicht sehen können, ist kein besseres Format.</p>
+  <p class="lead"><strong>Bilder für eine Website?</strong> Nimm WebP — oder liefere JPEG&nbsp;XL mit WebP als Fallback aus. WebP stellt jeder heute genutzte Browser dar. JPEG&nbsp;XL ist inzwischen in <a href="/de/chrome-jpeg-xl-unterstuetzung/">Chrome 155</a>, Firefox 158 und Safari 17 standardmäßig aktiv, Edge zeigt es aber nicht an, ebenso wenig jeder Browser, der nicht aktualisiert wurde. Ein besseres Format, das ein Teil deiner Besucher nicht sehen kann, ist für sich allein kein besseres Format.</p>
   <p class="lead"><strong>Eigene Fotos speichern, archivieren oder bearbeiten?</strong> Nimm JPEG&nbsp;XL. Es komprimiert stärker in genau den Qualitätsstufen, in denen man Fotos wirklich aufbewahrt, behält HDR und hohe Bittiefen, die WebP schlicht wegwirft, und kann deine vorhandene JPEG-Sammlung verlustfrei neu verpacken — was WebP überhaupt nicht kann.</p>
 </div></section>
 
 <section class="block alt"><div class="wrap">
   <h2>Eigenschaft für Eigenschaft</h2>
-  <table class="cmp">
+  <div class="gtbl"><table class="cmp">
     <thead><tr><th>&nbsp;</th><th>WebP</th><th>JPEG XL</th></tr></thead>
     <tbody>
       <tr><td>Erschienen</td><td>2010</td><td>2021–22 (ISO/IEC 18181)</td></tr>
-      <tr><td>Browserunterstützung</td><td class="y">Universell</td><td class="n">Standardmäßig nur Safari</td></tr>
+      <tr><td>Browserunterstützung</td><td class="y">Universell</td><td class="n">Chrome ab 155, Firefox ab 158, Safari ab 17; Edge nicht</td></tr>
       <tr><td>Kompression bei hoher Qualität</td><td>Gut</td><td class="y">Besser</td></tr>
       <tr><td>Kompression bei sehr niedriger Qualität</td><td>Konkurrenzfähig</td><td>Konkurrenzfähig</td></tr>
       <tr><td>Verlustfreier Modus</td><td class="y">Ja</td><td class="y">Ja, stärker</td></tr>
@@ -92,7 +93,7 @@
       <tr><td>Verpackt vorhandene JPEGs verlustfrei</td><td class="n">Nein</td><td class="y">Ja, ~20% kleiner</td></tr>
       <tr><td>Lizenzgebührenfrei</td><td class="y">Ja</td><td class="y">Ja</td></tr>
     </tbody>
-  </table>
+  </table></div>
 </div></section>
 
 <section class="block"><div class="wrap">
@@ -112,7 +113,7 @@
 <section class="block"><div class="wrap">
   <h2>Was also nehmen?</h2>
   <div class="grid3">
-    <div class="feature"><div class="fi">🌍</div><h3>Website-Bilder → WebP</h3><p>Universelle Unterstützung, gute Kompression, keine Fallback-Mechanik zu pflegen. Wieder anschauen, sobald Chrome JPEG XL standardmäßig aktiviert.</p></div>
+    <div class="feature"><div class="fi">🌍</div><h3>Website-Bilder → WebP</h3><p>Universelle Unterstützung, gute Kompression, keine Fallback-Mechanik zu pflegen. Seit Chrome 155 JPEG XL standardmäßig aktiviert hat (6. Oktober 2026), kannst du auch zuerst JPEG XL ausliefern und WebP als Fallback für Edge und ältere Browser behalten.</p></div>
     <div class="feature"><div class="fi">📸</div><h3>Fotoarchiv → JPEG XL</h3><p>Verlustfreies JPEG-Neuverpacken, HDR bleibt erhalten, bessere Kompression dort, wo es zählt. Du bestimmst die Software, die sie öffnet.</p></div>
     <div class="feature"><div class="fi">🎨</div><h3>Grafiken &amp; Screenshots → JPEG XL</h3><p>WebPs verlustbehafteter Modus ist auf 4:2:0-Chroma festgenagelt, was farbigen Text und harte Kanten verschmiert. JPEG XL kann die volle Farbauflösung behalten.</p></div>
     <div class="feature"><div class="fi">🖼️</div><h3>Riesige Panoramen → JPEG XL</h3><p>WebP endet bei 16.383 Pixeln pro Seite. Zusammengesetzte Panoramen und hochauflösende Scans laufen regelmäßig gegen diese Wand.</p></div>

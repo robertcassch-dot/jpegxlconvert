@@ -6,7 +6,111 @@
     <atom:link href="https://jpegxlconvert.com/en/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Plain-English guides about JPEG XL, HEIC and image files that won&apos;t open.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 29 Aug 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <item>
+      <title>How to Open a JXL File on Windows</title>
+      <link>https://jpegxlconvert.com/en/open-jxl-on-windows/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/open-jxl-on-windows/</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>Microsoft&apos;s free extension, the viewers that work on Windows 10, and the fixes when thumbnails or Photos still fail.</description>
+    </item>
+    <item>
+      <title>How to Open JPEG XL Files on a Mac</title>
+      <link>https://jpegxlconvert.com/en/open-jxl-on-mac/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/open-jxl-on-mac/</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>Preview, Quick Look and Safari read JPEG XL from macOS 14. Saving it is another story. Batch conversion, measured.</description>
+    </item>
+    <item>
+      <title>JPEG XL on iPhone and iPad</title>
+      <link>https://jpegxlconvert.com/en/open-jxl-on-iphone/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/open-jxl-on-iphone/</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>iOS 17 opens .jxl everywhere. iPhone 16 Pro and later can hide JPEG XL inside ProRAW. What to do before the files reach a PC.</description>
+    </item>
+    <item>
+      <title>How to Open a JXL File on Android</title>
+      <link>https://jpegxlconvert.com/en/open-jxl-on-android/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/open-jxl-on-android/</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>Android itself still can&apos;t decode JPEG XL. Chrome 155 can, and so can a few free apps. What works on a phone today.</description>
+    </item>
+    <item>
+      <title>JPEG XL in Photoshop</title>
+      <link>https://jpegxlconvert.com/en/jpeg-xl-in-photoshop/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/jpeg-xl-in-photoshop/</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>Native since Photoshop 26.8, hidden in Save a Copy. The options explained, measured, and the fixes for older versions.</description>
+    </item>
+    <item>
+      <title>JPEG XL in Lightroom</title>
+      <link>https://jpegxlconvert.com/en/jpeg-xl-in-lightroom/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/jpeg-xl-in-lightroom/</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>Export settings one by one, measured file sizes, HDR, and the JPEG XL hiding inside lossy DNG files.</description>
+    </item>
+    <item>
+      <title>JPEG XL in GIMP</title>
+      <link>https://jpegxlconvert.com/en/jpeg-xl-in-gimp/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/jpeg-xl-in-gimp/</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>Which GIMP versions read and write .jxl, what each option in the export dialog does, and why some installs say “Unknown file type”.</description>
+    </item>
+    <item>
+      <title>Does Firefox Support JPEG XL?</title>
+      <link>https://jpegxlconvert.com/en/firefox-jpeg-xl-support/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/firefox-jpeg-xl-support/</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>On by default since 13 October 2026. Which builds have it, how to switch it on in older ones, and which Firefox forks ship it.</description>
+    </item>
+    <item>
+      <title>Does Your Browser Support JPEG XL?</title>
+      <link>https://jpegxlconvert.com/en/jpeg-xl-browser-test/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/jpeg-xl-browser-test/</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>Find out in a second, then see which browsers show JXL in October 2026 and how to switch it on where you can.</description>
+    </item>
+    <item>
+      <title>JPEG XL vs JPEG</title>
+      <link>https://jpegxlconvert.com/en/jpeg-xl-vs-jpeg/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/jpeg-xl-vs-jpeg/</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>16 photos, two tests, every command published. Where JPEG XL wins, and where it still loses.</description>
+    </item>
+    <item>
+      <title>JPEG XL vs PNG</title>
+      <link>https://jpegxlconvert.com/en/jpeg-xl-vs-png/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/jpeg-xl-vs-png/</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>Photos, screenshots, charts and transparent images, compressed losslessly and checked pixel by pixel.</description>
+    </item>
+    <item>
+      <title>JPEG XL vs HEIC</title>
+      <link>https://jpegxlconvert.com/en/jpeg-xl-vs-heic/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/jpeg-xl-vs-heic/</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>16 photos at equal visual quality, plus bit depth, support and patents. The honest result.</description>
+    </item>
+    <item>
+      <title>JPEG XL on the Command Line: cjxl and djxl</title>
+      <link>https://jpegxlconvert.com/en/cjxl-djxl-command-line/</link>
+      <guid isPermaLink="true">https://jpegxlconvert.com/en/cjxl-djxl-command-line/</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Robert Castillo</dc:creator>
+      <description>Installing libjxl 0.12, lossless JPEG repacking, quality and effort settings with measured results, batch scripts and real error messages.</description>
+    </item>
     <item>
       <title>What Is a .JPG-LARGE File?</title>
       <link>https://jpegxlconvert.com/en/jpg-large-file/</link>
@@ -85,7 +189,7 @@
       <guid isPermaLink="true">https://jpegxlconvert.com/en/jpeg-xl-software-support/</guid>
       <pubDate>Mon, 03 Aug 2026 12:00:00 +0000</pubDate>
       <dc:creator>Robert Castillo</dc:creator>
-      <description>The software that opens and exports .jxl today, and the notable holes.</description>
+      <description>The software that opens and exports .jxl today — Chrome and Firefox included since October 2026 — and the notable holes.</description>
     </item>
     <item>
       <title>What Is JPEG XL?</title>
@@ -101,7 +205,7 @@
       <guid isPermaLink="true">https://jpegxlconvert.com/en/chrome-jpeg-xl-support/</guid>
       <pubDate>Wed, 29 Jul 2026 12:00:00 +0000</pubDate>
       <dc:creator>Robert Castillo</dc:creator>
-      <description>Chrome 145 brought the decoder back, but JPEG XL is still off by default. How to turn it on, and what it means for you.</description>
+      <description>On by default since 6 October 2026, after ten versions behind a flag. Older versions, the switch, Edge, Firefox and what it means for websites.</description>
     </item>
     <item>
       <title>JPEG XL vs WebP</title>

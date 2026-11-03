@@ -22,7 +22,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"How do I open a .jxl file?","acceptedAnswer":{"@type":"Answer","text":"The fastest way is to drop it onto the viewer on this page — it opens instantly in your browser, with nothing uploaded. You can also save it as JPG or PNG."}},
-{"@type":"Question","name":"Why won't my .jxl file open?","acceptedAnswer":{"@type":"Answer","text":"JPEG XL is a new format that most browsers and apps haven't enabled yet, so the file looks unsupported even though it is valid. Opening it with a JPEG XL viewer or converting it to JPG/PNG solves it."}},
+{"@type":"Question","name":"Why won't my .jxl file open?","acceptedAnswer":{"@type":"Answer","text":"JPEG XL is a newer format that many apps, Microsoft Edge and browsers that haven't been updated still don't support, so the file looks unsupported even though it is valid. Chrome 155+, Firefox 158+ and Safari 17+ show it by default. Everywhere else, opening it with a JPEG XL viewer or converting it to JPG/PNG solves it."}},
 {"@type":"Question","name":"Can I open a .jxl file on iPhone or Android?","acceptedAnswer":{"@type":"Answer","text":"Yes. Open this page in your phone's browser and drop the .jxl file in — it opens on-device with no app to install."}}
 ]}
 </script>
@@ -32,7 +32,7 @@
 <header class="site"><div class="wrap nav">
   <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
   <div class="nav-right">
-    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Guides</a><a href="#devices">By device</a></nav>
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a><a href="#devices">By device</a></nav>
     <details class="lang"><summary>🌐 EN</summary>
       <div class="lang-menu">
         <a class="active" href="/en/how-to-open-jxl/"><span class="flag">🇬🇧</span> English</a>
@@ -77,18 +77,18 @@
 <section class="block alt" id="devices"><div class="wrap">
   <h2>How to open a .jxl file on each device</h2>
   <div class="grid3">
-    <div class="feature"><div class="fi">🪟</div><h3>Windows 10 / 11</h3><p>Windows doesn't open .jxl out of the box. You can install a JPEG XL extension or an app like XnView/IrfanView — or just use the viewer above, no install needed.</p></div>
-    <div class="feature"><div class="fi">🍎</div><h3>Mac</h3><p>Recent macOS (Sonoma) and Safari can preview many .jxl files. If yours still won't open or you're on an older Mac, use the viewer above.</p></div>
-    <div class="feature"><div class="fi">📱</div><h3>iPhone &amp; iPad</h3><p>Sometimes Photos/Files can preview .jxl; when it can't, open this page in Safari and drop the file in — it opens on-device.</p></div>
-    <div class="feature"><div class="fi">🤖</div><h3>Android</h3><p>Most Android phones can't open .jxl yet. Open this page in Chrome and select your file — it opens instantly, nothing installed.</p></div>
-    <div class="feature"><div class="fi">🌐</div><h3>Chrome / Edge / Firefox</h3><p>Chrome 145 brought the decoder back in February 2026, but it's still <a href="/en/chrome-jpeg-xl-support/">switched off by default</a>. You can enable a flag — or just use the viewer above, which works in every browser.</p></div>
-    <div class="feature"><div class="fi">🖼️</div><h3>Photoshop / GIMP</h3><p>GIMP and some editors support .jxl via a plugin. To edit anywhere, convert it to PNG first with our <a href="/en/jxl-to-png/">JXL to PNG converter</a>.</p></div>
+    <div class="feature"><div class="fi">🪟</div><h3>Windows 10 / 11</h3><p>Windows doesn't open .jxl out of the box. On Windows 11 24H2 or later, Microsoft's free <em>JPEG XL Image Extension</em> adds thumbnails in File Explorer and lets Photos open them. Otherwise use an app like XnView/IrfanView — or just the viewer above, no install needed. <a href="/en/open-jxl-on-windows/">Step by step →</a></p></div>
+    <div class="feature"><div class="fi">🍎</div><h3>Mac</h3><p>macOS Sonoma 14 and later open .jxl out of the box, and Safari 17 shows it on Monterey and Ventura too (still images only, no animation). On an older Mac, or if a file still won't open, use the viewer above. <a href="/en/open-jxl-on-mac/">Step by step →</a></p></div>
+    <div class="feature"><div class="fi">📱</div><h3>iPhone &amp; iPad</h3><p>Since iOS/iPadOS 17, Safari, Files and Photos open .jxl out of the box, and so do other iPhone browsers, which use the same engine (WebKit). On an older iOS, open this page and drop the file in — it opens on-device. <a href="/en/open-jxl-on-iphone/">Step by step →</a></p></div>
+    <div class="feature"><div class="fi">🤖</div><h3>Android</h3><p>Most Android apps still can't open .jxl, but Chrome 155 and later show it by default (since October 2026). If yours won't, open this page and select your file — it opens instantly, nothing installed. <a href="/en/open-jxl-on-android/">Step by step →</a></p></div>
+    <div class="feature"><div class="fi">🌐</div><h3>Chrome / Edge / Firefox</h3><p>Chrome 155 (6 October 2026) and Firefox 158 (13 October 2026) now show .jxl by default, as Safari 17+ already did — <a href="/en/chrome-jpeg-xl-support/">here's what changed in Chrome</a>. Microsoft Edge still doesn't, not even with the Chromium flag. There, or in a browser that hasn't been updated, the viewer above works. <a href="/en/jpeg-xl-browser-test/">Test your browser →</a></p></div>
+    <div class="feature"><div class="fi">🖼️</div><h3>Photoshop / GIMP</h3><p>Whether an editor opens .jxl depends on the program and its version. To edit it anywhere, convert it to PNG first with our <a href="/en/jxl-to-png/">JXL to PNG converter</a>. <a href="/en/jpeg-xl-in-gimp/">GIMP step by step →</a> · <a href="/en/jpeg-xl-in-photoshop/">Photoshop step by step →</a></p></div>
   </div>
 </div></section>
 
 <section class="block"><div class="wrap">
   <h2>Why won't my .jxl file open?</h2>
-  <p class="lead">A <strong>.jxl</strong> file is a <strong>JPEG XL</strong> image — a modern format that makes files smaller at the same quality. It's perfectly valid; the problem is that most browsers, phones and apps simply haven't turned on support for it yet. Google removed JPEG XL from Chrome in 2022 and brought the decoder back in <strong>Chrome 145 (February 2026)</strong> — but <a href="/en/chrome-jpeg-xl-support/">it's still disabled by default</a>, so in practice Chrome won't show your file. Until that changes, the reliable fix is to view it with a JPEG XL viewer or convert it.</p>
+  <p class="lead">A <strong>.jxl</strong> file is a <strong>JPEG XL</strong> image — a modern format that makes files smaller at the same quality. It's perfectly valid; the problem is that many apps, phones and browsers that haven't been updated still don't support it. Google removed JPEG XL from Chrome in 2023 (Chrome 110) and <a href="/en/chrome-jpeg-xl-support/">switched it back on by default</a> in <strong>Chrome 155 (6 October 2026)</strong>; Firefox 158 followed on 13 October, and Safari has had it since 2023. Microsoft Edge still won't show your file, though, and neither will an out-of-date browser. There, the reliable fix is to view it with a JPEG XL viewer or convert it.</p>
   <p class="lead">Want a permanent copy you can use anywhere? Convert it with the <a href="/en/jxl-to-jpg/">JXL to JPG converter</a> or <a href="/en/jxl-to-png/">JXL to PNG converter</a> — also free and 100% in your browser.</p>
 </div></section>
 
@@ -98,7 +98,7 @@
     <details open><summary>How do I open a .jxl file for free?</summary><div class="ans">Drop it onto the viewer at the top of this page. It opens instantly in your browser, with no app and nothing uploaded.</div></details>
     <details><summary>Is it safe / private?</summary><div class="ans">Yes. The file is decoded locally on your device and never leaves it — there's no upload to any server.</div></details>
     <details><summary>Can I turn the .jxl into a normal JPG or PNG?</summary><div class="ans">Yes — open it above and click "Download as JPG" or "Download as PNG", or use our converters.</div></details>
-    <details><summary>Will browsers open .jxl in the future?</summary><div class="ans">Likely yes. Safari has supported JPEG XL since 2023, and Chrome shipped the decoder in version 145 — though it's still off by default. See <a href="/en/chrome-jpeg-xl-support/">the current state of Chrome support</a>.</div></details>
+    <details><summary>Which browsers open .jxl now?</summary><div class="ans">Safari since 2023 (version 17), Chrome since version 155 (6 October 2026) and Firefox since version 158 (13 October 2026), all by default. The exception is Microsoft Edge: Edge 155 still doesn't show it. See <a href="/en/chrome-jpeg-xl-support/">the current state of Chrome support</a>.</div></details>
   </div>
 </div></section>
 </main>
@@ -106,7 +106,7 @@
 <footer class="site"><div class="wrap">
   <div class="fcols">
     <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
-    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/jxl-to-jpg/">JXL to JPG</a><a href="/en/guides/">Guides</a><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/news/">What's new</a></nav>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/jxl-to-jpg/">JXL to JPG</a><a href="/en/guides/">Blog</a><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/news/">What's new</a></nav>
   </div>
   <div class="legal">
     <span class="privacy-pill">🔒 Your files never leave your device</span>

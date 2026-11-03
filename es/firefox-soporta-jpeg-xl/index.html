@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9791902883190551" crossorigin="anonymous"></script>
+<title>¿Firefox admite JPEG XL? Sí, desde Firefox 158</title>
+<meta name="description" content="Firefox 158 (13 de octubre de 2026) muestra JPEG XL de serie. Qué versiones lo traen, el ajuste image.jxl.enabled y qué derivados de Firefox lo incluyen.">
+<link rel="canonical" href="https://jpegxlconvert.com/es/firefox-soporta-jpeg-xl/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/firefox-jpeg-xl-support/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/firefox-soporta-jpeg-xl/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/firefox-jpeg-xl-support/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="¿Firefox admite JPEG XL? Sí, desde Firefox 158">
+<meta property="og:description" content="Activado por defecto desde el 13 de octubre de 2026. Qué versiones lo traen, cómo activarlo en las antiguas y qué derivados lo incluyen.">
+<meta property="og:url" content="https://jpegxlconvert.com/es/firefox-soporta-jpeg-xl/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=8">
+<link rel="alternate" type="application/rss+xml" title="JXL Convert — Blog" href="/es/feed.xml">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"¿Firefox admite ya JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"Sí. Firefox 158, publicado el 13 de octubre de 2026, muestra imágenes JPEG XL de serie en escritorio y en Android. Firefox 152 a 157 y la ESR 153 traen el descodificador pero apagado; las versiones anteriores no pueden mostrar el formato de ninguna manera."}},
+{"@type":"Question","name":"¿Dónde está el ajuste de JPEG XL en Firefox?","acceptedAnswer":{"@type":"Answer","text":"En about:config, como image.jxl.enabled. En Firefox 152 a 157 ese mismo interruptor aparece también en Ajustes → Firefox Labs como Media: JPEG XL. En Firefox 158 no deberías necesitar ninguno de los dos: ya viene encendido."}},
+{"@type":"Question","name":"¿Por qué ha tardado tanto Firefox?","acceptedAnswer":{"@type":"Answer","text":"Por seguridad. Mozilla no quería exponer la web a un descodificador enorme en C++ (el de referencia pasa de 100.000 líneas de código multihilo). Pidió uno seguro en memoria, Google Research escribió jxl-rs en Rust y, cuando cumplió los requisitos de producción de Mozilla, se activó."}},
+{"@type":"Question","name":"¿Firefox para Android admite JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"Sí, desde la versión 158. El anuncio de Mozilla abarcaba todas las plataformas y el cambio se marcó como aplicable a Android. Las notas de la versión de Android no lo mencionan, así que, si dudas, pasa la prueba del navegador en el móvil."}},
+{"@type":"Question","name":"¿Puede Firefox guardar o convertir imágenes a JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"No. El descodificador de Firefox solo lee el formato; no crea archivos .jxl. Para hacer uno, usa un conversor como JPG a JXL, que funciona en tu navegador sin subir nada."}},
+{"@type":"Question","name":"¿El JPEG XL de Firefox es el mismo que el de Chrome?","acceptedAnswer":{"@type":"Answer","text":"Comparten descodificador: los dos usan jxl-rs, la implementación en Rust de Google, de la serie 0.7. El comportamiento debería ser muy parecido, mientras que Safari usa la pila de Apple, basada en el libjxl en C++. Microsoft Edge, pese a estar hecho sobre Chromium, no muestra JPEG XL en absoluto en su versión 155."}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"¿Firefox admite JPEG XL?","datePublished":"2026-10-15","dateModified":"2026-10-15","inLanguage":"es","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/es/sobre-el-proyecto/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/es/"},"mainEntityOfPage":"https://jpegxlconvert.com/es/firefox-soporta-jpeg-xl/"}
+</script>
+<style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+<style>.gtbl{max-width:720px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/es/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/es/">Conversor</a><a href="/es/visor-jxl/">Visor</a><a href="/es/guias/">Blog</a></nav>
+    <details class="lang"><summary>🌐 ES</summary>
+      <div class="lang-menu">
+        <a href="/en/firefox-jpeg-xl-support/"><span class="flag">🇬🇧</span> English</a>
+        <a class="active" href="/es/firefox-soporta-jpeg-xl/"><span class="flag">🇪🇸</span> Español</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">🦊 Actualizado el 15 de octubre de 2026</span>
+  <h1>¿Firefox admite JPEG&nbsp;XL?</h1>
+  <p class="sub"><strong>Sí, desde Firefox 158, que salió el 13 de octubre de 2026.</strong> Viene activado de serie en todas las plataformas, con un descodificador escrito en Rust. Las versiones anteriores, las ESR que usan las empresas y varios derivados son otra historia. Aquí ves cómo saber cuál usas y qué hacer en cada caso.</p>
+  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">por <a href="/es/sobre-el-proyecto/" style="color:inherit">Robert Castillo</a> · Publicado el <time datetime="2026-10-15">15 de octubre de 2026</time></p>
+  <div class="badges">
+    <span class="badge green">✅ Activado de serie en Firefox 158</span><span class="badge">🦀 Descodificador en Rust: jxl-rs</span><span class="badge">⚙️ image.jxl.enabled</span><span class="badge">🏢 ESR 153: apagado, pero activable</span>
+  </div>
+  <div class="cta-row">
+    <a class="cta-card" href="/es/test-jpeg-xl-navegador/"><span class="cta-ic">🧪</span><b>Comprueba tu navegador</b><span class="cta-sub">Una prueba en vivo con tres imágenes JPEG XL diminutas →</span></a>
+    <a class="cta-card" href="/es/visor-jxl/"><span class="cta-ic">👁️</span><b>¿Tienes un Firefox antiguo?</b><span class="cta-sub">Abre el .jxl en nuestro visor →</span></a>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>La respuesta corta</h2>
+  <p class="lead">Sí. <strong>Firefox 158</strong>, publicado el <strong>13 de octubre de 2026</strong>, muestra imágenes JPEG&nbsp;XL sin tocar nada. Sus <a href="https://www.firefox.com/en-US/firefox/158.0/releasenotes/" rel="nofollow noopener">notas de la versión</a> lo dicen en una línea: Firefox ya admite el formato de imagen JPEG XL. No hay que instalar nada ni activar nada: un <code>.jxl</code> metido en una web aparece sin más, igual que un JPEG o un WebP.</p>
+  <p class="lead">Por dentro, el cambio entero es una preferencia, <code>image.jxl.enabled</code>, que ahora viene en <code>true</code> (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=2065096" rel="nofollow noopener">fallo 2065096</a> de Bugzilla). Mozilla lo anunció para todas las plataformas, Android incluido. El descodificador que hace el trabajo es <strong>jxl-rs 0.7.4</strong>, escrito en Rust: de la misma familia que el que Chrome encendió justo una semana antes, en Chrome 155.</p>
+  <p class="lead">La pega está en todo Firefox que no sea el 158 o posterior. Las versiones antiguas, las ESR (las de soporte extendido que despliegan las empresas) y varios derivados conocidos siguen llegando con JPEG&nbsp;XL apagado, o directamente sin descodificador. La tabla de abajo lo aclara.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>¿Qué Firefox tienes?</h2>
+  <p class="lead">Estos son todos los Firefox con los que te puedes cruzar en octubre de 2026 y lo que hace cada uno con una imagen <code>.jxl</code>.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Versión de Firefox</th><th>JPEG XL</th><th>Qué hacer</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Firefox 158</strong> y posteriores</td><td class="y">Activado de serie</td><td>Nada</td></tr>
+      <tr><td><strong>Beta / Developer Edition 159</strong></td><td class="y">Activado de serie</td><td>Nada</td></tr>
+      <tr><td><strong>Nightly 160</strong></td><td class="y">Activado (desde la Nightly 153)</td><td>Nada</td></tr>
+      <tr><td><strong>Firefox 152 a 157</strong></td><td class="n">Incluido, pero apagado</td><td>Actualizar, o marcarlo en Firefox Labs</td></tr>
+      <tr><td><strong>Firefox ESR 153</strong></td><td class="n">Incluido, pero apagado</td><td><code>image.jxl.enabled</code> → <code>true</code></td></tr>
+      <tr><td><strong>ESR 140, ESR 115</strong>, Firefox 151 y anteriores</td><td class="n">Sin descodificador</td><td>Ningún ajuste sirve: visor o conversión</td></tr>
+      <tr><td><strong>Firefox para Android 158</strong></td><td class="y">Activado de serie</td><td>Nada</td></tr>
+      <tr><td><strong>Firefox para iPhone y iPad</strong></td><td class="y">Sí, con el motor de Apple</td><td>Hace falta iOS 17 o posterior</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">Firefox en el iPhone es la excepción que confirma la regla: está construido sobre WebKit, el motor de Apple, y no sobre el de Firefox, así que muestra JPEG&nbsp;XL siempre que Safari lo haga (con iOS 17 o posterior), diga lo que diga su número de versión.</p>
+  <p class="lead">Para ver cuál tienes, abre el menú <strong>☰ → Ayuda → Acerca de Firefox</strong> (en Mac, <strong>Firefox → Acerca de Firefox</strong>). Esa misma ventana descarga la actualización, que es el arreglo más sencillo para casi todas las filas que aparecen como apagadas.</p>
+</div></section>
+
+<section class="block" id="enable"><div class="wrap">
+  <h2>Cómo activarlo en un Firefox antiguo</h2>
+  <p class="lead">Si no puedes actualizar —un portátil del trabajo anclado a la ESR 153, o un derivado que todavía no se ha puesto al día—, aún puedes encender el descodificador, siempre que tu compilación lo traiga. Lo traen Firefox 152 a 157 y la ESR 153. No lo traen la ESR 140, la ESR 115 ni nada anterior a la 152.</p>
+  <div class="steps">
+    <div class="step"><h3>Opción 1: Firefox Labs (Firefox 152 a 157)</h3><p>Abre <strong>Ajustes</strong>, entra en <strong>Firefox Labs</strong> en el menú lateral y marca <strong>Media: JPEG XL</strong>. Mozilla deja ese nombre en inglés a propósito en todos los idiomas, así que busca exactamente esas palabras. Desde Firefox 146, Labs funciona aunque tengas desactivados la telemetría y los estudios.</p></div>
+    <div class="step"><h3>Opción 2: about:config (cualquier compilación con el descodificador)</h3><p>Escribe <code>about:config</code> en la barra de direcciones y acepta el aviso. Busca <code>image.jxl.enabled</code> y haz doble clic en la fila hasta que el valor sea <code>true</code>. Es el mismo interruptor que toca Labs, y también funciona en la ESR 153.</p></div>
+    <div class="step"><h3>Recarga y comprueba</h3><p>Recarga la página en la que estabas o pasa <a href="/es/test-jpeg-xl-navegador/">nuestra prueba del navegador</a>, que le pide a tu navegador que pinte tres imágenes JPEG XL diminutas y te dice si lo ha conseguido. Si sigue saliendo que no, reinicia Firefox una vez.</p></div>
+  </div>
+  <p class="lead">Si <code>image.jxl.enabled</code> no aparece, o cambiarlo no hace nada, tu copia se compiló sin descodificador. Hasta Firefox 152, JPEG&nbsp;XL solo se incluía en Nightly, así que en la ESR 140 la preferencia existe pero es un interruptor que no está conectado a nada. Eso no lo arregla ningún ajuste; solo un Firefox más nuevo o, para un archivo suelto, <a href="/es/visor-jxl/">nuestro visor</a>, que descodifica JPEG&nbsp;XL por su cuenta y funciona en cualquier versión.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Cómo ha llegado Firefox hasta aquí</h2>
+  <div class="grid3">
+    <div class="feature"><div class="fi">🧪</div><h3>2021: solo en Nightly</h3><p>Firefox 90 añadió un descodificador basado en libjxl, la biblioteca de referencia en C++, detrás de <code>image.jxl.enabled</code>. Solo se compilaba en Nightly, así que en el Firefox normal la preferencia no hizo nada durante cinco años.</p></div>
+    <div class="feature"><div class="fi">⚖️</div><h3>Neutral, no en contra</h3><p>La postura oficial de Mozilla sobre el formato era (y en el papel sigue siendo) neutral: buenas funciones, pero no tanto como para meter otro descodificador de imagen en C++. Uno seguro en memoria, añadía, rebajaría mucho ese coste.</p></div>
+    <div class="feature"><div class="fi">🦀</div><h3>Sept. 2024: la condición de Rust</h3><p>Mozilla dijo que el descodificador de referencia pasaba de 100.000 líneas de C++ multihilo y que, si Google Research le entregaba uno en Rust seguro, rápido y a la altura de producción, lo incluiría. Ese descodificador es jxl-rs.</p></div>
+    <div class="feature"><div class="fi">🧰</div><h3>Junio 2026: Firefox 152</h3><p>El descodificador en Rust entró por primera vez en Beta y en la versión normal, apagado y con una casilla en Firefox Labs. Nightly lo trae encendido desde la versión 153.</p></div>
+    <div class="feature"><div class="fi">📣</div><h3>Ago.–sept. 2026: anuncio oficial</h3><p>El 24 de agosto Mozilla anunció JPEG XL activado de serie para Firefox 157; Chrome presentó su propio anuncio esa misma mañana. El 3 de septiembre lo pasaron a la 158 porque el trabajo pendiente llevó más de lo previsto.</p></div>
+    <div class="feature"><div class="fi">🚢</div><h3>13 oct. 2026: para todos</h3><p>Firefox 158 salió con la preferencia activada de serie. Con Chrome 155 una semana antes y Safari desde 2023, los tres grandes motores ya muestran JPEG XL.</p></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Qué hace el JPEG XL de Firefox y qué no</h2>
+  <p class="lead"><strong>La carga progresiva funciona.</strong> Un JPEG&nbsp;XL se puede pintar mientras se descarga, primero borroso y cada vez más nítido según llegan los datos, y Mozilla insistió en ello para el descodificador en Rust. En <a href="https://hacks.mozilla.org/2026/08/intent-to-ship-jpeg-xl/" rel="nofollow noopener">el artículo de la propia Mozilla</a>, una foto de un zorro de 135&nbsp;kB ya se reconoce con solo unos pocos kilobytes recibidos. Safari, que tiene JPEG&nbsp;XL desde 2023, no lo pinta de forma progresiva.</p>
+  <p class="lead"><strong>El HDR se ve como SDR.</strong> El anuncio de Mozilla lo dice sin rodeos: las imágenes JPEG&nbsp;XL en HDR se muestran en rango dinámico estándar, como hace hoy Firefox con cualquier formato de imagen, aunque con un mapeo de tonos mejor que el de los demás formatos.</p>
+  <p class="lead"><strong>La velocidad es parecida, no idéntica.</strong> En la prueba de Mozilla con cinco formatos, hecha en el ordenador del propio ingeniero, Firefox descodificó JPEG&nbsp;XL un poco más rápido que Safari, que usa el libjxl en C++. Frente a los otros descodificadores de imagen de Firefox quedó muy cerca con imágenes grandes y algo más lejos con las pequeñas. El trabajo se reparte entre varios hilos: una preferencia oculta, <code>image.jxl.decode_participants</code>, decide cuántos, y su valor por defecto, 0, significa automático, entre 2 y 8 según tu procesador.</p>
+  <p class="lead"><strong>Lee JPEG&nbsp;XL, pero no lo escribe.</strong> jxl-rs solo descodifica, así que Firefox puede enseñar un <code>.jxl</code> pero no guardar uno. Con la preferencia encendida, Firefox además avisa a las webs de que entiende el formato, añadiendo <code>image/jxl</code> a la cabecera <code>Accept</code> que manda al pedir imágenes, y trata los <code>.jxl</code> descargados como algo que puede abrir él mismo en una pestaña. Para crear archivos JPEG&nbsp;XL sigue haciendo falta un codificador; <a href="/es/jpg-a-jxl/">el nuestro funciona en el navegador</a>.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Derivados de Firefox: cuáles muestran JPEG XL</h2>
+  <p class="lead">Los derivados siguen el código de Firefox pero no siempre su calendario, así que la respuesta depende de en qué versión se basan y de si cambian el valor por defecto. Los hemos comprobado uno a uno en su propio código fuente o en sus notas oficiales el 15 de octubre de 2026, no en hilos de foros, que siguen repitiendo cosas de hace años.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Navegador y versión</th><th>JPEG XL</th><th>Por qué</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Waterfox</strong> 6.7.6 (13 oct. 2026)</td><td class="y">Activado</td><td>Se basa en Firefox ESR 153, pero Waterfox pone <code>image.jxl.enabled</code> en <code>true</code> e incorpora por su cuenta jxl-rs 0.7.4</td></tr>
+      <tr><td><strong>LibreWolf</strong> 158.0-1 (13 oct. 2026)</td><td class="y">Activado</td><td>Se basa en Firefox 158 y hereda su nuevo valor; la configuración de LibreWolf no lo toca</td></tr>
+      <tr><td><strong>Floorp</strong> 12.20.1 (9 oct. 2026)</td><td class="n">Apagado</td><td>Se basa en Firefox 157.0.1: trae el descodificador, actívalo en about:config</td></tr>
+      <tr><td><strong>Zen</strong> 1.23.2b (9 oct. 2026)</td><td class="n">Apagado</td><td>Se basa en Firefox 157.0.1: se activará al pasar a la 158; mientras, about:config</td></tr>
+      <tr><td><strong>Pale Moon</strong> 35.0.2 (6 oct. 2026)</td><td class="y">Activado</td><td>Motor propio, salido de un Firefox antiguo; JPEG-XL desde la 31.4.0 (noviembre de 2022), con libjxl</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">La regla práctica: un derivado basado en Firefox 158 o posterior trae JPEG&nbsp;XL automáticamente salvo que lo apague, y uno basado en Firefox 152 a 157 o en la ESR 153 tiene el descodificador pero necesita <code>image.jxl.enabled</code> en <code>true</code>. Pale Moon va por libre: se separó del código de Firefox hace años, añadió su propio soporte de JPEG-XL en 2022 y lo mantiene encendido desde entonces. La rama de desarrollo de Zen ya apunta a Firefox 158, así que su próxima versión debería cambiar esa fila.</p>
+</div></section>
+
+<section class="block" id="fix"><div class="wrap">
+  <h2>¿Tienes Firefox 158 y sigue sin verse?</h2>
+  <div class="steps">
+    <div class="step"><h3>Confirma la versión</h3><p>Mira que <strong>Acerca de Firefox</strong> diga 158 o más. Los derivados muestran su propio número, así que en ellos busca en qué Firefox se basan: Zen 1.23 y Floorp 12.20 siguen en la 157.</p></div>
+    <div class="step"><h3>Comprueba que nadie lo ha apagado</h3><p>En <code>about:config</code>, busca <code>image.jxl.enabled</code>. Si pone <code>false</code> en negrita, algo lo cambió: un <code>user.js</code> de los que endurecen la privacidad, un ajuste antiguo o una sincronización desde otro equipo. La flecha de restablecer, al final de la fila, devuelve el valor por defecto.</p></div>
+    <div class="step"><h3>Busca un candado</h3><p>En un ordenador de empresa, una directiva puede bloquear preferencias. Un candado junto a la fila significa que solo puede cambiarla quien administra el equipo.</p></div>
+    <div class="step"><h3>Prueba el navegador, no la web</h3><p>Pasa <a href="/es/test-jpeg-xl-navegador/">la prueba del navegador</a>. Si dice que sí, Firefox está bien y el problema es la imagen o la web: un archivo que se llama .jxl pero no lo es, por ejemplo, o una web que a Firefox le manda otro formato.</p></div>
+  </div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Preguntas frecuentes</h2>
+  <div class="faq">
+    <details open><summary>¿Firefox admite ya JPEG XL?</summary><div class="ans">Sí. Firefox 158, publicado el 13 de octubre de 2026, muestra imágenes JPEG XL de serie en escritorio y en Android. Firefox 152 a 157 y la ESR 153 traen el descodificador pero apagado; las versiones anteriores no pueden mostrar el formato de ninguna manera.</div></details>
+    <details><summary>¿Dónde está el ajuste de JPEG XL en Firefox?</summary><div class="ans">En <code>about:config</code>, como <code>image.jxl.enabled</code>. En Firefox 152 a 157 ese mismo interruptor aparece también en Ajustes → Firefox Labs como <strong>Media: JPEG XL</strong>. En Firefox 158 no deberías necesitar ninguno de los dos: ya viene encendido.</div></details>
+    <details><summary>¿Por qué ha tardado tanto Firefox?</summary><div class="ans">Por seguridad. Mozilla no quería exponer la web a un descodificador enorme en C++ (el de referencia pasa de 100.000 líneas de código multihilo). Pidió uno seguro en memoria, Google Research escribió jxl-rs en Rust y, cuando cumplió los requisitos de producción de Mozilla, se activó.</div></details>
+    <details><summary>¿Firefox para Android admite JPEG XL?</summary><div class="ans">Sí, desde la versión 158. El anuncio de Mozilla abarcaba todas las plataformas y el cambio se marcó como aplicable a Android. Las notas de la versión de Android no lo mencionan, así que, si dudas, pasa la prueba del navegador en el móvil.</div></details>
+    <details><summary>¿Puede Firefox guardar o convertir imágenes a JPEG XL?</summary><div class="ans">No. El descodificador de Firefox solo lee el formato; no crea archivos <code>.jxl</code>. Para hacer uno, usa un conversor como <a href="/es/jpg-a-jxl/">JPG a JXL</a>, que funciona en tu navegador sin subir nada.</div></details>
+    <details><summary>¿El JPEG XL de Firefox es el mismo que el de Chrome?</summary><div class="ans">Comparten descodificador: los dos usan jxl-rs, la implementación en Rust de Google, de la serie 0.7. El comportamiento debería ser muy parecido, mientras que Safari usa la pila de Apple, basada en el libjxl en C++. Microsoft Edge, pese a estar hecho sobre Chromium, no muestra JPEG XL en absoluto en su versión 155.</div></details>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Sigue leyendo</h2>
+  <div class="cta-row">
+    <a class="cta-card" href="/es/test-jpeg-xl-navegador/"><span class="cta-ic">🧪</span><b>Test de JPEG XL en el navegador</b><span class="cta-sub">¿Tu navegador muestra JXL? Compruébalo en vivo →</span></a>
+    <a class="cta-card" href="/es/chrome-soporta-jpeg-xl/"><span class="cta-ic">🌐</span><b>¿Chrome admite JPEG XL?</b><span class="cta-sub">La otra mitad de la historia →</span></a>
+    <a class="cta-card" href="/es/abrir-jxl-en-android/"><span class="cta-ic">📱</span><b>Abrir archivos .jxl en Android</b><span class="cta-sub">Móviles, galerías y navegadores →</span></a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/es/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/es/">Conversor</a><a href="/es/visor-jxl/">Visor</a><a href="/es/guias/">Blog</a><a href="/es/sobre-el-proyecto/">Sobre el proyecto</a><a href="/es/contacto/">Contacto</a><a href="/es/novedades/">Novedades</a></nav>
+  </div>
+  <div class="legal">
+    <span class="privacy-pill">🔒 Tus archivos nunca salen de tu dispositivo</span>
+    <span class="flegal"><a href="/es/privacidad/">Privacidad</a> · <a href="/es/terminos/">Términos</a><span id="revocation-link" style="display:none"> · <a href="javascript:window.googlefc.showRevocationMessage();">Configuración de privacidad</a></span></span>
+    <span>© 2026 JXL Convert</span>
+  </div>
+  <div class="sister"><a href="https://docuniversal.com/" rel="noopener" style="display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:100%;color:inherit;opacity:.72;font-size:13px"><svg width="18" height="18" viewBox="0 0 64 64" aria-hidden="true" style="border-radius:5px;flex:none"><defs><linearGradient id="duLogo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7cc4a0"/><stop offset="1" stop-color="#366d55"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#duLogo)"/><circle cx="32" cy="32" r="16" fill="none" stroke="#fff" stroke-width="4" opacity=".95"/><circle cx="32" cy="32" r="5" fill="#fff"/></svg><span>¿Trabajas con PDF? Prueba DocUniversal — gratis, en tu navegador</span></a></div>
+</div></footer>
+<script>
+window.googlefc = window.googlefc || {};
+window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+window.googlefc.callbackQueue.push({
+  'CONSENT_API_READY':
+  () => __tcfapi('addEventListener', 0, (tcdata, success) => {
+    const revocationLink = document.getElementById('revocation-link');
+    if (!revocationLink) return;
+    if (!success || !tcdata) {
+      revocationLink.style.display = 'none';
+    } else if (tcdata.gdprApplies) {
+      revocationLink.style.display = 'inline';
+    } else {
+      revocationLink.style.display = 'none';
+    }
+  })
+});
+</script>
+</body>
+</html>

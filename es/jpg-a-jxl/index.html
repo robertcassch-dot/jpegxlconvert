@@ -23,14 +23,14 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/styles.css?v=8">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Convertir JPG a JXL pierde calidad?","acceptedAnswer":{"@type":"Answer","text":"No — el modo sin pérdida reempaqueta el JPG existente, así que es idéntico píxel a píxel y solo más pequeño."}},{"@type":"Question","name":"¿Dónde puedo usar .jxl?","acceptedAnswer":{"@type":"Answer","text":"Safari ya lo admite y Chrome 145 ya trae el descodificador, aunque sigue desactivado por defecto. Guarda tus originales mientras tanto."}},{"@type":"Question","name":"¿Es gratis y privado?","acceptedAnswer":{"@type":"Answer","text":"Sí — gratis, sin registro, y el archivo no sale de tu dispositivo."}},{"@type":"Question","name":"¿Cambia algo la calidad del JPG original?","acceptedAnswer":{"@type":"Answer","text":"No. El reempaquetado sin pérdida reconstruye los mismos datos JPEG dentro del contenedor JPEG XL, así que es matemáticamente idéntico, solo más pequeño."}},{"@type":"Question","name":"¿Debo borrar mis JPG tras convertir?","acceptedAnswer":{"@type":"Answer","text":"Consérvalos hasta que el soporte de JPEG XL sea universal. Por ahora, el .jxl es ideal para archivar y ahorrar espacio junto a tus originales."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Convertir JPG a JXL pierde calidad?","acceptedAnswer":{"@type":"Answer","text":"No — el modo sin pérdida reempaqueta el JPG existente, así que es idéntico píxel a píxel y solo más pequeño."}},{"@type":"Question","name":"¿Dónde puedo usar .jxl?","acceptedAnswer":{"@type":"Answer","text":"Safari 17+, Chrome 155+ (desde el 6 de octubre de 2026) y Firefox 158+ (desde el 13 de octubre de 2026) lo muestran de serie; Microsoft Edge no. Guarda tus originales mientras tanto y, en una web, sirve el .jxl con un JPG o un WebP de respaldo."}},{"@type":"Question","name":"¿Es gratis y privado?","acceptedAnswer":{"@type":"Answer","text":"Sí — gratis, sin registro, y el archivo no sale de tu dispositivo."}},{"@type":"Question","name":"¿Cambia algo la calidad del JPG original?","acceptedAnswer":{"@type":"Answer","text":"No. El reempaquetado sin pérdida reconstruye los mismos datos JPEG dentro del contenedor JPEG XL, así que es matemáticamente idéntico, solo más pequeño."}},{"@type":"Question","name":"¿Debo borrar mis JPG tras convertir?","acceptedAnswer":{"@type":"Answer","text":"Consérvalos hasta que el soporte de JPEG XL sea universal. Por ahora, el .jxl es ideal para archivar y ahorrar espacio junto a tus originales."}}]}</script>
 <style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
 </head>
 <body>
 <header class="site"><div class="wrap nav">
   <a class="brand" href="/es/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
   <div class="nav-right">
-    <nav class="nav-links"><a href="/es/">Conversor</a><a href="/es/visor-jxl/">Visor</a><a href="/es/guias/">Guías</a><a href="#faq">FAQ</a></nav>
+    <nav class="nav-links"><a href="/es/">Conversor</a><a href="/es/visor-jxl/">Visor</a><a href="/es/guias/">Blog</a><a href="#faq">FAQ</a></nav>
     <details class="lang"><summary>🌐 ES</summary>
       <div class="lang-menu">
         <a href="/en/jpg-to-jxl/"><span class="flag">🇬🇧</span> English</a>
@@ -73,7 +73,7 @@
       <div class="ctrl"><label>Calidad</label>
         <div class="quality"><input type="range" id="quality" min="40" max="100" value="90"><output id="quality-val">90</output></div>
       </div>
-      <div class="ctrl"><label>&nbsp;</label><label class="switch"><input type="checkbox" id="lossless"> Sin pérdida</label></div>
+      <div class="ctrl"><label>&nbsp;</label><label class="switch"><input type="checkbox" id="lossless" checked> Sin pérdida</label></div>
     </div>
     <div class="results" id="results"></div>
     <div class="results-actions" id="results-actions"></div>
@@ -93,7 +93,7 @@
 <section class="block"><div class="wrap about">
   <h2>Conviene saber</h2>
   <p class="prose">Los móviles modernos hacen JPGs preciosos, pero poco eficientes. Convertir JPG a JPEG XL con reempaquetado sin pérdida reduce cada archivo cerca de un 20% manteniéndolo idéntico píxel a píxel al original: no pierdes absolutamente nada y ganas espacio. Multiplícalo por una biblioteca de miles de fotos y el ahorro se dispara.</p>
-  <p class="prose">JPEG XL es el sucesor moderno y libre de regalías del JPG: Safari ya lo muestra de forma nativa y Chrome lo está activando, así que el formato será cada vez más útil. Todo se convierte en privado en tu navegador, de modo que puedes preparar para el futuro hasta tus fotos personales sin subirlas a ningún sitio.</p>
+  <p class="prose">JPEG XL es el sucesor moderno y libre de regalías del JPG: Safari ya lo muestra de forma nativa, y Chrome 155 y Firefox 158 lo activaron de serie en octubre de 2026, así que el formato será cada vez más útil. Todo se convierte en privado en tu navegador, de modo que puedes preparar para el futuro hasta tus fotos personales sin subirlas a ningún sitio.</p>
 </div></section>
 
 <section class="block alt" id="how"><div class="wrap">
@@ -109,7 +109,7 @@
   <h2>FAQ</h2>
   <div class="faq">
     <details open><summary>¿Convertir JPG a JXL pierde calidad?</summary><div class="ans">No — el modo sin pérdida reempaqueta el JPG existente, así que es idéntico píxel a píxel y solo más pequeño.</div></details>
-    <details><summary>¿Dónde puedo usar .jxl?</summary><div class="ans">Safari ya lo admite y Chrome 145 ya trae el descodificador, aunque sigue desactivado por defecto. Guarda tus originales mientras tanto.</div></details>
+    <details><summary>¿Dónde puedo usar .jxl?</summary><div class="ans">Safari 17+, Chrome 155+ (desde el 6 de octubre de 2026) y Firefox 158+ (desde el 13 de octubre de 2026) lo muestran de serie; Microsoft Edge no. Guarda tus originales mientras tanto y, en una web, sirve el .jxl con un JPG o un WebP de respaldo.</div></details>
     <details><summary>¿Es gratis y privado?</summary><div class="ans">Sí — gratis, sin registro, y el archivo no sale de tu dispositivo.</div></details>
     <details><summary>¿Cambia algo la calidad del JPG original?</summary><div class="ans">No. El reempaquetado sin pérdida reconstruye los mismos datos JPEG dentro del contenedor JPEG XL, así que es matemáticamente idéntico, solo más pequeño.</div></details>
     <details><summary>¿Debo borrar mis JPG tras convertir?</summary><div class="ans">Consérvalos hasta que el soporte de JPEG XL sea universal. Por ahora, el .jxl es ideal para archivar y ahorrar espacio junto a tus originales.</div></details>
@@ -143,7 +143,7 @@
 <footer class="site"><div class="wrap">
   <div class="fcols">
     <a class="brand" href="/es/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
-    <nav class="fnav"><a href="/es/">Conversor</a><a href="#how">Cómo</a><a href="#faq">FAQ</a><a href="/es/sobre-el-proyecto/">Sobre el proyecto</a><a href="/es/contacto/">Contacto</a><a href="/es/novedades/">Novedades</a></nav>
+    <nav class="fnav"><a href="/es/">Conversor</a><a href="#how">Cómo</a><a href="#faq">FAQ</a><a href="/es/guias/">Blog</a><a href="/es/sobre-el-proyecto/">Sobre el proyecto</a><a href="/es/contacto/">Contacto</a><a href="/es/novedades/">Novedades</a></nav>
   </div>
   <div class="legal"><span class="privacy-pill">🔒 Tus archivos nunca salen de tu dispositivo</span><span class="flegal"><a href="/es/privacidad/">Privacidad</a> · <a href="/es/terminos/">Términos</a><span id="revocation-link" style="display:none"> · <a href="javascript:window.googlefc.showRevocationMessage();">Configuración de privacidad</a></span></span><span>© 2026 JXL Convert</span></div>
   <div class="sister"><a href="https://docuniversal.com/" rel="noopener" style="display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:100%;color:inherit;opacity:.72;font-size:13px"><svg width="18" height="18" viewBox="0 0 64 64" aria-hidden="true" style="border-radius:5px;flex:none"><defs><linearGradient id="duLogo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7cc4a0"/><stop offset="1" stop-color="#366d55"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#duLogo)"/><circle cx="32" cy="32" r="16" fill="none" stroke="#fff" stroke-width="4" opacity=".95"/><circle cx="32" cy="32" r="5" fill="#fff"/></svg><span>¿Trabajas con PDF? Prueba DocUniversal — gratis, en tu navegador</span></a></div>
@@ -166,6 +166,6 @@ window.googlefc.callbackQueue.push({
   })
 });
 </script>
-<script type="module" src="/assets/js/app.js?v=9"></script>
+<script type="module" src="/assets/js/app.js?v=10"></script>
 </body>
 </html>

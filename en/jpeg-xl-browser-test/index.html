@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9791902883190551" crossorigin="anonymous"></script>
+<title>JPEG XL Browser Test: Does Your Browser Show JXL?</title>
+<meta name="description" content="A live test: your browser tries to draw three tiny JPEG XL images. What the result means, which browsers show JXL in October 2026, how to enable it.">
+<link rel="canonical" href="https://jpegxlconvert.com/en/jpeg-xl-browser-test/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/jpeg-xl-browser-test/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/test-jpeg-xl-navegador/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/jpeg-xl-browser-test/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Does your browser support JPEG XL? Live test">
+<meta property="og:description" content="Find out in a second, then see which browsers show JXL in October 2026 and how to switch it on where you can.">
+<meta property="og:url" content="https://jpegxlconvert.com/en/jpeg-xl-browser-test/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=8">
+<link rel="alternate" type="application/rss+xml" title="JXL Convert — Blog" href="/en/feed.xml">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is this test reliable?","acceptedAnswer":{"@type":"Answer","text":"It checks what websites rely on: whether your browser can decode a JPEG XL image natively, plus transparency and animation. A pass on the plain image means .jxl images on the web will display. It doesn't check HDR or progressive loading — Firefox, for instance, shows HDR images in standard range. Safari is the usual case for the animation row: it shows still JPEG XL images but doesn't play animated ones."}},
+{"@type":"Question","name":"Why does Chrome say yes and Edge no, if both are Chromium?","acceptedAnswer":{"@type":"Answer","text":"Chromium contains the decoder, but each company decides what goes into its own build — Chromium even has a build option for leaving JPEG XL out. Microsoft removed JPEG XL from its Edge 155 release notes on 9 October 2026, and in our test Edge 155 couldn't decode it even with Chromium's feature forced on."}},
+{"@type":"Question","name":"I enabled the flag and the test still says no","acceptedAnswer":{"@type":"Answer","text":"Make sure you pressed Relaunch rather than just closing the tab, because flags apply after a restart. Then check the version: the current flag only exists from Chrome 145 onwards, and in Edge it does nothing."}},
+{"@type":"Question","name":"Does the test work on my phone?","acceptedAnswer":{"@type":"Answer","text":"Yes. On Android, Chrome 155 and Firefox 158 or later should pass; Samsung Internet is unconfirmed, so this test is the quickest way to find out. On iPhone and iPad the mainstream browsers all run on Apple's engine, so with iOS 17 or later they pass, just like Safari."}},
+{"@type":"Question","name":"Does a pass mean I can save images as JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"No. Browsers only decode the format; none of them can save to it. To create a .jxl, use a converter such as JPG to JXL, which also runs in your browser."}},
+{"@type":"Question","name":"Does the test upload or record anything?","acceptedAnswer":{"@type":"Answer","text":"No. The test itself fetches nothing and sends nothing: its three images are already inside this page, the result is worked out by your own browser, and it's shown only to you."}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Does Your Browser Support JPEG XL?","datePublished":"2026-10-15","dateModified":"2026-10-15","inLanguage":"en","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/en/about/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/en/"},"mainEntityOfPage":"https://jpegxlconvert.com/en/jpeg-xl-browser-test/"}
+</script>
+<style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+<style>.gtbl{max-width:720px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a></nav>
+    <details class="lang"><summary>🌐 EN</summary>
+      <div class="lang-menu">
+        <a class="active" href="/en/jpeg-xl-browser-test/"><span class="flag">🇬🇧</span> English</a>
+        <a href="/es/test-jpeg-xl-navegador/"><span class="flag">🇪🇸</span> Español</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">🧪 Live test · October 2026</span>
+  <h1>Does Your Browser Support JPEG&nbsp;XL?</h1>
+  <p class="sub">The box below asks your browser to show three tiny JPEG&nbsp;XL images by itself — no plugin, no help from this site. Underneath: what the answer means, where every major browser stands in October 2026, and how to switch support on where that's possible.</p>
+  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">by <a href="/en/about/" style="color:inherit">Robert Castillo</a> · Published <time datetime="2026-10-15">October 15, 2026</time></p>
+  <div class="badges">
+    <span class="badge green">✅ Chrome 155+</span><span class="badge green">✅ Firefox 158+</span><span class="badge">🍎 Safari 17+</span><span class="badge">🚫 Edge 155: no</span>
+  </div>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/jxl-viewer/"><span class="cta-ic">👁️</span><b>Result says no?</b><span class="cta-sub">Open your .jxl in our viewer — works in any browser →</span></a>
+    <a class="cta-card" href="/en/jxl-to-jpg/"><span class="cta-ic">🔁</span><b>Need a file that opens everywhere?</b><span class="cta-sub">Convert JXL to JPG, nothing uploaded →</span></a>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>The test</h2>
+  <p class="lead">Your browser is handed three JPEG&nbsp;XL images embedded in this page — a plain one (97 bytes), one with transparency (175 bytes) and a two-frame animation (88 bytes) — and asked to draw them like any other picture. Each has its own width and height, which the test checks, so a browser can't pass by merely pretending to load them; for the transparent one it also checks that the transparent corner really comes out transparent, and for the animation it asks the browser's own decoder how many frames it reads. Browsers without that decoder interface get the animated square instead, with a note to watch whether it changes colour: we'd rather ask you to look than report a “no” we can't be sure of. If the plain one draws, your browser decodes JPEG&nbsp;XL natively. The test itself fetches nothing and sends nothing: the whole check happens inside your tab.</p>
+  <p class="lead"><em>Natively</em> is the key word. This site's viewer and converter decode JPEG&nbsp;XL with WebAssembly and work in every browser; the test deliberately leaves that out and checks only what your browser can do on its own, which is exactly what decides whether <code>.jxl</code> images on other websites will appear. The answer needs JavaScript, so with it switched off you'll see a short notice instead of the result.</p>
+  <div id="jxl-test" class="grid3" aria-live="polite"><noscript><p>JavaScript is off, so the live test can't run.</p></noscript></div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>What your result means</h2>
+  <div class="grid3">
+    <div class="feature"><div class="fi">✅</div><h3>Yes — it's supported</h3><p>Websites can send you <code>.jxl</code> images and you'll see them. In Chrome 155 we could also open a <code>.jxl</code> straight from disk or from a link, and it displayed as an ordinary image instead of downloading. There's nothing for you to change.</p></div>
+    <div class="feature"><div class="fi">❌</div><h3>No — not supported</h3><p>Your browser can't draw JPEG XL by itself. Well-built websites notice and send you AVIF, WebP or JPEG instead, so your browsing isn't affected. A <code>.jxl</code> file that someone sends you is another matter — see what to do further down.</p></div>
+    <div class="feature"><div class="fi">🤔</div><h3>No, but I expected yes</h3><p>Almost always one of three things: an older version (Chrome before 155, Firefox before 158), Microsoft Edge, or a switch that someone turned off. The table below tells you which, and the section after it how to fix it.</p></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Which browsers support JPEG XL in October 2026</h2>
+  <p class="lead">Three engines now show JPEG&nbsp;XL by default: Chrome's since version 155 (6 October 2026), Firefox's since 158 (13 October 2026) and Safari's since 2023. Browsers built on those engines don't always follow them, and Microsoft Edge is the clearest case.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Browser</th><th>JPEG XL</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Chrome 155+</strong> (Windows, Mac, Linux, ChromeOS)</td><td class="y">Yes, by default</td><td>Since 6 Oct 2026 — we tested 155.0.8059.40</td></tr>
+      <tr><td><strong>Chrome 145–154</strong></td><td class="n">Behind a flag</td><td><code>chrome://flags/#enable-jxl-image-format</code></td></tr>
+      <tr><td><strong>Chrome for Android 155+</strong></td><td class="y">Yes, by default</td><td>Same release; Android WebView too</td></tr>
+      <tr><td><strong>Microsoft Edge 155</strong></td><td class="n">No</td><td>We tested 155.0.4283.45 — no switch brings it back</td></tr>
+      <tr><td><strong>Brave 1.97.56+</strong></td><td class="y">Yes, by default</td><td>Built on Chromium 155 — we tested 1.97.57</td></tr>
+      <tr><td><strong>Opera</strong></td><td class="n">Behind a flag</td><td><code>opera://flags/#enable-jxl-image-format</code>, per caniuse (Opera 132–135); October build not checked</td></tr>
+      <tr><td><strong>Samsung Internet</strong></td><td>Not confirmed</td><td>caniuse lists no support up to version 30 (May 2026); newer versions untested</td></tr>
+      <tr><td><strong>Firefox 158+</strong> (desktop and Android)</td><td class="y">Yes, by default</td><td>Since 13 Oct 2026</td></tr>
+      <tr><td><strong>Firefox 152–157</strong>, ESR 153</td><td class="n">Off, can be switched on</td><td>Firefox Labs or <code>about:config</code></td></tr>
+      <tr><td><strong>Safari 17+</strong> on Mac</td><td class="y">Yes, partly</td><td>macOS Sonoma 14 or later; no animation or progressive loading</td></tr>
+      <tr><td><strong>Safari</strong> on iPhone and iPad</td><td class="y">Yes, partly</td><td>iOS / iPadOS 17 or later; Chrome and Firefox there answer the same</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">We ran the Chrome, Edge and Brave rows ourselves on Windows&nbsp;11 on 15 October 2026, with the same method as the test — a tiny JPEG&nbsp;XL image embedded in the page — plus one served over HTTP and a <code>&lt;picture&gt;</code> element with a PNG fallback. Chrome and Brave drew the images and chose the JPEG&nbsp;XL source; Edge failed every check and fell back to the PNG, even when we forced Chromium's JPEG&nbsp;XL feature on from the command line. The other rows come from each browser's release notes, its source code or <a href="https://caniuse.com/jpegxl" rel="nofollow noopener">caniuse.com</a>.</p>
+  <p class="lead">Edge is the surprise. Microsoft listed JPEG&nbsp;XL in its Edge 155 release notes and then <a href="https://github.com/MicrosoftDocs/edge-developer/pull/3973" rel="nofollow noopener">removed the entry on 9 October</a> without saying why, and our test agrees with the edit. Opera builds on older Chromium versions than Chrome (Opera 130 used Chromium 146), so, according to caniuse, it has the flag rather than the default. Safari's "partly" means still images only, without progressive loading; and on older Macs it isn't there at all — Apple disabled it on macOS Ventura and Monterey in 2023 because of a rendering bug, and we found nothing saying it came back.</p>
+</div></section>
+
+<section class="block alt" id="enable"><div class="wrap">
+  <h2>How to switch it on, where you can</h2>
+  <p class="lead">Where support is built in but turned off, this takes under a minute. Where the decoder isn't in the browser at all, no setting will help — skip to the next section.</p>
+  <div class="steps">
+    <div class="step"><h3>Chrome 145 to 154, and Opera</h3><p>Updating is the real fix, because Chrome 155 has it on. If you can't update, paste <code>chrome://flags/#enable-jxl-image-format</code> into the address bar (in Opera, <code>opera://flags/#enable-jxl-image-format</code>), set <strong>Enable JXL image format</strong> to <strong>Enabled</strong> and press <strong>Relaunch</strong>.</p></div>
+    <div class="step"><h3>Chrome 155 or later and still no</h3><p>Open the same flag. If it reads <strong>Disabled</strong>, set it back to <strong>Default</strong> and relaunch — in our test, disabling it switched JPEG XL off completely. Chromium has the flag due to expire after version 158, so from then on it will vanish from the list.</p></div>
+    <div class="step"><h3>Firefox 152 to 157, and ESR 153</h3><p>In 152 to 157, tick <strong>Media: JPEG XL</strong> in Settings → Firefox Labs; in ESR 153, set <code>image.jxl.enabled</code> to <code>true</code> in <code>about:config</code>. Updating to Firefox 158 is simpler still. <a href="/en/firefox-jpeg-xl-support/">Our Firefox guide</a> covers the ESR builds and the forks.</p></div>
+    <div class="step"><h3>Edge, Samsung Internet, older Firefox</h3><p>There's nothing to flip. Edge 155 ignored even the command-line switch in our test, Samsung Internet has no known switch (caniuse lists no flag), and Firefox before 152, ESR 140 and ESR 115 were built without the decoder. Use another browser for JPEG XL, or one of the options further down.</p></div>
+    <div class="step"><h3>Then run the test again</h3><p>Reload this page after relaunching. If the box now says yes, websites will get the same answer from your browser.</p></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>For web developers: how a site can tell</h2>
+  <p class="lead"><strong>The Accept header.</strong> A browser that can decode JPEG&nbsp;XL says so in the <code>Accept</code> header of its image requests. In our test Chrome 155 sent <code>image/jxl,image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8</code>, and Brave did the same; Edge 155 left <code>image/jxl</code> out, and so did Chrome with the feature disabled. Firefox adds <code>image/jxl</code> whenever <code>image.jxl.enabled</code> is on. A server or CDN can use that to decide which file to send.</p>
+  <p class="lead"><strong>The &lt;picture&gt; element.</strong> Put the JPEG&nbsp;XL in a <code>&lt;source type="image/jxl"&gt;</code> with an ordinary image behind it and each browser takes what it can show. In our test Chrome and Brave downloaded only the <code>.jxl</code> and Edge only the PNG, so nobody wasted a byte.</p>
+  <p class="lead"><strong>Decoding, not encoding.</strong> None of these browsers can create JPEG&nbsp;XL. In Chrome 155, asking a canvas for <code>image/jxl</code> with <code>toBlob()</code> quietly returned a PNG, which is what the HTML standard says to do with a type the browser doesn't support. Encoding remains a job for <code>cjxl</code> or a converter.</p>
+  <p class="lead">Whatever the test says on your own machine, keep a fallback on a public site. Edge, older Chrome and Firefox, and every browser that simply hasn't updated yet still can't show JPEG&nbsp;XL, and Samsung Internet is unconfirmed. The version you test with is rarely the one all your visitors run.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Your browser says no — now what?</h2>
+  <div class="grid3">
+    <div class="feature"><div class="fi">👁️</div><h3>Just look at the file</h3><p><a href="/en/jxl-viewer/">Open it in our viewer</a>. It decodes JPEG XL with WebAssembly inside the tab, works in every browser including Edge, and uploads nothing.</p></div>
+    <div class="feature"><div class="fi">🔁</div><h3>Convert it</h3><p>Turn it into a <a href="/en/jxl-to-jpg/">JPG</a> for photos or a <a href="/en/jxl-to-png/">PNG</a> for graphics and transparency. Both open anywhere, and both conversions run on your device.</p></div>
+    <div class="feature"><div class="fi">🌐</div><h3>Use another browser for it</h3><p>Chrome 155+, Firefox 158+ or Safari on a recent Mac or iPhone show JPEG XL directly. Worth it if .jxl files reach you often; overkill for a single picture.</p></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <details open><summary>Is this test reliable?</summary><div class="ans">It checks what websites rely on: whether your browser can decode a JPEG XL image natively, plus transparency and animation. A pass on the plain image means .jxl images on the web will display. It doesn't check HDR or progressive loading — Firefox, for instance, shows HDR images in standard range. Safari is the usual case for the animation row: it shows still JPEG XL images but doesn't play animated ones.</div></details>
+    <details><summary>Why does Chrome say yes and Edge no, if both are Chromium?</summary><div class="ans">Chromium contains the decoder, but each company decides what goes into its own build — Chromium even has a build option for leaving JPEG XL out. Microsoft removed JPEG XL from its Edge 155 release notes on 9 October 2026, and in our test Edge 155 couldn't decode it even with Chromium's feature forced on.</div></details>
+    <details><summary>I enabled the flag and the test still says no</summary><div class="ans">Make sure you pressed Relaunch rather than just closing the tab, because flags apply after a restart. Then check the version: the current flag only exists from Chrome 145 onwards, and in Edge it does nothing.</div></details>
+    <details><summary>Does the test work on my phone?</summary><div class="ans">Yes. On Android, Chrome 155 and Firefox 158 or later should pass; Samsung Internet is unconfirmed, so this test is the quickest way to find out. On iPhone and iPad the mainstream browsers all run on Apple's engine, so with iOS 17 or later they pass, just like Safari.</div></details>
+    <details><summary>Does a pass mean I can save images as JPEG XL?</summary><div class="ans">No. Browsers only decode the format; none of them can save to it. To create a <code>.jxl</code>, use a converter such as <a href="/en/jpg-to-jxl/">JPG to JXL</a>, which also runs in your browser.</div></details>
+    <details><summary>Does the test upload or record anything?</summary><div class="ans">No. The test itself fetches nothing and sends nothing: its three images are already inside this page, the result is worked out by your own browser, and it's shown only to you.</div></details>
+  </div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Keep reading</h2>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/firefox-jpeg-xl-support/"><span class="cta-ic">🦊</span><b>Does Firefox support JPEG XL?</b><span class="cta-sub">Yes since 158 — and the ESR and forks →</span></a>
+    <a class="cta-card" href="/en/chrome-jpeg-xl-support/"><span class="cta-ic">🌐</span><b>Does Chrome support JPEG XL?</b><span class="cta-sub">From flag to default →</span></a>
+    <a class="cta-card" href="/en/open-jxl-on-windows/"><span class="cta-ic">🪟</span><b>Open .jxl files on Windows</b><span class="cta-sub">Photos, viewers and the quick fix →</span></a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/news/">What's new</a></nav>
+  </div>
+  <div class="legal">
+    <span class="privacy-pill">🔒 Your files never leave your device</span>
+    <span class="flegal"><a href="/en/privacy/">Privacy</a> · <a href="/en/terms/">Terms</a><span id="revocation-link" style="display:none"> · <a href="javascript:window.googlefc.showRevocationMessage();">Privacy settings</a></span></span>
+    <span>© 2026 JXL Convert</span>
+  </div>
+  <div class="sister"><a href="https://docuniversal.com/" rel="noopener" style="display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:100%;color:inherit;opacity:.72;font-size:13px"><svg width="18" height="18" viewBox="0 0 64 64" aria-hidden="true" style="border-radius:5px;flex:none"><defs><linearGradient id="duLogo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7cc4a0"/><stop offset="1" stop-color="#366d55"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#duLogo)"/><circle cx="32" cy="32" r="16" fill="none" stroke="#fff" stroke-width="4" opacity=".95"/><circle cx="32" cy="32" r="5" fill="#fff"/></svg><span>Working with PDFs? Try DocUniversal — free, in your browser</span></a></div>
+</div></footer>
+<script>
+window.googlefc = window.googlefc || {};
+window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+window.googlefc.callbackQueue.push({
+  'CONSENT_API_READY':
+  () => __tcfapi('addEventListener', 0, (tcdata, success) => {
+    const revocationLink = document.getElementById('revocation-link');
+    if (!revocationLink) return;
+    if (!success || !tcdata) {
+      revocationLink.style.display = 'none';
+    } else if (tcdata.gdprApplies) {
+      revocationLink.style.display = 'inline';
+    } else {
+      revocationLink.style.display = 'none';
+    }
+  })
+});
+</script>
+<script src="/assets/js/jxl-test.js?v=3" defer></script>
+</body>
+</html>

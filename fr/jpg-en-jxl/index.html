@@ -23,7 +23,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/styles.css?v=8">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Convertir JPG en JXL perd-il en qualité ?","acceptedAnswer":{"@type":"Answer","text":"Non — le mode sans perte réencapsule le JPG existant : identique au pixel près, simplement plus petit."}},{"@type":"Question","name":"Où puis-je utiliser le .jxl ?","acceptedAnswer":{"@type":"Answer","text":"Safari le gère déjà et Chrome 145 embarque le décodeur, mais il reste désactivé par défaut. Gardez vos originaux en attendant."}},{"@type":"Question","name":"Est-ce gratuit et privé ?","acceptedAnswer":{"@type":"Answer","text":"Oui — gratuit, sans inscription, et le fichier ne quitte jamais votre appareil."}},{"@type":"Question","name":"La qualité du JPG original est-elle modifiée ?","acceptedAnswer":{"@type":"Answer","text":"Non. La réencapsulation sans perte reconstruit les mêmes données JPEG dans le conteneur JPEG XL : mathématiquement identique, juste plus petit."}},{"@type":"Question","name":"Dois-je supprimer mes JPG après conversion ?","acceptedAnswer":{"@type":"Answer","text":"Gardez-les jusqu'à ce que JPEG XL soit pris en charge partout. Pour l'instant, le .jxl est idéal pour archiver et gagner de la place à côté de vos originaux."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Convertir JPG en JXL perd-il en qualité ?","acceptedAnswer":{"@type":"Answer","text":"Non — le mode sans perte réencapsule le JPG existant : identique au pixel près, simplement plus petit."}},{"@type":"Question","name":"Où puis-je utiliser le .jxl ?","acceptedAnswer":{"@type":"Answer","text":"Safari 17+, Chrome 155+ (depuis le 6 octobre 2026) et Firefox 158+ (depuis le 13 octobre 2026) l'affichent par défaut ; Microsoft Edge non. Gardez vos originaux en attendant et, sur un site, servez le .jxl avec un repli JPG ou WebP."}},{"@type":"Question","name":"Est-ce gratuit et privé ?","acceptedAnswer":{"@type":"Answer","text":"Oui — gratuit, sans inscription, et le fichier ne quitte jamais votre appareil."}},{"@type":"Question","name":"La qualité du JPG original est-elle modifiée ?","acceptedAnswer":{"@type":"Answer","text":"Non. La réencapsulation sans perte reconstruit les mêmes données JPEG dans le conteneur JPEG XL : mathématiquement identique, juste plus petit."}},{"@type":"Question","name":"Dois-je supprimer mes JPG après conversion ?","acceptedAnswer":{"@type":"Answer","text":"Gardez-les jusqu'à ce que JPEG XL soit pris en charge partout. Pour l'instant, le .jxl est idéal pour archiver et gagner de la place à côté de vos originaux."}}]}</script>
 <style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
 </head>
 <body>
@@ -73,7 +73,7 @@
       <div class="ctrl"><label>Qualité</label>
         <div class="quality"><input type="range" id="quality" min="40" max="100" value="90"><output id="quality-val">90</output></div>
       </div>
-      <div class="ctrl"><label>&nbsp;</label><label class="switch"><input type="checkbox" id="lossless"> Sans perte</label></div>
+      <div class="ctrl"><label>&nbsp;</label><label class="switch"><input type="checkbox" id="lossless" checked> Sans perte</label></div>
     </div>
     <div class="results" id="results"></div>
     <div class="results-actions" id="results-actions"></div>
@@ -93,7 +93,7 @@
 <section class="block"><div class="wrap about">
   <h2>Bon à savoir</h2>
   <p class="prose">Les téléphones modernes produisent de superbes JPG, mais loin d'être efficaces. Convertir JPG en JPEG XL avec réencapsulation sans perte réduit chaque fichier d'environ 20% tout en le gardant identique au pixel près à l'original — vous ne perdez littéralement rien et gagnez du stockage. Multipliez cela sur une photothèque de milliers d'images et les économies s'accumulent vite.</p>
-  <p class="prose">JPEG XL est le successeur moderne et libre de droits du JPG : Safari l'affiche déjà nativement et Chrome déploie la prise en charge, le format ne fera donc que gagner en utilité. Tout est converti en privé dans votre navigateur : vous pouvez pérenniser même vos photos personnelles sans les envoyer où que ce soit.</p>
+  <p class="prose">JPEG XL est le successeur moderne et libre de droits du JPG : Safari l'affiche déjà nativement, et Chrome 155 et Firefox 158 l'ont activé par défaut en octobre 2026 : le format ne fera donc que gagner en utilité. Tout est converti en privé dans votre navigateur : vous pouvez pérenniser même vos photos personnelles sans les envoyer où que ce soit.</p>
 </div></section>
 
 <section class="block alt" id="how"><div class="wrap">
@@ -109,7 +109,7 @@
   <h2>FAQ</h2>
   <div class="faq">
     <details open><summary>Convertir JPG en JXL perd-il en qualité ?</summary><div class="ans">Non — le mode sans perte réencapsule le JPG existant : identique au pixel près, simplement plus petit.</div></details>
-    <details><summary>Où puis-je utiliser le .jxl ?</summary><div class="ans">Safari le gère déjà et Chrome 145 embarque le décodeur, mais il reste désactivé par défaut. Gardez vos originaux en attendant.</div></details>
+    <details><summary>Où puis-je utiliser le .jxl ?</summary><div class="ans">Safari 17+, Chrome 155+ (depuis le 6 octobre 2026) et Firefox 158+ (depuis le 13 octobre 2026) l'affichent par défaut ; Microsoft Edge non. Gardez vos originaux en attendant et, sur un site, servez le .jxl avec un repli JPG ou WebP.</div></details>
     <details><summary>Est-ce gratuit et privé ?</summary><div class="ans">Oui — gratuit, sans inscription, et le fichier ne quitte jamais votre appareil.</div></details>
     <details><summary>La qualité du JPG original est-elle modifiée ?</summary><div class="ans">Non. La réencapsulation sans perte reconstruit les mêmes données JPEG dans le conteneur JPEG XL : mathématiquement identique, juste plus petit.</div></details>
     <details><summary>Dois-je supprimer mes JPG après conversion ?</summary><div class="ans">Gardez-les jusqu'à ce que JPEG XL soit pris en charge partout. Pour l'instant, le .jxl est idéal pour archiver et gagner de la place à côté de vos originaux.</div></details>
@@ -165,6 +165,6 @@ window.googlefc.callbackQueue.push({
   })
 });
 </script>
-<script type="module" src="/assets/js/app.js?v=9"></script>
+<script type="module" src="/assets/js/app.js?v=10"></script>
 </body>
 </html>

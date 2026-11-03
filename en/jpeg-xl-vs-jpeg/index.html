@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9791902883190551" crossorigin="anonymous"></script>
+<title>JPEG XL vs JPEG: We Measured Both on 16 Photos</title>
+<meta name="description" content="Our own test: JPEG XL re-packed 16 JPEGs 20.7% smaller and gave every one back bit for bit, and beat JPEG by 20–33% at equal quality.">
+<link rel="canonical" href="https://jpegxlconvert.com/en/jpeg-xl-vs-jpeg/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/jpeg-xl-vs-jpeg/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/jpeg-xl-vs-jpeg/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/jpeg-xl-vs-jpeg/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JPEG XL vs JPEG, measured">
+<meta property="og:description" content="16 photos, two tests, every command published. Where JPEG XL wins, and where it still loses.">
+<meta property="og:url" content="https://jpegxlconvert.com/en/jpeg-xl-vs-jpeg/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=8">
+<link rel="alternate" type="application/rss+xml" title="JXL Convert — Blog" href="/en/feed.xml">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Does converting JPG to JPEG XL lose quality?","acceptedAnswer":{"@type":"Answer","text":"Not with the lossless re-pack, which is what cjxl does by default with a JPEG and what our JPG to JPEG XL converter does by default too: the pixels are untouched and the original JPEG can be rebuilt byte for byte. We checked all 16 of our test files with SHA-256. Quality is only lost if you deliberately re-encode the image with a lossy setting."}},
+{"@type":"Question","name":"How much smaller does JPEG XL make a JPEG?","acceptedAnswer":{"@type":"Answer","text":"In our test, 20.7% overall, between 11% and 29% per photo. Camera JPEGs saved more than phone JPEGs, and photos with an HDR gain map or a motion photo inside saved less, because those extras are stored unchanged."}},
+{"@type":"Question","name":"Can I convert the JPEG XL back to the original JPG?","acceptedAnswer":{"@type":"Answer","text":"Yes, as long as it was made by lossless re-packing: djxl photo.jxl photo.jpg gives you back the identical file, metadata included."}},
+{"@type":"Question","name":"Is jpegli a reason to stay with JPEG?","acceptedAnswer":{"@type":"Answer","text":"It narrows the gap, and the files open everywhere, which is a real advantage. But in our test JPEG XL still needed about 20% to 24% fewer bytes than jpegli for the same quality."}},
+{"@type":"Question","name":"Do browsers show JPEG XL now?","acceptedAnswer":{"@type":"Answer","text":"Safari since version 17, Chrome by default since version 155 and Firefox since version 158. Edge 155 does not: Microsoft withdrew JPEG XL from its release notes on 9 October 2026."}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"JPEG XL vs JPEG","datePublished":"2026-10-15","dateModified":"2026-10-15","inLanguage":"en","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/en/about/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/en/"},"mainEntityOfPage":"https://jpegxlconvert.com/en/jpeg-xl-vs-jpeg/"}
+</script>
+<style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+<style>.gtbl{max-width:720px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a></nav>
+    <details class="lang"><summary>🌐 EN</summary>
+      <div class="lang-menu">
+        <a class="active" href="/en/jpeg-xl-vs-jpeg/"><span class="flag">🇬🇧</span> English</a>
+        <a href="/es/jpeg-xl-vs-jpeg/"><span class="flag">🇪🇸</span> Español</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">📏 Measured on our own server</span>
+  <h1>JPEG&nbsp;XL vs JPEG</h1>
+  <p class="sub">We put 16 photos from phones and cameras through both formats. <strong>JPEG&nbsp;XL came out smaller every single time</strong>: about a fifth smaller without touching a pixel, and 20 to 33% smaller when both are compressed to the same visual quality. JPEG still wins two things: speed and, above all, compatibility, which is what decides most real-world choices.</p>
+  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">by <a href="/en/about/" style="color:inherit">Robert Castillo</a> · Published <time datetime="2026-10-15">October 15, 2026</time></p>
+  <div class="badges">
+    <span class="badge green">🔁 −20.7% lossless re-pack</span><span class="badge">✅ 16/16 back bit for bit</span><span class="badge">📉 20–33% smaller at equal quality</span><span class="badge">🧪 libjxl 0.12.0</span>
+  </div>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/jpg-to-jxl/"><span class="cta-ic">🔁</span><b>JPG to JPEG XL</b><span class="cta-sub">Re-pack a JPEG in your browser →</span></a>
+    <a class="cta-card" href="/en/jxl-viewer/"><span class="cta-ic">👁️</span><b>Open a .jxl file</b><span class="cta-sub">No install, nothing uploaded →</span></a>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>The short answer</h2>
+  <p class="lead"><strong>For storing photos, JPEG&nbsp;XL wins on size in everything we measured; the price is speed.</strong> It can take a JPEG you already have and shrink it by around 20% with a guarantee that the original file can be rebuilt exactly, and when you compress a photo from scratch it needs far fewer bytes than JPEG for the same visual quality.</p>
+  <p class="lead"><strong>For sending photos to other people, JPEG is still the safe choice.</strong> Since October 2026 the three main browsers (Chrome, Firefox and Safari) display it by default, and Edge doesn't yet. That is a real change, but plenty of apps, upload forms and older devices have not caught up. JPEG opens everywhere; JPEG&nbsp;XL opens in more places every month.</p>
+  <p class="lead">The rest of this page is the evidence: two tests, the numbers for every photo, and exactly how we ran them, with links to every photo, so you can repeat it.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Test 1: re-packing JPEGs without losing anything</h2>
+  <p class="lead">This is the feature people mean when they say JPEG&nbsp;XL is "20% smaller". When <code>cjxl</code> is given a JPEG, by default it does not decode the image and compress it again. It re-encodes the JPEG's own data with better entropy coding, so the pixels stay exactly as they were, and it keeps enough information to rebuild the original file.</p>
+  <p class="lead">We ran it on 16 JPEGs exactly as they were uploaded to Wikimedia Commons, all public domain (CC0): seven from phones (two iPhone 13, two iPhone 12, two Google Pixel 7, one Samsung Galaxy S21 Ultra) and nine from cameras (Fujifilm, Canon, Olympus, Nikon and Sony), between 7.8 and 26.8 megapixels. Then we turned each <code>.jxl</code> back into a JPEG with <code>djxl</code> and compared the SHA-256 checksum with the original.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Photo</th><th>JPEG</th><th>JPEG XL</th><th>Saved</th></tr></thead>
+    <tbody>
+      <tr><td>Fujifilm X-T3 · river at blue hour</td><td>11.46 MB</td><td>8.47 MB</td><td class="y">26.1%</td></tr>
+      <tr><td>Fujifilm X-T3 · birds in foliage</td><td>14.29 MB</td><td>10.75 MB</td><td class="y">24.8%</td></tr>
+      <tr><td>Canon EOS 6D · cathedral, blue sky</td><td>7.28 MB</td><td>5.88 MB</td><td class="y">19.3%</td></tr>
+      <tr><td>Canon EOS 6D · swans in flight</td><td>1.53 MB</td><td>1.09 MB</td><td class="y">28.9%</td></tr>
+      <tr><td>Olympus E-M10 II · poppy</td><td>9.42 MB</td><td>8.12 MB</td><td class="y">13.8%</td></tr>
+      <tr><td>Olympus E-M10 II · frozen bubble, macro</td><td>7.25 MB</td><td>5.61 MB</td><td class="y">22.7%</td></tr>
+      <tr><td>Nikon D7500 · rural landscape</td><td>8.42 MB</td><td>6.06 MB</td><td class="y">28.1%</td></tr>
+      <tr><td>Nikon D7500 · steam locomotive</td><td>6.35 MB</td><td>5.07 MB</td><td class="y">20.2%</td></tr>
+      <tr><td>Sony A7R IV · ship at sea</td><td>2.50 MB</td><td>1.92 MB</td><td class="y">23.1%</td></tr>
+      <tr><td>iPhone 13 · aquarium</td><td>7.42 MB</td><td>6.19 MB</td><td class="y">16.5%</td></tr>
+      <tr><td>iPhone 13 · shop front at night</td><td>4.45 MB</td><td>3.68 MB</td><td class="y">17.3%</td></tr>
+      <tr><td>iPhone 12 · spring and trees</td><td>2.80 MB</td><td>2.27 MB</td><td class="y">18.8%</td></tr>
+      <tr><td>iPhone 12 · red car (HDR gain map)</td><td>5.97 MB</td><td>4.89 MB</td><td class="y">18.0%</td></tr>
+      <tr><td>Pixel 7 · hazy landscape (gain map + motion photo)</td><td>4.76 MB</td><td>4.23 MB</td><td class="y">11.1%</td></tr>
+      <tr><td>Pixel 7 · train station (gain map)</td><td>3.68 MB</td><td>3.03 MB</td><td class="y">17.8%</td></tr>
+      <tr><td>Galaxy S21 Ultra · leaves</td><td>3.96 MB</td><td>3.32 MB</td><td class="y">16.1%</td></tr>
+      <tr><td><strong>All 16</strong></td><td><strong>101.53 MB</strong></td><td><strong>80.56 MB</strong></td><td class="y"><strong>20.7%</strong></td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead"><strong>All 16 files came back bit for bit identical</strong>: same checksum, same size, same metadata. That is the part that makes this safe for an archive. You are not trusting that the result "looks the same"; you can prove it is the same file.</p>
+  <p class="lead">The saving ranged from 11.1% to 28.9%, with a median of 19.0%. The camera files shrank more than the phone ones (23.0% against 16.5% on average), but read that with care: five of the nine were not straight out of the camera. Four had been written by Lightroom, Camera Raw, Photoshop or Canon's Digital Photo Professional, and one had been cropped, so this compares these particular files rather than cameras with phones. Part of the gap shows up in the jpegtran test further down: several of those files used generic coding tables, so even the old optimiser found up to 12% of slack in them, against about 3% in the phone JPEGs.</p>
+  <p class="lead">Turning up the effort barely helps. Effort 9 instead of the default 7 saved 20.9% instead of 20.7%, and took about eight times as much processor time. The default is the right setting.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>The catch: HDR gain maps and motion photos</h2>
+  <p class="lead">Three of our phone photos carry something extra glued on after the end of the main image. The two Pixel 7 photos contain an Ultra HDR <em>gain map</em>, a second small image that tells HDR screens how to brighten the picture, and one of them also carries the short video of a Motion Photo. The iPhone 12 shot taken on iOS 26 carries Apple's own HDR gain map.</p>
+  <p class="lead"><code>cjxl</code> keeps all of that, which is why the round trip is still bit-exact, but it stores those extra bytes as they are: it can only re-pack the main JPEG. That is why the Pixel photo with a video inside saved just 11.1%. Measured on the main image alone, the same three photos shrank by 18.3% to 21.5%, in line with the others.</p>
+  <p class="lead">The classic JPEG optimiser does something worse. <code>jpegtran</code> appears to save 50.7% on that Pixel photo, but only because it silently throws away the gain map and the video while leaving the metadata that says they exist. If you run lossless optimisers over a phone library, check what they do with these extras first.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Against the classic JPEG optimisers</h2>
+  <p class="lead">Lossless JPEG optimisation is not new: <code>jpegtran</code> has been rewriting Huffman tables for decades. To compare like with like, here are the 13 photos without extra data at the end, so nothing gets dropped.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Method</th><th>Saved</th><th>What you get</th></tr></thead>
+    <tbody>
+      <tr><td>jpegtran -optimize</td><td>5.2%</td><td>Still a JPEG; same pixels, but not the original file</td></tr>
+      <tr><td>jpegtran -progressive</td><td>9.5%</td><td>Still a JPEG; same pixels, but not the original file</td></tr>
+      <tr><td>cjxl (default, effort 7)</td><td class="y">21.5%</td><td class="y">A .jxl; the original JPEG rebuilt byte for byte</td></tr>
+      <tr><td>cjxl -e 9</td><td class="y">21.7%</td><td class="y">A .jxl; the original JPEG rebuilt byte for byte</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">JPEG&nbsp;XL saves about twice as much as the best JPEG-only trick. The price is that the result is no longer a JPEG, so anything that has to open it needs JPEG&nbsp;XL support, or a quick <code>djxl</code> back to the original.</p>
+</div></section>
+
+<section class="block" id="lossy"><div class="wrap">
+  <h2>Test 2: the same visual quality, how many bytes?</h2>
+  <p class="lead">Re-packing only helps with JPEGs you already have. The other question is what happens when you save a photo from scratch, for example after editing it. Comparing "quality 80" in one encoder with "quality 80" in another means nothing, because the scales are unrelated. So we matched quality with a perceptual metric instead.</p>
+  <p class="lead">We shrank each photo to 2048 pixels on the long side, which erases most traces of its original JPEG compression, and encoded it at many quality settings with four encoders: libjpeg-turbo with its default 4:2:0 colour subsampling, libjpeg-turbo with full 4:4:4 colour, Google's jpegli, and JPEG&nbsp;XL. Every result was decoded and scored against the reference with SSIMULACRA2, and for each photo we interpolated the file size each encoder needs to reach the same score.</p>
+  <p class="lead">On SSIMULACRA2's own scale, <strong>70</strong> means high quality, where artefacts are hard to notice without the original next to it; <strong>80</strong> means you cannot tell the two apart side by side at 100% zoom; <strong>85</strong> means you cannot tell them apart flipping between them; and <strong>90</strong> is visually lossless.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Score</th><th>JPEG turbo</th><th>JPEG jpegli</th><th>JPEG XL (vs jpegli)</th></tr></thead>
+    <tbody>
+      <tr><td>70 · high quality</td><td>339 KB</td><td>292 KB</td><td class="y">239 KB<br>(−22%)</td></tr>
+      <tr><td>80 · identical side by side</td><td>529 KB</td><td>469 KB</td><td class="y">382 KB<br>(−20%)</td></tr>
+      <tr><td>85 · identical when flipping</td><td>792 KB</td><td>664 KB</td><td class="y">535 KB<br>(−23%)</td></tr>
+      <tr><td>90 · visually lossless</td><td class="n">1,373 KB*</td><td>1,289 KB</td><td class="y">964 KB<br>(−24%)</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">Sizes are the median across the 16 photos, scaled to a 2048 × 1536 picture (3.1 megapixels). "JPEG turbo" is libjpeg-turbo with its default 4:2:0 colour, plus -optimize -progressive. The percentage under JPEG&nbsp;XL is its median saving against jpegli, the better of the two JPEG encoders, worked out photo by photo. *Only 13 of the 16 photos reached 90 with libjpeg-turbo at all; more on that below.</p>
+  <p class="lead"><strong>JPEG&nbsp;XL produced the smaller file on every photo at every level</strong>: 80 comparisons out of 80 against jpegli and 77 out of 77 against libjpeg-turbo. Against libjpeg-turbo, the JPEG library most programs and operating systems use, the median saving was 28% to 33% depending on the level; at a score of 80 it ranged from 16% to 63% depending on the photo. Google's jpegli closes part of that gap, but at the levels in the table JPEG&nbsp;XL still needed 20% to 24% fewer bytes. That is a more modest number than some you will read online, and it is what our photos actually gave.</p>
+  <p class="lead">The biggest wins came on smooth, clean pictures: at a score of 80, the swans against a blue sky and the poppy against clouds needed less than half the bytes of libjpeg-turbo as JPEG&nbsp;XL, and about 40% fewer than jpegli. Dense, detailed scenes such as the spring with trees or the red car still came out 14% to 16% smaller than jpegli. JPEG has nowhere to hide on a flat sky: its 8×8 blocks show up as banding and blocking first.</p>
+  <p class="lead">There is also a ceiling. With its default 4:2:0 colour subsampling, libjpeg-turbo could not reach 90 on 3 of the 16 photos even at quality 100, because halving the colour resolution caps how faithful it can get. Switching it to full 4:4:4 colour fixes that, but costs more bytes at the usual levels: it needed more than the 4:2:0 version up to 80 and less from 85 upwards.</p>
+  <p class="lead">If you want the settings rather than the scores: reaching 80 took a median quality of 83 in libjpeg-turbo and in jpegli, and a distance of 1.6 in <code>cjxl</code>. Reaching 85 took quality 91 and distance 1.0, which is exactly <code>cjxl</code>'s default for non-JPEG input. Visually lossless (90) took quality 97 in libjpeg-turbo and distance 0.5 in <code>cjxl</code>.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Speed: where JPEG still wins clearly</h2>
+  <p class="lead">JPEG&nbsp;XL saves space by working harder, and on a single core you can feel it. To reach a score of 80, libjpeg-turbo spent a median of 0.04 seconds of processor time per megapixel, jpegli 0.06 and <code>cjxl</code> at its default effort 0.77: roughly 13 to 20 times more work than JPEG. In practice that is still under a second for a 3-megapixel photo, but it adds up when you process tens of thousands of files.</p>
+  <p class="lead">Decoding shows the same pattern, less dramatically. In the re-pack test, <code>djpeg</code> turned the original JPEGs into pixels in 0.019 seconds per megapixel and <code>djxl</code> needed 0.049 for the same photos re-packed as JPEG&nbsp;XL, about 2.5 times longer on one thread. For a 12-megapixel phone photo that is roughly a quarter of a second against six tenths. Rebuilding the original JPEG file from the <code>.jxl</code> took 0.045 seconds per megapixel.</p>
+  <p class="lead">The lossless re-pack itself is cheap: 0.12 seconds of processor time per megapixel at the default effort, so about 1.4 seconds for a 12-megapixel photo. Effort 9 cost about 1 second per megapixel for an extra 0.2%. Tools like <code>djxl</code> and <code>cjxl</code> can also spread the work over several cores, which shortens the wait but not the total work.</p>
+</div></section>
+
+<section class="block" id="support"><div class="wrap">
+  <h2>Compatibility in October 2026</h2>
+  <p class="lead">This is the row that decides most real choices, and it has moved more in the last fortnight than in the previous three years.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Where</th><th>JPEG</th><th>JPEG XL</th></tr></thead>
+    <tbody>
+      <tr><td>Safari (Mac, iPhone, iPad)</td><td class="y">Yes</td><td class="y">Since Safari 17 (2023); no progressive loading or animation</td></tr>
+      <tr><td>Chrome</td><td class="y">Yes</td><td class="y">By default since Chrome 155 (6 October 2026)</td></tr>
+      <tr><td>Firefox</td><td class="y">Yes</td><td class="y">Since Firefox 158 (13 October 2026)</td></tr>
+      <tr><td>Edge</td><td class="y">Yes</td><td class="n">Not in Edge 155: Microsoft withdrew it from that version's release notes on 9 October 2026</td></tr>
+      <tr><td>Windows 11 (Photos, Explorer)</td><td class="y">Yes</td><td class="y">With Microsoft's free JPEG XL Image Extension, version 24H2 or later</td></tr>
+      <tr><td>Windows 10</td><td class="y">Yes</td><td class="n">No official support</td></tr>
+      <tr><td>Android (gallery, system)</td><td class="y">Yes</td><td class="n">Not in Android's official format list; Chrome shows it in web pages</td></tr>
+      <tr><td>Email, messaging, upload forms</td><td class="y">Universal</td><td class="n">Hit and miss: test before you rely on it</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">The sources: Chrome's change is listed as enabled by default from version 155 on <a href="https://chromestatus.com/feature/5114042131808256" rel="nofollow noopener">Chrome Platform Status</a>, and Firefox announced it in its <a href="https://www.firefox.com/en-US/firefox/158.0/releasenotes/" rel="nofollow noopener">158 release notes</a>. If you want to know what <em>your</em> browser does right now, our <a href="/en/jpeg-xl-browser-test/">JPEG XL browser test</a> checks it in a second. And if a .jxl lands on a machine that can't open it, <a href="/en/jxl-viewer/">the viewer</a> or a <a href="/en/jxl-to-jpg/">conversion back to JPG</a> fixes it without installing anything.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Which one should you use?</h2>
+  <div class="grid3">
+    <div class="feature"><div class="fi">🗄️</div><h3>Archiving JPEGs you already have</h3><p>JPEG XL, with lossless re-packing. About 20% less disk, and the original file can always be rebuilt exactly.</p></div>
+    <div class="feature"><div class="fi">🎨</div><h3>Saving edited photos</h3><p>JPEG XL if you control where they will be opened. You get the same quality in far fewer bytes, or better quality at the same size.</p></div>
+    <div class="feature"><div class="fi">📤</div><h3>Sending to someone</h3><p>JPEG. It is the one format you can be sure the other person opens, on any device and in any app.</p></div>
+    <div class="feature"><div class="fi">🌐</div><h3>Images on a website</h3><p>JPEG XL is now viable with a JPEG fallback inside a <code>&lt;picture&gt;</code> element. Without a fallback, not yet.</p></div>
+    <div class="feature"><div class="fi">📱</div><h3>HDR phone photos</h3><p>Re-pack them if you like, but know the gain map is stored as-is, so the saving is smaller. Never run them through jpegtran.</p></div>
+    <div class="feature"><div class="fi">⚡</div><h3>Thousands of images, fast</h3><p>JPEG encodes and decodes several times faster. If processing time matters more than storage, that still counts.</p></div>
+  </div>
+</div></section>
+
+<section class="block" id="method"><div class="wrap">
+  <h2>How we measured</h2>
+  <p class="lead"><strong>Machine:</strong> a shared Ubuntu 24.04 server with 6 virtual AMD EPYC cores. Times are processor time (user plus system) for each command, run single-threaded where the tool allows it, which makes them much less sensitive to other load on the server than wall-clock time. Treat them as ratios, not absolute figures.</p>
+  <p class="lead"><strong>Tools:</strong> libjxl 0.12.0 (<code>cjxl</code>, <code>djxl</code>, <code>ssimulacra2</code>), libjpeg-turbo 2.1.5 (<code>cjpeg</code>, <code>djpeg</code>, <code>jpegtran</code>), jpegli built from its GitHub repository at commit 031a007 (June 2026), and ImageMagick 6.9.12 for the resizing.</p>
+  <p class="lead"><strong>Test 1 commands:</strong> <code>cjxl photo.jpg photo.jxl --num_threads=0</code>, the same with <code>-e 9</code>, then <code>djxl photo.jxl back.jpg</code> and a SHA-256 comparison. For comparison, <code>jpegtran -copy all -optimize</code> and <code>jpegtran -copy all -progressive</code>.</p>
+  <p class="lead"><strong>Test 2 commands:</strong> references made with <code>convert photo.jpg -auto-orient -resize 2048x2048 -strip</code>. JPEG with <code>cjpeg -quality Q -optimize -progressive</code> (plus <code>-sample 1x1</code> for 4:4:4) at qualities 20 to 100, jpegli with <code>cjpegli -q Q</code> at the same qualities, JPEG&nbsp;XL with <code>cjxl -d D</code> at distances 0.2 to 15. JPEGs decoded with <code>djpeg</code>, JPEG&nbsp;XL with <code>djxl</code>, all scored with <code>ssimulacra2</code>. Sizes at each target score are interpolated between the two nearest settings, photo by photo.</p>
+  <p class="lead"><strong>The 16 photos</strong> (Wikimedia Commons, all CC0), so you can repeat the test: <a href="https://commons.wikimedia.org/wiki/File:Neckarfront-blaue-stunde.jpg" rel="nofollow noopener">river at blue hour</a>, <a href="https://commons.wikimedia.org/wiki/File:Tier-in-wilhelma-7.jpg" rel="nofollow noopener">birds in foliage</a>, <a href="https://commons.wikimedia.org/wiki/File:Berliner_Dom_und_Fernsehturm,_170117,_ako.jpg" rel="nofollow noopener">cathedral</a>, <a href="https://commons.wikimedia.org/wiki/File:Cygnus_cygnus_Oulu_20170417_02.jpg" rel="nofollow noopener">swans</a>, <a href="https://commons.wikimedia.org/wiki/File:Poppy_flower_(Unsplash).jpg" rel="nofollow noopener">poppy</a>, <a href="https://commons.wikimedia.org/wiki/File:Macro_view_of_frozen_winter_ball_(Unsplash).jpg" rel="nofollow noopener">frozen bubble</a>, <a href="https://commons.wikimedia.org/wiki/File:Chojayama_Castle_(Aki),_enkei.jpg" rel="nofollow noopener">rural landscape</a>, <a href="https://commons.wikimedia.org/wiki/File:D51_272_in_Setagaya_Park.jpg" rel="nofollow noopener">locomotive</a>, <a href="https://commons.wikimedia.org/wiki/File:Trial_onbemand_vaartuig_2019-1.jpg" rel="nofollow noopener">ship</a>, <a href="https://commons.wikimedia.org/wiki/File:Aquarium_de_Monaco_en_novembre_2021_(2).jpg" rel="nofollow noopener">aquarium</a>, <a href="https://commons.wikimedia.org/wiki/File:Restaurant_Via_Roma_au_Pontet_(Vaucluse)_de_nuit.jpg" rel="nofollow noopener">shop front at night</a>, <a href="https://commons.wikimedia.org/wiki/File:Gilchrist_Blue_Springs_State_Park.jpg" rel="nofollow noopener">spring and trees</a>, <a href="https://commons.wikimedia.org/wiki/File:Red_1974_AMC_Gremlin.jpg" rel="nofollow noopener">red car</a>, <a href="https://commons.wikimedia.org/wiki/File:Cataracte_sur_Wiki_aime_la_terre_06.jpg" rel="nofollow noopener">hazy landscape</a>, <a href="https://commons.wikimedia.org/wiki/File:Newag_Griffin_Toru%C5%84_G%C5%82%C3%B3wny_(2024-04-27).jpg" rel="nofollow noopener">train station</a>, <a href="https://commons.wikimedia.org/wiki/File:HK_TKO_%E5%B0%87%E8%BB%8D%E6%BE%B3_Tseung_Kwan_O_%E5%94%90%E5%BE%B7%E8%A1%97_Tong_Tak_Street_tree_green_leaves_November_2024_SS21G5_08.jpg" rel="nofollow noopener">leaves</a>.</p>
+  <p class="lead"><strong>Limits:</strong> 16 photos is a small sample, not a study, and the result would shift with a different set. SSIMULACRA2 was developed by the same people who built JPEG&nbsp;XL; it is widely used and correlates well with human ratings, but a second metric or a panel of viewers could rank things differently. Our references come from JPEGs, not from raw files. All the scripts, the per-setting results as CSV and the source and licence of every photo are kept with the measurements, and we will gladly share them.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Common questions</h2>
+  <div class="faq">
+    <details open><summary>Does converting JPG to JPEG XL lose quality?</summary><div class="ans">Not with the lossless re-pack, which is what <code>cjxl</code> does by default with a JPEG and what our JPG to JPEG XL converter does by default too: the pixels are untouched and the original JPEG can be rebuilt byte for byte. We checked all 16 of our test files with SHA-256. Quality is only lost if you deliberately re-encode the image with a lossy setting.</div></details>
+    <details><summary>How much smaller does JPEG XL make a JPEG?</summary><div class="ans">In our test, 20.7% overall, between 11% and 29% per photo. Camera JPEGs saved more than phone JPEGs, and photos with an HDR gain map or a motion photo inside saved less, because those extras are stored unchanged.</div></details>
+    <details><summary>Can I convert the JPEG XL back to the original JPG?</summary><div class="ans">Yes, as long as it was made by lossless re-packing: <code>djxl photo.jxl photo.jpg</code> gives you back the identical file, metadata included.</div></details>
+    <details><summary>Is jpegli a reason to stay with JPEG?</summary><div class="ans">It narrows the gap, and the files open everywhere, which is a real advantage. But in our test JPEG XL still needed about 20% to 24% fewer bytes than jpegli for the same quality.</div></details>
+    <details><summary>Do browsers show JPEG XL now?</summary><div class="ans">Safari since version 17, Chrome by default since version 155 and Firefox since version 158. Edge 155 does not: Microsoft withdrew JPEG&nbsp;XL from its release notes on 9 October 2026.</div></details>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Keep reading</h2>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/jpeg-xl-vs-heic/"><span class="cta-ic">📱</span><b>JPEG XL vs HEIC</b><span class="cta-sub">Against the iPhone format, measured →</span></a>
+    <a class="cta-card" href="/en/jpeg-xl-vs-png/"><span class="cta-ic">🖼️</span><b>JPEG XL vs PNG</b><span class="cta-sub">Lossless, screenshots and transparency →</span></a>
+    <a class="cta-card" href="/en/cjxl-djxl-command-line/"><span class="cta-ic">⌨️</span><b>cjxl and djxl</b><span class="cta-sub">The commands, explained →</span></a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/news/">What's new</a></nav>
+  </div>
+  <div class="legal">
+    <span class="privacy-pill">🔒 Your files never leave your device</span>
+    <span class="flegal"><a href="/en/privacy/">Privacy</a> · <a href="/en/terms/">Terms</a><span id="revocation-link" style="display:none"> · <a href="javascript:window.googlefc.showRevocationMessage();">Privacy settings</a></span></span>
+    <span>© 2026 JXL Convert</span>
+  </div>
+  <div class="sister"><a href="https://docuniversal.com/" rel="noopener" style="display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:100%;color:inherit;opacity:.72;font-size:13px"><svg width="18" height="18" viewBox="0 0 64 64" aria-hidden="true" style="border-radius:5px;flex:none"><defs><linearGradient id="duLogo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7cc4a0"/><stop offset="1" stop-color="#366d55"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#duLogo)"/><circle cx="32" cy="32" r="16" fill="none" stroke="#fff" stroke-width="4" opacity=".95"/><circle cx="32" cy="32" r="5" fill="#fff"/></svg><span>Working with PDFs? Try DocUniversal — free, in your browser</span></a></div>
+</div></footer>
+<script>
+window.googlefc = window.googlefc || {};
+window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+window.googlefc.callbackQueue.push({
+  'CONSENT_API_READY':
+  () => __tcfapi('addEventListener', 0, (tcdata, success) => {
+    const revocationLink = document.getElementById('revocation-link');
+    if (!revocationLink) return;
+    if (!success || !tcdata) {
+      revocationLink.style.display = 'none';
+    } else if (tcdata.gdprApplies) {
+      revocationLink.style.display = 'inline';
+    } else {
+      revocationLink.style.display = 'none';
+    }
+  })
+});
+</script>
+</body>
+</html>

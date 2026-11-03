@@ -17,26 +17,27 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/styles.css?v=8">
-<link rel="alternate" type="application/rss+xml" title="JXL Convert — Guides" href="/en/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="JXL Convert — Blog" href="/en/feed.xml">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"Which produces smaller files, AVIF or JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"It depends on how hard you compress. At aggressive settings — small thumbnails, low-quality web images — AVIF usually wins. At the high quality settings you'd use for photographs you care about, JPEG XL usually wins. The gap in both directions is smaller than either camp claims."}},
 {"@type":"Question","name":"Is AVIF lossless any good?","acceptedAnswer":{"@type":"Answer","text":"Not particularly. AVIF supports lossless but wasn't designed around it, and the results are often larger than PNG. JPEG XL's lossless mode is genuinely strong, which is why archival workflows favour it."}},
 {"@type":"Question","name":"Can I convert AVIF to JPEG XL directly?","acceptedAnswer":{"@type":"Answer","text":"You can, but think about what happens: AVIF is lossy, so decoding and re-encoding costs a second generation of quality. If you still have the original, convert from that instead. Converting from an already-lossy file should be a last resort."}},
-{"@type":"Question","name":"Which one does Google use?","acceptedAnswer":{"@type":"Answer","text":"Both, in different places, which tells you something. Google co-developed AV1 behind AVIF and serves it widely, while JPEG XL grew out of Google Research's PIK project. The removal from Chrome was a product decision about browser scope, not a verdict on the technology."}},
+{"@type":"Question","name":"Which one does Google use?","acceptedAnswer":{"@type":"Answer","text":"Both, in different places, which tells you something. Google co-developed AV1 behind AVIF and serves it widely, while JPEG XL grew out of Google Research's PIK project. The removal from Chrome in 2023 was a product decision about browser scope, not a verdict on the technology — and Chrome 155 brought it back, on by default, in October 2026."}},
 {"@type":"Question","name":"Should I convert my whole library to AVIF?","acceptedAnswer":{"@type":"Answer","text":"Probably not. For archiving you want lossless or near-lossless, which is JPEG XL's strength and AVIF's weakness — and the JPEG re-packing trick means you can convert without any quality loss at all, which AVIF simply cannot offer."}}
 ]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"JPEG XL vs AVIF","datePublished":"2026-08-03","dateModified":"2026-08-03","inLanguage":"en","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/en/about/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/en/"},"mainEntityOfPage":"https://jpegxlconvert.com/en/jpeg-xl-vs-avif/"}
+{"@context":"https://schema.org","@type":"Article","headline":"JPEG XL vs AVIF","datePublished":"2026-08-03","dateModified":"2026-10-15","inLanguage":"en","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/en/about/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/en/"},"mainEntityOfPage":"https://jpegxlconvert.com/en/jpeg-xl-vs-avif/"}
 </script>
 <style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+<style>.gtbl{max-width:720px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
 </head>
 <body>
 <header class="site"><div class="wrap nav">
   <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
   <div class="nav-right">
-    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Guides</a></nav>
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a></nav>
     <details class="lang"><summary>🌐 EN</summary>
       <div class="lang-menu">
         <a class="active" href="/en/jpeg-xl-vs-avif/"><span class="flag">🇬🇧</span> English</a>
@@ -49,8 +50,8 @@
 <section class="hero"><div class="wrap">
   <span class="eyebrow">⚖️ Head to head</span>
   <h1>JPEG XL vs AVIF</h1>
-  <p class="sub">These are the two serious candidates to replace JPEG, and the argument between them has been running for years. The short version: <strong>AVIF has the browsers, JPEG&nbsp;XL has the engineering</strong>. Which matters more depends entirely on what you're doing with the file.</p>
-  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">by <a href="/en/about/" style="color:inherit">Robert Castillo</a> · Published <time datetime="2026-08-03">August 3, 2026</time></p>
+  <p class="sub">These are the two serious candidates to replace JPEG, and the argument between them has been running for years. The short version: <strong>AVIF has the wider browser support, JPEG&nbsp;XL has the engineering</strong> — though the support gap narrowed sharply in October 2026, when Chrome and Firefox switched JPEG&nbsp;XL on by default. Which matters more depends entirely on what you're doing with the file.</p>
+  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">by <a href="/en/about/" style="color:inherit">Robert Castillo</a> · Published <time datetime="2026-08-03">August 3, 2026</time> · updated <time datetime="2026-10-15">October 15, 2026</time></p>
   <div class="badges">
     <span class="badge green">🌐 AVIF wins support</span><span class="badge">⚡ JXL wins speed</span><span class="badge">🔁 JXL re-packs JPEGs</span><span class="badge">🎯 Different jobs</span>
   </div>
@@ -69,10 +70,10 @@
 
 <section class="block"><div class="wrap">
   <h2>The comparison, honestly</h2>
-  <table class="cmp">
+  <div class="gtbl"><table class="cmp">
     <thead><tr><th></th><th>AVIF</th><th>JPEG XL</th></tr></thead>
     <tbody>
-      <tr><td>Browser support today</td><td class="y">Excellent — Chrome, Firefox, Safari</td><td class="n">Safari only; Chrome off by default</td></tr>
+      <tr><td>Browser support today</td><td class="y">Excellent — Chrome, Firefox, Safari</td><td>Chrome 155+, Firefox 158+, Safari 17+; not Edge</td></tr>
       <tr><td>Compression at low quality</td><td class="y">Usually better</td><td>Good</td></tr>
       <tr><td>Compression at high quality</td><td>Good</td><td class="y">Usually better</td></tr>
       <tr><td>True lossless</td><td class="n">Supported but inefficient</td><td class="y">Excellent</td></tr>
@@ -83,14 +84,14 @@
       <tr><td>Animation</td><td class="y">Yes</td><td class="y">Yes</td></tr>
       <tr><td>HDR / wide gamut</td><td class="y">Yes</td><td class="y">Yes</td></tr>
     </tbody>
-  </table>
+  </table></div>
   <p class="lead">Read that table twice and a pattern appears. AVIF wins the rows about getting an image onto a web page today. JPEG XL wins nearly everything about the image itself. Neither is a knockout, and anyone who tells you otherwise is selling something.</p>
 </div></section>
 
 <section class="block alt"><div class="wrap">
   <h2>The four differences that actually change your decision</h2>
   <div class="grid3">
-    <div class="feature"><div class="fi">🌐</div><h3>Support isn't close</h3><p>AVIF renders in Chrome, Firefox, Safari and Edge. JPEG XL renders in Safari, and is switched off by default everywhere else. For anything a stranger will open in a browser, this single row outweighs the other nine.</p></div>
+    <div class="feature"><div class="fi">🌐</div><h3>Support is closer, not equal</h3><p>AVIF renders in Chrome, Firefox, Safari and Edge. JPEG XL is now on by default in Chrome 155 (since 6 October 2026), Firefox 158 (since 13 October 2026) and Safari 17, but Edge still doesn't show it, and nor does any browser that hasn't been updated. For anything a stranger will open in a browser, that gap still matters: JPEG XL on a public page needs a fallback behind it.</p></div>
     <div class="feature"><div class="fi">🔁</div><h3>Only JPEG XL re-packs JPEGs</h3><p>Feed it an existing JPEG and it stores the same data about 20% smaller, reversibly, byte for byte. For anyone with a large legacy library this is free disk space with zero risk. AVIF has no equivalent — it must re-encode, which loses quality.</p></div>
     <div class="feature"><div class="fi">⚡</div><h3>Encoding speed is not a footnote</h3><p>AVIF encoding is slow enough to be a genuine operational cost at scale. JPEG XL is several times faster. If you're processing a hundred thousand images, this is the difference between an afternoon and a weekend.</p></div>
     <div class="feature"><div class="fi">🔍</div><h3>They fail differently</h3><p>Squeezed hard, AVIF smooths detail away — skin and foliage turn waxy, and the image looks clean but subtly wrong. JPEG XL holds texture longer and degrades more like film grain. Which you prefer is genuinely a matter of taste.</p></div>
@@ -103,15 +104,15 @@
     <div class="step"><h3>Images on a public website → AVIF</h3><p>It works in every major browser today, with a JPEG fallback for the rest. Nothing else about the comparison matters if the picture doesn't render.</p></div>
     <div class="step"><h3>Your own photo archive → JPEG XL</h3><p>Better at high quality, genuinely good at lossless, and the JPEG re-packing gives you a fifth of your disk back for nothing. You control what opens these files, so compatibility stops being an argument. <a href="/en/archive-photos-without-losing-quality/">How to do it properly →</a></p></div>
     <div class="step"><h3>Sending a file to another person → neither</h3><p>Send a JPEG. Both of these will confuse someone eventually, and the recipient's confusion is your problem. If you're the one who received the odd file, the <a href="/en/jxl-viewer/">viewer</a> opens it.</p></div>
-    <div class="step"><h3>Serving both → use the picture element</h3><p>A <code>&lt;picture&gt;</code> element can offer AVIF, JPEG XL and JPEG at once, letting each browser take the best it understands. More work, but it's the only answer that doesn't compromise.</p></div>
+    <div class="step"><h3>Serving both → use the picture element</h3><p>A <code>&lt;picture&gt;</code> element can offer AVIF, JPEG XL and JPEG at once, letting each browser take the best it understands. More work, but it's the only answer that doesn't compromise — and since October 2026 the JPEG XL source is picked up by Chrome and Firefox as well as Safari.</p></div>
   </div>
 </div></section>
 
 <section class="block"><div class="wrap">
   <h2>Will JPEG XL ever win?</h2>
   <p class="lead">It's the question underneath every version of this comparison, and the honest answer is that nobody knows. Chrome removed JPEG XL support in 2023 citing insufficient ecosystem interest, a decision that was unpopular enough to generate its own small genre of angry blog posts.</p>
-  <p class="lead">Since then the picture has softened rather than reversed: Apple shipped support across its platforms, a memory-safe Rust implementation has been in progress, and the format keeps gaining ground in professional and archival workflows where nobody has to ask a browser's permission.</p>
-  <p class="lead">What that means practically is that JPEG XL is a safe choice for storage and a risky one for the public web — which is exactly what the table above says. If your interest is the web specifically, <a href="/en/chrome-jpeg-xl-support/">the Chrome situation is worth understanding in detail</a>.</p>
+  <p class="lead">Since then the picture has reversed. Apple shipped support across its platforms. Chrome brought JPEG XL back behind a flag in Chrome 145 (10 February 2026), using jxl-rs, a decoder written in memory-safe Rust, and switched it on by default in Chrome 155 on 6 October 2026. Firefox 158 followed on 13 October 2026, with the same decoder. And the format keeps gaining ground in professional and archival workflows where nobody has to ask a browser's permission.</p>
+  <p class="lead">What that means practically is that JPEG XL is a safe choice for storage and, on the public web, a good one only with a fallback behind it, because Edge and browsers that haven't been updated still can't show it — which is exactly what the table above says. If your interest is the web specifically, <a href="/en/chrome-jpeg-xl-support/">the Chrome situation is worth understanding in detail</a>, and you can <a href="/en/jpeg-xl-browser-test/">test your own browser</a> in a few seconds.</p>
 </div></section>
 
 <section class="block alt"><div class="wrap">
@@ -120,7 +121,7 @@
     <details open><summary>Which produces smaller files, AVIF or JPEG XL?</summary><div class="ans">It depends on how hard you compress. At aggressive settings — small thumbnails, low-quality web images — AVIF usually wins. At the high quality settings you'd use for photographs you care about, JPEG XL usually wins. The gap in both directions is smaller than either camp claims.</div></details>
     <details><summary>Is AVIF lossless any good?</summary><div class="ans">Not particularly. AVIF supports lossless but wasn't designed around it, and the results are often larger than PNG. JPEG XL's lossless mode is genuinely strong, which is why archival workflows favour it.</div></details>
     <details><summary>Can I convert AVIF to JPEG XL directly?</summary><div class="ans">You can, but think about what happens: AVIF is lossy, so decoding and re-encoding costs a second generation of quality. If you still have the original, convert from that instead. Converting from an already-lossy file should be a last resort.</div></details>
-    <details><summary>Which one does Google use?</summary><div class="ans">Both, in different places, which tells you something. Google co-developed AV1 behind AVIF and serves it widely, while JPEG XL grew out of Google Research's PIK project. The removal from Chrome was a product decision about browser scope, not a verdict on the technology.</div></details>
+    <details><summary>Which one does Google use?</summary><div class="ans">Both, in different places, which tells you something. Google co-developed AV1 behind AVIF and serves it widely, while JPEG XL grew out of Google Research's PIK project. The removal from Chrome in 2023 was a product decision about browser scope, not a verdict on the technology — and Chrome 155 brought it back, on by default, in October 2026.</div></details>
     <details><summary>Should I convert my whole library to AVIF?</summary><div class="ans">Probably not. For archiving you want lossless or near-lossless, which is JPEG XL's strength and AVIF's weakness — and the JPEG re-packing trick means you can convert without any quality loss at all, which AVIF simply cannot offer.</div></details>
   </div>
 </div></section>
@@ -138,7 +139,7 @@
 <footer class="site"><div class="wrap">
   <div class="fcols">
     <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
-    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Guides</a><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/news/">What's new</a></nav>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/news/">What's new</a></nav>
   </div>
   <div class="legal">
     <span class="privacy-pill">🔒 Your files never leave your device</span>

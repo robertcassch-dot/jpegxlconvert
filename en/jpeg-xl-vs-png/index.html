@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9791902883190551" crossorigin="anonymous"></script>
+<title>JPEG XL vs PNG: Lossless Compression, Measured</title>
+<meta name="description" content="20 images compressed losslessly as PNG and JPEG XL: a third smaller for photos, far smaller for illustrations, but screenshots and speed favour PNG.">
+<link rel="canonical" href="https://jpegxlconvert.com/en/jpeg-xl-vs-png/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/jpeg-xl-vs-png/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/jpeg-xl-vs-png/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/jpeg-xl-vs-png/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JPEG XL vs PNG, measured">
+<meta property="og:description" content="Photos, screenshots, charts and transparent images, compressed losslessly and checked pixel by pixel.">
+<meta property="og:url" content="https://jpegxlconvert.com/en/jpeg-xl-vs-png/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=8">
+<link rel="alternate" type="application/rss+xml" title="JXL Convert — Blog" href="/en/feed.xml">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is JPEG XL smaller than PNG?","acceptedAnswer":{"@type":"Answer","text":"For photos and illustrations, yes, clearly: a third smaller for our photos and 41% for our illustrations at the default setting, against PNGs already optimised with oxipng. For screenshots, only at the slowest effort; at the default it was larger than a well-optimised PNG on three of five."}},
+{"@type":"Question","name":"Is lossless JPEG XL really lossless?","acceptedAnswer":{"@type":"Answer","text":"Yes. We decoded all 112 files from our test and compared them with the originals pixel by pixel, including the alpha channel. Not a single pixel differed."}},
+{"@type":"Question","name":"Does JPEG XL keep transparency?","acceptedAnswer":{"@type":"Answer","text":"Yes, exactly. Our three illustrations with soft transparent edges came back identical, and as a group they were where JPEG XL saved the most."}},
+{"@type":"Question","name":"Which effort should I use for lossless?","acceptedAnswer":{"@type":"Answer","text":"For photos, the default (7) or even 3 if you are in a hurry; above 7 the gain is tiny. For screenshots and flat graphics, 9 or 10, because the lower settings can end up bigger than PNG."}},
+{"@type":"Question","name":"Should I convert all my PNGs to JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"Only the ones you keep for yourself. Anything you share or upload is safer as PNG, which opens everywhere and decodes about ten times faster."}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"JPEG XL vs PNG","datePublished":"2026-10-15","dateModified":"2026-10-15","inLanguage":"en","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/en/about/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/en/"},"mainEntityOfPage":"https://jpegxlconvert.com/en/jpeg-xl-vs-png/"}
+</script>
+<style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+<style>.gtbl{max-width:720px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a></nav>
+    <details class="lang"><summary>🌐 EN</summary>
+      <div class="lang-menu">
+        <a class="active" href="/en/jpeg-xl-vs-png/"><span class="flag">🇬🇧</span> English</a>
+        <a href="/es/jpeg-xl-vs-png/"><span class="flag">🇪🇸</span> Español</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">📏 Measured on our own server</span>
+  <h1>JPEG&nbsp;XL vs PNG</h1>
+  <p class="sub">Both are lossless, so you get back exactly the same pixels. We checked that on all 20 test images, then measured what it costs. <strong>On photos and illustrations JPEG&nbsp;XL wins clearly. On screenshots, a well-optimised PNG beat it unless we let JPEG&nbsp;XL work much harder.</strong></p>
+  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">by <a href="/en/about/" style="color:inherit">Robert Castillo</a> · Published <time datetime="2026-10-15">October 15, 2026</time></p>
+  <div class="badges">
+    <span class="badge green">📷 Photos: −33% vs best PNG</span><span class="badge">🫥 Illustrations: −41%</span><span class="badge">🖥️ Screenshots: PNG wins at default</span><span class="badge">✅ 0 pixels changed</span>
+  </div>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/png-to-jxl/"><span class="cta-ic">🔁</span><b>PNG to JPEG XL</b><span class="cta-sub">Convert in your browser (tick “Lossless”; it uses a fast setting — for screenshots, cjxl -e 9 or 10 does better) →</span></a>
+    <a class="cta-card" href="/en/jxl-viewer/"><span class="cta-ic">👁️</span><b>Open a .jxl file</b><span class="cta-sub">No install, nothing uploaded →</span></a>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>The short answer</h2>
+  <p class="lead"><strong>For photos and for our illustrations, JPEG&nbsp;XL is clearly smaller.</strong> At its default settings it shrank our photos by a third and our illustrations by 41% (43% for the three with real transparency) compared with PNGs already optimised with oxipng's maximum level (<code>-o max</code>, without its slower Zopfli mode), and every pixel came back identical.</p>
+  <p class="lead"><strong>For screenshots it is not that simple.</strong> At the default effort JPEG&nbsp;XL was bigger than a well-optimised PNG on three of our five screenshots. It only pulled clearly ahead at effort 10, its slowest setting, where in total it cut them by 53% (from 12% to 75% depending on the screenshot). And PNG decodes roughly ten times faster and opens absolutely everywhere, which still makes it the sensible choice for anything you are about to share.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>What we tested</h2>
+  <p class="lead">Twenty images of four kinds. <strong>Eight photos</strong> from phones and cameras, all public domain (CC0) from Wikimedia Commons, reduced to 2048 pixels on the long side. <strong>Five screenshots</strong> of our own website at normal, 2× (laptop) and 3× (phone) pixel density, plus terminal output and a page of code rendered in the browser. <strong>Three charts</strong> we generated with matplotlib. And <strong>four illustrations</strong> from Wikimedia Commons, CC0, rendered from SVG; three have a transparent background and soft edges, the fourth, a map, is almost entirely opaque.</p>
+  <p class="lead">Each one was stored as the PNG the program that made it wrote (ImageMagick, Chrome, matplotlib or cairosvg), the "unoptimised" PNG most people actually have; through oxipng 10.2.1 at its default level and at its maximum; and as lossless JPEG&nbsp;XL (<code>cjxl -d 0</code>) at efforts 1, 2, 3, 7 (the default) and 9, plus effort 10 for everything except the photos, where it takes minutes per image.</p>
+</div></section>
+
+<section class="block" id="results"><div class="wrap">
+  <h2>Results by type of image</h2>
+  <p class="lead">The baseline is the best PNG we could make, with <code>oxipng -o max</code>. Totals per group; the percentage is against that baseline.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Images</th><th>Best PNG</th><th>JPEG XL default</th><th>JPEG XL slowest*</th></tr></thead>
+    <tbody>
+      <tr><td>8 photos</td><td>32.14 MB</td><td class="y">21.55 MB<br>(−33%)</td><td class="y">21.36 MB<br>(−34%)</td></tr>
+      <tr><td>4 illustrations (3 transparent)</td><td>1.05 MB</td><td class="y">0.62 MB<br>(−41%)</td><td class="y">0.40 MB<br>(−62%)</td></tr>
+      <tr><td>3 charts</td><td>0.37 MB</td><td class="y">0.27 MB<br>(−26%)</td><td class="y">0.20 MB<br>(−45%)</td></tr>
+      <tr><td>5 screenshots</td><td>0.74 MB</td><td class="n">0.92 MB<br>(+25%)</td><td class="y">0.34 MB<br>(−53%)</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">*Effort 9 for the photos and effort 10 for everything else. JPEG&nbsp;XL at its default effort beat the best PNG on every photo (by 23% to 40%), every chart and every illustration. On screenshots it lost on three of five, by up to 54% on the page of code, which is exactly the kind of image people assume JPEG&nbsp;XL will crush.</p>
+  <p class="lead">Two things soften that. First, most screenshots never go through an optimiser at all: against the PNGs exactly as Chrome saved them, default JPEG&nbsp;XL was 17% smaller in total. Second, effort 10 turns the result around completely: the terminal screenshot shrank to less than half of the best PNG and the page of code to a quarter. The price is time, which is the next table.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>What each effort level buys you</h2>
+  <p class="lead">Size against the best PNG, and processor time per megapixel on one core. A phone screenshot is typically 2.5 to 4 megapixels; one of our reduced photos is about 3.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Setting</th><th>Photos</th><th>Everything else</th></tr></thead>
+    <tbody>
+      <tr><td>oxipng, default level</td><td>+0.4% · 1.4 s</td><td>+2.9% · 0.7 s</td></tr>
+      <tr><td>oxipng -o max</td><td>0% · 11.6 s</td><td>0% · 9.7 s</td></tr>
+      <tr><td>JPEG XL effort 1</td><td class="y">−13% · 0.07 s</td><td class="n">+67% · 0.04 s</td></tr>
+      <tr><td>JPEG XL effort 3</td><td class="y">−29% · 0.38 s</td><td class="n">+46% · 0.37 s</td></tr>
+      <tr><td>JPEG XL effort 7 (default)</td><td class="y">−33% · 1.8 s</td><td class="y">−16% · 0.76 s</td></tr>
+      <tr><td>JPEG XL effort 9</td><td class="y">−34% · 10.9 s</td><td class="y">−25% · 3.0 s</td></tr>
+      <tr><td>JPEG XL effort 10</td><td>not run</td><td class="y">−56% · 13.9 s</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">For photos, effort 1 is the surprise: 13% smaller than the best PNG while using about 160 times less processor time than <code>oxipng -o max</code>. Effort 3 gets most of the way to the default result for a fifth of the time. Above effort 7 there is almost nothing left to gain on photos: effort 9 saved another 0.6% for six times the work, and on one photo we also tried effort 10, which saved 3% more than effort 9 for roughly four times as long again (about two minutes of processor time for 3.1 megapixels).</p>
+  <p class="lead">For screenshots, charts and flat-colour graphics it is the opposite: the low efforts are worse than PNG and the high ones are far better. If you archive screenshots as JPEG&nbsp;XL, use effort 9 or 10 and be patient. Note also that oxipng's default level is almost as good as its maximum, at a tenth of the time.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Is it really lossless? And transparency?</h2>
+  <p class="lead">Yes, on everything we tried. We decoded every JPEG&nbsp;XL file (112 of them, across all effort levels) and compared it with the original PNG pixel by pixel, red, green, blue and alpha, with ImageMagick. The number of pixels that differed was zero in every single case. The same check on the oxipng files also gave zero.</p>
+  <p class="lead">That includes the three illustrations with real transparency: the soft, semi-transparent edges round the astronaut, the elephant and the robot came back exactly, and as a group they were where JPEG&nbsp;XL gained most (43% at the default effort). Our three charts carry an alpha channel that is fully opaque, which is what matplotlib writes; both formats kept it without trouble, so you don't need to strip it before converting.</p>
+  <p class="lead">All of this is <code>cjxl</code> on the command line. Our <a href="/en/png-to-jxl/">PNG to JPEG XL converter</a> works differently: it is lossy unless you tick “Lossless”, it uses a fast effort setting, and it reads the image through the browser's canvas, which works in 8 bits and can round semi-transparent pixels. For an exact copy of a 16-bit or transparent image, use <code>cjxl -d 0</code>.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Decoding: PNG is about ten times faster</h2>
+  <p class="lead">This is the cost nobody puts on the box. On one core, <code>djxl</code> needed 0.33 seconds per megapixel to decode our lossless photos and around 0.19 for the other images. Opening the same pictures as PNG with Pillow, which uses the standard zlib library, took between 0.014 and 0.035 seconds per megapixel.</p>
+  <p class="lead">For a single image on screen that is the difference between a fraction of a second and an instant. For a folder of thousands of files being thumbnailed, or a web page full of large lossless graphics, it is noticeable. Decoders can use several cores, and browsers and viewers do, which narrows the wait, but the work is still about ten times greater.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>If your PNG is a photo, ask whether it needs to be lossless</h2>
+  <p class="lead">Photos often end up as PNG for no better reason than a screenshot tool or an editor's default. Lossless storage of a photo is expensive in any format: our eight photos took 2.7 MB each on average as lossless JPEG&nbsp;XL.</p>
+  <p class="lead">In our <a href="/en/jpeg-xl-vs-jpeg/">JPEG XL vs JPEG test</a>, the same photos encoded with lossy JPEG&nbsp;XL at visually lossless quality (an SSIMULACRA2 score of 90, where you cannot spot a difference even flicking between the two) came out a median 3.3 times smaller than lossless, and at the still excellent score of 85 about 5.5 times smaller. If the PNG is a master you will edit again, keep it lossless. If it is a photo you just want to keep, lossy JPEG&nbsp;XL at <code>-d 0.5</code> to <code>-d 1</code> is the bigger saving by far.</p>
+</div></section>
+
+<section class="block alt" id="support"><div class="wrap">
+  <h2>Compatibility in October 2026</h2>
+  <p class="lead">PNG's advantage here is total, and it is the one that matters most when a file leaves your hands.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Where</th><th>PNG</th><th>JPEG XL</th></tr></thead>
+    <tbody>
+      <tr><td>Chrome, Firefox, Safari</td><td class="y">Yes</td><td class="y">Yes: Safari 17+, Chrome 155+ and Firefox 158+</td></tr>
+      <tr><td>Edge</td><td class="y">Yes</td><td class="n">Not in Edge 155</td></tr>
+      <tr><td>Windows 11</td><td class="y">Yes</td><td class="y">With Microsoft's free JPEG XL Image Extension (24H2 or later)</td></tr>
+      <tr><td>Android</td><td class="y">Yes</td><td class="n">Not in the official format list</td></tr>
+      <tr><td>Image editors, office apps, email, chat</td><td class="y">Everywhere</td><td class="n">Patchy: check each one</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">PNG is also still moving: its <a href="https://www.w3.org/TR/png-3/" rel="nofollow noopener">third edition</a>, a W3C Recommendation since 24 June 2025, officially adds HDR colour (through the cICP chunk) and animated PNG. So "PNG can't do HDR" is no longer true on paper, even if support in software is only starting. If you need to know what your own browser does with <code>.jxl</code>, our <a href="/en/jpeg-xl-browser-test/">browser test</a> tells you in a second.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>When PNG is still the right choice, and when it isn't</h2>
+  <div class="grid3">
+    <div class="feature"><div class="fi">📤</div><h3>Sharing or uploading → PNG</h3><p>Every app, editor, chat and web form opens it. That alone settles most cases.</p></div>
+    <div class="feature"><div class="fi">🖥️</div><h3>Quick screenshots → PNG</h3><p>At default settings an optimised PNG beat JPEG XL on 3 of our 5 screenshots, and PNG decodes about ten times faster.</p></div>
+    <div class="feature"><div class="fi">⚡</div><h3>Thousands of files to open → PNG</h3><p>Lossless JPEG XL decoded about ten times slower in our test. Thumbnails, previews and batch jobs feel it.</p></div>
+    <div class="feature"><div class="fi">📷</div><h3>Lossless photo archive → JPEG XL</h3><p>A third smaller than the best PNG at the default setting, with every pixel verified identical.</p></div>
+    <div class="feature"><div class="fi">🫥</div><h3>Illustrations and transparent art → JPEG XL</h3><p>41% smaller at the default effort, 62% at effort 10, transparency kept exactly by cjxl.</p></div>
+    <div class="feature"><div class="fi">🗜️</div><h3>Screenshots you archive → JPEG XL, effort 10</h3><p>Slow, but in total it cut them by 53% against the best PNG (12% to 75% depending on the screenshot), most on text-heavy ones.</p></div>
+  </div>
+</div></section>
+
+<section class="block alt" id="method"><div class="wrap">
+  <h2>How we measured</h2>
+  <p class="lead"><strong>Machine and timing:</strong> a shared Ubuntu 24.04 server with 6 virtual AMD EPYC cores. Every command ran on one thread (<code>cjxl --num_threads=0</code>, <code>oxipng -t 1</code>), one after another, capped at 2.5 GB of memory and at the lowest priority, so the server's websites came first. Times are processor time (user plus system), which other load on the machine barely affects; read them as ratios rather than as what your own computer will do.</p>
+  <p class="lead"><strong>Tools:</strong> libjxl 0.12.0 (<code>cjxl</code>, <code>djxl</code>), oxipng 10.2.1, ImageMagick 6.9.12 for resizing and for the pixel comparison (<code>compare -metric AE</code> on all four channels), Pillow 12.3 for PNG decoding times, Chrome 146 for the screenshots, matplotlib 3.10.8 for the charts and cairosvg 2.9.0 for the illustrations.</p>
+  <p class="lead"><strong>Commands:</strong> <code>oxipng -t 1 -o 2</code> and <code>oxipng -t 1 -o max</code>; <code>cjxl in.png out.jxl -d 0 -e E --num_threads=0</code> with E = 1, 2, 3, 7, 9 and 10; <code>djxl out.jxl check.png</code> for the pixel check and <code>djxl out.jxl out.pam --num_threads=0</code> for decoding time.</p>
+  <p class="lead"><strong>Limits:</strong> this is a small sample, not a study. We planned 16 photos and ran 8 (four from phones, four from cameras) because the test had to be slowed down and run one command at a time on a server that also hosts websites; effort 10 was not run on photos. We did not test tiny images such as icons, where file overhead matters more, nor PNG's slowest optimiser, zopfli. The photos come from JPEGs and were reduced, so they are cleaner than a raw development; real lossless photo files may compress differently. Scripts, results per image as CSV, and the source and licence of every image are kept with the measurements.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Common questions</h2>
+  <div class="faq">
+    <details open><summary>Is JPEG XL smaller than PNG?</summary><div class="ans">For photos and illustrations, yes, clearly: a third smaller for our photos and 41% for our illustrations at the default setting, against PNGs already optimised with oxipng. For screenshots, only at the slowest effort; at the default it was larger than a well-optimised PNG on three of five.</div></details>
+    <details><summary>Is lossless JPEG XL really lossless?</summary><div class="ans">Yes. We decoded all 112 files from our test and compared them with the originals pixel by pixel, including the alpha channel. Not a single pixel differed.</div></details>
+    <details><summary>Does JPEG XL keep transparency?</summary><div class="ans">Yes, exactly. Our three illustrations with soft transparent edges came back identical, and as a group they were where JPEG XL saved the most.</div></details>
+    <details><summary>Which effort should I use for lossless?</summary><div class="ans">For photos, the default (7) or even 3 if you are in a hurry; above 7 the gain is tiny. For screenshots and flat graphics, 9 or 10, because the lower settings can end up bigger than PNG.</div></details>
+    <details><summary>Should I convert all my PNGs to JPEG XL?</summary><div class="ans">Only the ones you keep for yourself. Anything you share or upload is safer as PNG, which opens everywhere and decodes about ten times faster.</div></details>
+  </div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Keep reading</h2>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/jpeg-xl-vs-jpeg/"><span class="cta-ic">📏</span><b>JPEG XL vs JPEG</b><span class="cta-sub">The 20% lossless re-pack, measured →</span></a>
+    <a class="cta-card" href="/en/jpeg-xl-vs-webp/"><span class="cta-ic">⚖️</span><b>JPEG XL vs WebP</b><span class="cta-sub">The other lossless contender →</span></a>
+    <a class="cta-card" href="/en/cjxl-djxl-command-line/"><span class="cta-ic">⌨️</span><b>cjxl and djxl</b><span class="cta-sub">Every option, explained →</span></a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/news/">What's new</a></nav>
+  </div>
+  <div class="legal">
+    <span class="privacy-pill">🔒 Your files never leave your device</span>
+    <span class="flegal"><a href="/en/privacy/">Privacy</a> · <a href="/en/terms/">Terms</a><span id="revocation-link" style="display:none"> · <a href="javascript:window.googlefc.showRevocationMessage();">Privacy settings</a></span></span>
+    <span>© 2026 JXL Convert</span>
+  </div>
+  <div class="sister"><a href="https://docuniversal.com/" rel="noopener" style="display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:100%;color:inherit;opacity:.72;font-size:13px"><svg width="18" height="18" viewBox="0 0 64 64" aria-hidden="true" style="border-radius:5px;flex:none"><defs><linearGradient id="duLogo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7cc4a0"/><stop offset="1" stop-color="#366d55"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#duLogo)"/><circle cx="32" cy="32" r="16" fill="none" stroke="#fff" stroke-width="4" opacity=".95"/><circle cx="32" cy="32" r="5" fill="#fff"/></svg><span>Working with PDFs? Try DocUniversal — free, in your browser</span></a></div>
+</div></footer>
+<script>
+window.googlefc = window.googlefc || {};
+window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+window.googlefc.callbackQueue.push({
+  'CONSENT_API_READY':
+  () => __tcfapi('addEventListener', 0, (tcdata, success) => {
+    const revocationLink = document.getElementById('revocation-link');
+    if (!revocationLink) return;
+    if (!success || !tcdata) {
+      revocationLink.style.display = 'none';
+    } else if (tcdata.gdprApplies) {
+      revocationLink.style.display = 'inline';
+    } else {
+      revocationLink.style.display = 'none';
+    }
+  })
+});
+</script>
+</body>
+</html>

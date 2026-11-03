@@ -23,14 +23,14 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/styles.css?v=8">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does JPG to JXL lose quality?","acceptedAnswer":{"@type":"Answer","text":"No — lossless mode repacks the existing JPG, so it's pixel-identical and just smaller."}},{"@type":"Question","name":"Where can I use .jxl?","acceptedAnswer":{"@type":"Answer","text":"Safari supports it, and Chrome 145 shipped the decoder — though it is still off by default. Keep your originals meanwhile."}},{"@type":"Question","name":"Is it free and private?","acceptedAnswer":{"@type":"Answer","text":"Yes — free, no sign-up, and the file never leaves your device."}},{"@type":"Question","name":"Is the original JPG quality changed at all?","acceptedAnswer":{"@type":"Answer","text":"No. Lossless repacking rebuilds the same JPEG data inside the JPEG XL container, so it's mathematically identical — just smaller."}},{"@type":"Question","name":"Should I delete my JPGs after converting?","acceptedAnswer":{"@type":"Answer","text":"Keep them until JPEG XL support is universal. For now, .jxl is great for archiving and saving space alongside your originals."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does JPG to JXL lose quality?","acceptedAnswer":{"@type":"Answer","text":"No — lossless mode repacks the existing JPG, so it's pixel-identical and just smaller."}},{"@type":"Question","name":"Where can I use .jxl?","acceptedAnswer":{"@type":"Answer","text":"Safari 17+, Chrome 155+ (since 6 October 2026) and Firefox 158+ (since 13 October 2026) show it by default; Microsoft Edge doesn't. Keep your originals meanwhile, and on a website serve .jxl with a JPG or WebP fallback."}},{"@type":"Question","name":"Is it free and private?","acceptedAnswer":{"@type":"Answer","text":"Yes — free, no sign-up, and the file never leaves your device."}},{"@type":"Question","name":"Is the original JPG quality changed at all?","acceptedAnswer":{"@type":"Answer","text":"No. Lossless repacking rebuilds the same JPEG data inside the JPEG XL container, so it's mathematically identical — just smaller."}},{"@type":"Question","name":"Should I delete my JPGs after converting?","acceptedAnswer":{"@type":"Answer","text":"Keep them until JPEG XL support is universal. For now, .jxl is great for archiving and saving space alongside your originals."}}]}</script>
 <style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
 </head>
 <body>
 <header class="site"><div class="wrap nav">
   <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
   <div class="nav-right">
-    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Guides</a><a href="#faq">FAQ</a></nav>
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a><a href="#faq">FAQ</a></nav>
     <details class="lang"><summary>🌐 EN</summary>
       <div class="lang-menu">
         <a class="active" href="/en/jpg-to-jxl/"><span class="flag">🇬🇧</span> English</a>
@@ -73,7 +73,7 @@
       <div class="ctrl"><label>Quality</label>
         <div class="quality"><input type="range" id="quality" min="40" max="100" value="90"><output id="quality-val">90</output></div>
       </div>
-      <div class="ctrl"><label>&nbsp;</label><label class="switch"><input type="checkbox" id="lossless"> Lossless</label></div>
+      <div class="ctrl"><label>&nbsp;</label><label class="switch"><input type="checkbox" id="lossless" checked> Lossless</label></div>
     </div>
     <div class="results" id="results"></div>
     <div class="results-actions" id="results-actions"></div>
@@ -93,7 +93,7 @@
 <section class="block"><div class="wrap about">
   <h2>Good to know</h2>
   <p class="prose">Modern phones produce gorgeous JPGs, but they're far from efficient. Converting JPG to JPEG XL with lossless repacking shrinks each file by around 20% while keeping it pixel-for-pixel identical to the original — you literally lose nothing and gain storage. Multiply that across a library of thousands of images and the savings add up fast.</p>
-  <p class="prose">JPEG XL is the modern, royalty-free successor to JPG: Safari already displays it natively and Chrome is rolling support out, so the format is only going to become more useful. Everything is converted privately in your browser, so you can future-proof even personal photos without uploading them anywhere.</p>
+  <p class="prose">JPEG XL is the modern, royalty-free successor to JPG: Safari already displays it natively, and Chrome 155 and Firefox 158 switched it on by default in October 2026, so the format is only going to become more useful. Everything is converted privately in your browser, so you can future-proof even personal photos without uploading them anywhere.</p>
 </div></section>
 
 <section class="block alt" id="how"><div class="wrap">
@@ -109,7 +109,7 @@
   <h2>FAQ</h2>
   <div class="faq">
     <details open><summary>Does JPG to JXL lose quality?</summary><div class="ans">No — lossless mode repacks the existing JPG, so it's pixel-identical and just smaller.</div></details>
-    <details><summary>Where can I use .jxl?</summary><div class="ans">Safari supports it, and Chrome 145 shipped the decoder — though it is still off by default. Keep your originals meanwhile.</div></details>
+    <details><summary>Where can I use .jxl?</summary><div class="ans">Safari 17+, Chrome 155+ (since 6 October 2026) and Firefox 158+ (since 13 October 2026) show it by default; Microsoft Edge doesn't. Keep your originals meanwhile, and on a website serve .jxl with a JPG or WebP fallback.</div></details>
     <details><summary>Is it free and private?</summary><div class="ans">Yes — free, no sign-up, and the file never leaves your device.</div></details>
     <details><summary>Is the original JPG quality changed at all?</summary><div class="ans">No. Lossless repacking rebuilds the same JPEG data inside the JPEG XL container, so it's mathematically identical — just smaller.</div></details>
     <details><summary>Should I delete my JPGs after converting?</summary><div class="ans">Keep them until JPEG XL support is universal. For now, .jxl is great for archiving and saving space alongside your originals.</div></details>
@@ -137,7 +137,7 @@
     <a class="cta-card" href="/en/jpeg-xl-vs-webp/"><span class="cta-ic">⚖️</span><b>JPEG XL vs WebP</b><span class="cta-sub">Which should you actually use? →</span></a>
     <a class="cta-card" href="/en/how-to-open-jxl/"><span class="cta-ic">📂</span><b>How to open a .jxl file</b><span class="cta-sub">On Windows, Mac, iPhone &amp; Android →</span></a>
     <a class="cta-card" href="/en/jxl-file/"><span class="cta-ic">📄</span><b>What is a .jxl file?</b><span class="cta-sub">You have one and nothing opens it →</span></a>
-    <a class="cta-card" href="/en/jpeg-xl-vs-avif/"><span class="cta-ic">⚖️</span><b>JPEG XL vs AVIF</b><span class="cta-sub">AVIF has the browsers, JPEG XL has the engineering →</span></a>
+    <a class="cta-card" href="/en/jpeg-xl-vs-avif/"><span class="cta-ic">⚖️</span><b>JPEG XL vs AVIF</b><span class="cta-sub">AVIF has wider browser support, JPEG XL the engineering →</span></a>
     <a class="cta-card" href="/en/jpeg-xl-software-support/"><span class="cta-ic">🧰</span><b>Which apps support JPEG XL?</b><span class="cta-sub">The 2026 list, with the gaps stated plainly →</span></a>
     <a class="cta-card" href="/en/archive-photos-without-losing-quality/"><span class="cta-ic">🗄️</span><b>Archiving without losing quality</b><span class="cta-sub">Reclaim ~20% of your disk, reversibly →</span></a>
     <a class="cta-card" href="/en/iphone-photos-wont-open-on-windows/"><span class="cta-ic">📱</span><b>iPhone photos won’t open on Windows</b><span class="cta-sub">What HEIC is and the setting that stops it →</span></a>
@@ -149,7 +149,7 @@
 <footer class="site"><div class="wrap">
   <div class="fcols">
     <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
-    <nav class="fnav"><a href="/en/">Converter</a><a href="#how">How to</a><a href="#faq">FAQ</a><a href="/en/guides/">Guides</a><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/news/">What's new</a></nav>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="#how">How to</a><a href="#faq">FAQ</a><a href="/en/guides/">Blog</a><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/news/">What's new</a></nav>
   </div>
   <div class="legal"><span class="privacy-pill">🔒 Your files never leave your device</span><span class="flegal"><a href="/en/privacy/">Privacy</a> · <a href="/en/terms/">Terms</a><span id="revocation-link" style="display:none"> · <a href="javascript:window.googlefc.showRevocationMessage();">Privacy settings</a></span></span><span>© 2026 JXL Convert</span></div>
   <div class="sister"><a href="https://docuniversal.com/" rel="noopener" style="display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:100%;color:inherit;opacity:.72;font-size:13px"><svg width="18" height="18" viewBox="0 0 64 64" aria-hidden="true" style="border-radius:5px;flex:none"><defs><linearGradient id="duLogo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7cc4a0"/><stop offset="1" stop-color="#366d55"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#duLogo)"/><circle cx="32" cy="32" r="16" fill="none" stroke="#fff" stroke-width="4" opacity=".95"/><circle cx="32" cy="32" r="5" fill="#fff"/></svg><span>Working with PDFs? Try DocUniversal — free, in your browser</span></a></div>
@@ -172,6 +172,6 @@ window.googlefc.callbackQueue.push({
   })
 });
 </script>
-<script type="module" src="/assets/js/app.js?v=9"></script>
+<script type="module" src="/assets/js/app.js?v=10"></script>
 </body>
 </html>

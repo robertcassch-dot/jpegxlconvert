@@ -37,7 +37,7 @@
 <main class="legal-page">
   <a class="back" href="/fr/">← Retour au convertisseur</a>
   <h1>Politique de confidentialité et cookies</h1>
-  <div class="updated">Dernière mise à jour : 18 août 2026</div>
+  <div class="updated">Dernière mise à jour : 15 octobre 2026</div>
 
   <h2 id="en-bref">1. En bref</h2>
   <p><strong>Vos images et vos fichiers ne sont jamais envoyés sur un serveur.</strong> Le convertisseur et la visionneuse s'exécutent entièrement à l'intérieur de votre navigateur, avec WebAssembly. Le fichier est ouvert depuis votre disque, traité dans la mémoire de votre appareil et vous est restitué sous forme de téléchargement. Il ne passe jamais par nous.</p>
@@ -77,14 +77,14 @@
   </ul>
 
   <h2 id="donnees">5. Quelles données sont traitées, pourquoi et sur quelle base légale</h2>
-  <p>Voici la liste complète de ce qui est traité. Sous le tableau figure la seule autre chose qui quitte votre navigateur.</p>
+  <p>Voici la liste complète de ce qui est traité.</p>
   <div class="tbl"><table class="cmp">
     <tr><th>Donnée</th><th>Finalité</th><th>Base légale</th><th>Conservation</th></tr>
     <tr>
-      <td><strong>Données de connexion</strong><br>Adresse IP, agent utilisateur (navigateur et système), adresse demandée, date et heure.<br><em>Traitées par un tiers : Cloudflare, qui héberge le site.</em></td>
+      <td><strong>Données de connexion</strong><br>Adresse IP, agent utilisateur (navigateur et système), adresse demandée, page de provenance, date et heure. <strong>L'adresse IP est raccourcie avant d'être enregistrée</strong> : sa dernière partie est remplacée par des zéros (le dernier des quatre nombres d'une adresse IPv4, les 80 derniers bits d'une adresse IPv6).<br><em>Conservées dans le journal d'accès du propre serveur de ce site, loué à Contabo GmbH et situé en Allemagne.</em></td>
       <td>Vous servir la page, maintenir le service en ligne et bloquer les abus et les attaques.</td>
       <td>Intérêt légitime (art. 6.1.f du RGPD) : sans ces données techniques, aucune page web ne peut être livrée ni protégée.</td>
-      <td>Celle que fixe Cloudflare dans sa <a href="https://www.cloudflare.com/privacypolicy/" rel="nofollow noopener">politique de confidentialité</a>. Le responsable de ce site n'accède pas à ces journaux et ne les télécharge pas.</td>
+      <td><strong>14 jours.</strong> Le journal repart sur un nouveau fichier chaque jour, et chaque fichier est supprimé automatiquement au bout de 14 jours.</td>
     </tr>
     <tr>
       <td><strong>Données publicitaires</strong><br>Cookies et identifiants publicitaires, adresse IP, agent utilisateur, pages que vous visitez sur ce site et interaction avec les annonces.<br><em>Traitées par un tiers : Google. Dans le tableau de bord AdSense, nous ne voyons que des chiffres agrégés — impressions, clics, revenus —, jamais rien vous concernant en tant que personne.</em></td>
@@ -93,15 +93,15 @@
       <td>Fixée par Google, pas par nous : les cookies AdSense les plus durables (<code>__gads</code>, <code>__gpi</code>, <code>IDE</code>) expirent au bout de 13 mois dans l'EEE et au Royaume-Uni, d'après la <a href="https://business.safety.google/adscookies/" rel="nofollow noopener">liste publiée par Google</a> ; ce que Google conserve ensuite relève de sa <a href="https://policies.google.com/privacy" rel="nofollow noopener">politique de confidentialité</a>. Le responsable ne peut fixer ni raccourcir aucun de ces deux délais.</td>
     </tr>
     <tr>
-      <td><strong>Données de mesure d'audience</strong><br>Adresse de la page ouverte, page de provenance, agent utilisateur, temps de chargement, taille d'écran et pays déduit de votre adresse IP.<br><em>Traitées par un tiers : Cloudflare Web Analytics. Cloudflare injecte son script en périphérie, depuis <code>static.cloudflareinsights.com</code>, raison pour laquelle il n'apparaît pas dans le code source de ce site. Il ne dépose <strong>aucun cookie</strong> et n'enregistre aucun identifiant sur votre appareil.</em></td>
+      <td><strong>Données de mesure d'audience</strong><br>Adresse de la page ouverte, page de provenance, agent utilisateur, temps de chargement, taille d'écran et pays déduit de votre adresse IP.<br><em>Traitées par un tiers : Cloudflare Web Analytics. Son script, chargé depuis <code>static.cloudflareinsights.com</code>, est ajouté à chaque page au moment où elle est envoyée, si bien qu'il ne figure pas dans les fichiers sources de ce site. Il ne dépose <strong>aucun cookie</strong> et n'enregistre aucun identifiant sur votre appareil.</em></td>
       <td>Compter les visites de façon agrégée : combien de pages sont ouvertes, lesquelles, et approximativement depuis où.</td>
       <td>Intérêt légitime (art. 6.1.f du RGPD). Rien n'est écrit ni lu sur votre appareil, de sorte que l'article 82 de la loi Informatique et Libertés n'exige pas de consentement pour ce stockage, qui n'existe pas.</td>
       <td>Celle que Cloudflare applique à Web Analytics. Le responsable ne voit que des graphiques agrégés et ne peut ni allonger ni raccourcir ce délai.</td>
     </tr>
   </table></div>
   <p><strong>À propos de cette troisième ligne.</strong> C'est toute la mesure d'audience de ce site : pas de cartes de chaleur, pas d'enregistrement de session, pas de tests A/B, pas de Google Analytics, pas de compteur maison. Elle fonctionne sans cookies et sans aucun identifiant sur votre appareil, et le responsable ne voit que des graphiques agrégés — pages vues, pages les plus consultées, pays —, jamais rien qui désigne un visiteur en particulier.</p>
-  <p>Une dernière chose quitte votre navigateur sans qu'aucun script n'intervienne : Cloudflare envoie avec chaque réponse les en-têtes <code>NEL</code> et <code>Report-To</code>, qui demandent à votre navigateur de signaler les erreurs réseau — connexion échouée, délai dépassé — à <code>a.nel.cloudflare.com</code>. Ces signalements contiennent l'adresse demandée, votre adresse IP et le type d'erreur. Ils font partie de l'hébergement, pas d'une quelconque mesure de notre part.</p>
-  <p>En dehors de ces trois lignes, le responsable de ce site ne dispose d'aucune base de données, d'aucun serveur propre, d'aucun système qui recevrait des données vous concernant.</p>
+  <p>Le journal d'accès du serveur, celui de la première ligne, ne sert pas non plus à compter les visiteurs. Il est là pour servir les pages, faire fonctionner le site et bloquer les abus.</p>
+  <p>En dehors de ces trois lignes, le responsable de ce site ne dispose d'aucune base de données ni d'aucun système qui recevrait des données vous concernant.</p>
 
   <h2 id="publicite">6. Publicité : Google AdSense</h2>
   <p>Ce site est gratuit et n'a pas de version payante : il est financé par <strong>Google AdSense</strong>. Le script AdSense, avec l'identifiant d'éditeur <code>ca-pub-9791902883190551</code>, est chargé sur <strong>toutes</strong> les pages de contenu du site, y compris celle-ci ; la seule page qui ne le charge pas est la page d'erreur 404.</p>
@@ -161,23 +161,24 @@
   <p><strong>Les façons de dire non qui ne dépendent pas du message</strong>, où que vous soyez : <a href="https://myadcenter.google.com/" rel="nofollow noopener">Mon centre de publicité</a>, le blocage des cookies tiers dans les réglages de votre navigateur, et les bloqueurs de publicité.</p>
 
   <h2 id="destinataires">9. Avec qui les données sont partagées</h2>
-  <p>Avec ces deux entités uniquement, et personne d'autre :</p>
+  <p>Avec ces trois entités uniquement, et personne d'autre :</p>
   <ul>
     <li><strong>Google Ireland Ltd. / Google LLC</strong> — fournisseur de publicité (Google AdSense). Pour l'essentiel des données publicitaires, Google agit comme <strong>responsable de traitement indépendant</strong> au titre de ses propres conditions : il décide lui-même de ce qu'il en fait. C'est pourquoi les demandes d'exercice de droits portant sur la publicité doivent être adressées directement à Google : le responsable de ce site ne peut pas y répondre et ne peut pas donner d'instructions à Google à ce sujet.</li>
-    <li><strong>Cloudflare, Inc.</strong> — hébergement du site et réseau de diffusion (Cloudflare Pages), et mesure d'audience (Cloudflare Web Analytics). Dans ces deux rôles, Cloudflare agit comme <strong>sous-traitant</strong>, pour le compte du responsable et sur ses instructions.</li>
+    <li><strong>Contabo GmbH</strong> (Munich, Allemagne) — fournisseur du serveur sur lequel tourne ce site et où est conservé le journal d'accès décrit au <a href="#donnees">point 5</a>. Contabo agit comme <strong>sous-traitant</strong>, pour le compte du responsable et sur ses instructions.</li>
+    <li><strong>Cloudflare, Inc.</strong> — mesure d'audience (Cloudflare Web Analytics), DNS du domaine et transfert des courriels envoyés à l'adresse de contact. Dans ces rôles, Cloudflare agit comme <strong>sous-traitant</strong>, pour le compte du responsable et sur ses instructions.</li>
   </ul>
   <p>Aucune donnée n'est vendue. Aucune donnée n'est cédée à des intermédiaires ni à des courtiers en données. Il n'y a aucune autre cession ni communication à des tiers.</p>
   <p>Et le plus important : <strong>les fichiers que vous convertissez ne sont partagés avec personne, parce qu'ils ne quittent pas votre appareil.</strong> Il n'y a rien à partager.</p>
 
   <h2 id="transferts">10. Transferts internationaux</h2>
-  <p>Google et Cloudflare sont des entreprises présentes aux États-Unis : les données de connexion et les données publicitaires décrites au <a href="#donnees">point 5</a> peuvent donc y être traitées, ou l'être dans d'autres pays situés hors de l'Espace économique européen.</p>
+  <p>Le serveur sur lequel tourne ce site se trouve en Allemagne, dans l'Union européenne, si bien que le journal d'accès ne quitte jamais l'UE. Google et Cloudflare, en revanche, sont des entreprises présentes aux États-Unis : les données qui passent par eux — notamment les données publicitaires et les données de mesure d'audience décrites au <a href="#donnees">point 5</a> — peuvent donc y être traitées, ou l'être dans d'autres pays situés hors de l'Espace économique européen.</p>
   <p>Ces transferts s'appuient sur le cadre de protection des données UE–États-Unis (<em>EU–US Data Privacy Framework</em>) et, lorsque celui-ci n'est pas applicable, sur les clauses contractuelles types approuvées par la Commission européenne. Chaque fournisseur le détaille sur sa propre page : <a href="https://policies.google.com/privacy/frameworks" rel="nofollow noopener">Google</a> et <a href="https://www.cloudflare.com/privacypolicy/" rel="nofollow noopener">Cloudflare</a>.</p>
 
   <h2 id="conservation">11. Durée de conservation</h2>
-  <p><strong>Le responsable de ce site ne conserve rien</strong>, puisqu'il n'a ni base de données, ni serveur qui recevrait des données vous concernant.</p>
-  <p>Les durées sont fixées par les prestataires. Le critère est à chaque fois ce dont chacun a besoin pour livrer, protéger ou facturer le service, et le responsable de ce site ne peut ni les allonger ni les raccourcir :</p>
+  <p><strong>Le responsable de ce site ne tient aucune base de données vous concernant.</strong> La seule chose que conserve le propre serveur de ce site est son journal d'accès, avec l'adresse IP déjà raccourcie, et il le supprime automatiquement au bout de 14 jours.</p>
+  <p>Les autres durées sont fixées par les prestataires. Le critère est à chaque fois ce dont chacun a besoin pour livrer, protéger ou facturer le service, et le responsable de ce site ne peut ni les allonger ni les raccourcir :</p>
   <ul>
-    <li><strong>Journaux de l'hébergeur</strong> — conservés par Cloudflare selon ses propres durées (<a href="https://www.cloudflare.com/privacypolicy/" rel="nofollow noopener">sa politique de confidentialité</a>). Le responsable ne les lit pas, ne les copie pas, ne les télécharge pas, et ne peut pas non plus en prolonger la durée.</li>
+    <li><strong>Journal d'accès du serveur</strong> — <strong>14 jours</strong>, avec l'adresse IP raccourcie avant d'être enregistrée. Le fichier de chaque jour est supprimé automatiquement lorsqu'il atteint cet âge.</li>
     <li><strong>Mesure d'audience</strong> — conservée par Cloudflare selon la durée qu'il applique à Web Analytics. Seuls des chiffres agrégés parviennent au responsable, et rien n'y identifie un visiteur.</li>
     <li><strong>Données publicitaires</strong> — les cookies expirent selon le calendrier publié par Google : 13 mois dans l'EEE et au Royaume-Uni pour les cookies AdSense les plus durables (<a href="https://business.safety.google/adscookies/" rel="nofollow noopener">liste des cookies de Google</a>). Ce que Google conserve ensuite relève de sa <a href="https://policies.google.com/privacy" rel="nofollow noopener">politique de confidentialité</a> ; AdSense n'en donne aucun contrôle aux éditeurs.</li>
     <li><strong>Adresse de contact</strong> — si vous écrivez pour exercer un droit, votre message et la réponse sont conservés <strong>un an à compter de la date de la réponse</strong>, ce qui est nécessaire pour pouvoir prouver qu'une réponse vous a été apportée, puis supprimés.</li>

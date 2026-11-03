@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9791902883190551" crossorigin="anonymous"></script>
+<title>JPEG XL in Photoshop: Open and Save .jxl (2026)</title>
+<meta name="description" content="Photoshop opens and saves JPEG XL natively since 26.8 (June 2025). Where the option hides, what Lossless and Quality do, and what to do on older versions.">
+<link rel="canonical" href="https://jpegxlconvert.com/en/jpeg-xl-in-photoshop/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/jpeg-xl-in-photoshop/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/jpeg-xl-en-photoshop/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/jpeg-xl-in-photoshop/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JPEG XL in Photoshop: where it is and what it does">
+<meta property="og:description" content="Native since Photoshop 26.8, hidden in Save a Copy. The options explained, measured, and the fixes for older versions.">
+<meta property="og:url" content="https://jpegxlconvert.com/en/jpeg-xl-in-photoshop/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=8">
+<link rel="alternate" type="application/rss+xml" title="JXL Convert — Blog" href="/en/feed.xml">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Does Photoshop support JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"Yes. Since version 26.8 (June 2025) it opens, edits and saves .jxl files natively, on Windows and macOS. Saving is under File › Save a Copy, or File › Save As for a single-layer document."}},
+{"@type":"Question","name":"Is Photoshop's Lossless the same as a lossless JPEG conversion?","acceptedAnswer":{"@type":"Answer","text":"No. Photoshop stores the decoded pixels, so from a JPEG source the file is often larger than the original. A lossless JPEG re-pack keeps the JPEG's own data and was 12% and 23% smaller on these two photos, around 20% across the 16 photos of our JPEG comparison; Photoshop can't do it, but our converter can. More in Is JPEG XL lossless?"}},
+{"@type":"Question","name":"What Quality should I choose for Lossy?","acceptedAnswer":{"@type":"Answer","text":"Adobe doesn't document how its slider maps to the encoder, so don't copy numbers from other programs. Start high, open the result at 100% and step down until you notice a difference, then go one step back. One user who compared closely found Photoshop's Quality 100 close to libjxl's quality 90 in size and artefacts, so if you need more, use Lossless."}},
+{"@type":"Question","name":"Can Photoshop batch-convert a folder to JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"Not with the Image Processor, which only writes JPEG, PSD and TIFF. For a folder, a dedicated tool is quicker: cjxl in a script, or our converter, which takes many files at once."}},
+{"@type":"Question","name":"Can I save a CMYK image as JPEG XL?","acceptedAnswer":{"@type":"Answer","text":"Users report that Photoshop won't, even though the format itself supports CMYK. For print, TIFF or PDF remain the safe choice; convert a copy to RGB if you need a .jxl."}},
+{"@type":"Question","name":"Will people be able to open the .jxl I send them?","acceptedAnswer":{"@type":"Answer","text":"Not always. Support in viewers and browsers is still patchy, so check with our browser test, or send a JPEG when you don't know what the recipient uses."}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"JPEG XL in Photoshop","datePublished":"2026-10-15","dateModified":"2026-10-15","inLanguage":"en","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/en/about/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/en/"},"mainEntityOfPage":"https://jpegxlconvert.com/en/jpeg-xl-in-photoshop/"}
+</script>
+<style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+<style>.gtbl{max-width:720px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a></nav>
+    <details class="lang"><summary>🌐 EN</summary>
+      <div class="lang-menu">
+        <a class="active" href="/en/jpeg-xl-in-photoshop/"><span class="flag">🇬🇧</span> English</a>
+        <a href="/es/jpeg-xl-en-photoshop/"><span class="flag">🇪🇸</span> Español</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">🎨 Adobe Photoshop · checked October 2026</span>
+  <h1>JPEG&nbsp;XL in Photoshop</h1>
+  <p class="sub"><strong>Yes, Photoshop opens and saves .jxl files by itself — since version 26.8, June 2025.</strong> It just isn't where most people look: not in Export As, but in <strong>File › Save a Copy</strong>. Here is the exact route, what each option really does to your file, and what to do if you're stuck on an older version.</p>
+  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">by <a href="/en/about/" style="color:inherit">Robert Castillo</a> · Published <time datetime="2026-10-15">October 15, 2026</time></p>
+  <div class="badges">
+    <span class="badge green">✅ Native since 26.8</span><span class="badge">💾 File › Save a Copy</span><span class="badge">🚫 Not in Export As</span><span class="badge">🧪 Sizes measured with libjxl</span>
+  </div>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/jpg-to-jxl/"><span class="cta-ic">🗜️</span><b>Shrink a JPEG without touching it</b><span class="cta-sub">The lossless re-pack Photoshop can't do →</span></a>
+    <a class="cta-card" href="/en/jxl-viewer/"><span class="cta-ic">👁️</span><b>No Photoshop at hand?</b><span class="cta-sub">Open the .jxl in your browser →</span></a>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>The short answer</h2>
+  <p class="lead">Photoshop has opened and saved JPEG&nbsp;XL on its own since <strong>version 26.8, released in June 2025</strong>. Adobe's feature summary for that release said it plainly: you could now “open, edit, and save images in AVIF and JPEG XL (JXL) formats”, with lossy and lossless compression and native HDR support. No plugin, and no detour through Camera Raw.</p>
+  <p class="lead">Every version from 26.8 onwards has it. In October 2026 that means the whole Photoshop 2026 line, from 27.0 to the current 27.11 (see Adobe's <a href="https://helpx.adobe.com/photoshop/desktop/whats-new/photoshop-on-desktop-release-notes.html" rel="nofollow noopener">release notes</a>), plus the long-term-support release of Photoshop 2025 (26.11). To see which one you have, open <strong>Help › About Photoshop</strong> on Windows or <strong>Photoshop › About Photoshop</strong> on a Mac.</p>
+  <p class="lead">What trips people up is <em>where</em> the format lives. JPEG&nbsp;XL is not in Export As, Quick Export or Save for Web. It sits in <strong>File › Save a Copy</strong>, next to TIFF and PNG, and in <strong>File › Save As</strong> only when the document is a single flattened layer, because Save As lists just the formats that keep everything in your file.</p>
+</div></section>
+
+<section class="block alt" id="save"><div class="wrap">
+  <h2>How to save a JPEG XL from Photoshop</h2>
+  <div class="steps">
+    <div class="step"><h3>Check the version</h3><p>You need 26.8 or later. If you're behind, update from the Creative Cloud desktop app. JPEG XL was a beta feature from April 2025 and became standard in the June release.</p></div>
+    <div class="step"><h3>Open Save a Copy</h3><p>Go to <strong>File › Save a Copy</strong> and pick <strong>JPEG XL</strong> in the format menu. A copy is written; the document you're working on stays open and unchanged, layers and all.</p></div>
+    <div class="step"><h3>Choose the compression</h3><p>In the options dialog, set <strong>Color Compression</strong> to <strong>Lossless</strong> to keep every pixel exactly, or to <strong>Lossy</strong> for a far smaller file. Only Lossy shows a <strong>Quality</strong> slider, which tops out at 100 (“Maximum”).</p></div>
+    <div class="step"><h3>Reopen and look</h3><p>Open the new .jxl once and check it at 100% before you delete anything. With Lossy, look at skies, skin and fine texture first: that's where compression shows.</p></div>
+  </div>
+  <p class="lead">At launch, users pointed out that JPEG&nbsp;XL appears neither in <strong>Export As</strong> nor in <strong>Save for Web (Legacy)</strong>, so there is no side-by-side preview to compare quality settings. Adobe's release notes since then don't announce a change: the April 2026 release (27.6) mentions “expanded support for modern file formats” without naming any.</p>
+  <p class="lead">Adobe also hasn't published a help page for the JPEG&nbsp;XL dialog itself. The option names here are the ones users quote from the English interface in Adobe's own forums; if a future version adds settings, the route through Save a Copy will still be the same.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Lossless, Lossy and Quality: what they do to the file</h2>
+  <p class="lead">Photoshop's dialog is short, and Adobe doesn't say how its Quality scale maps onto the JPEG&nbsp;XL encoder. What we can tell you is what each choice means in practice, and when each one is the right call.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Setting</th><th>What it does</th><th>Use it for</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Lossless</strong></td><td>Stores the document's pixels exactly. No Quality slider.</td><td>Masters, anything you'll open and save again</td></tr>
+      <tr><td><strong>Lossy</strong>, high Quality</td><td>Throws away detail the eye is unlikely to notice. Files shrink several times over.</td><td>Finished photos to share, galleries, client previews</td></tr>
+      <tr><td><strong>Lossy</strong>, low Quality</td><td>Smaller still; artefacts start to show on gradients and texture.</td><td>Thumbnails and drafts, after checking at 100%</td></tr>
+      <tr><td>Bit depth</td><td>Not documented: Adobe doesn't say whether 16- or 32-bit documents keep their depth.</td><td>If it matters, check the saved file in another program</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">Adobe doesn't document whether a 16- or 32-bit document is written at that depth. Its <a href="https://helpx.adobe.com/photoshop/desktop/save-and-export/export-files-to-different-formats/photoshop-file-formats-overview.html" rel="nofollow noopener">file formats overview</a> lists JPEG&nbsp;XL among the 32-bit formats, alongside PSD, PSB, TIFF, OpenEXR, Radiance and Portable Float Map, but a user reported in November 2025 that Photoshop 2026 still couldn't save it at 16 bits. If it matters, check by opening the file in another program.</p>
+  <p class="lead">One case from Adobe's forum shows a related trap. A user whose printer only accepted classic JPEG found that Photoshop offered nothing but JPEG&nbsp;XL: the document was in 16-bit mode, and plain JPEG is 8-bit only, so it disappears from Save a Copy while JPEG&nbsp;XL stays. Switching to 8 Bits/Channel brought JPEG back.</p>
+</div></section>
+
+<section class="block alt" id="measured"><div class="wrap">
+  <h2>Measured: what those choices weigh</h2>
+  <p class="lead">To put sizes on those choices we encoded two public-domain photos with <strong>libjxl 0.12.0</strong>, the reference JPEG&nbsp;XL encoder, with settings analogous to Photoshop's two modes: lossless from the pixels, and lossy at two quality levels. <strong>This is an approximation with libjxl, not Photoshop itself.</strong> Adobe uses its own encoder settings, and users in Adobe's forum report Photoshop's files coming out several times larger than other apps', so read these as what the format can do, not what Photoshop will write.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>File</th><th>Photo A · 14 MP</th><th>Photo B · 45 MP</th></tr></thead>
+    <tbody>
+      <tr><td>Original JPEG</td><td>8.38 MB</td><td>12.02 MB</td></tr>
+      <tr><td>PNG (lossless, maximum compression)</td><td>14.49 MB</td><td>32.97 MB</td></tr>
+      <tr><td>JPEG XL <strong>Lossless</strong> from the pixels</td><td>10.25 MB</td><td>18.68 MB</td></tr>
+      <tr><td>JPEG XL <strong>Lossy</strong>, distance 1.0 (≈ libjxl quality 90)</td><td>0.99 MB</td><td>2.91 MB</td></tr>
+      <tr><td>JPEG XL <strong>Lossy</strong>, distance 2.0 (≈ libjxl quality 79)</td><td>0.50 MB</td><td>1.32 MB</td></tr>
+      <tr><td>JPEG re-packed into JPEG XL (not possible in Photoshop)</td><td class="y">7.34 MB</td><td class="y">9.30 MB</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">The surprise is the third row. When a picture started life as a JPEG, Photoshop's <strong>Lossless</strong> option keeps the decoded pixels exactly — compression artefacts included — and the result can be <strong>bigger than the JPEG you opened</strong>: 22% bigger for photo A and 55% for photo B. It's still 29–43% smaller than a PNG of the same pixels, so it makes a sensible master for edited work. It just isn't a way to shrink a folder of JPEGs.</p>
+  <p class="lead">The last row is the one that is. libjxl can re-pack a JPEG's own compressed data without decoding it, and give you the original file back <strong>byte for byte</strong> — we checked both photos. That saved 12% on photo A and 23% on photo B, and around 20% across the 16 photos of our <a href="/en/jpeg-xl-vs-jpeg/">JPEG comparison</a>. Photoshop, Lightroom and GIMP all decode to pixels first, so none of them can do this; our <a href="/en/jpg-to-jxl/">JPG to JPEG XL converter</a> and <a href="/en/cjxl-djxl-command-line/">cjxl on the command line</a> can.</p>
+  <p class="lead">On the lossy side, distance 1.0 scored <strong>84.8</strong> on SSIMULACRA2 for photo A, where 85 means differences an average viewer won't notice even comparing in place at 1:1. A JPEG of the same pixels at quality 90, made with libjpeg-turbo, weighed 1.52 MB and scored 80.8. On the busier photo B the margin narrowed: distance 1.0 was 41% smaller than the quality-90 JPEG but scored slightly lower (77.2 against 78.6), so detailed photos deserve a notch more Quality.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>HDR and 32-bit documents</h2>
+  <p class="lead">JPEG&nbsp;XL is one of the few formats that can keep HDR values without the bulk of a 32-bit TIFF. Adobe's formats overview puts it in the 32-bit list, with a note to save those documents through <strong>Save As</strong>; as noted above, whether the file keeps that depth isn't documented, so check an HDR export before relying on it.</p>
+  <p class="lead">Seeing HDR on screen is a separate matter. In the versions we checked, Adobe's Camera Raw HDR guide tells you to switch on <strong>Precise color management for HDR display</strong> under <strong>Preferences (Settings on a Mac) › Technology Previews</strong> before Photoshop shows HDR content correctly, and you need an HDR-capable display for it to matter at all.</p>
+  <p class="lead">Camera Raw is the other door. Since <strong>Camera Raw 16.0</strong> (October 2023) its Save Image button can write JPEG&nbsp;XL, with an <strong>HDR Output</strong> box under Color Space. If your edit starts as a raw file, saving the JPEG&nbsp;XL straight from Camera Raw skips a round trip through Photoshop's document.</p>
+</div></section>
+
+<section class="block alt" id="older"><div class="wrap">
+  <h2>On an older Photoshop</h2>
+  <p class="lead">If you can't update to 26.8, what works depends on your version and on whether you're on Windows or a Mac.</p>
+  <div class="grid3">
+    <div class="feature"><div class="fi">🎞️</div><h3>Photoshop 2024 to 26.7</h3><p>With Camera Raw 16 or later, a .jxl opens — but through the Camera Raw dialog. Click <strong>Open</strong> there to get a normal document. Saving goes through Camera Raw's Save Image button, not Save As.</p></div>
+    <div class="feature"><div class="fi">🧩</div><h3>Photoshop 2020–2023 on Windows</h3><p>The free <a href="https://gitlab.com/SuperSaltyGamer/jpegxlformat" rel="nofollow noopener">JpegXlFormat plugin</a> adds open and save: copy <code>jpegxlformat.8bi</code> into Photoshop's <code>Plug-ins</code> folder and restart. Lossless and lossy, 8 and 16-bit, ICC profiles, Exif/XMP, transparency. Last code change: February 2025.</p></div>
+    <div class="feature"><div class="fi">🍎</div><h3>Older versions on a Mac</h3><p>We found no maintained Mac plugin. Convert the file first — <a href="/en/jxl-to-png/">JXL to PNG</a> keeps every pixel — edit, and convert back if you need a .jxl at the end.</p></div>
+  </div>
+  <p class="lead">One warning about the plugin's own instructions: to stop Camera Raw intercepting .jxl files, its README suggests renaming <code>Camera Raw.8bi</code>. That disables Camera Raw for everything, raw files included, which most photographers won't want. Leave it alone unless you know you never use Camera Raw.</p>
+</div></section>
+
+<section class="block" id="problems"><div class="wrap">
+  <h2>Common problems and their fixes</h2>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>What happens</th><th>Why</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td>JPEG XL isn't in the Save As list</td><td>The document has layers; Save As only lists formats that keep them</td><td>Use <strong>File › Save a Copy</strong></td></tr>
+      <tr><td>No JPEG XL anywhere</td><td>Photoshop older than 26.8</td><td>Update, or see the section above</td></tr>
+      <tr><td>Not in Export As or Save for Web</td><td>Not offered there when it launched</td><td>Save a Copy; for folders, a batch tool</td></tr>
+      <tr><td>Only JPEG XL is offered, plain JPEG is missing</td><td>16-bit document; JPEG is 8-bit only</td><td><strong>Image › Mode › 8 Bits/Channel</strong>, then save</td></tr>
+      <tr><td>CMYK document won't save as .jxl</td><td>Reported since June 2025</td><td>Convert a copy to RGB, or deliver TIFF for print</td></tr>
+      <tr><td>A .jxl opens in Camera Raw</td><td>Usually a Photoshop older than 26.8</td><td>Click Open in Camera Raw, or update</td></tr>
+      <tr><td>Someone can't open the .jxl you sent</td><td>Their software doesn't read it yet</td><td>Send a JPEG, or point them to a viewer</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">A rare one: during the beta, a few deliberately unusual test files from the official libjxl conformance set — spot colours, CMYK layers, premultiplied alpha — wouldn't open. Ordinary photos are not affected, but if a .jxl from a print workflow refuses to open, decode it to PNG with <a href="/en/cjxl-djxl-command-line/">djxl</a> or our <a href="/en/jxl-viewer/">viewer</a> and carry on.</p>
+</div></section>
+
+<section class="block alt" id="faq"><div class="wrap">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <details open><summary>Does Photoshop support JPEG XL?</summary><div class="ans">Yes. Since version 26.8 (June 2025) it opens, edits and saves .jxl files natively, on Windows and macOS. Saving is under File › Save a Copy, or File › Save As for a single-layer document.</div></details>
+    <details><summary>Is Photoshop's Lossless the same as a lossless JPEG conversion?</summary><div class="ans">No. Photoshop stores the decoded pixels, so from a JPEG source the file is often larger than the original. A lossless JPEG re-pack keeps the JPEG's own data and was 12% and 23% smaller on these two photos, around 20% across the 16 photos of our <a href="/en/jpeg-xl-vs-jpeg/">JPEG comparison</a>; Photoshop can't do it, but <a href="/en/jpg-to-jxl/">our converter</a> can. More in <a href="/en/is-jpeg-xl-lossless/">Is JPEG XL lossless?</a></div></details>
+    <details><summary>What Quality should I choose for Lossy?</summary><div class="ans">Adobe doesn't document how its slider maps to the encoder, so don't copy numbers from other programs. Start high, open the result at 100% and step down until you notice a difference, then go one step back. One user who compared closely found Photoshop's Quality 100 close to libjxl's quality 90 in size and artefacts, so if you need more, use Lossless.</div></details>
+    <details><summary>Can Photoshop batch-convert a folder to JPEG XL?</summary><div class="ans">Not with the Image Processor, which only writes JPEG, PSD and TIFF. For a folder, a dedicated tool is quicker: <a href="/en/cjxl-djxl-command-line/">cjxl</a> in a script, or <a href="/en/jpg-to-jxl/">our converter</a>, which takes many files at once.</div></details>
+    <details><summary>Can I save a CMYK image as JPEG XL?</summary><div class="ans">Users report that Photoshop won't, even though the format itself supports CMYK. For print, TIFF or PDF remain the safe choice; convert a copy to RGB if you need a .jxl.</div></details>
+    <details><summary>Will people be able to open the .jxl I send them?</summary><div class="ans">Not always. Support in viewers and browsers is still patchy, so check with our <a href="/en/jpeg-xl-browser-test/">browser test</a>, or send a JPEG when you don't know what the recipient uses.</div></details>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Keep reading</h2>
+  <div class="cta-row">
+    <a class="cta-card" href="/en/jpeg-xl-in-lightroom/"><span class="cta-ic">📷</span><b>JPEG XL in Lightroom</b><span class="cta-sub">Export options, HDR and lossy DNG →</span></a>
+    <a class="cta-card" href="/en/jpeg-xl-in-gimp/"><span class="cta-ic">🖌️</span><b>JPEG XL in GIMP</b><span class="cta-sub">Every setting of the export dialog →</span></a>
+    <a class="cta-card" href="/en/cjxl-djxl-command-line/"><span class="cta-ic">⌨️</span><b>cjxl and djxl</b><span class="cta-sub">The command line, for whole folders →</span></a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/news/">What's new</a></nav>
+  </div>
+  <div class="legal">
+    <span class="privacy-pill">🔒 Your files never leave your device</span>
+    <span class="flegal"><a href="/en/privacy/">Privacy</a> · <a href="/en/terms/">Terms</a><span id="revocation-link" style="display:none"> · <a href="javascript:window.googlefc.showRevocationMessage();">Privacy settings</a></span></span>
+    <span>© 2026 JXL Convert</span>
+  </div>
+  <div class="sister"><a href="https://docuniversal.com/" rel="noopener" style="display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:100%;color:inherit;opacity:.72;font-size:13px"><svg width="18" height="18" viewBox="0 0 64 64" aria-hidden="true" style="border-radius:5px;flex:none"><defs><linearGradient id="duLogo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7cc4a0"/><stop offset="1" stop-color="#366d55"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#duLogo)"/><circle cx="32" cy="32" r="16" fill="none" stroke="#fff" stroke-width="4" opacity=".95"/><circle cx="32" cy="32" r="5" fill="#fff"/></svg><span>Working with PDFs? Try DocUniversal — free, in your browser</span></a></div>
+</div></footer>
+<script>
+window.googlefc = window.googlefc || {};
+window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+window.googlefc.callbackQueue.push({
+  'CONSENT_API_READY':
+  () => __tcfapi('addEventListener', 0, (tcdata, success) => {
+    const revocationLink = document.getElementById('revocation-link');
+    if (!revocationLink) return;
+    if (!success || !tcdata) {
+      revocationLink.style.display = 'none';
+    } else if (tcdata.gdprApplies) {
+      revocationLink.style.display = 'inline';
+    } else {
+      revocationLink.style.display = 'none';
+    }
+  })
+});
+</script>
+</body>
+</html>

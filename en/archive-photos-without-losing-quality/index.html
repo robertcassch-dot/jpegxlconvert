@@ -17,10 +17,10 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/css/styles.css?v=8">
-<link rel="alternate" type="application/rss+xml" title="JXL Convert — Guides" href="/en/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="JXL Convert — Blog" href="/en/feed.xml">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"How much space will I actually save?","acceptedAnswer":{"@type":"Answer","text":"On typical camera JPEGs, expect around 20%. Higher-quality and larger images tend to do slightly better, heavily compressed small ones slightly worse. On a 2 TB library that's roughly 400 GB — worth an afternoon of work."}},
+{"@type":"Question","name":"How much space will I actually save?","acceptedAnswer":{"@type":"Answer","text":"Expect around 20%: in our own test of 16 camera and phone JPEGs it was 20.7% overall, between 11% and 29% per file. Don't try to predict it from quality or size: the smallest, most heavily compressed file in that test (a 7.8-megapixel shot of swans) saved the most, 28.9%, while a high-quality poppy close-up saved 13.8%. Phone photos with an HDR gain map or a motion photo attached save less, because those extras are stored unchanged. On a 2 TB library that's roughly 400 GB — worth an afternoon of work."}},
 {"@type":"Question","name":"Is it really lossless, or lossless-ish?","acceptedAnswer":{"@type":"Answer","text":"Genuinely lossless for the JPEG re-packing case, in the strongest sense available: the reconstructed file is bit-identical to the original, same checksum. That is a stronger guarantee than 'visually identical', which is what most tools mean when they say lossless."}},
 {"@type":"Question","name":"What if JPEG XL dies?","acceptedAnswer":{"@type":"Answer","text":"You convert everything back to JPEG and lose nothing but the time. That is precisely why the byte-exact reconstruction matters — it's the escape hatch that makes the whole plan reversible."}},
 {"@type":"Question","name":"Can I do this in the browser instead of the command line?","acceptedAnswer":{"@type":"Answer","text":"For a few hundred photos, yes — the converter here does lossless JPEG re-packing and never uploads anything. For tens of thousands, use cjxl: a script won't get bored, and it can hash-verify as it goes."}},
@@ -29,15 +29,16 @@
 ]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Archiving Photos Without Losing Quality","datePublished":"2026-08-03","dateModified":"2026-08-03","inLanguage":"en","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/en/about/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/en/"},"mainEntityOfPage":"https://jpegxlconvert.com/en/archive-photos-without-losing-quality/"}
+{"@context":"https://schema.org","@type":"Article","headline":"Archiving Photos Without Losing Quality","datePublished":"2026-08-03","dateModified":"2026-10-15","inLanguage":"en","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/en/about/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/en/"},"mainEntityOfPage":"https://jpegxlconvert.com/en/archive-photos-without-losing-quality/"}
 </script>
 <style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+<style>.gtbl{max-width:720px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
 </head>
 <body>
 <header class="site"><div class="wrap nav">
   <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
   <div class="nav-right">
-    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Guides</a></nav>
+    <nav class="nav-links"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a></nav>
     <details class="lang"><summary>🌐 EN</summary>
       <div class="lang-menu">
         <a class="active" href="/en/archive-photos-without-losing-quality/"><span class="flag">🇬🇧</span> English</a>
@@ -51,7 +52,7 @@
   <span class="eyebrow">🗄️ Long-term storage</span>
   <h1>Archiving Photos Without Losing Quality</h1>
   <p class="sub">If you have tens of thousands of photographs, there is a way to reclaim roughly <strong>a fifth of the disk space</strong> without altering a single pixel — and it's fully reversible. This is how to do it properly, and how to store the result so it's still readable long after the drive it's on has died.</p>
-  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">by <a href="/en/about/" style="color:inherit">Robert Castillo</a> · Published <time datetime="2026-08-03">August 3, 2026</time></p>
+  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">by <a href="/en/about/" style="color:inherit">Robert Castillo</a> · Published <time datetime="2026-08-03">August 3, 2026</time> · updated <time datetime="2026-10-15">October 15, 2026</time></p>
   <div class="badges">
     <span class="badge green">📦 ~20% smaller</span><span class="badge">🔒 Bit-exact reversible</span><span class="badge">✅ Verifiable</span><span class="badge">🕰️ Built to last</span>
   </div>
@@ -111,7 +112,7 @@
 <section class="block"><div class="wrap">
   <h2>FAQ</h2>
   <div class="faq">
-    <details open><summary>How much space will I actually save?</summary><div class="ans">On typical camera JPEGs, expect around 20%. Higher-quality and larger images tend to do slightly better, heavily compressed small ones slightly worse. On a 2 TB library that's roughly 400 GB — worth an afternoon of work.</div></details>
+    <details open><summary>How much space will I actually save?</summary><div class="ans">Expect around 20%: in our own test of 16 camera and phone JPEGs it was 20.7% overall, between 11% and 29% per file. Don't try to predict it from quality or size: the smallest, most heavily compressed file in that test (a 7.8-megapixel shot of swans) saved the most, 28.9%, while a high-quality poppy close-up saved 13.8%. Phone photos with an HDR gain map or a motion photo attached save less, because those extras are stored unchanged. On a 2 TB library that's roughly 400 GB — worth an afternoon of work.</div></details>
     <details><summary>Is it really lossless, or lossless-ish?</summary><div class="ans">Genuinely lossless for the JPEG re-packing case, in the strongest sense available: the reconstructed file is bit-identical to the original, same checksum. That is a stronger guarantee than 'visually identical', which is what most tools mean when they say lossless.</div></details>
     <details><summary>What if JPEG XL dies?</summary><div class="ans">You convert everything back to JPEG and lose nothing but the time. That is precisely why the byte-exact reconstruction matters — it's the escape hatch that makes the whole plan reversible.</div></details>
     <details><summary>Can I do this in the browser instead of the command line?</summary><div class="ans">For a few hundred photos, yes — the converter here does lossless JPEG re-packing and never uploads anything. For tens of thousands, use cjxl: a script won't get bored, and it can hash-verify as it goes.</div></details>
@@ -133,7 +134,7 @@
 <footer class="site"><div class="wrap">
   <div class="fcols">
     <a class="brand" href="/en/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
-    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Guides</a><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/news/">What's new</a></nav>
+    <nav class="fnav"><a href="/en/">Converter</a><a href="/en/jxl-viewer/">Viewer</a><a href="/en/guides/">Blog</a><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/news/">What's new</a></nav>
   </div>
   <div class="legal">
     <span class="privacy-pill">🔒 Your files never leave your device</span>

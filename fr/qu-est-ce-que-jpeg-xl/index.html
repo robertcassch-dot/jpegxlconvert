@@ -26,16 +26,17 @@
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"Que signifie JXL ?","acceptedAnswer":{"@type":"Answer","text":"C'est simplement la forme courte de JPEG XL, où XL veut dire « extra large » au sens de capacités étendues, pas de dimensions d'image. L'extension est .jxl et le type MIME image/jxl."}},
 {"@type":"Question","name":"JPEG XL, c'est la même chose que JPEG 2000 ?","acceptedAnswer":{"@type":"Answer","text":"Non, et la confusion est facile. JPEG 2000 (.jp2) est un format bien plus ancien et sans lien, qui n'a jamais percé hors de domaines spécialisés comme l'imagerie médicale et le cinéma. JPEG XL est une conception distincte, à partir de 2018."}},
-{"@type":"Question","name":"JPEG XL est-il meilleur qu'AVIF ?","acceptedAnswer":{"@type":"Answer","text":"Ils sont proches, et le vainqueur dépend de l'image et des réglages. En gros : AVIF s'en sort mieux en très basse qualité, JPEG XL en haute qualité et en sans perte, et JPEG XL encode beaucoup plus vite — tandis qu'AVIF bénéficie d'un vrai support navigateur aujourd'hui."}},
+{"@type":"Question","name":"JPEG XL est-il meilleur qu'AVIF ?","acceptedAnswer":{"@type":"Answer","text":"Ils sont proches, et le vainqueur dépend de l'image et des réglages. En gros : AVIF s'en sort mieux en très basse qualité, JPEG XL en haute qualité et en sans perte, et JPEG XL encode beaucoup plus vite — tandis qu'AVIF est dans les navigateurs depuis plus longtemps : JPEG XL n'est arrivé par défaut dans Chrome et Firefox qu'en octobre 2026, et Edge ne l'affiche toujours pas."}},
 {"@type":"Question","name":"Convertir en JPEG XL fait-il perdre de la qualité ?","acceptedAnswer":{"@type":"Answer","text":"Seulement si vous le demandez. JPEG XL dispose d'un véritable mode sans perte qui conserve chaque pixel à l'identique. Réencapsuler un JPEG existant sans perte est entièrement réversible. Le mode avec perte, lui, dégrade par conception, comme tout format avec perte."}},
 {"@type":"Question","name":"JPEG XL est-il gratuit ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Il est libre de redevances avec une implémentation de référence open source (libjxl), ce qui explique précisément pourquoi tant de gens ont poussé pour son adoption face à des alternatives grevées de brevets."}},
 {"@type":"Question","name":"Comment créer un fichier .jxl ?","acceptedAnswer":{"@type":"Answer","text":"Déposez n'importe quelle image dans notre convertisseur et choisissez JPEG XL. Tout se passe dans votre navigateur : l'image n'est téléversée nulle part."}}
 ]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Qu'est-ce que JPEG XL ?","datePublished":"2026-07-29","dateModified":"2026-07-29","inLanguage":"fr","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/fr/a-propos/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/fr/"},"mainEntityOfPage":"https://jpegxlconvert.com/fr/qu-est-ce-que-jpeg-xl/"}
+{"@context":"https://schema.org","@type":"Article","headline":"Qu'est-ce que JPEG XL ?","datePublished":"2026-07-29","dateModified":"2026-10-15","inLanguage":"fr","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/fr/a-propos/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/fr/"},"mainEntityOfPage":"https://jpegxlconvert.com/fr/qu-est-ce-que-jpeg-xl/"}
 </script>
 <style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+<style>.gtbl{max-width:720px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
 </head>
 <body>
 <header class="site"><div class="wrap nav">
@@ -59,7 +60,7 @@
   <span class="eyebrow">📘 Le format, expliqué</span>
   <h1>Qu'est-ce que JPEG&nbsp;XL ?</h1>
   <p class="sub"><strong>JPEG&nbsp;XL</strong> est un format d'image moderne — extension <code>.jxl</code> — conçu pour remplacer le JPEG. Il produit des fichiers nettement plus petits à qualité égale, et il fait des choses dont le JPEG a toujours été incapable : transparence, animation, HDR et véritable sans perte. Il est libre de redevances et normalisé sous <strong>ISO/IEC 18181</strong>.</p>
-  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">par <a href="/fr/a-propos/" style="color:inherit">Robert Castillo</a> · Publié le <time datetime="2026-07-29">29 juillet 2026</time></p>
+  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">par <a href="/fr/a-propos/" style="color:inherit">Robert Castillo</a> · Publié le <time datetime="2026-07-29">29 juillet 2026</time> · mis à jour le <time datetime="2026-10-15">15 octobre 2026</time></p>
   <div class="badges">
     <span class="badge green">📦 Fichiers plus petits</span><span class="badge">🆓 Libre de redevances</span><span class="badge">🔁 Réencapsulation JPEG sans perte</span><span class="badge">🎞️ Un format pour tout</span>
   </div>
@@ -73,7 +74,7 @@
   <h2>La version courte</h2>
   <p class="lead">Tout format d'image est un compromis entre la taille du fichier, la qualité visuelle et le nombre de logiciels capables de l'ouvrir. Le JPEG remporte le troisième point depuis 1992, tout en perdant régulièrement les deux premiers.</p>
   <p class="lead">JPEG&nbsp;XL a été conçu pour emporter nettement les deux premiers sans jeter ce qui faisait l'utilité du JPEG. Il est né de la fusion, en 2018, de deux projets — <strong>PIK</strong> de Google et <strong>FUIF</strong> de Cloudinary — avant d'être adopté comme norme internationale. Point essentiel : il est <strong>libre de redevances</strong>, sans organisme à rémunérer, ce qui explique en grande partie pourquoi tant de gens voulaient le voir s'imposer.</p>
-  <p class="lead">Le hic, c'est le troisième compromis. Un format ne vaut que ce que valent les logiciels qui l'ouvrent, et là JPEG&nbsp;XL se bat encore. <a href="/fr/chrome-prend-il-en-charge-jpeg-xl/">Chrome le laisse toujours désactivé par défaut</a>.</p>
+  <p class="lead">Le hic, c'est le troisième compromis. Un format ne vaut que ce que valent les logiciels qui l'ouvrent, et là JPEG&nbsp;XL rattrape encore son retard. Le grand pas est venu en octobre 2026 : <a href="/fr/chrome-prend-il-en-charge-jpeg-xl/">Chrome 155 l'a activé par défaut le 6 octobre</a>, et Firefox 158 a suivi le 13 octobre. Microsoft Edge ne l'affiche toujours pas.</p>
 </div></section>
 
 <section class="block alt"><div class="wrap">
@@ -90,7 +91,7 @@
 
 <section class="block"><div class="wrap">
   <h2>JPEG XL face aux formats que vous utilisez déjà</h2>
-  <table class="cmp">
+  <div class="gtbl"><table class="cmp">
     <thead><tr><th>Caractéristique</th><th>JPEG</th><th>PNG</th><th>WebP</th><th>JPEG XL</th></tr></thead>
     <tbody>
       <tr><td>Compression avec perte</td><td class="y">Oui</td><td class="n">Non</td><td class="y">Oui</td><td class="y">Oui</td></tr>
@@ -101,7 +102,7 @@
       <tr><td>Réencapsule les JPEG sans perte</td><td class="n">—</td><td class="n">Non</td><td class="n">Non</td><td class="y">Oui</td></tr>
       <tr><td>S'ouvre partout aujourd'hui</td><td class="y">Oui</td><td class="y">Oui</td><td class="y">Oui</td><td class="n">Pas encore</td></tr>
     </tbody>
-  </table>
+  </table></div>
   <p class="lead">Cette dernière ligne résume tout. Sur le plan technique, JPEG&nbsp;XL remporte le tableau ; sur la seule ligne qui compte pour l'inconnu qui reçoit votre fichier, il perd. Pour la comparaison la plus serrée, voyez <a href="/fr/jpeg-xl-vs-webp/">JPEG XL contre WebP</a>.</p>
 </div></section>
 
@@ -109,14 +110,14 @@
   <h2>Alors, faut-il l'utiliser ?</h2>
   <div class="grid3">
     <div class="feature"><div class="fi">✅</div><h3>Oui — pour votre propre stockage</h3><p>Photothèque, sauvegardes, archives. Vous maîtrisez ce qui les ouvre, et la réencapsulation sans perte vous rend près de 20% de disque sans aucun coût en qualité ni enfermement.</p></div>
-    <div class="feature"><div class="fi">⚠️</div><h3>Prudence — sur un site web</h3><p>La plupart des visiteurs sont sous Chrome, et Chrome n'affiche pas un <code>.jxl</code> aujourd'hui. À n'utiliser que dans un élément <code>&lt;picture&gt;</code> avec un repli WebP ou JPEG.</p></div>
+    <div class="feature"><div class="fi">⚠️</div><h3>Prudence — sur un site web</h3><p>Chrome 155+, Firefox 158+ et Safari 17+ affichent un <code>.jxl</code>, mais pas Edge, ni aucun navigateur qui n'a pas été mis à jour. À n'utiliser que dans un élément <code>&lt;picture&gt;</code> avec un repli WebP ou JPEG.</p></div>
     <div class="feature"><div class="fi">❌</div><h3>Non — pour envoyer à quelqu'un</h3><p>Envoyez un JPEG ou un PNG. Si c'est <em>vous</em> qui recevez un <code>.jxl</code>, notre <a href="/fr/visionneuse-jxl/">visionneuse</a> l'ouvre et notre <a href="/fr/jxl-en-jpg/">convertisseur</a> en fait quelque chose de normal.</p></div>
   </div>
 </div></section>
 
 <section class="block"><div class="wrap">
   <h2>Où vous croiserez des fichiers .jxl</h2>
-  <p class="lead">Même avec des navigateurs à la traîne, JPEG&nbsp;XL s'est installé discrètement là où la taille et la fidélité comptent plus que la compatibilité universelle. <strong>Apple</strong> le prend en charge dans Safari et macOS. <strong>Adobe</strong> utilise la compression JPEG&nbsp;XL dans les fichiers DNG modernes. La <strong>PDF Association</strong> en a fait le format privilégié pour les images HDR dans les PDF. Les chaînes de production photo et de numérisation s'en servent pour les masters d'archivage.</p>
+  <p class="lead">Bien avant que Chrome et Firefox ne l'activent, JPEG&nbsp;XL s'était installé discrètement là où la taille et la fidélité comptent plus que la compatibilité universelle. <strong>Apple</strong> le prend en charge dans Safari et macOS. <strong>Adobe</strong> utilise la compression JPEG&nbsp;XL dans les fichiers DNG modernes. La <strong>PDF Association</strong> en a fait le format privilégié pour les images HDR dans les PDF. Les chaînes de production photo et de numérisation s'en servent pour les masters d'archivage.</p>
   <p class="lead">C'est ainsi que la plupart des gens découvrent le format : non pas en le choisissant, mais en recevant un <code>.jxl</code> qui refuse de s'ouvrir. Si c'est votre cas, notre <a href="/fr/visionneuse-jxl/">visionneuse</a> l'ouvre immédiatement.</p>
 </div></section>
 
@@ -125,7 +126,7 @@
   <div class="faq">
     <details open><summary>Que signifie JXL ?</summary><div class="ans">C'est simplement la forme courte de JPEG XL, où XL veut dire « extra large » au sens de capacités étendues, pas de dimensions d'image. L'extension est <code>.jxl</code> et le type MIME <code>image/jxl</code>.</div></details>
     <details><summary>JPEG XL, c'est la même chose que JPEG 2000 ?</summary><div class="ans">Non, et la confusion est facile. JPEG 2000 (<code>.jp2</code>) est un format bien plus ancien et sans lien, qui n'a jamais percé hors de domaines spécialisés comme l'imagerie médicale et le cinéma. JPEG XL est une conception distincte, à partir de 2018.</div></details>
-    <details><summary>JPEG XL est-il meilleur qu'AVIF ?</summary><div class="ans">Ils sont proches, et le vainqueur dépend de l'image et des réglages. En gros : AVIF s'en sort mieux en très basse qualité, JPEG XL en haute qualité et en sans perte, et JPEG XL encode beaucoup plus vite — tandis qu'AVIF bénéficie d'un vrai support navigateur aujourd'hui.</div></details>
+    <details><summary>JPEG XL est-il meilleur qu'AVIF ?</summary><div class="ans">Ils sont proches, et le vainqueur dépend de l'image et des réglages. En gros : AVIF s'en sort mieux en très basse qualité, JPEG XL en haute qualité et en sans perte, et JPEG XL encode beaucoup plus vite — tandis qu'AVIF est dans les navigateurs depuis plus longtemps : JPEG XL n'est arrivé par défaut dans Chrome et Firefox qu'en octobre 2026, et Edge ne l'affiche toujours pas.</div></details>
     <details><summary>Convertir en JPEG XL fait-il perdre de la qualité ?</summary><div class="ans">Seulement si vous le demandez. JPEG XL dispose d'un véritable mode sans perte qui conserve chaque pixel à l'identique. Réencapsuler un JPEG existant sans perte est entièrement réversible. Le mode avec perte, lui, dégrade par conception, comme tout format avec perte.</div></details>
     <details><summary>JPEG XL est-il gratuit ?</summary><div class="ans">Oui. Il est libre de redevances avec une implémentation de référence open source (libjxl), ce qui explique précisément pourquoi tant de gens ont poussé pour son adoption face à des alternatives grevées de brevets.</div></details>
     <details><summary>Comment créer un fichier .jxl ?</summary><div class="ans">Déposez n'importe quelle image dans <a href="/fr/">notre convertisseur</a> et choisissez JPEG XL. Tout se passe dans votre navigateur : l'image n'est téléversée nulle part.</div></details>

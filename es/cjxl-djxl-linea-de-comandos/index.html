@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9791902883190551" crossorigin="anonymous"></script>
+<title>cjxl y djxl: convertir JPEG XL desde la línea de comandos</title>
+<meta name="description" content="Instala libjxl 0.12 en Windows, macOS o Linux, reempaqueta JPEG sin perder un bit, elige -d, -q y -e con tiempos medidos y convierte carpetas enteras.">
+<link rel="canonical" href="https://jpegxlconvert.com/es/cjxl-djxl-linea-de-comandos/">
+<link rel="alternate" hreflang="en" href="https://jpegxlconvert.com/en/cjxl-djxl-command-line/">
+<link rel="alternate" hreflang="es" href="https://jpegxlconvert.com/es/cjxl-djxl-linea-de-comandos/">
+<link rel="alternate" hreflang="x-default" href="https://jpegxlconvert.com/en/cjxl-djxl-command-line/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cjxl y djxl: JPEG XL desde la línea de comandos, probado">
+<meta property="og:description" content="Instalar libjxl 0.12, reempaquetar JPEG sin pérdida, calidad y esfuerzo con resultados medidos, scripts por lotes y los errores reales.">
+<meta property="og:url" content="https://jpegxlconvert.com/es/cjxl-djxl-linea-de-comandos/">
+<meta property="og:image" content="https://jpegxlconvert.com/assets/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/styles.css?v=8">
+<link rel="alternate" type="application/rss+xml" title="JXL Convert — Blog" href="/es/feed.xml">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"¿cjxl convierte sin pérdida por defecto?","acceptedAnswer":{"@type":"Answer","text":"Depende de lo que le des. Un JPEG se reempaqueta sin pérdida y un GIF se codifica sin pérdida, pero PNG, APNG y los demás formatos de píxeles van a -d 1, que es visualmente sin pérdida pero no matemáticamente. Añade -d 0 siempre que tenga que sobrevivir cada píxel."}},
+{"@type":"Question","name":"¿Me conviene recodificar mis JPEG con pérdida para ahorrar más?","acceptedAnswer":{"@type":"Answer","text":"Normalmente no. Con nuestra foto, el camino con pérdida (--lossless_jpeg=0 -d 1) dio 0,80 MB frente a 2,67 MB del reempaquetado, pero vuelve a comprimir una imagen que ya estaba comprimida, se dejó el XMP y el IPTC y no tiene vuelta atrás. Para guardar, el 27% sin pérdida es mejor trato."}},
+{"@type":"Question","name":"¿Puedo borrar los JPEG originales después de convertir?","acceptedAnswer":{"@type":"Answer","text":"Solo cuando hayas comprobado que cada uno vuelve idéntico, con el bucle de djxl y cmp de arriba o con sumas de comprobación. Ten en cuenta que muchos programas todavía no abren .jxl, así que puede que tengas que reconstruir el JPEG con djxl cada vez que quieras compartir una foto. Como la reconstrucción es exacta, es una molestia, no un riesgo."}},
+{"@type":"Question","name":"¿Cómo paso un .jxl otra vez a PNG o JPG?","acceptedAnswer":{"@type":"Answer","text":"Con djxl foto.jxl foto.png para PNG. Si la salida es .jpg, un JPEG reempaquetado se reconstruye exacto; cualquier otro .jxl se codifica como un JPEG nuevo con calidad 95 por defecto, que puedes cambiar con -q (por ejemplo, djxl foto.jxl foto.jpg -q 90)."}},
+{"@type":"Question","name":"¿Los archivos hechos con la 0.12.0 se abren con programas más viejos?","acceptedAnswer":{"@type":"Answer","text":"Sí, en lo que respecta al formato. El djxl 0.7.0 de Ubuntu descodificó nuestra foto hecha con la 0.12.0, reconstruyó byte a byte el JPEG reempaquetado y descodificó las animaciones. Otra cosa es que un programa concreto abra .jxl, que suele ser el problema de verdad."}},
+{"@type":"Question","name":"¿Necesito la línea de comandos para esto?","acceptedAnswer":{"@type":"Answer","text":"Para cuatro archivos, no. El conversor de JPG a JXL de esta web hace el mismo reempaquetado sin pérdida dentro de tu navegador si marcas Sin pérdida, y no se sube nada. La terminal se gana el sitio cuando tienes carpetas enteras, necesitas ajustes exactos o quieres automatizarlo."}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"JPEG XL en la línea de comandos: cjxl y djxl","datePublished":"2026-10-15","dateModified":"2026-10-15","inLanguage":"es","author":{"@type":"Person","name":"Robert Castillo","url":"https://jpegxlconvert.com/es/sobre-el-proyecto/"},"publisher":{"@type":"Organization","name":"JXL Convert","url":"https://jpegxlconvert.com/es/"},"mainEntityOfPage":"https://jpegxlconvert.com/es/cjxl-djxl-linea-de-comandos/"}
+</script>
+<style>.site .sister{margin-top:14px;padding-top:14px;border-top:1px solid #24304a;text-align:center}.site .sister a:hover{opacity:1 !important;text-decoration:none}</style>
+<style>.gtbl{max-width:720px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/es/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span class="tld">Convert</span></a>
+  <div class="nav-right">
+    <nav class="nav-links"><a href="/es/">Conversor</a><a href="/es/visor-jxl/">Visor</a><a href="/es/guias/">Blog</a></nav>
+    <details class="lang"><summary>🌐 ES</summary>
+      <div class="lang-menu">
+        <a href="/en/cjxl-djxl-command-line/"><span class="flag">🇬🇧</span> English</a>
+        <a class="active" href="/es/cjxl-djxl-linea-de-comandos/"><span class="flag">🇪🇸</span> Español</a>
+      </div>
+    </details>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">⌨️ Línea de comandos · libjxl 0.12.0</span>
+  <h1>JPEG XL en la línea de comandos: cjxl y djxl</h1>
+  <p class="sub">Las herramientas oficiales, usadas de verdad con libjxl 0.12.0: cómo instalarlas en cada sistema, los comandos que merece la pena saberse, lo que cuestan en bytes y en segundos la calidad y el esfuerzo, dos scripts por lotes probados con nombres de archivo complicados y los errores que te vas a encontrar, con su arreglo.</p>
+  <p class="sub" style="font-size:14px;opacity:.62;margin-top:6px">por <a href="/es/sobre-el-proyecto/" style="color:inherit">Robert Castillo</a> · Publicado el <time datetime="2026-10-15">15 de octubre de 2026</time></p>
+  <div class="badges">
+    <span class="badge">🧪 Probado con libjxl 0.12.0</span><span class="badge green">🔁 El JPEG vuelve idéntico</span><span class="badge">⏱️ Tiempos medidos</span><span class="badge">🪟🍎🐧 Windows, macOS, Linux</span>
+  </div>
+  <div class="cta-row">
+    <a class="cta-card" href="/es/jpg-a-jxl/"><span class="cta-ic">🔁</span><b>¿Prefieres no abrir la terminal?</b><span class="cta-sub">Marca Sin pérdida en el conversor de JPG a JXL del navegador →</span></a>
+    <a class="cta-card" href="/es/visor-jxl/"><span class="cta-ic">👁️</span><b>¿Solo quieres ver un .jxl?</b><span class="cta-sub">Ábrelo en el visor, sin instalar nada →</span></a>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>La respuesta corta</h2>
+  <p class="lead">Las herramientas oficiales de JPEG&nbsp;XL para la línea de comandos salen de <strong>libjxl</strong>, la implementación de referencia del formato. Con tres programas se hace casi todo: <code>cjxl</code> codifica, <code>djxl</code> descodifica y <code>jxlinfo</code> te dice qué hay dentro de un archivo. La versión actual es la <strong>0.12.0</strong>, publicada el 1 de julio de 2026, y todos los comandos, salidas y cifras de esta página salen de ejecutarla nosotros.</p>
+  <p class="lead">Si te quedas con un solo comando, que sea este: <code>cjxl foto.jpg foto.jxl</code>. Cuando le das un JPEG, cjxl no vuelve a comprimir la imagen: reempaqueta los datos que el JPEG ya tiene de forma más eficiente. Con nuestra foto de prueba ahorró un <strong>26,9%</strong>, y djxl reconstruyó el JPEG original con la misma suma de comprobación, metadatos incluidos.</p>
+  <p class="lead">Lo demás son detalles, pero algunos pillan por sorpresa. Un PNG se comprime <em>con pérdida</em> si no dices lo contrario, una opción de calidad sobre un JPEG da error en vez de aplicarse, y la versión que instala Ubuntu 24.04 tiene cuatro años. Todo eso está más abajo, con su solución.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Cómo lo hemos probado</h2>
+  <div class="grid3">
+    <div class="feature"><div class="fi">📷</div><h3>La foto</h3><p>Un paisaje de 3506×2329 hecho con una Nikon D90 por David Marcu y publicado como CC0 en Wikimedia Commons: 3,66 MB con EXIF, XMP, IPTC y perfil de color ProPhoto. Un archivo real de cámara, no una muestra de laboratorio.</p></div>
+    <div class="feature"><div class="fi">🖥️</div><h3>La máquina</h3><p>Un servidor Linux con 6 núcleos virtuales AMD EPYC, compartido con otros trabajos. Toma los tiempos como órdenes de magnitud: en tu ordenador serán otros, la proporción entre ajustes cambia mucho menos.</p></div>
+    <div class="feature"><div class="fi">🔢</div><h3>Las versiones</h3><p>libjxl 0.12.0 (la compilación estática oficial) y, para ver qué cambia, la 0.7.0 que sigue trayendo Ubuntu 24.04. Lo de Windows, en Windows 11 con PowerShell 5.1 y el zip oficial.</p></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Instalar cjxl, djxl y jxlinfo</h2>
+  <p class="lead">Todos los sistemas importantes tienen paquete, pero la versión que te llevas cambia muchísimo de uno a otro. Estas son las que ofrecía cada fuente el 15 de octubre de 2026:</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Sistema</th><th>Comando</th><th>Versión</th></tr></thead>
+    <tbody>
+      <tr><td>Windows (winget)</td><td><code>winget install libjxl.libjxl</code></td><td class="y">0.12.0</td></tr>
+      <tr><td>Windows (Scoop)</td><td><code>scoop install libjxl</code></td><td class="y">0.12.0</td></tr>
+      <tr><td>Windows (a mano)</td><td><code>jxl-x64-windows-static.zip</code> de GitHub</td><td class="y">0.12.0</td></tr>
+      <tr><td>Windows (Chocolatey)</td><td>No hay paquete</td><td class="n">—</td></tr>
+      <tr><td>macOS (Homebrew)</td><td><code>brew install jpeg-xl</code></td><td class="y">0.12.0</td></tr>
+      <tr><td>Arch Linux</td><td><code>sudo pacman -S libjxl</code></td><td class="y">0.12.0</td></tr>
+      <tr><td>Fedora 43 y 44</td><td><code>sudo dnf install libjxl-utils</code></td><td>0.11.2</td></tr>
+      <tr><td>Debian 13</td><td><code>sudo apt install libjxl-tools</code></td><td>0.11.2</td></tr>
+      <tr><td>Ubuntu 25.10 y 26.04 LTS</td><td><code>sudo apt install libjxl-tools</code></td><td>0.11.1</td></tr>
+      <tr><td>Ubuntu 24.04 LTS, Debian 12</td><td><code>sudo apt install libjxl-tools</code></td><td class="n">0.7.0 (2022)</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead"><strong>Windows.</strong> winget instala el zip oficial como aplicación portátil y añade su carpeta al PATH de tu usuario, así que cierra la terminal y abre otra antes de escribir <code>cjxl --version</code>. Si prefieres hacerlo a mano, descarga <code>jxl-x64-windows-static.zip</code> de la <a href="https://github.com/libjxl/libjxl/releases/tag/v0.12.0" rel="nofollow noopener">página de la versión 0.12.0</a> y descomprímelo: los programas están en <code>x64-windows-static\bin</code>. Añade esa carpeta al PATH o llama a <code>cjxl.exe</code> con su ruta completa. El zip que baja winget es exactamente ese, con la misma suma de comprobación.</p>
+  <p class="lead"><strong>macOS.</strong> En Homebrew el paquete se llama <code>jpeg-xl</code>, no libjxl. Instala cjxl, djxl, jxlinfo y jxltran, más las herramientas de desarrollo de libjxl (entre ellas ssimulacra2 y butteraugli_main), compilado todo a partir del código de la 0.12.0.</p>
+  <p class="lead"><strong>Comprueba qué tienes.</strong> <code>cjxl --version</code> responde con una línea como <code>cjxl v0.12.0 4128790 [_AVX2_,SSE4,SSE2]</code>; lo de los corchetes son las instrucciones del procesador que está aprovechando. No lo intentes con jxlinfo, que no tiene opción de versión (lo explicamos debajo de la tabla de errores).</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Ubuntu 24.04 y Debian 12: cómo pasar de la 0.7</h2>
+  <p class="lead">Ubuntu 24.04 LTS y Debian 12 siguen instalando <strong>libjxl 0.7.0</strong>, de 2022. Funciona —en nuestras pruebas incluso descodificó sin un fallo archivos hechos con la 0.12.0—, pero no tiene el esfuerzo 10 ni la opción de seguridad <code>--reconstruct_jpeg</code> de djxl, y le faltan cuatro años de correcciones, entre ellas la larga lista de refuerzos de seguridad que trae la 0.12.0. Además trata las opciones de calidad sobre un JPEG de otra manera, y eso puede cambiar en silencio lo que hace un script (lo explicamos más abajo).</p>
+  <p class="lead">La forma más limpia de tener la 0.12.0 es la compilación estática oficial: un solo archivo comprimido, programas autónomos y ni una biblioteca del sistema tocada. Es exactamente como está montado nuestro servidor de pruebas. Ve lanzando estos comandos uno a uno:</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Bash · Ubuntu / Debian</th></tr></thead>
+    <tbody>
+      <tr><td><code>sudo apt install lzip<br>wget https://github.com/libjxl/libjxl/releases/download/v0.12.0/jxl-linux-x86_64-static.tar.lz<br>sudo mkdir -p /opt/libjxl-0.12.0<br>sudo tar --lzip -xf jxl-linux-x86_64-static.tar.lz -C /opt/libjxl-0.12.0<br>sudo ln -s /opt/libjxl-0.12.0/tools/{cjxl,djxl,jxlinfo} /usr/local/bin/<br>cjxl --version</code></td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">El archivo no trae carpeta propia —todo va suelto en la raíz—, por eso se descomprime en un directorio aparte. En el PATH por defecto de Ubuntu, <code>/usr/local/bin</code> va antes que <code>/usr/bin</code>, así que estos enlaces mandan aunque también tengas libjxl-tools instalado; abre otra terminal (o ejecuta <code>hash -r</code>) y la versión debería decir v0.12.0. La publicación trae también paquetes .deb para Ubuntu 24.04, llamados <code>jxl</code> y <code>libjxl</code>. Esos dejan cjxl en <code>/usr/bin</code>, el mismo sitio que libjxl-tools, así que si vas por ahí desinstala antes el paquete de la distribución.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Reempaquetar un JPEG sin perder ni un bit</h2>
+  <p class="lead">Esta es la conversión que busca casi todo el mundo, y en la que JPEG&nbsp;XL no tiene rival: archivos más pequeños sin renunciar a nada, y reversible cuando quieras.</p>
+  <div class="steps">
+    <div class="step"><h3>Convertir</h3><p><code>cjxl foto.jpg foto.jxl</code> escribe <code>Encoding [JPEG, lossless transcode, effort: 7]</code> y <code>Compressed to 2671.6 kB including container</code>. Nuestra foto de 3.655.400 bytes se quedó en 2.671.641, un 26,9% menos, en menos de un segundo.</p></div>
+    <div class="step"><h3>Recuperar el JPEG</h3><p><code>djxl foto.jxl vuelta.jpg</code> contesta <code>Reconstructed to JPEG.</code> Tardó entre 0,3 y 0,4 segundos en nuestro servidor. Ese es el mensaje que hay que buscar: significa que se ha reconstruido el archivo original, no que se haya codificado uno nuevo.</p></div>
+    <div class="step"><h3>Demostrarlo</h3><p>Compara las sumas de comprobación: <code>sha256sum</code> en Linux, <code>shasum -a 256</code> en Mac, <code>Get-FileHash</code> en PowerShell. Los dos archivos dieron 7cf96c2b…534b, tanto en Linux como en Windows.</p></div>
+  </div>
+  <p class="lead">Ese último paso es el que importa. No es «visualmente idéntico»: es el mismo archivo, byte a byte, con el EXIF y el perfil de color dentro. En Linux o Mac puedes comprobarlo sin crear ningún archivo temporal: <code>djxl foto.jxl - --output_format jpg | cmp - foto.jpg</code> no dice nada si coinciden.</p>
+  <p class="lead">Con cada JPEG, cjxl añade un aviso, <em>Implicit-default for JPEG is lossless-transcoding</em>, que solo te cuenta lo que ha decidido. Si pones <code>--lossless_jpeg=1</code> la decisión queda explícita y el aviso desaparece. En el lado de la descodificación, la 0.12.0 estrena <code>--reconstruct_jpeg</code> (<code>-J</code>): en vez de sacarte un JPEG nuevo cuando no puede reconstruir el original, djxl se para con <em>Error: could not decode losslessly to JPEG.</em></p>
+  <p class="lead">La compatibilidad también funciona hacia atrás. El djxl 0.7.0 de Ubuntu reconstruyó nuestro archivo hecho con la 0.12.0 y devolvió el JPEG idéntico. El formato se publicó como norma en 2022 (ISO/IEC 18181); lo que sigue avanzando son las herramientas.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>-d y -q: cómo pedir la calidad</h2>
+  <p class="lead">Con todo lo que no sea JPEG, cjxl comprime los píxeles y tú decides cuánta pérdida aceptas. Hay dos maneras de decirlo. <code>-d</code> (distancia) es la propia del formato: 0 es sin pérdida matemática, 1 es lo que el codificador considera visualmente sin pérdida, y los números más altos permiten más distorsión, hasta 25. <code>-q</code> (calidad) es una escala de 0 a 100 pensada para que se parezca a la del JPEG, y cjxl la traduce sin más a una distancia. Usa una u otra: las dos a la vez dan error.</p>
+  <p class="lead">Codificamos nuestra foto (guardada como PNG de 9,85 MB) con las calidades más habituales y puntuamos cada resultado con SSIMULACRA2, que es la nota de la tabla: 90 es visualmente sin pérdida, 70 calidad alta y 50 calidad media. De calidad 30 para arriba la conversión es una recta, distancia = 0,1 + (100 − q) × 0,09:</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Ajuste</th><th>Tamaño</th><th>Nota</th></tr></thead>
+    <tbody>
+      <tr><td>-q 100, sin pérdida</td><td>6,49 MB</td><td class="y">Píxeles idénticos</td></tr>
+      <tr><td>-q 95 = -d 0.55</td><td>1,41 MB</td><td>89,9</td></tr>
+      <tr><td>-q 90 = -d 1 (por defecto con PNG)</td><td>0,80 MB</td><td>86,7</td></tr>
+      <tr><td>-q 85 = -d 1.45</td><td>0,58 MB</td><td>83,4</td></tr>
+      <tr><td>-q 80 = -d 1.9</td><td>0,47 MB</td><td>80,2</td></tr>
+      <tr><td>-q 70 = -d 2.8</td><td>0,34 MB</td><td>73,6</td></tr>
+      <tr><td>-q 50 = -d 4.6</td><td>0,21 MB</td><td>60,8</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">Por debajo de 30 la curva se dobla: calidad 20 da distancia 9,07, calidad 10 da 15,27 y calidad 0, el máximo, 25. Para fotos no le hacen falta a nadie.</p>
+  <p class="lead">Para el día a día, -d 1 (o -q 90) es un buen punto de partida, y una distancia de entre 0,5 y 0,7 es lo indicado para un original de alta calidad que vas a retocar después. Escríbelo con punto, <code>-d 0.5</code>, que es como lo entiende el programa. La propia ayuda de <code>cjxl --help</code> recomienda moverse entre 0,5 y 3.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>La trampa: opciones de calidad sobre un JPEG</h2>
+  <p class="lead">Prueba <code>cjxl foto.jpg foto.jxl -d 1</code> con la versión 0.12.0 y no se escribe nada: sale un error que empieza por <em>Must not set non-zero distance</em> (con <code>-q</code>, por <em>Must not set quality below 100</em>), y lo tienes completo en la tabla de errores. cjxl está protegiendo el reempaquetado sin pérdida: una distancia no pinta nada cuando no va a tocar los píxeles.</p>
+  <p class="lead">Si de verdad quieres un archivo con pérdida y más pequeño a partir de un JPEG, hay que decirlo: <code>cjxl foto.jpg foto.jxl --lossless_jpeg=0 -d 1</code>. Nuestra foto salió con 800.133 bytes, menos de un tercio que el reempaquetado. El precio es una segunda ronda de pérdida sobre una imagen que ya se comprimió una vez y, como verás en el apartado de metadatos, parte de los metadatos. Para un archivo que vas a guardar, el 27% sin pérdida sale más a cuenta.</p>
+  <p class="lead">La versión 0.7.0 se porta de otra manera, y aquí es donde muerde: con ella, <code>-d 1</code> sobre un JPEG se ignora en silencio. Nuestro comando de prueba terminó sin error y escribió un reempaquetado sin pérdida. O sea, un script que «funcionaba» en Ubuntu 24.04 falla con la 0.12.0, y uno que contaba con -d para encoger los JPEG nunca los encogió. Si escribes <code>--lossless_jpeg=0</code> o <code>=1</code> de forma explícita, las dos versiones hacen lo mismo.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>El esfuerzo (-e): qué compran los segundos de más</h2>
+  <p class="lead"><code>-e</code> decide cuánto trabaja el codificador, de 1 a 10, y por defecto vale 7. Aquí van dos trabajos con la misma foto: reempaquetar el JPEG de 3,66 MB y codificar su versión en PNG, de 9,85 MB, a -d 1. Cada casilla da el tamaño del archivo y el tiempo de reloj, mediana de tres pasadas (el sin pérdida tiene su propia tabla en el apartado siguiente):</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Nivel</th><th>JPEG sin pérdida</th><th>PNG con pérdida</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>2,867 MB · 0,6 s</td><td>0,784 MB · 0,7 s</td></tr>
+      <tr><td>2</td><td>2,867 MB · 0,6 s</td><td>0,784 MB · 0,6 s</td></tr>
+      <tr><td>3</td><td>2,672 MB · 0,6 s</td><td>0,725 MB · 0,6 s</td></tr>
+      <tr><td>4</td><td>2,672 MB · 0,7 s</td><td>0,767 MB · 0,6 s</td></tr>
+      <tr><td>5</td><td>2,672 MB · 0,7 s</td><td>0,782 MB · 1,0 s</td></tr>
+      <tr><td>6</td><td>2,672 MB · 0,7 s</td><td>0,797 MB · 2,5 s</td></tr>
+      <tr><td><strong>7 (por defecto)</strong></td><td><strong>2,672 MB · 0,9 s</strong></td><td><strong>0,800 MB · 2,1 s</strong></td></tr>
+      <tr><td>8</td><td>2,666 MB · 1,8 s</td><td>0,754 MB · 23,6 s</td></tr>
+      <tr><td>9</td><td>2,665 MB · 11,6 s</td><td>0,753 MB · 36,7 s</td></tr>
+      <tr><td>10</td><td>2,668 MB · 12,3 s</td><td>0,752 MB · 34,7 s</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">Léela en horizontal, no de arriba abajo. Al reempaquetar un JPEG, los esfuerzos del 3 al 7 dan exactamente el mismo archivo, y del 8 en adelante se ahorra un 0,2% a cambio de esperar entre dos y catorce veces más; el 10 incluso salió un poco más grande que el 9. Con pérdida, el esfuerzo 3 da el archivo más pequeño pero con peor nota (SSIMULACRA2 85,5 frente a 86,7 con el valor por defecto), mientras que del 8 al 10 los archivos salen alrededor de un 6% más pequeños que con el 7 y prácticamente con la misma nota (86,4–86,5), a cambio de once a diecisiete veces más tiempo.</p>
+  <p class="lead">Conclusión: déjalo en 7 para casi todo. El esfuerzo 10 no existe en la 0.7.0, y la 0.12.0 tiene además un 11 reservado a expertos: sin <code>--allow_expert_options</code> responde <em>Valid range is {1, 2, ..., 10}</em>.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Sin pérdida desde PNG quiere decir -d 0</h2>
+  <p class="lead">Con PNG, APNG, PPM y el resto de formatos de píxeles, lo que hace cjxl por defecto es <code>-d 1</code>: visualmente sin pérdida, pero con pérdida. Para fotos que solo vas a mirar está bien; para capturas de pantalla, escaneos, ilustraciones o cualquier cosa que estés archivando, donde quieres conservar cada píxel, no. Pon <code>-d 0</code> (o <code>-q 100</code>).</p>
+  <p class="lead">Nuestra foto guardada como PNG pesaba 9.854.523 bytes. A -d 0 salió así con cada esfuerzo (mediana de tres pasadas hasta el 7, una sola del 8 al 10):</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Nivel</th><th>Tamaño</th><th>Tiempo</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>8,373 MB</td><td>0,4 s</td></tr>
+      <tr><td>2</td><td>7,110 MB</td><td>0,6 s</td></tr>
+      <tr><td>3</td><td>6,826 MB</td><td>0,9 s</td></tr>
+      <tr><td>4</td><td>6,782 MB</td><td>1,4 s</td></tr>
+      <tr><td>5</td><td>6,852 MB</td><td>2,0 s</td></tr>
+      <tr><td>6</td><td>6,795 MB</td><td>2,5 s</td></tr>
+      <tr><td><strong>7 (por defecto)</strong></td><td><strong>6,489 MB</strong></td><td><strong>3,8 s</strong></td></tr>
+      <tr><td>8</td><td>6,218 MB</td><td>16,7 s</td></tr>
+      <tr><td>9</td><td>6,190 MB</td><td>24,8 s</td></tr>
+      <tr><td>10</td><td>6,101 MB</td><td>Unos 5,5 min</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">Con el esfuerzo por defecto queda un 34% por debajo del PNG, y al descodificarla de nuevo <code>compare -metric AE</code> de ImageMagick contó <strong>0</strong> píxeles distintos. Donde el esfuerzo rinde de forma más constante es aquí: el 9 deja el archivo un 4,6% más pequeño que el 7 a cambio de esperar seis veces y media más, y el 10 rasca otro 1,4% a cambio de cinco minutos y medio con una sola foto (324 y 337 segundos en dos pasadas distintas). Usa el 9 para un archivo que vas a crear una vez y guardar durante años.</p>
+  <p class="lead">El GIF es la excepción en sentido contrario: cjxl lo codifica sin pérdida por defecto, como verás en el apartado de animaciones.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>jxlinfo: mira qué hay dentro</h2>
+  <p class="lead">Antes de convertir un .jxl de vuelta, conviene saber de qué tipo es. Estas son las líneas clave que da jxlinfo con nuestro JPEG reempaquetado:</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Lo que escribe jxlinfo</th></tr></thead>
+    <tbody>
+      <tr><td><code>JPEG XL image, 3506x2329, (possibly) lossless, 8-bit RGB<br>940-byte ICC profile, CMM type: "KCMS", Color space: "RGB ", Rendering intent: 0<br>JPEG bitstream reconstruction data available<br>Brotli-compressed Exif metadata: 3709 compressed bytes<br>Brotli-compressed xml  metadata: 3050 compressed bytes</code></td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">La línea que más importa es <strong>JPEG bitstream reconstruction data available</strong>: mientras esté ahí, djxl puede devolverte el JPEG original. Un archivo con pérdida dice <em>lossy</em> en vez de <em>(possibly) lossless</em> y no lleva la línea de reconstrucción; una animación empieza por <em>JPEG XL animation</em> y enumera cada fotograma con su duración. Con <code>-v</code> ves también las cajas del contenedor. En la 0.12.0 jxlinfo se reescribió entero y solo admite <code>-v</code> y <code>-h</code>.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Metadatos: qué se conserva y qué no</h2>
+  <p class="lead">Nuestra foto de prueba lleva EXIF (con cámara y fecha), XMP, IPTC y un perfil ICC ProPhoto. Para comprobar el GPS y las palabras clave se los añadimos con exiftool a un segundo JPEG pequeño. Esto es lo que salió por cada camino:</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Camino</th><th>Se conserva</th><th>Se pierde</th></tr></thead>
+    <tbody>
+      <tr><td>JPEG → JXL reempaquetado → JPEG</td><td>Todo: EXIF y GPS, XMP, IPTC, perfil ICC</td><td class="y">Nada</td></tr>
+      <tr><td>JPEG → JXL reempaquetado → PNG</td><td>EXIF y GPS, XMP, perfil ICC</td><td class="n">IPTC</td></tr>
+      <tr><td>JPEG → JXL con pérdida (<code>--lossless_jpeg=0</code>)</td><td>EXIF y GPS; el perfil ICC pasa a ser una descripción de color propia del formato</td><td class="n">XMP, IPTC</td></tr>
+      <tr><td>PNG con EXIF y XMP → JXL a -d 1</td><td>EXIF, XMP; el perfil ICC se convierte igual que arriba</td><td>No hay más que perder</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">El reempaquetado sin pérdida es el camino seguro: vuelve el JPEG entero, y con él hasta el último byte de metadatos. exiftool lee el EXIF y el XMP directamente del .jxl; el bloque IPTC y el perfil ICC original viajan dentro de los datos de reconstrucción y reaparecen al reconstruir el JPEG.</p>
+  <p class="lead">La sorpresa está en recodificar un JPEG con pérdida: cjxl 0.12.0 conservó el EXIF, posición GPS incluida, pero se dejó por el camino el XMP y el IPTC. Si tus palabras clave, valoraciones o ajustes de Lightroom van en el XMP, vuelve a meterlo a mano: <code>exiftool -xmp -b foto.jpg &gt; foto.xmp</code> y luego añade <code>-x xmp=foto.xmp</code> al comando de cjxl. Comprobamos que así el campo de autor llega al .jxl.</p>
+  <p class="lead">Para quitar el GPS y el resto del EXIF antes de compartir una foto está <code>-x strip=exif</code>. Sobre un JPEG se niega con <em>Cannot strip exif metadata, try setting --allow_jpeg_reconstruction=0.</em>, porque el original ya no se podría reconstruir byte a byte. Añade esa opción y funciona: la imagen se sigue reempaquetando sin pérdida, pero djxl pasa a decir <em>Decoded to pixels.</em> y escribe un JPEG nuevo en lugar del original. Y para sacar los metadatos de un .jxl basta con poner la extensión del tipo en la salida: <code>djxl foto.jxl foto.exif</code> o <code>djxl foto.jxl foto.xmp</code>.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>GIF y APNG animados</h2>
+  <p class="lead">cjxl lee GIF y APNG animados y conserva cada fotograma con su tiempo. Hicimos con ffmpeg tres animaciones de 60 fotogramas a 480×270 y convertimos cada una con los ajustes por defecto y con la opción contraria:</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Animación</th><th>cjxl por defecto</th><th>Al revés</th></tr></thead>
+    <tbody>
+      <tr><td>GIF, carta de ajuste plana: 646 KB</td><td>606 KB, sin pérdida (−6%)</td><td class="n">-d 1: 1.177 KB (+82%)</td></tr>
+      <tr><td>GIF, barrido sobre la foto: 6.074 KB</td><td>5.158 KB, sin pérdida (−15%)</td><td class="y">-d 1: 1.663 KB (−73%)</td></tr>
+      <tr><td>APNG, carta de ajuste plana: 1.009 KB</td><td>990 KB, con pérdida (−2%)</td><td class="y">-d 0: 620 KB (−38%)</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">Dos valores por defecto explican la tabla. El GIF se codifica sin pérdida, y que la pérdida ayude o no depende por completo del contenido: con gráficos planos el archivo creció un 82%, con fotogramas fotográficos bajó un 73%. El APNG, como el PNG, va por defecto a -d 1 con pérdida, y con nuestra animación de gráficos fue la peor opción: un 60% más grande que sin pérdida. Prueba las dos cosas con un par de tus archivos antes de convertir una carpeta entera.</p>
+  <p class="lead">Para sacar las animaciones otra vez: djxl escribe todos los fotogramas en un PNG animado tanto si llamas a la salida <code>.apng</code> como <code>.png</code> (contamos 60 fotogramas en los dos casos). GIF no sabe escribirlo (el mensaje exacto está en la tabla de errores), así que si necesitas otra vez un GIF, convierte ese APNG con ffmpeg o ImageMagick.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Archivos progresivos (-p)</h2>
+  <p class="lead"><code>-p</code> reordena el archivo para que una descarga a medias ya enseñe la imagen entera, con menos detalle. Cuesta un poco: nuestra foto con pérdida pasó de 799.774 a 852.155 bytes (+6,5%). Para ver qué se compra con eso, cortamos las dos versiones antes de su final, descodificamos lo que quedaba con <code>djxl --allow_partial_files</code> y lo puntuamos frente al original:</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Recibido</th><th>Normal</th><th>Progresivo</th></tr></thead>
+    <tbody>
+      <tr><td>20%</td><td>Sin imagen</td><td>Sin imagen</td></tr>
+      <tr><td>40%</td><td>−8,1</td><td>16,6</td></tr>
+      <tr><td>60%</td><td>1,4</td><td class="y">65,6</td></tr>
+      <tr><td>75%</td><td>13,5</td><td class="y">71,7</td></tr>
+      <tr><td>90%</td><td>34,0</td><td class="y">78,0</td></tr>
+      <tr><td>100%</td><td>86,7</td><td>87,4</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">Sin -p la imagen también ocupa todo el encuadre pronto, pero casi toda se queda en un borrón provisional hasta que llegan casi todos los datos. Con -p, el 60% del archivo ya puntúa 65,6. Merece la pena para imágenes que se sirven en una web, y no aporta nada en un archivo de copias. También funciona al reempaquetar JPEG: nuestra foto creció un 1,9% y siguió volviendo idéntica byte a byte.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Convertir una carpeta entera en Linux o Mac</h2>
+  <p class="lead">Este script pasa a .jxl, sin pérdida, los .jpg, .jpeg y .png de una carpeta (no los de sus subcarpetas) y deja los originales donde estaban. Guárdalo como <code>convertir-a-jxl.sh</code> y ejecútalo con <code>bash convertir-a-jxl.sh ~/Imágenes/vacaciones</code>:</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Bash · Linux y macOS</th></tr></thead>
+    <tbody>
+      <tr><td><code>#!/usr/bin/env bash<br>carpeta="${1:-.}"<br>shopt -s nullglob nocaseglob<br>for f in "$carpeta"/*.jpg "$carpeta"/*.jpeg "$carpeta"/*.png; do<br>destino="${f%.*}.jxl"<br>if [ -e "$destino" ]; then echo "Ya existe, me la salto: $destino"; continue; fi<br>if cjxl "$f" "$destino.part" -d 0 --lossless_jpeg=1 --quiet; then<br>mv "$destino.part" "$destino"<br>touch -r "$f" "$destino"<br>echo "OK: $destino"<br>else<br>rm -f "$destino.part"<br>echo "No se pudo convertir: $f" &gt;&amp;2<br>fi<br>done</code></td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">Qué hace: los JPEG se reempaquetan sin pérdida y los PNG se codifican con -d 0, así que no se pierde nada en ningún caso. Se salta cualquier imagen que ya tenga su .jxl, de modo que puedes pararlo y volver a lanzarlo. Cada archivo se escribe primero como <code>.part</code> y solo se renombra cuando cjxl ha terminado, así que una ejecución interrumpida nunca deja un .jxl a medias que la siguiente daría por bueno. El archivo nuevo hereda la fecha del original, y si uno falla lo avisa y sigue con los demás. Las extensiones en mayúsculas, como <code>.JPG</code>, también entran.</p>
+  <p class="lead">Lo lanzamos dos veces sobre una carpeta con nombres puestos para dar guerra —espacios, una ñ, corchetes, letras cirílicas, un .JPG en mayúsculas—, más un .jxl que ya existía y una «foto» que en realidad era un archivo de texto. La segunda vez se saltó todo lo hecho y volvió a avisar del falso. En un Mac, ejecútalo con <code>bash</code> como se indica en lugar de pegarlo en la terminal, que por defecto usa zsh: <code>shopt</code> es una orden de bash. Para comprobar después todos los JPEG, abre una terminal dentro de la carpeta y pega esta línea; al ir envuelta en <code>bash -c</code> funciona igual desde bash que desde zsh: <code>bash -c 'shopt -s nullglob nocaseglob; for f in *.jpg *.jpeg; do djxl "${f%.*}.jxl" - --output_format jpg --quiet | cmp -s - "$f" &amp;&amp; echo "idéntico: $f" || echo "DISTINTO: $f"; done'</code></p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Convertir una carpeta entera en Windows (PowerShell)</h2>
+  <p class="lead">Lo mismo para Windows. Cambia la ruta de la primera línea y pega el bloque entero en una ventana de PowerShell. Al pegarlo, en vez de guardarlo como archivo .ps1, te evitas la directiva de Windows que por defecto bloquea la ejecución de scripts:</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>PowerShell · Windows</th></tr></thead>
+    <tbody>
+      <tr><td><code>$carpeta = "C:\Fotos"<br>Get-ChildItem -LiteralPath $carpeta -File | Where-Object { $_.Extension -in ".jpg", ".jpeg", ".png" } | ForEach-Object {<br>$destino = [IO.Path]::ChangeExtension($_.FullName, ".jxl")<br>if (Test-Path -LiteralPath $destino) { Write-Host "Ya existe, me la salto: $destino"; return }<br>&amp; cjxl $_.FullName "$destino.part" -d 0 --lossless_jpeg=1 --quiet<br>if ($? -and $LASTEXITCODE -eq 0) {<br>Move-Item -LiteralPath "$destino.part" -Destination $destino<br>(Get-Item -LiteralPath $destino).LastWriteTime = $_.LastWriteTime<br>Write-Host "OK: $destino"<br>} else {<br>Remove-Item -LiteralPath "$destino.part" -ErrorAction SilentlyContinue<br>Write-Warning "No se pudo convertir: $($_.FullName)"<br>}<br>}</code></td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">Se comporta exactamente igual que la versión de bash, y lo probamos de la misma manera: dos veces sobre la carpeta de nombres raros, en Windows PowerShell 5.1 con Windows 11 y en PowerShell 7.6 en Linux. <code>-LiteralPath</code> es lo que impide que un nombre con corchetes se lea como comodín, y la comparación <code>-in</code> no distingue mayúsculas, así que los .JPG también entran. Los mensajes van sin tildes a propósito: si algún día lo guardas como .ps1 con el Bloc de notas, PowerShell 5.1 no te los desfigura. Para comprobar un resultado a mano: <code>djxl foto.jxl prueba.jpg</code> y después <code>(Get-FileHash foto.jpg).Hash -eq (Get-FileHash prueba.jpg).Hash</code> tiene que decir True.</p>
+  <p class="lead">Hay un límite común a los dos scripts: si foto.jpg y foto.png están juntas, las dos quieren llamarse foto.jxl, así que la segunda se salta. Cambia antes el nombre a una de ellas.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Los errores que te vas a encontrar, y su arreglo</h2>
+  <p class="lead">Todos los mensajes están copiados de nuestras pruebas, tal cual los escribe el programa. cjxl saca primero una línea con su versión; el error es la siguiente.</p>
+  <div class="gtbl"><table class="cmp">
+    <thead><tr><th>Mensaje</th><th>Causa y arreglo</th></tr></thead>
+    <tbody>
+      <tr><td><code>Must not set non-zero distance in combination with --lossless_jpeg=1, which is set by default.</code></td><td>Has usado -d o -q sobre un JPEG (0.12.0).<br><strong>Arreglo:</strong> añade <code>--lossless_jpeg=0</code> si quieres pérdida, o quita -d para reempaquetar sin pérdida.</td></tr>
+      <tr><td><code>Getting pixel data failed.</code></td><td>La entrada no es un formato que lea cjxl (nos pasó con WebP, TIFF y BMP) o el archivo está dañado.<br><strong>Arreglo:</strong> pásalo antes a PNG, por ejemplo con <code>magick entrada.webp entrada.png</code>. cjxl lee JPEG, PNG, APNG, GIF, PPM/PNM/PFM/PAM, PGX y JXL.</td></tr>
+      <tr><td><code>Reading image data failed.</code></td><td>No existe ningún archivo en esa ruta.<br><strong>Arreglo:</strong> revisa el nombre y pon comillas si la ruta lleva espacios.</td></tr>
+      <tr><td><code>JPEG bitstream reconstruction data could not be created. Possibly there is too much tail data.</code></td><td>En nuestras pruebas, un JPEG en CMYK (habitual en imprenta); 300 KB de datos pegados al final no dieron problema.<br><strong>Arreglo:</strong> pasa la imagen antes a RGB. La 0.12.0 rechazó el CMYK por todos los caminos que probamos.</td></tr>
+      <tr><td><code>Invalid flag value for --effort: Valid range is {1, 2, ..., 9}.</code></td><td>Tienes libjxl 0.7 (Ubuntu 24.04, Debian 12) y has pedido -e 10.<br><strong>Arreglo:</strong> actualiza, o usa -e 9.</td></tr>
+      <tr><td><code>Unknown argument: --reconstruct_jpeg</code></td><td>djxl 0.7, anterior a esa opción.<br><strong>Arreglo:</strong> actualiza, o quita la opción.</td></tr>
+      <tr><td><code>can't decode to the file extension '.gif'.</code></td><td>djxl no escribe GIF.<br><strong>Arreglo:</strong> descodifica a .apng y conviértelo con ffmpeg o ImageMagick.</td></tr>
+      <tr><td><code>Cannot strip exif metadata, try setting --allow_jpeg_reconstruction=0.</code></td><td>-x strip=exif al reempaquetar un JPEG.<br><strong>Arreglo:</strong> añade esa opción; el JPEG original ya no se podrá recuperar byte a byte.</td></tr>
+      <tr><td><code>El término 'cjxl' no se reconoce como nombre de un cmdlet…</code></td><td>PowerShell no encuentra cjxl en el PATH.<br><strong>Arreglo:</strong> abre una terminal nueva después de instalar con winget, o llama a cjxl.exe con su ruta completa.</td></tr>
+      <tr><td><code>…porque la ejecución de scripts está deshabilitada en este sistema</code></td><td>Has guardado el bucle de PowerShell como archivo .ps1.<br><strong>Arreglo:</strong> pégalo en la ventana, o ejecuta una vez <code>Set-ExecutionPolicy -Scope CurrentUser RemoteSigned</code>.</td></tr>
+      <tr><td><code>tar (child): lzip: Cannot exec</code></td><td>Falta lzip, así que no se puede descomprimir la versión estática.<br><strong>Arreglo:</strong> <code>sudo apt install lzip</code>.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead">Hay tres más que se resuelven solos al leerlos: si pones a la vez <code>-d</code> y <code>-q</code>, cjxl se niega a elegir por ti; si olvidas el nombre del archivo de salida, te recuerda que no le has dicho dónde escribir; y jxlinfo no tiene opción de versión, así que <code>jxlinfo --version</code> toma «--version» por el nombre de una imagen y dice que no puede leerla. La versión te la da <code>cjxl --version</code>.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Preguntas frecuentes</h2>
+  <div class="faq">
+    <details open><summary>¿cjxl convierte sin pérdida por defecto?</summary><div class="ans">Depende de lo que le des. Un JPEG se reempaqueta sin pérdida y un GIF se codifica sin pérdida, pero PNG, APNG y los demás formatos de píxeles van a -d 1, que es visualmente sin pérdida pero no matemáticamente. Añade -d 0 siempre que tenga que sobrevivir cada píxel.</div></details>
+    <details><summary>¿Me conviene recodificar mis JPEG con pérdida para ahorrar más?</summary><div class="ans">Normalmente no. Con nuestra foto, el camino con pérdida (--lossless_jpeg=0 -d 1) dio 0,80 MB frente a 2,67 MB del reempaquetado, pero vuelve a comprimir una imagen que ya estaba comprimida, se dejó el XMP y el IPTC y no tiene vuelta atrás. Para guardar, el 27% sin pérdida es mejor trato.</div></details>
+    <details><summary>¿Puedo borrar los JPEG originales después de convertir?</summary><div class="ans">Solo cuando hayas comprobado que cada uno vuelve idéntico, con el bucle de djxl y cmp de arriba o con sumas de comprobación. Ten en cuenta que muchos programas todavía no abren .jxl, así que puede que tengas que reconstruir el JPEG con djxl cada vez que quieras compartir una foto. Como la reconstrucción es exacta, es una molestia, no un riesgo.</div></details>
+    <details><summary>¿Cómo paso un .jxl otra vez a PNG o JPG?</summary><div class="ans">Con djxl foto.jxl foto.png para PNG. Si la salida es .jpg, un JPEG reempaquetado se reconstruye exacto; cualquier otro .jxl se codifica como un JPEG nuevo con calidad 95 por defecto, que puedes cambiar con -q (por ejemplo, djxl foto.jxl foto.jpg -q 90).</div></details>
+    <details><summary>¿Los archivos hechos con la 0.12.0 se abren con programas más viejos?</summary><div class="ans">Sí, en lo que respecta al formato. El djxl 0.7.0 de Ubuntu descodificó nuestra foto hecha con la 0.12.0, reconstruyó byte a byte el JPEG reempaquetado y descodificó las animaciones. Otra cosa es que un programa concreto abra .jxl, que suele ser el problema de verdad.</div></details>
+    <details><summary>¿Necesito la línea de comandos para esto?</summary><div class="ans">Para cuatro archivos, no. El <a href="/es/jpg-a-jxl/">conversor de JPG a JXL</a> de esta web hace el mismo reempaquetado sin pérdida dentro de tu navegador si marcas Sin pérdida, y no se sube nada. La terminal se gana el sitio cuando tienes carpetas enteras, necesitas ajustes exactos o quieres automatizarlo.</div></details>
+  </div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Sigue leyendo</h2>
+  <div class="cta-row">
+    <a class="cta-card" href="/es/jpeg-xl-vs-jpeg/"><span class="cta-ic">⚖️</span><b>JPEG XL frente a JPEG</b><span class="cta-sub">Lo que ahorra el reempaquetado y cuándo compensa cambiar →</span></a>
+    <a class="cta-card" href="/es/jpeg-xl-vs-png/"><span class="cta-ic">🖼️</span><b>JPEG XL frente a PNG</b><span class="cta-sub">Archivos sin pérdida, comparados →</span></a>
+    <a class="cta-card" href="/es/jpeg-xl-en-gimp/"><span class="cta-ic">🎨</span><b>JPEG XL en GIMP</b><span class="cta-sub">Abrir y exportar .jxl sin terminal →</span></a>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <a class="brand" href="/es/"><svg class="logo" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#5b4bff"/><path d="M7 21l4-10 4 10M8.5 17.5h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 11v10h5" stroke="#a9a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> JXL<span style="color:#a9a0ff">Convert</span></a>
+    <nav class="fnav"><a href="/es/">Conversor</a><a href="/es/visor-jxl/">Visor</a><a href="/es/guias/">Blog</a><a href="/es/sobre-el-proyecto/">Sobre el proyecto</a><a href="/es/contacto/">Contacto</a><a href="/es/novedades/">Novedades</a></nav>
+  </div>
+  <div class="legal">
+    <span class="privacy-pill">🔒 Tus archivos nunca salen de tu dispositivo</span>
+    <span class="flegal"><a href="/es/privacidad/">Privacidad</a> · <a href="/es/terminos/">Términos</a><span id="revocation-link" style="display:none"> · <a href="javascript:window.googlefc.showRevocationMessage();">Configuración de privacidad</a></span></span>
+    <span>© 2026 JXL Convert</span>
+  </div>
+  <div class="sister"><a href="https://docuniversal.com/" rel="noopener" style="display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:100%;color:inherit;opacity:.72;font-size:13px"><svg width="18" height="18" viewBox="0 0 64 64" aria-hidden="true" style="border-radius:5px;flex:none"><defs><linearGradient id="duLogo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7cc4a0"/><stop offset="1" stop-color="#366d55"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#duLogo)"/><circle cx="32" cy="32" r="16" fill="none" stroke="#fff" stroke-width="4" opacity=".95"/><circle cx="32" cy="32" r="5" fill="#fff"/></svg><span>¿Trabajas con PDF? Prueba DocUniversal — gratis, en tu navegador</span></a></div>
+</div></footer>
+<script>
+window.googlefc = window.googlefc || {};
+window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+window.googlefc.callbackQueue.push({
+  'CONSENT_API_READY':
+  () => __tcfapi('addEventListener', 0, (tcdata, success) => {
+    const revocationLink = document.getElementById('revocation-link');
+    if (!revocationLink) return;
+    if (!success || !tcdata) {
+      revocationLink.style.display = 'none';
+    } else if (tcdata.gdprApplies) {
+      revocationLink.style.display = 'inline';
+    } else {
+      revocationLink.style.display = 'none';
+    }
+  })
+});
+</script>
+</body>
+</html>
