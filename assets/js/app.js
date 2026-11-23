@@ -51,20 +51,21 @@ async function transcodeJpegToJxl(file) {
   return mod.FS.readFile("out.jxl"); // Uint8Array
 }
 
-// PNG goes to cjxl as the original file, not as canvas pixels: a canvas keeps only
-// the pixels, so Exif, XMP and the colour profile were lost on the way (reported by
-// a user, Oct 2026). This cjxl build reads PNG in full; JPEG only for lossless repacking.
-async function encodePngViaCjxl(file, { quality, lossless }) {
+// PNG and JXL go to cjxl as the original file, not as canvas pixels: a canvas keeps
+// only the pixels, so Exif, XMP and the colour profile were lost on the way (reported
+// by a user, Oct 2026). This cjxl build reads both in full; JPEG only for lossless repacking.
+async function encodeFileViaCjxl(file, name, { quality, lossless }) {
   const mod = await getCjxl();
-  mod.FS.writeFile("in.png", new Uint8Array(await file.arrayBuffer()));
-  try { mod.callMain(["in.png", "out.jxl", "--num_threads", "0", "-q", lossless ? "100" : String(quality), "-e", "4"]); } catch (e) { /* emscripten exits via throw */ }
+  mod.FS.writeFile(name, new Uint8Array(await file.arrayBuffer()));
+  try { mod.callMain([name, "out.jxl", "--num_threads", "0", "-q", lossless ? "100" : String(quality), "-e", "4"]); } catch (e) { /* emscripten exits via throw */ }
   return mod.FS.readFile("out.jxl"); // throws if cjxl produced nothing
 }
 
 // ---- metadata for the pixel path ----
-// Lossy JPEG, HEIC and WebP reach cjxl as canvas pixels, so their Exif and XMP are
-// read from the source file and written into the JXL container by hand. The colour
-// profile stays out on purpose: the canvas has already converted the pixels to sRGB.
+// Whatever goes through a canvas (lossy JPEG, HEIC and WebP to JXL; anything to JPG)
+// comes out with only its pixels, so Exif and XMP are read from the source file and
+// written into the output by hand. The colour profile stays out on purpose: the canvas
+// has already converted the pixels to sRGB.
 const XMP_NS = "http://ns.adobe.com/xap/1.0/\0";
 const ascii = (s) => Uint8Array.from(s, (c) => c.charCodeAt(0));
 const startsWith = (b, s) => s.length <= b.length && [...s].every((c, i) => b[i] === c.charCodeAt(0));
@@ -83,6 +84,53 @@ function jpegMetadata(b) {
     i += 2 + len;
   }
   return out;
+}
+
+function pngMetadata(b) {
+  const out = {};
+  const d = new DataView(b.buffer, b.byteOffset, b.byteLength);
+  for (let i = 8; i + 12 <= b.length;) {
+    const size = d.getUint32(i);
+    const type = String.fromCharCode(b[i + 4], b[i + 5], b[i + 6], b[i + 7]);
+    const data = b.subarray(i + 8, i + 8 + size);
+    if (type === "eXIf") out.exif = data.slice();
+    if (type === "iTXt" && startsWith(data, "XML:com.adobe.xmp\0") && data[18] === 0) {
+      let p = 20; // keyword, its zero, compression flag and method
+      for (let zeros = 0; p < data.length && zeros < 2; p++) if (data[p] === 0) zeros++; // language and translated keyword
+      out.xmp = data.slice(p);
+    }
+    i += 12 + size;
+  }
+  return out;
+}
+
+function jxlBoxes(b) {
+  const out = {};
+  if (b[0] === 0xff && b[1] === 0x0a) return out; // bare codestream: no metadata boxes
+  const d = new DataView(b.buffer, b.byteOffset, b.byteLength);
+  const fourcc = (i) => String.fromCharCode(b[i], b[i + 1], b[i + 2], b[i + 3]);
+  for (let i = 0; i + 8 <= b.length;) {
+    let size = d.getUint32(i), head = 8;
+    if (size === 1) { size = Number(d.getBigUint64(i + 8)); head = 16; } else if (size === 0) size = b.length - i;
+    if (size < head) break;
+    const type = fourcc(i + 4), start = i + head;
+    if (type === "Exif") out.exif = b.slice(start + 4 + d.getUint32(start), i + size);
+    if (type === "xml ") out.xmp = b.slice(start, i + size);
+    if (type === "brob" && ["Exif", "xml "].includes(fourcc(start))) out.compressed = true;
+    i += size;
+  }
+  return out;
+}
+
+// Metadata boxes are usually Brotli-compressed and browsers can't undo that, so a
+// throwaway fast re-encode with cjxl gets them back uncompressed.
+async function jxlMetadata(b) {
+  const found = jxlBoxes(b);
+  if (!found.compressed) return found;
+  const mod = await getCjxl();
+  mod.FS.writeFile("in.jxl", b);
+  try { mod.callMain(["in.jxl", "out.jxl", "--num_threads", "0", "-d", "25", "-e", "1", "--compress_boxes=0"]); } catch (e) { /* emscripten exits via throw */ }
+  return jxlBoxes(mod.FS.readFile("out.jxl"));
 }
 
 function webpMetadata(b) {
@@ -179,13 +227,23 @@ function heicMetadata(b) {
   return out;
 }
 
-async function readMetadata(file, kind) {
+function sourceKind(file) {
+  if (isJxl(file)) return "jxl";
+  if (isHeic(file)) return "heic";
+  if (file.type === "image/jpeg" || /\.jpe?g$/i.test(file.name)) return "jpeg";
+  if (file.type === "image/png" || /\.png$/i.test(file.name)) return "png";
+  if (file.type === "image/webp" || /\.webp$/i.test(file.name)) return "webp";
+  return "";
+}
+
+async function readMetadata(file) {
   try {
-    const b = new Uint8Array(await file.arrayBuffer());
-    const read = { jpeg: jpegMetadata, webp: webpMetadata, heic: heicMetadata }[kind];
-    return read ? read(b) : null;
+    const read = { jpeg: jpegMetadata, png: pngMetadata, webp: webpMetadata, heic: heicMetadata, jxl: jxlMetadata }[sourceKind(file)];
+    return read ? await read(new Uint8Array(await file.arrayBuffer())) : null;
   } catch (e) { return null; } // a photo with odd metadata must still convert
 }
+
+const isTiff = (b) => b && (b[0] === 0x49 || b[0] === 0x4d); // "II" or "MM"
 
 // The browser already rotated the pixels, so the copied Exif has to say "upright"
 // or anything that honours the tag would rotate the photo a second time.
@@ -214,9 +272,7 @@ function addMetadata(buf, meta) {
     Uint8Array.from([0, 0, 0, 12, 0x4a, 0x58, 0x4c, 0x20, 0x0d, 0x0a, 0x87, 0x0a]),
     ...box("ftyp", ascii("jxl "), new Uint8Array(4), ascii("jxl ")),
   ];
-  if (meta.exif && (meta.exif[0] === 0x49 || meta.exif[0] === 0x4d)) {
-    parts.push(...box("Exif", new Uint8Array(4), uprightExif(meta.exif)));
-  }
+  if (isTiff(meta.exif)) parts.push(...box("Exif", new Uint8Array(4), uprightExif(meta.exif)));
   if (meta.xmp) parts.push(...box("xml ", meta.xmp));
   parts.push(...box("jxlc", code));
   const out = new Uint8Array(parts.reduce((s, x) => s + x.length, 0));
@@ -225,7 +281,31 @@ function addMetadata(buf, meta) {
   return out;
 }
 
-// Pixel → JXL encoding also goes through cjxl: the jSquash encoder WASM runs out
+function addJpegMetadata(buf, meta) {
+  const b = new Uint8Array(buf);
+  if (!meta || !(meta.exif || meta.xmp)) return b;
+  const segment = (header, data) => {
+    const len = 2 + header.length + data.length;
+    if (len > 0xffff) return new Uint8Array(0); // doesn't fit in a JPEG segment
+    const s = new Uint8Array(2 + len);
+    s.set([0xff, 0xe1, len >> 8, len & 255], 0);
+    s.set(ascii(header), 4);
+    s.set(data, 4 + header.length);
+    return s;
+  };
+  const exif = isTiff(meta.exif) ? segment("Exif\0\0", uprightExif(meta.exif)) : new Uint8Array(0);
+  const xmp = meta.xmp ? segment(XMP_NS, meta.xmp) : new Uint8Array(0);
+  // right after the start marker and the JFIF header the browser writes
+  const at = b[2] === 0xff && b[3] === 0xe0 ? 4 + ((b[4] << 8) | b[5]) : 2;
+  const out = new Uint8Array(b.length + exif.length + xmp.length);
+  out.set(b.subarray(0, at), 0);
+  out.set(exif, at);
+  out.set(xmp, at + exif.length);
+  out.set(b.subarray(at), at + exif.length + xmp.length);
+  return out;
+}
+
+// Pixel \u2192 JXL encoding also goes through cjxl: the jSquash encoder WASM runs out
 // of heap and aborts somewhere between 12 and 16 MP (a 22 MP camera JPEG dies with
 // "RuntimeError: index out of bounds"), and at effort 7 it needs ~20 s for a 12 MP
 // photo anyway. cjxl fed with raw PPM/PAM pixels at effort 4 handles 22 MP in ~3 s.
@@ -416,17 +496,16 @@ async function convert(file, { target, quality, lossless }) {
         if (tbuf && tbuf.length) return { blob: new Blob([tbuf], { type: "image/jxl" }), ext: "jxl" };
       } catch (e) { /* fall through to pixel encode */ }
     }
-    // PNG: cjxl reads the file itself and keeps its metadata; if it can't handle
-    // this particular file, the pixel path below still converts it.
-    const isPng = !fromJxl && !fromHeic && (file.type === "image/png" || /\.png$/i.test(file.name));
-    if (isPng) {
+    // PNG and JXL: cjxl reads the file itself and keeps its metadata; if it can't
+    // handle this particular file, the pixel path below still converts it.
+    const kind = sourceKind(file);
+    if (kind === "png" || kind === "jxl") {
       try {
-        const pbuf = await encodePngViaCjxl(file, { quality, lossless });
-        if (pbuf && pbuf.length) return { blob: new Blob([pbuf], { type: "image/jxl" }), ext: "jxl" };
+        const fbuf = await encodeFileViaCjxl(file, "in." + kind, { quality, lossless });
+        if (fbuf && fbuf.length) return { blob: new Blob([fbuf], { type: "image/jxl" }), ext: "jxl" };
       } catch (e) { /* fall through to pixel encode */ }
     }
-    const isWebp = file.type === "image/webp" || /\.webp$/i.test(file.name);
-    const meta = await readMetadata(file, isJpeg ? "jpeg" : fromHeic ? "heic" : isWebp ? "webp" : "");
+    const meta = await readMetadata(file);
     const imageData = fromJxl ? (await getJxl()).decode(await file.arrayBuffer()) : await fileToImageData(file);
     const id = (imageData instanceof Promise) ? await imageData : imageData;
     try {
@@ -453,7 +532,9 @@ async function convert(file, { target, quality, lossless }) {
   }
   const q = out === "jpeg" ? (lossless ? 0.98 : quality / 100) : undefined;
   const blob = await imageDataToBlob(imageData, mime, q);
-  return { blob, ext };
+  if (out !== "jpeg") return { blob, ext };
+  const withMeta = addJpegMetadata(await blob.arrayBuffer(), await readMetadata(file));
+  return { blob: new Blob([withMeta], { type: mime }), ext };
 }
 
 // ---- UI wiring ----
